@@ -30,7 +30,8 @@ repos:
   - afonin900/Margariteros.bar # execution, growth, brand history
 
 ### GitHub Project
-project: not configured
+project_id: 8
+project: Margariteros Bar Ops
 owner: afonin900
 
 ### Task routing
