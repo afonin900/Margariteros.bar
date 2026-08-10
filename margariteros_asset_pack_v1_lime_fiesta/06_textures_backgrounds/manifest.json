@@ -1,0 +1,169 @@
+{
+  "package": "MARGARITEROS Lime Fiesta — Stage 6 Textures / Backgrounds",
+  "version": "1.0",
+  "generated_at": "2026-08-05",
+  "master_resolution": [
+    1536,
+    1536
+  ],
+  "production_method": "native procedural texture synthesis; no raster upscaling",
+  "palette": {
+    "black": "#0B0B0B",
+    "cream": "#FFF5E1",
+    "lime": "#C6FF00",
+    "green": "#7BC300",
+    "orange": "#FF5A2E"
+  },
+  "files": [
+    {
+      "file": "lf_bg_black_chalk.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P",
+      "size_bytes": 1357845,
+      "size_mb": 1.295,
+      "role": "background",
+      "seamless": true
+    },
+    {
+      "file": "lf_bg_black_grunge.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P",
+      "size_bytes": 1071111,
+      "size_mb": 1.021,
+      "role": "background",
+      "seamless": true
+    },
+    {
+      "file": "lf_bg_cream_paper.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P",
+      "size_bytes": 972333,
+      "size_mb": 0.927,
+      "role": "background",
+      "seamless": true
+    },
+    {
+      "file": "lf_bg_lime_paint.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P",
+      "size_bytes": 1085796,
+      "size_mb": 1.035,
+      "role": "background",
+      "seamless": true
+    },
+    {
+      "file": "lf_bg_orange_paint.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P",
+      "size_bytes": 934277,
+      "size_mb": 0.891,
+      "role": "background",
+      "seamless": true
+    },
+    {
+      "file": "lf_overlay_distress_dark.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "size_bytes": 163524,
+      "size_mb": 0.156,
+      "role": "overlay",
+      "seamless": false
+    },
+    {
+      "file": "lf_overlay_distress_light.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "size_bytes": 121351,
+      "size_mb": 0.116,
+      "role": "overlay",
+      "seamless": false
+    },
+    {
+      "file": "lf_overlay_glow_lime.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "size_bytes": 61517,
+      "size_mb": 0.059,
+      "role": "overlay",
+      "seamless": false
+    },
+    {
+      "file": "lf_overlay_glow_orange.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "size_bytes": 60127,
+      "size_mb": 0.057,
+      "role": "overlay",
+      "seamless": false
+    },
+    {
+      "file": "lf_overlay_grain_dark.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "size_bytes": 29460,
+      "size_mb": 0.028,
+      "role": "overlay",
+      "seamless": false
+    },
+    {
+      "file": "lf_overlay_grain_light.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "size_bytes": 42550,
+      "size_mb": 0.041,
+      "role": "overlay",
+      "seamless": false
+    },
+    {
+      "file": "lf_overlay_vignette.png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA",
+      "size_bytes": 145469,
+      "size_mb": 0.139,
+      "role": "overlay",
+      "seamless": false
+    },
+    {
+      "file": "lf_texture_seam_test.png",
+      "width": 2200,
+      "height": 760,
+      "mode": "P",
+      "size_bytes": 273697,
+      "size_mb": 0.261,
+      "role": "preview",
+      "seamless": false
+    },
+    {
+      "file": "lf_texture_sheet.png",
+      "width": 2400,
+      "height": 1840,
+      "mode": "P",
+      "size_bytes": 598697,
+      "size_mb": 0.571,
+      "role": "preview",
+      "seamless": false
+    },
+    {
+      "file": "lf_texture_usage_preview.png",
+      "width": 2200,
+      "height": 1400,
+      "mode": "P",
+      "size_bytes": 1214307,
+      "size_mb": 1.158,
+      "role": "preview",
+      "seamless": false
+    }
+  ]
+}

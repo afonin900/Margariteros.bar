@@ -1,0 +1,19 @@
+{
+  "stage": 3,
+  "name": "Icons Pack",
+  "status": "approved",
+  "format": "PNG RGBA",
+  "canvas": "2400x2400",
+  "assets": [
+    "lf_icon_chili.png",
+    "lf_icon_sun.png",
+    "lf_icon_heart_lime.png",
+    "lf_icon_lime_slice.png",
+    "lf_icon_music_note.png",
+    "lf_icon_cactus.png",
+    "lf_icon_cocktail.png",
+    "lf_icon_taco.png",
+    "lf_icon_splash.png",
+    "lf_icon_agave.png"
+  ]
+}

@@ -1,0 +1,868 @@
+{
+  "package": "MARGARITEROS Lime Fiesta — Stage 7 Poster Templates Pack",
+  "version": "1.0",
+  "quality_policy": {
+    "source_asset_upscaling": false,
+    "background_method": "native 1536×1536 seamless tiles repeated at output size",
+    "decorative_assets": "scaled down only; wide elements repeated rather than enlarged",
+    "print_metadata": "A4 and A6 PNG files saved with 300 DPI metadata",
+    "digital_metadata": "digital PNG files saved with 96 DPI metadata"
+  },
+  "files": [
+    {
+      "file": "lf_poster_feed_1080x1350_blank.png",
+      "type": "background template",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "dpi": 96,
+      "mode": "indexed RGB PNG",
+      "bytes": 639032,
+      "megabytes": 0.609
+    },
+    {
+      "file": "lf_poster_feed_1080x1350_overlay.png",
+      "type": "transparent decorative overlay",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "dpi": 96,
+      "mode": "RGBA PNG",
+      "bytes": 905599,
+      "megabytes": 0.864
+    },
+    {
+      "file": "lf_poster_square_1080x1080_blank.png",
+      "type": "background template",
+      "dimensions": [
+        1080,
+        1080
+      ],
+      "dpi": 96,
+      "mode": "indexed RGB PNG",
+      "bytes": 525421,
+      "megabytes": 0.501
+    },
+    {
+      "file": "lf_poster_square_1080x1080_overlay.png",
+      "type": "transparent decorative overlay",
+      "dimensions": [
+        1080,
+        1080
+      ],
+      "dpi": 96,
+      "mode": "RGBA PNG",
+      "bytes": 719770,
+      "megabytes": 0.686
+    },
+    {
+      "file": "lf_story_1080x1920_blank.png",
+      "type": "background template",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "dpi": 96,
+      "mode": "indexed RGB PNG",
+      "bytes": 1079240,
+      "megabytes": 1.029
+    },
+    {
+      "file": "lf_story_1080x1920_overlay.png",
+      "type": "transparent decorative overlay",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "dpi": 96,
+      "mode": "RGBA PNG",
+      "bytes": 1135741,
+      "megabytes": 1.083
+    },
+    {
+      "file": "lf_banner_1920x1080_blank.png",
+      "type": "background template",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "dpi": 96,
+      "mode": "indexed RGB PNG",
+      "bytes": 1005421,
+      "megabytes": 0.959
+    },
+    {
+      "file": "lf_banner_1920x1080_overlay.png",
+      "type": "transparent decorative overlay",
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "dpi": 96,
+      "mode": "RGBA PNG",
+      "bytes": 1635303,
+      "megabytes": 1.56
+    },
+    {
+      "file": "lf_menu_a4_2480x3508_blank.png",
+      "type": "background template",
+      "dimensions": [
+        2480,
+        3508
+      ],
+      "dpi": 300,
+      "mode": "indexed RGB PNG",
+      "bytes": 1473868,
+      "megabytes": 1.406
+    },
+    {
+      "file": "lf_menu_a4_2480x3508_overlay.png",
+      "type": "transparent decorative overlay",
+      "dimensions": [
+        2480,
+        3508
+      ],
+      "dpi": 300,
+      "mode": "RGBA PNG",
+      "bytes": 1868763,
+      "megabytes": 1.782
+    },
+    {
+      "file": "lf_table_tent_a6_1240x1748_blank.png",
+      "type": "background template",
+      "dimensions": [
+        1240,
+        1748
+      ],
+      "dpi": 300,
+      "mode": "indexed RGB PNG",
+      "bytes": 957678,
+      "megabytes": 0.913
+    },
+    {
+      "file": "lf_table_tent_a6_1240x1748_overlay.png",
+      "type": "transparent decorative overlay",
+      "dimensions": [
+        1240,
+        1748
+      ],
+      "dpi": 300,
+      "mode": "RGBA PNG",
+      "bytes": 1212962,
+      "megabytes": 1.157
+    },
+    {
+      "file": "lf_drink_card_a6_1240x1748_blank.png",
+      "type": "background template",
+      "dimensions": [
+        1240,
+        1748
+      ],
+      "dpi": 300,
+      "mode": "indexed RGB PNG",
+      "bytes": 765112,
+      "megabytes": 0.73
+    },
+    {
+      "file": "lf_drink_card_a6_1240x1748_overlay.png",
+      "type": "transparent decorative overlay",
+      "dimensions": [
+        1240,
+        1748
+      ],
+      "dpi": 300,
+      "mode": "RGBA PNG",
+      "bytes": 981797,
+      "megabytes": 0.936
+    },
+    {
+      "file": "lf_template_usage_preview.png",
+      "type": "usage preview sheet",
+      "dimensions": [
+        2600,
+        1900
+      ],
+      "dpi": 96,
+      "bytes": 1431724,
+      "megabytes": 1.365
+    },
+    {
+      "file": "lf_template_zones_guide.png",
+      "type": "placement guide",
+      "dimensions": [
+        2600,
+        1900
+      ],
+      "dpi": 96,
+      "bytes": 791697,
+      "megabytes": 0.755
+    }
+  ],
+  "source_scale_log": [
+    {
+      "asset": "paper1",
+      "source": [
+        1536,
+        499
+      ],
+      "output": [
+        923,
+        300
+      ],
+      "scale": 0.6012,
+      "upscaled": false
+    },
+    {
+      "asset": "logo",
+      "source": [
+        1021,
+        1395
+      ],
+      "output": [
+        124,
+        170
+      ],
+      "scale": 0.1219,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        416,
+        135
+      ],
+      "scale": 0.2716,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        374,
+        108
+      ],
+      "scale": 0.2494,
+      "upscaled": false
+    },
+    {
+      "asset": "agave_corner",
+      "source": [
+        883,
+        624
+      ],
+      "output": [
+        360,
+        254
+      ],
+      "scale": 0.4077,
+      "upscaled": false
+    },
+    {
+      "asset": "mascot_invite",
+      "source": [
+        1784,
+        2524
+      ],
+      "output": [
+        304,
+        430
+      ],
+      "scale": 0.1704,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_lime",
+      "source": [
+        1811,
+        1811
+      ],
+      "output": [
+        110,
+        110
+      ],
+      "scale": 0.0607,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_music",
+      "source": [
+        1381,
+        1728
+      ],
+      "output": [
+        64,
+        80
+      ],
+      "scale": 0.0463,
+      "upscaled": false
+    },
+    {
+      "asset": "divider",
+      "source": [
+        1492,
+        214
+      ],
+      "output": [
+        627,
+        90
+      ],
+      "scale": 0.4206,
+      "upscaled": false
+    },
+    {
+      "asset": "paper2",
+      "source": [
+        1536,
+        390
+      ],
+      "output": [
+        985,
+        250
+      ],
+      "scale": 0.641,
+      "upscaled": false
+    },
+    {
+      "asset": "logo",
+      "source": [
+        1021,
+        1395
+      ],
+      "output": [
+        124,
+        170
+      ],
+      "scale": 0.1219,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        397,
+        129
+      ],
+      "scale": 0.2596,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        374,
+        108
+      ],
+      "scale": 0.2494,
+      "upscaled": false
+    },
+    {
+      "asset": "mascot_base",
+      "source": [
+        1837,
+        2552
+      ],
+      "output": [
+        310,
+        430
+      ],
+      "scale": 0.1685,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_chili",
+      "source": [
+        1119,
+        1934
+      ],
+      "output": [
+        69,
+        120
+      ],
+      "scale": 0.062,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_lime",
+      "source": [
+        1811,
+        1811
+      ],
+      "output": [
+        120,
+        120
+      ],
+      "scale": 0.0663,
+      "upscaled": false
+    },
+    {
+      "asset": "paper1",
+      "source": [
+        1536,
+        499
+      ],
+      "output": [
+        1016,
+        330
+      ],
+      "scale": 0.6613,
+      "upscaled": false
+    },
+    {
+      "asset": "logo",
+      "source": [
+        1021,
+        1395
+      ],
+      "output": [
+        139,
+        190
+      ],
+      "scale": 0.1362,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        471,
+        153
+      ],
+      "scale": 0.3078,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        464,
+        134
+      ],
+      "scale": 0.3095,
+      "upscaled": false
+    },
+    {
+      "asset": "sticker",
+      "source": [
+        937,
+        843
+      ],
+      "output": [
+        250,
+        225
+      ],
+      "scale": 0.2668,
+      "upscaled": false
+    },
+    {
+      "asset": "mascot_pointing",
+      "source": [
+        1849,
+        2527
+      ],
+      "output": [
+        380,
+        520
+      ],
+      "scale": 0.2058,
+      "upscaled": false
+    },
+    {
+      "asset": "confetti",
+      "source": [
+        806,
+        694
+      ],
+      "output": [
+        465,
+        400
+      ],
+      "scale": 0.5764,
+      "upscaled": false
+    },
+    {
+      "asset": "paper2",
+      "source": [
+        1536,
+        390
+      ],
+      "output": [
+        1418,
+        360
+      ],
+      "scale": 0.9231,
+      "upscaled": false
+    },
+    {
+      "asset": "logo",
+      "source": [
+        1021,
+        1395
+      ],
+      "output": [
+        242,
+        330
+      ],
+      "scale": 0.2366,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        431,
+        140
+      ],
+      "scale": 0.2817,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        374,
+        108
+      ],
+      "scale": 0.2494,
+      "upscaled": false
+    },
+    {
+      "asset": "mascot_cheers",
+      "source": [
+        1773,
+        2660
+      ],
+      "output": [
+        373,
+        560
+      ],
+      "scale": 0.2105,
+      "upscaled": false
+    },
+    {
+      "asset": "divider",
+      "source": [
+        1492,
+        214
+      ],
+      "output": [
+        627,
+        90
+      ],
+      "scale": 0.4206,
+      "upscaled": false
+    },
+    {
+      "asset": "logo",
+      "source": [
+        1021,
+        1395
+      ],
+      "output": [
+        315,
+        430
+      ],
+      "scale": 0.3082,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        863,
+        280
+      ],
+      "scale": 0.5634,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        727,
+        210
+      ],
+      "scale": 0.485,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        709,
+        230
+      ],
+      "scale": 0.4628,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        796,
+        230
+      ],
+      "scale": 0.5312,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_cocktail",
+      "source": [
+        1374,
+        1909
+      ],
+      "output": [
+        166,
+        230
+      ],
+      "scale": 0.1205,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_taco",
+      "source": [
+        1409,
+        1953
+      ],
+      "output": [
+        166,
+        230
+      ],
+      "scale": 0.1178,
+      "upscaled": false
+    },
+    {
+      "asset": "divider",
+      "source": [
+        1492,
+        214
+      ],
+      "output": [
+        697,
+        100
+      ],
+      "scale": 0.4673,
+      "upscaled": false
+    },
+    {
+      "asset": "paper2",
+      "source": [
+        1536,
+        390
+      ],
+      "output": [
+        1142,
+        290
+      ],
+      "scale": 0.7436,
+      "upscaled": false
+    },
+    {
+      "asset": "logo",
+      "source": [
+        1021,
+        1395
+      ],
+      "output": [
+        161,
+        220
+      ],
+      "scale": 0.1577,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        591,
+        192
+      ],
+      "scale": 0.3863,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        543,
+        157
+      ],
+      "scale": 0.3626,
+      "upscaled": false
+    },
+    {
+      "asset": "sticker",
+      "source": [
+        937,
+        843
+      ],
+      "output": [
+        270,
+        243
+      ],
+      "scale": 0.2882,
+      "upscaled": false
+    },
+    {
+      "asset": "mascot_wave",
+      "source": [
+        1815,
+        2510
+      ],
+      "output": [
+        362,
+        500
+      ],
+      "scale": 0.1992,
+      "upscaled": false
+    },
+    {
+      "asset": "paper1",
+      "source": [
+        1536,
+        499
+      ],
+      "output": [
+        862,
+        280
+      ],
+      "scale": 0.5611,
+      "upscaled": false
+    },
+    {
+      "asset": "logo",
+      "source": [
+        1021,
+        1395
+      ],
+      "output": [
+        139,
+        190
+      ],
+      "scale": 0.1362,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_cocktail",
+      "source": [
+        1374,
+        1909
+      ],
+      "output": [
+        374,
+        520
+      ],
+      "scale": 0.2724,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_lime",
+      "source": [
+        1531,
+        497
+      ],
+      "output": [
+        591,
+        192
+      ],
+      "scale": 0.3863,
+      "upscaled": false
+    },
+    {
+      "asset": "brush_orange",
+      "source": [
+        1498,
+        433
+      ],
+      "output": [
+        481,
+        139
+      ],
+      "scale": 0.321,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_lime",
+      "source": [
+        1811,
+        1811
+      ],
+      "output": [
+        150,
+        150
+      ],
+      "scale": 0.0828,
+      "upscaled": false
+    },
+    {
+      "asset": "icon_chili",
+      "source": [
+        1119,
+        1934
+      ],
+      "output": [
+        84,
+        145
+      ],
+      "scale": 0.075,
+      "upscaled": false
+    },
+    {
+      "asset": "divider",
+      "source": [
+        1492,
+        214
+      ],
+      "output": [
+        558,
+        80
+      ],
+      "scale": 0.3738,
+      "upscaled": false
+    }
+  ]
+}

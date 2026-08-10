@@ -1,0 +1,80 @@
+{
+  "project": "MARGARITEROS Asset Pack v1",
+  "style": "Lime Fiesta",
+  "stage": 2,
+  "status": "ready_for_approval",
+  "palette": {
+    "lime": "#C6FF00",
+    "orange": "#FF5A2E",
+    "cream": "#FFF5E1",
+    "black": "#0B0B0B"
+  },
+  "technical": {
+    "format": "PNG",
+    "master_dimensions": "3000x3000 px",
+    "colour_space": "sRGB",
+    "background": "transparent RGBA"
+  },
+  "assets": [
+    {
+      "pose": "base",
+      "file": "lf_mascot_base.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    },
+    {
+      "pose": "wave",
+      "file": "lf_mascot_wave.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    },
+    {
+      "pose": "cheers",
+      "file": "lf_mascot_cheers.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    },
+    {
+      "pose": "dance",
+      "file": "lf_mascot_dance.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    },
+    {
+      "pose": "lime_toss",
+      "file": "lf_mascot_lime_toss.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    },
+    {
+      "pose": "pointing",
+      "file": "lf_mascot_pointing.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    },
+    {
+      "pose": "invite",
+      "file": "lf_mascot_invite.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    },
+    {
+      "pose": "happy_maracas",
+      "file": "lf_mascot_happy_maracas.png",
+      "dimensions": "3000x3000",
+      "transparent": true
+    }
+  ],
+  "sheets": [
+    {
+      "file": "lf_mascot_pose_sheet.png",
+      "dimensions": "6000x3000",
+      "transparent": true
+    },
+    {
+      "file": "lf_mascot_pack_preview.png",
+      "dimensions": "2400x1500",
+      "transparent": false
+    }
+  ]
+}

@@ -1,0 +1,1120 @@
+{
+  "summary": {
+    "project": "MARGARITEROS Lime Fiesta Asset Pack v1",
+    "generated_at": "2026-08-06T09:42:26.256706+00:00",
+    "file_count_before_stage9": 127,
+    "size_bytes_before_stage9": 158014614,
+    "stages_completed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "quality_rules": [
+      "no fake raster upscale",
+      "single glass stem mascot",
+      "native dimensions recorded",
+      "repeat seamless tiles instead of stretching"
+    ]
+  },
+  "files": [
+    {
+      "path": "00_master_reference/approved_lime_fiesta_board.png",
+      "bytes": 1855774,
+      "mb": 1.77,
+      "type": "png",
+      "width": 1122,
+      "height": 1402,
+      "mode": "RGB"
+    },
+    {
+      "path": "01_logo_pack/lf_logo_badge_on_black.png",
+      "bytes": 2614783,
+      "mb": 2.494,
+      "type": "png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB"
+    },
+    {
+      "path": "01_logo_pack/lf_logo_primary_round.png",
+      "bytes": 2767983,
+      "mb": 2.64,
+      "type": "png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "01_logo_pack/lf_logo_round_variant_02.png",
+      "bytes": 2222190,
+      "mb": 2.119,
+      "type": "png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "01_logo_pack/lf_logo_round_variant_03.png",
+      "bytes": 2684974,
+      "mb": 2.561,
+      "type": "png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "01_logo_pack/lf_logo_usage_preview.png",
+      "bytes": 2358236,
+      "mb": 2.249,
+      "type": "png",
+      "width": 1122,
+      "height": 1402,
+      "mode": "RGB"
+    },
+    {
+      "path": "01_logo_pack/lf_logo_variations_sheet_01.png",
+      "bytes": 2541228,
+      "mb": 2.424,
+      "type": "png",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "01_logo_pack/lf_logo_variations_sheet_02.png",
+      "bytes": 2680697,
+      "mb": 2.557,
+      "type": "png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/README.md",
+      "bytes": 466,
+      "mb": 0.0,
+      "type": "md"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_base.png",
+      "bytes": 2712042,
+      "mb": 2.586,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_cheers.png",
+      "bytes": 2594099,
+      "mb": 2.474,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_dance.png",
+      "bytes": 2115174,
+      "mb": 2.017,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_happy_maracas.png",
+      "bytes": 2698354,
+      "mb": 2.573,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_invite.png",
+      "bytes": 2325213,
+      "mb": 2.217,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_lime_in_hand.png",
+      "bytes": 2589131,
+      "mb": 2.469,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_lime_toss.png",
+      "bytes": 3230049,
+      "mb": 3.08,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_pack_preview.png",
+      "bytes": 807864,
+      "mb": 0.77,
+      "type": "png",
+      "width": 2400,
+      "height": 1500,
+      "mode": "RGB"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_pointing.png",
+      "bytes": 2259749,
+      "mb": 2.155,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_pose_sheet.png",
+      "bytes": 6598571,
+      "mb": 6.293,
+      "type": "png",
+      "width": 6000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_pose_sheet_revised.png",
+      "bytes": 2496101,
+      "mb": 2.38,
+      "type": "png",
+      "width": 3160,
+      "height": 1820,
+      "mode": "RGB"
+    },
+    {
+      "path": "02_mascot_pack/lf_mascot_wave.png",
+      "bytes": 2235129,
+      "mb": 2.132,
+      "type": "png",
+      "width": 3000,
+      "height": 3000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "02_mascot_pack/manifest.json",
+      "bytes": 1736,
+      "mb": 0.002,
+      "type": "json"
+    },
+    {
+      "path": "03_icons_pack/README.md",
+      "bytes": 303,
+      "mb": 0.0,
+      "type": "md"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_agave.png",
+      "bytes": 423628,
+      "mb": 0.404,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_cactus.png",
+      "bytes": 46042,
+      "mb": 0.044,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_chili.png",
+      "bytes": 73436,
+      "mb": 0.07,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_cocktail.png",
+      "bytes": 1503648,
+      "mb": 1.434,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_heart_lime.png",
+      "bytes": 1295072,
+      "mb": 1.235,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_lime_slice.png",
+      "bytes": 114661,
+      "mb": 0.109,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_music_note.png",
+      "bytes": 36622,
+      "mb": 0.035,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_splash.png",
+      "bytes": 1464082,
+      "mb": 1.396,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_sun.png",
+      "bytes": 62595,
+      "mb": 0.06,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icon_taco.png",
+      "bytes": 1755263,
+      "mb": 1.674,
+      "type": "png",
+      "width": 2400,
+      "height": 2400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "03_icons_pack/lf_icons_sheet.png",
+      "bytes": 2026040,
+      "mb": 1.932,
+      "type": "png",
+      "width": 2920,
+      "height": 1540,
+      "mode": "RGB"
+    },
+    {
+      "path": "03_icons_pack/manifest.json",
+      "bytes": 398,
+      "mb": 0.0,
+      "type": "json"
+    },
+    {
+      "path": "04_decor_pack/README.md",
+      "bytes": 551,
+      "mb": 0.001,
+      "type": "md"
+    },
+    {
+      "path": "04_decor_pack/lf_agave_corner_lime.png",
+      "bytes": 1027235,
+      "mb": 0.98,
+      "type": "png",
+      "width": 914,
+      "height": 647,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_brush_stroke_lime.png",
+      "bytes": 2017231,
+      "mb": 1.924,
+      "type": "png",
+      "width": 1536,
+      "height": 501,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_brush_stroke_orange.png",
+      "bytes": 1614633,
+      "mb": 1.54,
+      "type": "png",
+      "width": 1517,
+      "height": 436,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_confetti_cluster_01.png",
+      "bytes": 1064612,
+      "mb": 1.015,
+      "type": "png",
+      "width": 837,
+      "height": 725,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_corner_deco_pair.png",
+      "bytes": 2074964,
+      "mb": 1.979,
+      "type": "png",
+      "width": 954,
+      "height": 1462,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_cta_sticker_fiesta_time.png",
+      "bytes": 1673969,
+      "mb": 1.596,
+      "type": "png",
+      "width": 942,
+      "height": 873,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_decor_pack_preview.png",
+      "bytes": 4086571,
+      "mb": 3.897,
+      "type": "png",
+      "width": 3600,
+      "height": 5000,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_decor_pack_preview_revised.png",
+      "bytes": 1029207,
+      "mb": 0.982,
+      "type": "png",
+      "width": 2200,
+      "height": 1500,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_decor_sheet.png",
+      "bytes": 2169406,
+      "mb": 2.069,
+      "type": "png",
+      "width": 2680,
+      "height": 3070,
+      "mode": "RGB"
+    },
+    {
+      "path": "04_decor_pack/lf_divider_lime_chili.png",
+      "bytes": 618010,
+      "mb": 0.589,
+      "type": "png",
+      "width": 1508,
+      "height": 215,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_papel_picado_strip_01.png",
+      "bytes": 1392493,
+      "mb": 1.328,
+      "type": "png",
+      "width": 1536,
+      "height": 506,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_papel_picado_strip_02.png",
+      "bytes": 1263117,
+      "mb": 1.205,
+      "type": "png",
+      "width": 1536,
+      "height": 393,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/lf_splash_cluster_01.png",
+      "bytes": 1090501,
+      "mb": 1.04,
+      "type": "png",
+      "width": 817,
+      "height": 758,
+      "mode": "RGBA"
+    },
+    {
+      "path": "04_decor_pack/manifest.json",
+      "bytes": 2971,
+      "mb": 0.003,
+      "type": "json"
+    },
+    {
+      "path": "05_pattern_pack/README.md",
+      "bytes": 949,
+      "mb": 0.001,
+      "type": "md"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_border_bottom.png",
+      "bytes": 618010,
+      "mb": 0.589,
+      "type": "png",
+      "width": 1508,
+      "height": 215,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_border_side.png",
+      "bytes": 633484,
+      "mb": 0.604,
+      "type": "png",
+      "width": 215,
+      "height": 1508,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_border_top.png",
+      "bytes": 1392493,
+      "mb": 1.328,
+      "type": "png",
+      "width": 1536,
+      "height": 506,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_fiesta_repeat_on_black.png",
+      "bytes": 640943,
+      "mb": 0.611,
+      "type": "png",
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_fiesta_repeat_tile.png",
+      "bytes": 769476,
+      "mb": 0.734,
+      "type": "png",
+      "width": 1400,
+      "height": 1400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_icons_repeat_on_cream.png",
+      "bytes": 665154,
+      "mb": 0.634,
+      "type": "png",
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_icons_repeat_tile.png",
+      "bytes": 525667,
+      "mb": 0.501,
+      "type": "png",
+      "width": 1200,
+      "height": 1200,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_mascot_repeat_on_black.png",
+      "bytes": 466825,
+      "mb": 0.445,
+      "type": "png",
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_mascot_repeat_tile.png",
+      "bytes": 569601,
+      "mb": 0.543,
+      "type": "png",
+      "width": 1400,
+      "height": 1400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/lf_pattern_sheet.png",
+      "bytes": 1468095,
+      "mb": 1.4,
+      "type": "png",
+      "width": 2400,
+      "height": 1900,
+      "mode": "RGBA"
+    },
+    {
+      "path": "05_pattern_pack/manifest.json",
+      "bytes": 2794,
+      "mb": 0.003,
+      "type": "json"
+    },
+    {
+      "path": "06_textures_backgrounds/README.md",
+      "bytes": 1648,
+      "mb": 0.002,
+      "type": "md"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_bg_black_chalk.png",
+      "bytes": 1357845,
+      "mb": 1.295,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_bg_black_grunge.png",
+      "bytes": 1071111,
+      "mb": 1.021,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_bg_cream_paper.png",
+      "bytes": 972333,
+      "mb": 0.927,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_bg_lime_paint.png",
+      "bytes": 1085796,
+      "mb": 1.035,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_bg_orange_paint.png",
+      "bytes": 934277,
+      "mb": 0.891,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_overlay_distress_dark.png",
+      "bytes": 163524,
+      "mb": 0.156,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_overlay_distress_light.png",
+      "bytes": 121351,
+      "mb": 0.116,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_overlay_glow_lime.png",
+      "bytes": 61517,
+      "mb": 0.059,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_overlay_glow_orange.png",
+      "bytes": 60127,
+      "mb": 0.057,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_overlay_grain_dark.png",
+      "bytes": 29460,
+      "mb": 0.028,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_overlay_grain_light.png",
+      "bytes": 42550,
+      "mb": 0.041,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_overlay_vignette.png",
+      "bytes": 145469,
+      "mb": 0.139,
+      "type": "png",
+      "width": 1536,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_texture_seam_test.png",
+      "bytes": 273697,
+      "mb": 0.261,
+      "type": "png",
+      "width": 2200,
+      "height": 760,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_texture_sheet.png",
+      "bytes": 598697,
+      "mb": 0.571,
+      "type": "png",
+      "width": 2400,
+      "height": 1840,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/lf_texture_usage_preview.png",
+      "bytes": 1214307,
+      "mb": 1.158,
+      "type": "png",
+      "width": 2200,
+      "height": 1400,
+      "mode": "P"
+    },
+    {
+      "path": "06_textures_backgrounds/manifest.json",
+      "bytes": 3717,
+      "mb": 0.004,
+      "type": "json"
+    },
+    {
+      "path": "07_poster_templates_pack/README.md",
+      "bytes": 2015,
+      "mb": 0.002,
+      "type": "md"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_banner_1920x1080_blank.png",
+      "bytes": 1005421,
+      "mb": 0.959,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_banner_1920x1080_overlay.png",
+      "bytes": 1635303,
+      "mb": 1.56,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_drink_card_a6_1240x1748_blank.png",
+      "bytes": 765112,
+      "mb": 0.73,
+      "type": "png",
+      "width": 1240,
+      "height": 1748,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_drink_card_a6_1240x1748_overlay.png",
+      "bytes": 981797,
+      "mb": 0.936,
+      "type": "png",
+      "width": 1240,
+      "height": 1748,
+      "mode": "RGBA"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_menu_a4_2480x3508_blank.png",
+      "bytes": 1473868,
+      "mb": 1.406,
+      "type": "png",
+      "width": 2480,
+      "height": 3508,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_menu_a4_2480x3508_overlay.png",
+      "bytes": 1868763,
+      "mb": 1.782,
+      "type": "png",
+      "width": 2480,
+      "height": 3508,
+      "mode": "RGBA"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_poster_feed_1080x1350_blank.png",
+      "bytes": 639032,
+      "mb": 0.609,
+      "type": "png",
+      "width": 1080,
+      "height": 1350,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_poster_feed_1080x1350_overlay.png",
+      "bytes": 905599,
+      "mb": 0.864,
+      "type": "png",
+      "width": 1080,
+      "height": 1350,
+      "mode": "RGBA"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_poster_square_1080x1080_blank.png",
+      "bytes": 525421,
+      "mb": 0.501,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_poster_square_1080x1080_overlay.png",
+      "bytes": 719770,
+      "mb": 0.686,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_story_1080x1920_blank.png",
+      "bytes": 1079240,
+      "mb": 1.029,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_story_1080x1920_overlay.png",
+      "bytes": 1135741,
+      "mb": 1.083,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_table_tent_a6_1240x1748_blank.png",
+      "bytes": 957678,
+      "mb": 0.913,
+      "type": "png",
+      "width": 1240,
+      "height": 1748,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_table_tent_a6_1240x1748_overlay.png",
+      "bytes": 1212962,
+      "mb": 1.157,
+      "type": "png",
+      "width": 1240,
+      "height": 1748,
+      "mode": "RGBA"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_template_usage_preview.png",
+      "bytes": 1431724,
+      "mb": 1.365,
+      "type": "png",
+      "width": 2600,
+      "height": 1900,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/lf_template_zones_guide.png",
+      "bytes": 791697,
+      "mb": 0.755,
+      "type": "png",
+      "width": 2600,
+      "height": 1900,
+      "mode": "P"
+    },
+    {
+      "path": "07_poster_templates_pack/manifest.json",
+      "bytes": 14456,
+      "mb": 0.014,
+      "type": "json"
+    },
+    {
+      "path": "08_video_social_templates_pack/README.md",
+      "bytes": 2207,
+      "mb": 0.002,
+      "type": "md"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_cocktails_1080x1080.png",
+      "bytes": 1112004,
+      "mb": 1.06,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_contact_1080x1080.png",
+      "bytes": 931096,
+      "mb": 0.888,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_events_1080x1080.png",
+      "bytes": 995666,
+      "mb": 0.95,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_food_1080x1080.png",
+      "bytes": 1121637,
+      "mb": 1.07,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_location_1080x1080.png",
+      "bytes": 984468,
+      "mb": 0.939,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_menu_1080x1080.png",
+      "bytes": 904422,
+      "mb": 0.863,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_music_1080x1080.png",
+      "bytes": 979743,
+      "mb": 0.934,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_highlight_offers_1080x1080.png",
+      "bytes": 1092034,
+      "mb": 1.041,
+      "type": "png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_reel_15s_storyboard.png",
+      "bytes": 2903686,
+      "mb": 2.769,
+      "type": "png",
+      "width": 2500,
+      "height": 1200,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_reel_cta_1080x1920_blank.png",
+      "bytes": 2675613,
+      "mb": 2.552,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_reel_cta_1080x1920_overlay.png",
+      "bytes": 1405997,
+      "mb": 1.341,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_reel_intro_1080x1920_blank.png",
+      "bytes": 2784177,
+      "mb": 2.655,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_reel_intro_1080x1920_overlay.png",
+      "bytes": 1648082,
+      "mb": 1.572,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_reel_safe_zones_1080x1920.png",
+      "bytes": 1131748,
+      "mb": 1.079,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_social_pack_preview.png",
+      "bytes": 4504183,
+      "mb": 4.296,
+      "type": "png",
+      "width": 2600,
+      "height": 2200,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_story_event_1080x1920_blank.png",
+      "bytes": 2358968,
+      "mb": 2.25,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_story_event_1080x1920_overlay.png",
+      "bytes": 1049195,
+      "mb": 1.001,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_story_offer_1080x1920_blank.png",
+      "bytes": 2427873,
+      "mb": 2.315,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_story_offer_1080x1920_overlay.png",
+      "bytes": 977146,
+      "mb": 0.932,
+      "type": "png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_video_end_screen_1920x1080_blank.png",
+      "bytes": 2619380,
+      "mb": 2.498,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_video_end_screen_1920x1080_overlay.png",
+      "bytes": 1718494,
+      "mb": 1.639,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_video_lower_third_1920x1080_overlay.png",
+      "bytes": 116203,
+      "mb": 0.111,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_video_safe_zones_1920x1080.png",
+      "bytes": 1617703,
+      "mb": 1.543,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_video_title_1920x1080_blank.png",
+      "bytes": 2760996,
+      "mb": 2.633,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/lf_video_title_1920x1080_overlay.png",
+      "bytes": 1813681,
+      "mb": 1.73,
+      "type": "png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA"
+    },
+    {
+      "path": "08_video_social_templates_pack/manifest.json",
+      "bytes": 21280,
+      "mb": 0.02,
+      "type": "json"
+    },
+    {
+      "path": "08_video_social_templates_pack/motion_guide.md",
+      "bytes": 1956,
+      "mb": 0.002,
+      "type": "md"
+    },
+    {
+      "path": "PROJECT_STATUS.md",
+      "bytes": 1430,
+      "mb": 0.001,
+      "type": "md"
+    },
+    {
+      "path": "README.md",
+      "bytes": 226,
+      "mb": 0.0,
+      "type": "md"
+    }
+  ]
+}

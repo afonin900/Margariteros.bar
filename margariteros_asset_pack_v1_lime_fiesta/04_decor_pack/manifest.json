@@ -1,0 +1,105 @@
+{
+  "title": "MARGARITEROS Lime Fiesta — Stage 4 revised",
+  "notes": "Native generated resolution; transparent margins trimmed; no upscaling.",
+  "assets": [
+    {
+      "file": "lf_agave_corner_lime.png",
+      "width": 914,
+      "height": 647,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1027235,
+      "sha256": "cc3450ead9eb2d3d780aca6694aff56603bf6869167504f8437398ee54314cee"
+    },
+    {
+      "file": "lf_brush_stroke_lime.png",
+      "width": 1536,
+      "height": 501,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 2017231,
+      "sha256": "931f9e7297cc6caed6979f9dd78c15529db0d3de36962dd4dca71b54cc41134f"
+    },
+    {
+      "file": "lf_brush_stroke_orange.png",
+      "width": 1517,
+      "height": 436,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1614633,
+      "sha256": "4461b9982c9a0ca4680168c547a3da65a4adcc84b70c53c582672a01c83aa50b"
+    },
+    {
+      "file": "lf_confetti_cluster_01.png",
+      "width": 837,
+      "height": 725,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1064612,
+      "sha256": "114bfde94ef1af26da13986338132b194cf569e97e36b72ebfe62bb8c6fbfb50"
+    },
+    {
+      "file": "lf_corner_deco_pair.png",
+      "width": 954,
+      "height": 1462,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 2074964,
+      "sha256": "efec11d69f77abbbdfcc8b517b07c98b134fa7cfa8562f74f41524f3d3cf4664"
+    },
+    {
+      "file": "lf_cta_sticker_fiesta_time.png",
+      "width": 942,
+      "height": 873,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1673969,
+      "sha256": "203a1832d7b4e25e7dea26993ecf1404fbb8aaf1c23ad36183035f29cc6d4778"
+    },
+    {
+      "file": "lf_decor_pack_preview_revised.png",
+      "width": 2200,
+      "height": 1500,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1029207,
+      "sha256": "806ace937ef284ff912ff98194974c02217e4cdf85bea9201348492e189883be"
+    },
+    {
+      "file": "lf_divider_lime_chili.png",
+      "width": 1508,
+      "height": 215,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 618010,
+      "sha256": "16386734512d19e9450425cfe928ccdb5d22faf227e9d89c4bfc10d4e9ca8fd0"
+    },
+    {
+      "file": "lf_papel_picado_strip_01.png",
+      "width": 1536,
+      "height": 506,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1392493,
+      "sha256": "b317e864d1beff637b05d9d2e7ef0c705e120e4a3a4ccbf2a22f220ab023b64f"
+    },
+    {
+      "file": "lf_papel_picado_strip_02.png",
+      "width": 1536,
+      "height": 393,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1263117,
+      "sha256": "b26c82f88658b67f0e18b8fe5d5fad831273796a6ecd8d29666639f1204c8236"
+    },
+    {
+      "file": "lf_splash_cluster_01.png",
+      "width": 817,
+      "height": 758,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1090501,
+      "sha256": "00034c511389ff6e2fd9cba612559c148029f7c0e657ec662dec2323d488ac18"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "title": "MARGARITEROS Lime Fiesta — Stage 5 Pattern Pack",
+  "notes": "Seamless transparent tiles and native border modules. Built from approved assets without upscaling.",
+  "assets": [
+    {
+      "file": "lf_pattern_border_bottom.png",
+      "width": 1508,
+      "height": 215,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 618010,
+      "sha256": "16386734512d19e9450425cfe928ccdb5d22faf227e9d89c4bfc10d4e9ca8fd0"
+    },
+    {
+      "file": "lf_pattern_border_side.png",
+      "width": 215,
+      "height": 1508,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 633484,
+      "sha256": "85a459d680fad1a7d24036ef6e5125b6628961768c7dd2dc9adab01cac175829"
+    },
+    {
+      "file": "lf_pattern_border_top.png",
+      "width": 1536,
+      "height": 506,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1392493,
+      "sha256": "b317e864d1beff637b05d9d2e7ef0c705e120e4a3a4ccbf2a22f220ab023b64f"
+    },
+    {
+      "file": "lf_pattern_fiesta_repeat_on_black.png",
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 640943,
+      "sha256": "d3d6d9b1178d3325397de95a11ce70194c03a84647d94c79fb9c7a5e03310752"
+    },
+    {
+      "file": "lf_pattern_fiesta_repeat_tile.png",
+      "width": 1400,
+      "height": 1400,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 769476,
+      "sha256": "715246fcb4eb42a1a581dd8ee697abc3d689544a32e6cdb07ea437e561b209fb"
+    },
+    {
+      "file": "lf_pattern_icons_repeat_on_cream.png",
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 665154,
+      "sha256": "df6fd55b978c2e13a95f3f7c38fecfc567491b4a26d9e626327f24e90b921dbb"
+    },
+    {
+      "file": "lf_pattern_icons_repeat_tile.png",
+      "width": 1200,
+      "height": 1200,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 525667,
+      "sha256": "63a336c5ccb9cedcebb36c77ece5932958554ca0f51179464085348d4b41329a"
+    },
+    {
+      "file": "lf_pattern_mascot_repeat_on_black.png",
+      "width": 2048,
+      "height": 2048,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 466825,
+      "sha256": "2306b1c7ea5e135f20b9d4f6bb6d33680760aaf812a9796f5f05929e745a37be"
+    },
+    {
+      "file": "lf_pattern_mascot_repeat_tile.png",
+      "width": 1400,
+      "height": 1400,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 569601,
+      "sha256": "9508b2152145e0e76c3d96091ef0361498b88ed336213d8bf2981646f571c0f8"
+    },
+    {
+      "file": "lf_pattern_sheet.png",
+      "width": 2400,
+      "height": 1900,
+      "mode": "RGBA",
+      "transparent": true,
+      "bytes": 1468095,
+      "sha256": "5d9675d18396dc0458c9fe120151f13f0a3717315412df271742467165f86ba9"
+    }
+  ]
+}

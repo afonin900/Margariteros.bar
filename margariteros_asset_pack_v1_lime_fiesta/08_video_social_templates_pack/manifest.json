@@ -1,0 +1,1232 @@
+{
+  "package": "MARGARITEROS Lime Fiesta — Stage 8 Video / Social Templates",
+  "version": "1.0",
+  "production_files": 25,
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 2207
+    },
+    {
+      "file": "lf_highlight_cocktails_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 1112004,
+      "megabytes": 1.06,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_highlight_contact_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 931096,
+      "megabytes": 0.888,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_highlight_events_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 995666,
+      "megabytes": 0.95,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_highlight_food_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 1121637,
+      "megabytes": 1.07,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_highlight_location_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 984468,
+      "megabytes": 0.939,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_highlight_menu_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 904422,
+      "megabytes": 0.863,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_highlight_music_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 979743,
+      "megabytes": 0.934,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_highlight_offers_1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 1092034,
+      "megabytes": 1.041,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_reel_15s_storyboard.png",
+      "width": 2500,
+      "height": 1200,
+      "mode": "RGBA",
+      "bytes": 2903686,
+      "megabytes": 2.769,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_reel_cta_1080x1920_blank.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 2675613,
+      "megabytes": 2.552,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_reel_cta_1080x1920_overlay.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 1405997,
+      "megabytes": 1.341,
+      "transparent": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lf_reel_intro_1080x1920_blank.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 2784177,
+      "megabytes": 2.655,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_reel_intro_1080x1920_overlay.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 1648082,
+      "megabytes": 1.572,
+      "transparent": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lf_reel_safe_zones_1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 1131748,
+      "megabytes": 1.079,
+      "transparent": true,
+      "alpha_extrema": [
+        60,
+        255
+      ]
+    },
+    {
+      "file": "lf_social_pack_preview.png",
+      "width": 2600,
+      "height": 2200,
+      "mode": "RGBA",
+      "bytes": 4504183,
+      "megabytes": 4.296,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_story_event_1080x1920_blank.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 2358968,
+      "megabytes": 2.25,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_story_event_1080x1920_overlay.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 1049195,
+      "megabytes": 1.001,
+      "transparent": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lf_story_offer_1080x1920_blank.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 2427873,
+      "megabytes": 2.315,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_story_offer_1080x1920_overlay.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGBA",
+      "bytes": 977146,
+      "megabytes": 0.932,
+      "transparent": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lf_video_end_screen_1920x1080_blank.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 2619380,
+      "megabytes": 2.498,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_video_end_screen_1920x1080_overlay.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 1718494,
+      "megabytes": 1.639,
+      "transparent": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lf_video_lower_third_1920x1080_overlay.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 116203,
+      "megabytes": 0.111,
+      "transparent": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "lf_video_safe_zones_1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 1617703,
+      "megabytes": 1.543,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_video_title_1920x1080_blank.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 2760996,
+      "megabytes": 2.633,
+      "transparent": false,
+      "alpha_extrema": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "lf_video_title_1920x1080_overlay.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGBA",
+      "bytes": 1813681,
+      "megabytes": 1.73,
+      "transparent": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "motion_guide.md",
+      "bytes": 1956
+    }
+  ],
+  "source_scaling_log": [
+    {
+      "asset": "garland_1",
+      "source_px": [
+        1536,
+        506
+      ],
+      "placed_px": [
+        1040,
+        343
+      ],
+      "scale": 0.6771,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        173,
+        250
+      ],
+      "scale": 0.1691,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_lime.png",
+      "source_px": [
+        1536,
+        501
+      ],
+      "placed_px": [
+        583,
+        190
+      ],
+      "scale": 0.3792,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_orange.png",
+      "source_px": [
+        1501,
+        434
+      ],
+      "placed_px": [
+        588,
+        170
+      ],
+      "scale": 0.3917,
+      "upscaled": false
+    },
+    {
+      "asset": "splash_cluster_01",
+      "source_px": [
+        811,
+        745
+      ],
+      "placed_px": [
+        530,
+        487
+      ],
+      "scale": 0.6535,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_mascot_wave.png",
+      "source_px": [
+        1837,
+        2660
+      ],
+      "placed_px": [
+        359,
+        520
+      ],
+      "scale": 0.1955,
+      "upscaled": false
+    },
+    {
+      "asset": "cta_sticker_fiesta_time",
+      "source_px": [
+        937,
+        848
+      ],
+      "placed_px": [
+        250,
+        226
+      ],
+      "scale": 0.2668,
+      "upscaled": false
+    },
+    {
+      "asset": "bottom_border",
+      "source_px": [
+        1504,
+        215
+      ],
+      "placed_px": [
+        820,
+        117
+      ],
+      "scale": 0.5452,
+      "upscaled": false
+    },
+    {
+      "asset": "garland_2",
+      "source_px": [
+        1536,
+        393
+      ],
+      "placed_px": [
+        1080,
+        276
+      ],
+      "scale": 0.7031,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        145,
+        210
+      ],
+      "scale": 0.1421,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_lime.png",
+      "source_px": [
+        1536,
+        501
+      ],
+      "placed_px": [
+        460,
+        150
+      ],
+      "scale": 0.2994,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_mascot_dance.png",
+      "source_px": [
+        1853,
+        2660
+      ],
+      "placed_px": [
+        300,
+        430
+      ],
+      "scale": 0.1617,
+      "upscaled": false
+    },
+    {
+      "asset": "splash_cluster_01",
+      "source_px": [
+        811,
+        745
+      ],
+      "placed_px": [
+        348,
+        320
+      ],
+      "scale": 0.4295,
+      "upscaled": false
+    },
+    {
+      "asset": "bottom_border",
+      "source_px": [
+        1504,
+        215
+      ],
+      "placed_px": [
+        760,
+        109
+      ],
+      "scale": 0.5053,
+      "upscaled": false
+    },
+    {
+      "asset": "garland_1",
+      "source_px": [
+        1536,
+        506
+      ],
+      "placed_px": [
+        1080,
+        356
+      ],
+      "scale": 0.7031,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_orange.png",
+      "source_px": [
+        1501,
+        434
+      ],
+      "placed_px": [
+        588,
+        170
+      ],
+      "scale": 0.3917,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_mascot_cheers.png",
+      "source_px": [
+        1773,
+        2660
+      ],
+      "placed_px": [
+        320,
+        480
+      ],
+      "scale": 0.1805,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        135,
+        195
+      ],
+      "scale": 0.1319,
+      "upscaled": false
+    },
+    {
+      "asset": "bottom_border",
+      "source_px": [
+        1504,
+        215
+      ],
+      "placed_px": [
+        820,
+        117
+      ],
+      "scale": 0.5452,
+      "upscaled": false
+    },
+    {
+      "asset": "garland_2",
+      "source_px": [
+        1536,
+        393
+      ],
+      "placed_px": [
+        1080,
+        276
+      ],
+      "scale": 0.7031,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        325,
+        470
+      ],
+      "scale": 0.318,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_lime.png",
+      "source_px": [
+        1536,
+        501
+      ],
+      "placed_px": [
+        583,
+        190
+      ],
+      "scale": 0.3792,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_orange.png",
+      "source_px": [
+        1501,
+        434
+      ],
+      "placed_px": [
+        553,
+        160
+      ],
+      "scale": 0.3687,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_mascot_invite.png",
+      "source_px": [
+        1855,
+        2660
+      ],
+      "placed_px": [
+        321,
+        460
+      ],
+      "scale": 0.1729,
+      "upscaled": false
+    },
+    {
+      "asset": "cta_sticker_fiesta_time",
+      "source_px": [
+        937,
+        848
+      ],
+      "placed_px": [
+        260,
+        235
+      ],
+      "scale": 0.2775,
+      "upscaled": false
+    },
+    {
+      "asset": "bottom_border",
+      "source_px": [
+        1504,
+        215
+      ],
+      "placed_px": [
+        780,
+        112
+      ],
+      "scale": 0.5186,
+      "upscaled": false
+    },
+    {
+      "asset": "garland_1",
+      "source_px": [
+        1536,
+        506
+      ],
+      "placed_px": [
+        1518,
+        500
+      ],
+      "scale": 0.9881,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        249,
+        360
+      ],
+      "scale": 0.2436,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_lime.png",
+      "source_px": [
+        1536,
+        501
+      ],
+      "placed_px": [
+        644,
+        210
+      ],
+      "scale": 0.4192,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_orange.png",
+      "source_px": [
+        1501,
+        434
+      ],
+      "placed_px": [
+        588,
+        170
+      ],
+      "scale": 0.3917,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_mascot_cheers.png",
+      "source_px": [
+        1773,
+        2660
+      ],
+      "placed_px": [
+        373,
+        560
+      ],
+      "scale": 0.2105,
+      "upscaled": false
+    },
+    {
+      "asset": "bottom_border",
+      "source_px": [
+        1504,
+        215
+      ],
+      "placed_px": [
+        1150,
+        164
+      ],
+      "scale": 0.7646,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        159,
+        230
+      ],
+      "scale": 0.1556,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_mascot_pointing.png",
+      "source_px": [
+        1855,
+        2660
+      ],
+      "placed_px": [
+        216,
+        310
+      ],
+      "scale": 0.1165,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        107,
+        155
+      ],
+      "scale": 0.1049,
+      "upscaled": false
+    },
+    {
+      "asset": "garland_2",
+      "source_px": [
+        1536,
+        393
+      ],
+      "placed_px": [
+        1536,
+        393
+      ],
+      "scale": 1.0,
+      "upscaled": false
+    },
+    {
+      "asset": "logo_primary_round",
+      "source_px": [
+        1023,
+        1478
+      ],
+      "placed_px": [
+        388,
+        560
+      ],
+      "scale": 0.3789,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_lime.png",
+      "source_px": [
+        1536,
+        501
+      ],
+      "placed_px": [
+        399,
+        130
+      ],
+      "scale": 0.2595,
+      "upscaled": false
+    },
+    {
+      "asset": "lf_brush_stroke_orange.png",
+      "source_px": [
+        1501,
+        434
+      ],
+      "placed_px": [
+        380,
+        110
+      ],
+      "scale": 0.2535,
+      "upscaled": false
+    },
+    {
+      "asset": "splash_cluster_01",
+      "source_px": [
+        811,
+        745
+      ],
+      "placed_px": [
+        327,
+        300
+      ],
+      "scale": 0.4027,
+      "upscaled": false
+    },
+    {
+      "asset": "bottom_border",
+      "source_px": [
+        1504,
+        215
+      ],
+      "placed_px": [
+        1200,
+        172
+      ],
+      "scale": 0.7979,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_menu_icon",
+      "source_px": [
+        371,
+        391
+      ],
+      "placed_px": [
+        371,
+        391
+      ],
+      "scale": 1.0,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_cocktails_icon",
+      "source_px": [
+        1377,
+        2040
+      ],
+      "placed_px": [
+        338,
+        500
+      ],
+      "scale": 0.2451,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_food_icon",
+      "source_px": [
+        1409,
+        2040
+      ],
+      "placed_px": [
+        345,
+        500
+      ],
+      "scale": 0.2451,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_events_icon",
+      "source_px": [
+        2081,
+        2081
+      ],
+      "placed_px": [
+        500,
+        500
+      ],
+      "scale": 0.2403,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_music_icon",
+      "source_px": [
+        1381,
+        1728
+      ],
+      "placed_px": [
+        400,
+        500
+      ],
+      "scale": 0.2894,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_offers_icon",
+      "source_px": [
+        1423,
+        2039
+      ],
+      "placed_px": [
+        349,
+        500
+      ],
+      "scale": 0.2452,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_location_icon",
+      "source_px": [
+        231,
+        341
+      ],
+      "placed_px": [
+        231,
+        341
+      ],
+      "scale": 1.0,
+      "upscaled": false
+    },
+    {
+      "asset": "highlight_contact_icon",
+      "source_px": [
+        391,
+        371
+      ],
+      "placed_px": [
+        391,
+        371
+      ],
+      "scale": 1.0,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        360,
+        640
+      ],
+      "scale": 0.3333,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        360,
+        640
+      ],
+      "scale": 0.3333,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        360,
+        640
+      ],
+      "scale": 0.3333,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        360,
+        640
+      ],
+      "scale": 0.3333,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1920,
+        1080
+      ],
+      "placed_px": [
+        780,
+        439
+      ],
+      "scale": 0.4062,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1920,
+        1080
+      ],
+      "placed_px": [
+        780,
+        439
+      ],
+      "scale": 0.4062,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1920,
+        1080
+      ],
+      "placed_px": [
+        780,
+        439
+      ],
+      "scale": 0.4062,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1080
+      ],
+      "placed_px": [
+        250,
+        250
+      ],
+      "scale": 0.2315,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        419,
+        745
+      ],
+      "scale": 0.388,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        419,
+        745
+      ],
+      "scale": 0.388,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        419,
+        745
+      ],
+      "scale": 0.388,
+      "upscaled": false
+    },
+    {
+      "asset": "preview_thumbnail",
+      "source_px": [
+        1080,
+        1920
+      ],
+      "placed_px": [
+        419,
+        745
+      ],
+      "scale": 0.388,
+      "upscaled": false
+    }
+  ],
+  "quality_policy": {
+    "source_upscaling": false,
+    "background_method": "native seamless tile repetition",
+    "raster_resampling": "Lanczos downscale only",
+    "color_space": "sRGB"
+  }
+}
