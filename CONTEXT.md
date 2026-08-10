@@ -29,6 +29,13 @@ W33 начинается не с автоматизации, а с двух не
 Автоматизация Remotion и проверка аналитики наступают только после owner review
 двух пакетов.
 
+## Удалённый ledger
+
+- Репозиторий: `afonin900/Margariteros.bar` (private).
+- GitHub Project: `Margariteros Bar Ops` (#8).
+- Родительский трек: Issue #1. Недельные карточки имеют метки `W33` или `W34`;
+  их состояние ведётся в Project Status.
+
 ## Внешние границы
 
 - Instagram — основной канал; TikTok — discovery; Google Business — intent.
