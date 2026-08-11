@@ -3,3 +3,7 @@
 # Local, unverified material. Keep it on the workstation until provenance and
 # permission to publish it to the private project history are confirmed.
 /social/
+
+# Local build dependencies and design-review snapshots.
+node_modules/
+.impeccable/critique/

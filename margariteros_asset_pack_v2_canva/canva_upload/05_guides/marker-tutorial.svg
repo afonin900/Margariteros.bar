@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#0B0B0B"/>
+  <g font-family="Montserrat, Arial, sans-serif" fill="#FFF5E1">
+    <text x="80" y="90" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="68" font-style="italic" font-weight="900">MARKER W CANVA</text>
+    <text x="80" y="135" font-size="24" font-weight="700">Rozciągaj tylko środek. Końcówki zachowują proporcje.</text>
+  </g>
+  <g transform="translate(80 215)">
+    <text y="-28" fill="#FFF5E1" font-family="Montserrat" font-size="22" font-weight="800">1 · TRZY CZĘŚCI</text>
+    <rect x="0" y="0" width="75" height="150" fill="#C6FF00" rx="36"/>
+    <rect x="85" y="0" width="180" height="150" fill="#C6FF00"/>
+    <rect x="275" y="0" width="75" height="150" fill="#C6FF00" rx="36"/>
+  </g>
+  <g transform="translate(480 215)">
+    <text y="-28" fill="#FFF5E1" font-family="Montserrat" font-size="22" font-weight="800">2 · ROZCIĄGNIJ ŚRODEK</text>
+    <rect x="0" y="0" width="75" height="150" fill="#C6FF00" rx="36"/>
+    <rect x="85" y="0" width="330" height="150" fill="#C6FF00"/>
+    <rect x="425" y="0" width="75" height="150" fill="#C6FF00" rx="36"/>
+    <path d="M170 190H330" stroke="#FF5A2E" stroke-width="10"/>
+    <path d="M170 190l28-18v36zM330 190l-28-18v36z" fill="#FF5A2E"/>
+  </g>
+  <g transform="translate(1030 215)">
+    <text y="-28" fill="#FFF5E1" font-family="Montserrat" font-size="22" font-weight="800">3 · PRZESUŃ PRAWĄ KOŃCÓWKĘ</text>
+    <rect x="0" y="0" width="75" height="150" fill="#C6FF00" rx="36"/>
+    <rect x="85" y="0" width="330" height="150" fill="#C6FF00"/>
+    <rect x="425" y="0" width="75" height="150" fill="#C6FF00" rx="36"/>
+    <text x="250" y="95" text-anchor="middle" fill="#0B0B0B" font-family="Barlow Condensed" font-style="italic" font-size="54" font-weight="900">PIĄTEK · 21:00</text>
+  </g>
+  <g transform="translate(80 560)">
+    <text y="-28" fill="#FFF5E1" font-family="Montserrat" font-size="22" font-weight="800">DOBRZE · CROP MASTER</text>
+    <rect width="620" height="170" fill="#C6FF00" rx="30"/>
+    <text x="310" y="108" text-anchor="middle" fill="#0B0B0B" font-family="Barlow Condensed" font-style="italic" font-size="62" font-weight="900">REZERWUJ STOLIK</text>
+  </g>
+  <g transform="translate(840 560)">
+    <text y="-28" fill="#FFF5E1" font-family="Montserrat" font-size="22" font-weight="800">ŹLE · ROZCIĄGNIĘTE KOŃCÓWKI</text>
+    <rect width="620" height="170" fill="#FF5A2E" rx="78"/>
+    <path d="M40 30L580 140M580 30L40 140" stroke="#0B0B0B" stroke-width="18"/>
+    <text x="310" y="108" text-anchor="middle" fill="#0B0B0B" font-family="Montserrat" font-size="40" font-weight="900">NIE ROZCIĄGAJ CAŁOŚCI</text>
+  </g>
+</svg>

@@ -1,0 +1,596 @@
+:root {
+  --lime: #c6ff00;
+  --deep: #7bc300;
+  --cream: #fff5e1;
+  --ink: #0b0b0b;
+  --orange: #ff5a2e;
+  --muted: #cbd2b4;
+  --panel: #151713;
+  --line: #343a2b;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: Montserrat, sans-serif;
+  overflow-x: hidden;
+}
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background: url("../canva_upload/03_backgrounds/black-grunge.png")
+    center/720px;
+  mix-blend-mode: screen;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px clamp(20px, 5vw, 72px);
+  background: rgba(11, 11, 11, 0.94);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: 900;
+  line-height: 1;
+}
+.brand:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+.brand img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+.brand small {
+  color: var(--lime);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.topbar nav {
+  display: flex;
+  gap: 26px;
+}
+.topbar nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 800;
+}
+.topbar nav a:hover,
+.topbar nav a:focus-visible {
+  color: var(--lime);
+}
+main {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 clamp(20px, 5vw, 72px);
+}
+.intro {
+  min-height: 78vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(310px, 0.85fr);
+  align-items: center;
+  gap: clamp(44px, 6vw, 90px);
+  padding: 80px 0;
+}
+.intro > * {
+  min-width: 0;
+}
+.intro h1 {
+  margin: 0;
+  max-width: 760px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(3.1rem, 6vw, 5.3rem);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.intro h1 em {
+  color: var(--lime);
+  font-style: normal;
+}
+.intro p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+.recipe {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.recipe span,
+.recipe strong {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+.recipe span {
+  color: var(--orange);
+  font-family: "Barlow Condensed";
+}
+.recipe strong {
+  font-size: 1.05rem;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.section-heading h2 {
+  margin: 0;
+  max-width: 760px;
+  font-family: "Barlow Condensed";
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+.section-heading p {
+  max-width: 400px;
+  margin: 0;
+  color: var(--muted);
+}
+.template-stage,
+.system,
+.assets {
+  padding: 90px 0;
+}
+.format-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 30px 0;
+}
+.format-tabs button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--cream);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font: 800 1rem Montserrat;
+  cursor: pointer;
+}
+.format-tabs button.active {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--ink);
+}
+.format-tabs button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+.format-panel {
+  display: none;
+  min-height: 600px;
+  grid-template-columns: minmax(320px, 1.1fr) minmax(280px, 0.9fr);
+  gap: 7vw;
+  align-items: center;
+  padding: clamp(24px, 4vw, 55px);
+  background: var(--panel);
+  border-radius: 16px;
+}
+.format-panel.active {
+  display: grid;
+}
+.artboard {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.32);
+}
+.poster-preview {
+  aspect-ratio: 4/5;
+  max-width: 560px;
+  background: var(--ink);
+}
+.photo-slot {
+  position: absolute;
+  inset: 0 0 35%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #3c4038, #141611);
+  color: #9aa18e;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+.photo-slot:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../canva_upload/04_overlays/papel-picado.png") top
+    center/100% auto no-repeat;
+  opacity: 0.88;
+}
+.photo-slot span {
+  z-index: 1;
+  border: 1px solid #747c67;
+  padding: 12px;
+}
+.day-chip {
+  position: absolute;
+  left: 7%;
+  top: 58%;
+  border: 1px solid var(--cream);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-weight: 900;
+}
+.headline {
+  position: absolute;
+  left: 7%;
+  bottom: 14%;
+  font: clamp(2rem, 5vw, 4rem) / 0.93 "Barlow Condensed";
+  letter-spacing: -0.035em;
+}
+.event-meta {
+  position: absolute;
+  right: 7%;
+  bottom: 16%;
+  font-weight: 900;
+  color: var(--orange);
+}
+.lime-rule {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 10%;
+  height: 5px;
+  background: var(--lime);
+}
+.footer-brand {
+  position: absolute;
+  left: 7%;
+  bottom: 5%;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+.format-copy h3 {
+  margin: 0 0 18px;
+  font: 2rem "Barlow Condensed";
+  text-transform: uppercase;
+}
+.format-copy p,
+.format-copy li {
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.55;
+}
+.format-copy ul {
+  padding-left: 1.2em;
+}
+.format-copy li::marker {
+  color: var(--orange);
+}
+.download-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 900;
+  text-decoration: none;
+}
+.download-action:hover {
+  background: var(--cream);
+}
+.download-action:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+.carousel-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(190px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 14px;
+}
+.mini-slide {
+  position: relative;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 4/5;
+  padding: 20px;
+  background: #23271f;
+  overflow: hidden;
+}
+.mini-slide:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), transparent 60%);
+}
+.mini-slide > * {
+  position: relative;
+}
+.mini-slide b {
+  font: 1.55rem/1 "Barlow Condensed";
+}
+.mini-slide small,
+.mini-slide span {
+  margin-top: 10px;
+  font-weight: 900;
+  color: var(--lime);
+}
+.mini-slide.cover {
+  background: var(--lime);
+  color: var(--ink);
+}
+.mini-slide.cover:before,
+.mini-slide.info:before,
+.mini-slide.cta:before {
+  display: none;
+}
+.mini-slide.cover small {
+  color: var(--ink);
+}
+.mini-slide.photo {
+  background: linear-gradient(135deg, #41463a, #171915);
+}
+.mini-slide.photo.alt {
+  background: linear-gradient(135deg, #51372c, #191411);
+}
+.mini-slide.info {
+  background: var(--cream);
+  color: var(--ink);
+}
+.mini-slide.info small {
+  color: #5d4a38;
+}
+.mini-slide.cta {
+  background: var(--orange);
+  color: var(--ink);
+}
+.mini-slide.cta small {
+  color: var(--ink);
+}
+.story-preview {
+  aspect-ratio: 9/16;
+  max-height: 650px;
+  margin: auto;
+  background: var(--ink);
+}
+.story-photo {
+  position: absolute;
+  inset: 0 0 34%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(150deg, #444b3b, #141713);
+  color: #aeb89b;
+  font-weight: 900;
+}
+.story-photo:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../canva_upload/04_overlays/papel-picado.png") top
+    center/100% auto no-repeat;
+}
+.story-copy {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.story-copy small {
+  font-weight: 900;
+  color: var(--orange);
+}
+.story-copy b {
+  font: clamp(1.8rem, 5vw, 3rem) / 0.95 "Barlow Condensed";
+}
+.story-copy span {
+  align-self: flex-start;
+  background: var(--lime);
+  color: var(--ink);
+  padding: 8px 12px;
+  font-weight: 900;
+}
+.mix-bar {
+  display: grid;
+  grid-template-columns: 65fr 20fr 10fr 5fr;
+  min-height: 240px;
+}
+.mix-bar div {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 22px;
+  border-right: 1px solid var(--ink);
+  background: var(--lime);
+  color: var(--ink);
+}
+.mix-bar div:nth-child(2) {
+  background: var(--cream);
+}
+.mix-bar div:nth-child(3) {
+  background: var(--orange);
+}
+.mix-bar div:nth-child(4) {
+  background: #34392e;
+  color: var(--cream);
+}
+.mix-bar b {
+  font: clamp(1.4rem, 3vw, 3rem) "Barlow Condensed";
+}
+.mix-bar span {
+  font-weight: 900;
+}
+.rules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  margin-top: 45px;
+}
+.rules article {
+  border-top: 3px solid var(--lime);
+  padding-top: 18px;
+}
+.rules h3 {
+  font: 1.3rem "Barlow Condensed";
+  text-transform: uppercase;
+}
+.rules p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.rules code {
+  color: var(--orange);
+}
+.asset-ledger {
+  border-top: 1px solid var(--line);
+}
+.asset-ledger > div {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 25px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.asset-ledger b {
+  font: 1.15rem "Barlow Condensed";
+}
+.asset-ledger span {
+  color: var(--muted);
+}
+.asset-ledger strong {
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+.ready {
+  background: var(--lime);
+  color: var(--ink);
+}
+.review {
+  background: var(--cream);
+  color: var(--ink);
+}
+.hold {
+  background: var(--orange);
+  color: var(--ink);
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 35px clamp(20px, 5vw, 72px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+footer b {
+  color: var(--lime);
+}
+@media (max-width: 850px) {
+  .topbar nav {
+    gap: 10px;
+    font-size: 0.72rem;
+  }
+  .topbar nav a:not(:first-child) {
+    display: none;
+  }
+  .topbar {
+    position: sticky;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .topbar nav {
+    position: absolute;
+    top: 27px;
+    right: 20px;
+  }
+  .brand span {
+    display: none;
+  }
+  .intro {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: calc(100vw - 40px);
+    min-height: auto;
+    padding: 70px 0;
+  }
+  .intro h1 {
+    max-width: 100%;
+    font-size: clamp(2.25rem, 11vw, 3rem);
+    overflow-wrap: anywhere;
+  }
+  .intro p {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  .section-heading {
+    display: block;
+  }
+  .section-heading p {
+    margin-top: 15px;
+  }
+  .format-panel {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 20px;
+  }
+  .format-tabs {
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  .format-tabs button {
+    flex: 0 0 auto;
+  }
+  .mix-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .rules {
+    grid-template-columns: 1fr;
+  }
+  .asset-ledger > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .asset-ledger strong {
+    justify-self: start;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "margariteros-canva-system",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node templates/build_templates.mjs",
+    "check": "node --check templates/build_templates.mjs && node --check dashboard/app.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  },
+  "overrides": {
+    "image-size": "2.0.2"
+  }
+}

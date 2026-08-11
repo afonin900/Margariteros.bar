@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Margariteros — Fiesta 24/7 Content Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,900&family=Montserrat:wght@500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../canva_upload/01_logos/margariteros-logo-clean.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Margariteros Content Desk">
+        <img
+          src="../canva_upload/01_logos/margariteros-logo-clean.png"
+          alt="Margariteros"
+        />
+        <span>Fiesta 24/7<br /><small>content desk</small></span>
+      </a>
+      <nav aria-label="Sekcje">
+        <a href="#templates">Szablony</a>
+        <a href="#system">System</a>
+        <a href="#assets">Assety</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <div>
+          <h1>
+            Jedno zdjęcie.<br />Jeden komunikat.<br /><em>Fiesta gotowa.</em>
+          </h1>
+          <p>
+            Powtarzalny system plakatów, karuzel i Stories do składania w Canva
+            — bez generowania grafiki przez AI.
+          </p>
+        </div>
+        <div class="recipe" aria-label="Proces przygotowania materiału">
+          <span>1</span><strong>Potwierdzone fakty</strong> <span>2</span
+          ><strong>Prawdziwe zdjęcie</strong> <span>3</span
+          ><strong>Gotowy szablon</strong> <span>4</span
+          ><strong>Akceptacja właściciela</strong>
+        </div>
+      </section>
+
+      <section class="template-stage" id="templates">
+        <div class="section-heading">
+          <h2>Trzy formaty. Jeden rytm.</h2>
+          <p>Kliknij format, aby zobaczyć jego obowiązkowe pola.</p>
+        </div>
+        <div class="format-tabs" role="tablist" aria-label="Formaty treści">
+          <button
+            id="tab-poster"
+            class="active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="poster"
+            tabindex="0"
+            data-target="poster"
+          >
+            Afisza
+          </button>
+          <button
+            id="tab-carousel"
+            role="tab"
+            aria-selected="false"
+            aria-controls="carousel"
+            tabindex="-1"
+            data-target="carousel"
+          >
+            Karuzela
+          </button>
+          <button
+            id="tab-story"
+            role="tab"
+            aria-selected="false"
+            aria-controls="story"
+            tabindex="-1"
+            data-target="story"
+          >
+            Story
+          </button>
+        </div>
+
+        <div
+          class="format-panel active"
+          id="poster"
+          role="tabpanel"
+          aria-labelledby="tab-poster"
+        >
+          <article class="poster-preview artboard">
+            <div class="photo-slot"><span>WSTAW PRAWDZIWE ZDJĘCIE</span></div>
+            <div class="day-chip">PIĄTEK</div>
+            <div class="headline">NAZWA<br />WYDARZENIA</div>
+            <div class="event-meta">DD.MM · GG:MM</div>
+            <div class="lime-rule"></div>
+            <div class="footer-brand">MARGARITEROS · CHMIELNA 7/9</div>
+          </article>
+          <div class="format-copy">
+            <h3>Afisza wydarzenia</h3>
+            <p>
+              Zdjęcie zajmuje większość kadru. Lime Fiesta działa jako podpis i
+              rytm, nie jako tapeta.
+            </p>
+            <ul>
+              <li>Nazwa wydarzenia lub DJ</li>
+              <li>Data i godzina z jednego źródła</li>
+              <li>Jedno krótkie wezwanie do działania</li>
+              <li>Maskot: opcjonalnie, maksymalnie 1 na 4 materiały</li>
+            </ul>
+            <a
+              class="download-action"
+              href="../templates/margariteros-afisza-4x5.pptx"
+              download
+              >Pobierz PPTX 4:5</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="format-panel"
+          id="carousel"
+          role="tabpanel"
+          aria-labelledby="tab-carousel"
+          hidden
+        >
+          <div class="carousel-strip" aria-label="Pięć slajdów karuzeli">
+            <article class="mini-slide cover">
+              <b>TYDZIEŃ<br />W MARGARITEROS</b><small>przesuń →</small>
+            </article>
+            <article class="mini-slide photo">
+              <span>PONIEDZIAŁEK</span><b>OFERTA / SMAK</b
+              ><small>szczegół</small>
+            </article>
+            <article class="mini-slide photo alt">
+              <span>PIĄTEK</span><b>WYDARZENIE</b><small>DD.MM · GG:MM</small>
+            </article>
+            <article class="mini-slide info">
+              <b>CO · GDZIE<br />KIEDY</b
+              ><small>tylko potwierdzone fakty</small>
+            </article>
+            <article class="mini-slide cta">
+              <b>REZERWUJ<br />STOLIK</b><small>ChoiceQR</small>
+            </article>
+          </div>
+          <div class="format-copy">
+            <h3>Karuzela modułowa</h3>
+            <p>
+              Rytm BAJS przeniesiony do Margariteros: każda karta ma jeden
+              temat, ale wszystkie tworzą serię.
+            </p>
+            <ul>
+              <li>5 bazowych slajdów</li>
+              <li>Stałe pozycje dnia, tytułu i CTA</li>
+              <li>Zdjęcie zmienia się, system pozostaje</li>
+              <li>Maskot tylko na okładce albo finale</li>
+            </ul>
+            <a
+              class="download-action"
+              href="../templates/margariteros-karuzela-5-slajdow.pptx"
+              download
+              >Pobierz karuzelę</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="format-panel"
+          id="story"
+          role="tabpanel"
+          aria-labelledby="tab-story"
+          hidden
+        >
+          <article class="story-preview artboard">
+            <div class="story-photo"><span>9:16 FOTO / WIDEO</span></div>
+            <div class="story-copy">
+              <small>DD.MM · GG:MM</small><b>NAZWA<br />WYDARZENIA</b
+              ><span>REZERWUJ →</span>
+            </div>
+          </article>
+          <div class="format-copy">
+            <h3>Story i Reel cover</h3>
+            <p>
+              Tekst pozostaje poza strefami interfejsu. Jeden blok informacji,
+              bez girlandy na każdej krawędzi.
+            </p>
+            <ul>
+              <li>Bezpieczne strefy 9:16</li>
+              <li>Wersja foto i wersja video</li>
+              <li>CTA w dolnej trzeciej części</li>
+              <li>Logo małe, lecz zawsze czytelne</li>
+            </ul>
+            <a
+              class="download-action"
+              href="../templates/margariteros-story-9x16.pptx"
+              download
+              >Pobierz Story / Reel</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="system" id="system">
+        <div class="section-heading">
+          <h2>Fiesta bez wizualnego hałasu</h2>
+          <p>Proporcja użycia elementów w standardowym materiale.</p>
+        </div>
+        <div class="mix-bar" aria-label="Proporcja elementów">
+          <div style="--size: 65">
+            <b>65%</b><span>realne foto lub video</span>
+          </div>
+          <div style="--size: 20">
+            <b>20%</b><span>typografia i fakty</span>
+          </div>
+          <div style="--size: 10"><b>10%</b><span>kolor i faktura</span></div>
+          <div style="--size: 5"><b>5%</b><span>maskot lub dekor</span></div>
+        </div>
+        <div class="rules">
+          <article>
+            <h3>Maskot</h3>
+            <p>
+              Nie częściej niż w co czwartym materiale. Jedna noga kieliszka,
+              bez butów.
+            </p>
+          </article>
+          <article>
+            <h3>Dekor</h3>
+            <p>
+              Jeden motyw na stronę: papel picado, pociągnięcie pędzla albo
+              cienka ramka.
+            </p>
+          </article>
+          <article>
+            <h3>Tekst</h3>
+            <p>
+              Jedna informacja główna. Data i godzina zawsze razem. Brak faktu
+              oznacza <code>missing</code>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="assets" id="assets">
+        <div class="section-heading">
+          <h2>Co trafia do Canva</h2>
+          <p>
+            Oryginalny pack zostaje bez zmian. Ten wybór jest krótszy i
+            jednoznaczny.
+          </p>
+        </div>
+        <div class="asset-ledger">
+          <div>
+            <b>Logo</b><span>czyste, kwadratowe, bez poświaty</span
+            ><strong class="ready">gotowe</strong>
+          </div>
+          <div>
+            <b>Maskot</b><span>wyłącznie pozy z jedną nogą kieliszka</span
+            ><strong class="review">ograniczone</strong>
+          </div>
+          <div>
+            <b>Ikony</b><span>tylko spójne płaskie znaki</span
+            ><strong class="review">ograniczone</strong>
+          </div>
+          <div>
+            <b>Tła</b><span>5 sprawdzonych tekstur</span
+            ><strong class="ready">gotowe</strong>
+          </div>
+          <div>
+            <b>Overlay</b><span>proste ramki, brush i papel picado</span
+            ><strong class="ready">gotowe</strong>
+          </div>
+          <div>
+            <b>Legacy</b
+            ><span>stare preview, nogi, duplikaty i wadliwy pattern</span
+            ><strong class="hold">poza produkcją</strong>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <b>Margariteros Fiesta 24/7</b
+      ><span
+        >Szablon porządkuje treść. Fakt i akceptacja nadal należą do
+        człowieka.</span
+      >
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

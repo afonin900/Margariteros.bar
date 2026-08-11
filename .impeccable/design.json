@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-11T19:20:00+02:00",
+  "title": "Design System: Margariteros Lime Fiesta",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Fiesta Ink", "canonical": "#0B0B0B" },
+      "cream": { "role": "neutral", "displayName": "Warm Tortilla Paper", "canonical": "#FFF5E1" },
+      "primary": { "role": "primary", "displayName": "Acid Lime", "canonical": "#C6FF00" },
+      "orange": { "role": "secondary", "displayName": "Fiesta Orange", "canonical": "#FF5A2E" },
+      "muted": { "role": "neutral", "displayName": "Muted Herb", "canonical": "#CBD2B4" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Event Display", "purpose": "Short Polish event headlines, one to three lines." },
+      "facts": { "displayName": "Confirmed Facts", "purpose": "Date, time, place, price and CTA." },
+      "label": { "displayName": "Operational Label", "purpose": "Compact metadata and footer." }
+    },
+    "breakpoints": [
+      { "name": "mobile", "value": "850px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Lime Marker",
+      "kind": "custom",
+      "refersTo": "marker-lime",
+      "description": "Crop-based information marker with black display text."
+    },
+    {
+      "name": "Primary CTA",
+      "kind": "button",
+      "refersTo": "cta-primary",
+      "description": "One short confirmed action in Polish."
+    }
+  ],
+  "narrative": {
+    "northStar": "The Real Bar, Marked for Fiesta",
+    "overview": "Real photographs and video carry the emotion; Lime Fiesta marks confirmed information with a compact, repeatable rhythm.",
+    "keyCharacteristics": ["Real photography first", "One dominant message", "Modern Polish copy", "Repeatable without a designer"],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Lime and orange never compete at equal weight.", "section": "colors" },
+      { "name": "The Two-Family Rule", "body": "Only Barlow Condensed and Montserrat are used in new production.", "section": "typography" },
+      { "name": "The Polish Proof Rule", "body": "Every master passes the complete Polish glyph test after Canva import.", "section": "typography" }
+    ],
+    "dos": ["Use confirmed facts and real photography", "Check mobile thumbnail and safe zones"],
+    "donts": ["Do not publish placeholders", "Do not stretch raster assets or marker caps"]
+  }
+}
