@@ -54,7 +54,9 @@ Instagram (основной канал по докам), ChoiceQR, Canva. TikTok
 
 ## Current focus
 
-P0 Growth & Content OS: сначала публикация (BrightBean), параллельно съём GBP/AdLoop **read-only**. Исходников BrightBean/AdLoop в GitHub `afonin900` нет — деплой стоит. GTM prod / меню / QR не трогать.
+- BrightBean **поднят**: https://studio.margariteros.bar (Sign in 200). Соцсети ещё не подключали.
+- Исходник: `brightbeanxyz/brightbean-studio` на нашем Dokploy, проект `margariteros`.
+- DNS: `studio.margariteros.bar` → Cloudflare. Секреты: OpenBao `secret/projects/margariteros/brightbean` (не в Git).
 
 Документы: `docs/growth-os/`.
 

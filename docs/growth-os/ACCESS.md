@@ -7,7 +7,7 @@ Status: **не проверено live**. Не считать «есть», по
 |---|---|---|---|
 | Dokploy (наш) | живой (Hermes/CMS уже там) | отдельное приложение BrightBean | P0 deploy |
 | Cloudflare `margariteros.bar` | **есть** в OpenBao `secret/projects/margariteros/cloudflare` (`zone_id` + token) | не печатать ключ | DNS/HTTPS |
-| BrightBean Studio upstream | URL есть: `brightbeanxyz/brightbean-studio` | клон + деплой | P0-A |
+| BrightBean Studio | **live** https://studio.margariteros.bar (login 200) | соц-OAuth ещё нет | P0 каналы |
 | AdLoop upstream | URL есть: `kLOsk/adloop` | наш fork ещё **не создан** | P0-C, P1 |
 | AdLoop `project_fork` | нет | создать после P0, не выдумывать имя | P1 |
 | Instagram | неизвестно | OAuth / логин владельца | P0 каналы |
