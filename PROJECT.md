@@ -54,7 +54,9 @@ Instagram (основной канал по докам), ChoiceQR, Canva. TikTok
 
 ## Current focus
 
-Схема отдела включена. Продуктовая идея следующей работы — от владельца, отдельной issue.
+P0 Growth & Content OS: сначала публикация (BrightBean), параллельно съём GBP/AdLoop **read-only**. Исходников BrightBean/AdLoop в GitHub `afonin900` нет — деплой стоит. GTM prod / меню / QR не трогать.
+
+Документы: `docs/growth-os/`.
 
 ## Unknown / unverified
 
