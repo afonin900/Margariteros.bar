@@ -12,6 +12,31 @@ Source: owner plan (this file is the locked scope, not a second task tracker).
 
 Потоки: **A Content** (выше) и **B Growth**. A не ждёт полный B.
 
+## Upstream repositories
+
+Кодовые базы системы. Не выдумывать свои платформы.
+
+```text
+Margariteros Growth & Content OS
+
+UPSTREAM
+├── BrightBean Studio   https://github.com/brightbeanxyz/brightbean-studio
+├── AdLoop              https://github.com/kLOsk/adloop
+└── Dokploy             https://github.com/Dokploy/dokploy   (наш runtime; не «Dockploy»)
+
+OPTIONAL
+└── Dokploy MCP         https://github.com/Dokploy/mcp
+
+НЕ репозитории: Choice, GTM, GA4, GBP.
+```
+
+AdLoop в PRD всегда двумя ссылками:
+
+- `upstream:` https://github.com/kLOsk/adloop
+- `project_fork:` **ещё нет** (не выдумывать). Рабочий репо появится после форка `afonin900/…`.
+
+Runtime: **наш существующий Dokploy**. DNS зоны `margariteros.bar` — Cloudflare, ключ в OpenBao `secret/projects/margariteros/cloudflare`.
+
 ## P0 / P1 / P2
 
 | Pri | Что должно стать правдой |

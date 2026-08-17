@@ -5,9 +5,11 @@ Status: **не проверено live**. Не считать «есть», по
 
 | Система | Статус | Нужно | Блокер для |
 |---|---|---|---|
-| Dokploy (существующий) | частично: CMS/Hermes живут | проект BrightBean + AdLoop | P0 deploy |
-| Репозиторий BrightBean Studio | **нет** у `afonin900` | URL / доступ | P0-A |
-| Репозиторий AdLoop | **нет** у `afonin900` | URL / форк | P0-C, P1 |
+| Dokploy (наш) | живой (Hermes/CMS уже там) | отдельное приложение BrightBean | P0 deploy |
+| Cloudflare `margariteros.bar` | **есть** в OpenBao `secret/projects/margariteros/cloudflare` (`zone_id` + token) | не печатать ключ | DNS/HTTPS |
+| BrightBean Studio upstream | URL есть: `brightbeanxyz/brightbean-studio` | клон + деплой | P0-A |
+| AdLoop upstream | URL есть: `kLOsk/adloop` | наш fork ещё **не создан** | P0-C, P1 |
+| AdLoop `project_fork` | нет | создать после P0, не выдумывать имя | P1 |
 | Instagram | неизвестно | OAuth / логин владельца | P0 каналы |
 | Facebook | неизвестно | то же | P0 |
 | Threads | неизвестно | то же | P0 |

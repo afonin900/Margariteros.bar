@@ -12,6 +12,9 @@ Status: spec only — продукт не развёрнут
 
 Владелец: сначала публикация, потом измерение. Не писать свой scheduler и не делать n8n обязательным слоем. Имя бара в репо — **Margariteros** (в исходном плане иногда «Margherita»).
 
+Upstream: https://github.com/brightbeanxyz/brightbean-studio  
+Runtime: наш Dokploy. DNS: зона `margariteros.bar` (Cloudflare в OpenBao).
+
 Источник фактов — Event, не готовый пост.
 
 ## Constraints
