@@ -1,14 +1,9 @@
 # Margariteros Bar
 
-Private operating repository for the Margariteros Bar content and growth pilot in Warsaw.
+Варшавский бар (Chmielna). Этот репо — бренд Lime Fiesta и SMM-ритм: факты → пост → ChoiceQR. Не школа флористики и не Pinterest-фабрика сухоцветов.
 
-Start with [CONTEXT.md](CONTEXT.md). The current weekly commitment is in
-[WEEKLY_LOG.md](WEEKLY_LOG.md); long-horizon direction is in
-[PROJECT_PLAN.md](PROJECT_PLAN.md).
+Как работать: `AGENTS.md`. Что живо: `PROJECT.md`. Задачи: GitHub Issues.
 
-The `margariteros_asset_pack_v1_lime_fiesta/` directory is the production
-brand-history asset pack. Its source-of-truth rules are in
-`09_docs/design.md`.
+Паки: `margariteros_asset_pack_v1_lime_fiesta/` и `margariteros_asset_pack_v2_canva/`. Визуальный закон: `…/09_docs/design.md`.
 
-No external publication, advertising, account connection, tracking activation,
-or payment is authorised merely by this repository.
+Публикация, реклама, подключение аккаунтов — только после явного «можно».

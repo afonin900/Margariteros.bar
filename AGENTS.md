@@ -1,44 +1,51 @@
-# Margariteros — правила работы
+# Margariteros — отдел бара / SMM
 
-- Пиши для публичного контента на естественном современном польском; английский
-  добавляй только когда он полезен гостю.
-- Не выдумывай DJ, дату, время, цену, акцию, доступность, блюдо, гостя или
-  событие. До поста обязателен source brief и фактчек.
-- Соблюдай `margariteros_asset_pack_v1_lime_fiesta/09_docs/design.md`:
-  не растягивай raster/seamless assets; маскот — один stem/base, без ног.
-- Реальные фото/видео — hero. Canva — финальная сборка. Remotion-прототипы не
-  публикуются автоматически.
-- Никаких публикаций, рекламных расходов, подключений аккаунтов, сервисов или
-  tracking/cookies без явного owner approval.
-- Перед изменением рабочих планов прочти `CONTEXT.md`, `WEEKLY_LOG.md` и
-  соответствующую карточку в `0_hq/tasks.md`.
+Штаб: `/opt/data/workspace/HQ/AGENTS.md`. Скиллы: `corp-*`.
+Задачи: GitHub Issues `afonin900/Margariteros.bar`.
+Факты домена: `PROJECT.md`.
+Доска: Margariteros Bar Ops (#8).
 
-## Agent Operations Config
+`CLAUDE.md` → этот файл.
 
-### Канонические файлы
-canonical:
-  context: CONTEXT.md
-  tasks: 0_hq/tasks.md
-  decisions: 0_hq/decisions.md
-  weekly_log: WEEKLY_LOG.md
+## Before durable work
 
-### Weekly cadence
-weekly_cadence: Monday brief, Tuesday-Thursday production, Friday-Saturday approved publishing, Sunday review
+1. Read `PROJECT.md` for current project state.
+2. Read the assigned GitHub Issue for requested work.
+3. Inspect relevant repository/runtime evidence before changing anything.
 
-### Repos
-repos:
-  - afonin900/Margariteros.bar # execution, growth, brand history
+## Priority of truth
 
-### GitHub Project
-project_id: 8
-project: Margariteros Bar Ops
-owner: afonin900
+1. Actual assets / live accounts / runtime
+2. GitHub Issue for the requested task
+3. PROJECT.md
+4. README and other documentation (`CONTEXT.md`, `PRODUCT.md`, `0_hq/` — legacy)
 
-### Task routing
-routing:
-  - pattern: content, SMM, Canva, Remotion
-    repo: afonin900/Margariteros.bar
-  - pattern: brand, asset pack, visual rules
-    repo: afonin900/Margariteros.bar
-  - pattern: analytics, attribution, ChoiceQR
-    repo: afonin900/Margariteros.bar
+If a doc contradicts reality, report the discrepancy. Do not blindly follow stale weekly cards.
+
+## Purpose
+
+Польский контент, который ведёт гостей в бар в пятницу и субботу. Реальное фото важнее шаблона.
+
+## Sources of truth
+
+- Задачи / статус: GitHub Issues
+- Что живо: `PROJECT.md`
+- Визуал: `margariteros_asset_pack_v1_lime_fiesta/09_docs/design.md`
+- Пайплайн контента (черновик): `CONTENT_PIPELINE_DRAFT.md`
+- Секреты: не в Git
+
+`0_hq/tasks.md` больше не канон задач. Не плодить второй трекер.
+
+## Boundaries
+
+- Публичный текст — современный польский. Английский только если полезен гостю.
+- Не выдумывать DJ, дату, время, цену, акцию, блюдо, гостя, событие.
+- До поста: source brief и фактчек.
+- Растр/паттерны не растягивать. Маскот — один stem/base, без ног.
+- Реальные фото/видео — hero. Canva — сборка. Remotion сам наружу не публикуется.
+- Публикации, реклама, аккаунты, трекинг — только после «можно».
+
+## Working rules
+
+- Факты снимать самому. Решение владельца — один вопрос с рекомендацией.
+- `corp-*` только когда к делу.
