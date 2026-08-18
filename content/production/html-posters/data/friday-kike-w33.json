@@ -1,0 +1,11 @@
+{
+  "template": "friday-reel",
+  "photo": "../fixtures/dj-kike-hero.jpg",
+  "photo_position": "82% 88%",
+  "dates": "14.08 | 15.08",
+  "artist": "DJ KIKE",
+  "start": "21:00",
+  "location": "MARGARITEROS.BAR",
+  "source": "Oficjalny Reel @margariteros.bar, 14–15.08, START 21:00. Zrzut przekazany właścicielem jako wzór piątkowej aficzy.",
+  "owner_approval": "fixture-only"
+}
