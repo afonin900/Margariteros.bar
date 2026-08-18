@@ -1,0 +1,4 @@
+# Project MCP. Secrets stay in the environment, never in this file.
+[mcp_servers.postiz]
+url = "https://postiz.margariteros.bar/api/mcp/${POSTIZ_API_KEY}"
+enabled = true

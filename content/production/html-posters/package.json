@@ -1,0 +1,9 @@
+{
+  "name": "margariteros-html-posters",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "bun run render.ts",
+    "render:kike": "bun run render.ts --data data/friday-kike-w33.json"
+  }
+}

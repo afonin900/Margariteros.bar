@@ -7,3 +7,9 @@
 # Local build dependencies and design-review snapshots.
 node_modules/
 .impeccable/critique/
+
+# Secrets and local renders.
+.env
+.env.*
+!.env.example
+content/production/html-posters/out/
