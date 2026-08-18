@@ -8,6 +8,7 @@ Status: **не проверено live**. Не считать «есть», по
 | Dokploy (наш) | живой (Hermes/CMS уже там) | отдельное приложение BrightBean | P0 deploy |
 | Cloudflare `margariteros.bar` | **есть** в OpenBao `secret/projects/margariteros/cloudflare` (`zone_id` + token) | не печатать ключ | DNS/HTTPS |
 | BrightBean Studio | **live** https://studio.margariteros.bar (login 200) | соц-OAuth ещё нет | P0 каналы |
+| Postiz Self-Hosted | **live** https://postiz.margariteros.bar (`/auth` 200, Register) | первый аккаунт владельца; Pinterest App пустой | публикация/OAuth |
 | AdLoop upstream | URL есть: `kLOsk/adloop` | наш fork ещё **не создан** | P0-C, P1 |
 | AdLoop `project_fork` | нет | создать после P0, не выдумывать имя | P1 |
 | Instagram | неизвестно | OAuth / логин владельца | P0 каналы |

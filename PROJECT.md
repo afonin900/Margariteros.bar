@@ -55,8 +55,8 @@ Instagram (основной канал по докам), ChoiceQR, Canva. TikTok
 ## Current focus
 
 - BrightBean **поднят**: https://studio.margariteros.bar (Sign in 200). Соцсети ещё не подключали.
-- Исходник: `brightbeanxyz/brightbean-studio` на нашем Dokploy, проект `margariteros`.
-- DNS: `studio.margariteros.bar` → Cloudflare. Секреты: OpenBao `secret/projects/margariteros/brightbean` (не в Git).
+- Postiz **поднят**: https://postiz.margariteros.bar (Register 200). Dokploy проект `postiz`. Temporal healthy. Pinterest ключей нет.
+- DNS: `studio` / `postiz`.margariteros.bar → Cloudflare. Секреты OpenBao, не Git.
 
 Документы: `docs/growth-os/`.
 
