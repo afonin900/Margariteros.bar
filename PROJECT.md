@@ -1,7 +1,7 @@
 # Project Map
 
-Updated: 2026-08-17
-Verified against: commit `eb7fdbc`; clone `/opt/data/workspace/Margariteros.bar`
+Updated: 2026-08-18
+Verified against: live Postiz + ChoiceQR booking; clone рядом со штабом
 
 ## Purpose
 
@@ -19,7 +19,7 @@ Confirmed:
 ## Architecture / major components
 
 ```text
-факт бара → brief → польский текст + Canva → «можно» → Instagram / и т.д.
+факт бара → content/weeks/YYYY-Www/YYYY-MM-DD-slug/<канал>/ → «можно» → сеть
 ```
 
 Автоматизация Remotion и аналитика в документах — после разбора двух post package. Это план, не факт работы.
@@ -27,6 +27,8 @@ Confirmed:
 ## Important paths
 
 - `AGENTS.md`, `PROJECT.md`, `README.md`
+- `content/weeks/README.md` — раскладка постов по неделе, дате и сети
+- `content/weeks/2026-W34/2026-08-22-dj-dragon/` — текущий слот субботы
 - `margariteros_asset_pack_v1_lime_fiesta/` + `09_docs/design.md`
 - `margariteros_asset_pack_v2_canva/`
 - `CONTENT_PIPELINE_DRAFT.md`
@@ -54,8 +56,9 @@ Instagram (основной канал по докам), ChoiceQR, Canva. TikTok
 
 ## Current focus
 
-- BrightBean **поднят**: https://studio.margariteros.bar (Sign in 200). Соцсети ещё не подключали.
-- Postiz **поднят**: https://postiz.margariteros.bar (Register 200). Dokploy проект `postiz`. Temporal healthy. Pinterest ключей нет.
+- BrightBean **поднят**: https://studio.margariteros.bar (Sign in 200).
+- Postiz **поднят**: https://postiz.margariteros.bar. Подключены Instagram, Threads, Facebook. GBP в Postiz нет.
+- Бронь: https://margariteroswwa.choiceqr.com/booking (форма живая, 18.08).
 - DNS: `studio` / `postiz`.margariteros.bar → Cloudflare. Секреты OpenBao, не Git.
 
 Документы: `docs/growth-os/`.

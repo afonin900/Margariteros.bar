@@ -32,9 +32,17 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 - Что живо: `PROJECT.md`
 - Визуал: `margariteros_asset_pack_v1_lime_fiesta/09_docs/design.md`
 - Пайплайн контента (черновик): `CONTENT_PIPELINE_DRAFT.md`
+- Куда класть посты: `content/weeks/README.md`
 - Секреты: не в Git
 
 `0_hq/tasks.md` больше не канон задач. Не плодить второй трекер.
+
+## Куда класть контент
+
+Готовый материал — в `content/weeks/YYYY-Www/YYYY-MM-DD-slug/<канал>/`.
+Дата в пути — день события. Каналы: `instagram`, `threads`, `gbp`, `facebook`.
+Генератор афиш остаётся в `content/production/html-posters/`; в git идёт `poster.png` из папки канала, не `out/`.
+Не складывать подписи всех сетей в один файл.
 
 ## Boundaries
 

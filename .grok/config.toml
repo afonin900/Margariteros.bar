@@ -1,4 +1,4 @@
-# Project MCP. Secrets stay in the environment, never in this file.
-[mcp_servers.postiz]
-url = "https://postiz.margariteros.bar/api/mcp/${POSTIZ_API_KEY}"
-enabled = true
+# Postiz MCP is not defined here.
+# TUI does not expand ${POSTIZ_API_KEY} from repo .env, so a project URL
+# with that placeholder always hits Postiz as Invalid API Key.
+# The live server is registered in the user Grok config (~/.grok/config.toml).

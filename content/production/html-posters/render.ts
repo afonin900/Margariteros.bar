@@ -13,10 +13,13 @@ type PosterInput = {
   artist?: string;
   start?: string;
   location?: string;
+  hook?: string;
+  width?: number;
+  height?: number;
 };
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
-const FORBIDDEN = new Set(["", "MISSING", "DD.MM", "GG:MM"]);
+const FORBIDDEN = new Set(["MISSING", "DD.MM", "GG:MM"]);
 const CHROME_CANDIDATES = [
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
@@ -110,14 +113,18 @@ const artist = clean(raw.artist);
 const dates = clean(raw.dates);
 const startRaw = clean(raw.start);
 const location = clean(raw.location);
+const hook = clean(raw.hook);
 const photoRel = clean(raw.photo);
 const photoPosition = clean(raw.photo_position) || "50% 50%";
 const templateName = clean(raw.template) || "friday-reel";
+const width = Number(raw.width) > 0 ? Math.round(Number(raw.width)) : 1080;
+const height = Number(raw.height) > 0 ? Math.round(Number(raw.height)) : 1920;
 
-assertUsable("artist", artist, true);
+assertUsable("artist", artist, !hook);
 assertUsable("dates", dates);
 assertUsable("start", startRaw);
 assertUsable("location", location);
+assertUsable("hook", hook);
 
 if (!photoRel) {
   throw new Error("photo jest wymagane — hero to prawdziwe zdjęcie z baru");
@@ -146,9 +153,11 @@ const html = fill(htmlTemplate, {
   DATES: escapeHtml(dates),
   START: escapeHtml(start),
   LOCATION: escapeHtml(location),
+  HOOK: escapeHtml(hook),
   DATES_HIDDEN: hiddenAttr(dates),
   START_HIDDEN: hiddenAttr(start),
   LOCATION_HIDDEN: hiddenAttr(location),
+  HOOK_HIDDEN: hiddenAttr(hook),
   PHOTO_POSITION: escapeHtml(photoPosition),
 });
 
@@ -190,7 +199,7 @@ const chromeArgs = [
   "--no-default-browser-check",
   `--user-data-dir=${profileDir}`,
   "--force-device-scale-factor=1",
-  "--window-size=1080,1920",
+  `--window-size=${width},${height}`,
   `--screenshot=${tmpShot}`,
   "--virtual-time-budget=4000",
   `http://127.0.0.1:${server.port}/out/${templateName}.html`,
@@ -199,7 +208,7 @@ const chromeProcess = spawn(chrome, chromeArgs, { stdio: ["ignore", "pipe", "pip
 try {
   await waitForFile(tmpShot);
   chromeProcess.kill("SIGKILL");
-  await run("sips", ["-z", "1920", "1080", tmpShot, "--out", pngPath]);
+  await run("sips", ["-z", String(height), String(width), tmpShot, "--out", pngPath]);
 } finally {
   chromeProcess.kill("SIGKILL");
   server.stop(true);

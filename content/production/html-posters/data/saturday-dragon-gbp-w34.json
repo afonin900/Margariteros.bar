@@ -1,0 +1,13 @@
+{
+  "template": "gbp-event",
+  "photo": "../fixtures/dj-dragon-hero.jpg",
+  "photo_position": "50% 28%",
+  "width": 1200,
+  "height": 900,
+  "dates": "22.08",
+  "artist": "DJ DRAGÓN",
+  "start": "21:00",
+  "location": "",
+  "source": "Aficza DJ Dragón + zdjęcie właściciela. Kadr 4:3 pod Google Business Profile.",
+  "owner_approval": "preview-only"
+}

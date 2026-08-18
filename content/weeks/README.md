@@ -1,0 +1,20 @@
+# Недели и каналы
+
+Готовые к одобрению материалы лежат здесь, не в корне `content/`.
+
+```text
+content/weeks/YYYY-Www/YYYY-MM-DD-slug/
+  brief.md
+  instagram/
+  threads/
+  gbp/
+  facebook/     только если есть отдельный текст или кадр
+```
+
+- `YYYY-Www` — календарная неделя ISO (`2026-W34`).
+- Дата в имени папки — **день события**, не день сборки.
+- Каждая сеть — своя папка. Общего `caption.md` на все каналы нет.
+- Картинка канала: `poster.png` в той же папке. `production/html-posters/out/` в git не кладём.
+- Пока нет «можно», в `brief.md` статус `draft`.
+
+Имена каналов фиксированные: `instagram`, `threads`, `gbp`, `facebook`.
