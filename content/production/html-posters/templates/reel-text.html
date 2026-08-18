@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Margariteros — reel text overlay</title>
+    <style>
+      @font-face {
+        font-family: "Montserrat";
+        src: url("../fonts/Montserrat-Variable.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: block;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .poster {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: transparent;
+      }
+
+      .shade {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.18) 0%,
+            rgba(0, 0, 0, 0) 22%,
+            rgba(0, 0, 0, 0.12) 48%,
+            rgba(0, 0, 0, 0.62) 78%,
+            rgba(0, 0, 0, 0.78) 100%
+          );
+      }
+
+      .copy {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 268px;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+      }
+
+      .dates {
+        margin: 0 0 10px;
+        font-size: 52px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        line-height: 1.1;
+      }
+
+      .dates[hidden] {
+        display: none;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 132px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+
+      .start {
+        margin: 0;
+        font-size: 72px;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        line-height: 1.05;
+        text-transform: uppercase;
+      }
+
+      .start[hidden] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="poster">
+      <div class="shade"></div>
+      <div class="copy">
+        <p class="dates" {{DATES_HIDDEN}}>{{DATES}}</p>
+        <h1>{{ARTIST}}</h1>
+        <p class="start" {{START_HIDDEN}}>{{START}}</p>
+      </div>
+    </article>
+  </body>
+</html>

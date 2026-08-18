@@ -1,0 +1,40 @@
+# Server-side GTM on existing Dokploy + Traefik.
+# Image: official Google tagging server.
+# Secrets only via env / OpenBao. Do not put CONTAINER_CONFIG in Git.
+# Tagging:  gtm.margariteros.bar          → gtm-server:8080
+# Preview:  gtm.margariteros.bar/preview  → gtm-preview:8080 (ровно 1 инстанс)
+
+services:
+  gtm-preview:
+    image: gcr.io/cloud-tagging-10302018/gtm-cloud-image:stable
+    restart: unless-stopped
+    environment:
+      CONTAINER_CONFIG: ${CONTAINER_CONFIG}
+      RUN_AS_PREVIEW_SERVER: "true"
+    expose:
+      - "8080"
+    cpus: 1.0
+    deploy:
+      replicas: 1
+    healthcheck:
+      test: ["CMD", "/nodejs/bin/node", "/app/health_checker_bin.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  gtm-server:
+    image: gcr.io/cloud-tagging-10302018/gtm-cloud-image:stable
+    restart: unless-stopped
+    environment:
+      CONTAINER_CONFIG: ${CONTAINER_CONFIG}
+      PREVIEW_SERVER_URL: https://gtm.margariteros.bar/preview
+    expose:
+      - "8080"
+    cpus: 1.0
+    healthcheck:
+      test: ["CMD", "/nodejs/bin/node", "/app/health_checker_bin.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
