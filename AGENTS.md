@@ -1,5 +1,7 @@
 # Margariteros — отдел бара / SMM
 
+**Сначала:** `docs/growth-os/HERMES-START.md`. Без этого файл не трогать.
+
 Штаб: `/opt/data/workspace/HQ/AGENTS.md`. Скиллы: `corp-*`.
 Задачи: GitHub Issues `afonin900/Margariteros.bar`.
 Факты домена: `PROJECT.md`.
@@ -9,9 +11,10 @@
 
 ## Before durable work
 
-1. Read `PROJECT.md` for current project state.
-2. Read the assigned GitHub Issue for requested work.
-3. Inspect relevant repository/runtime evidence before changing anything.
+1. Read `docs/growth-os/HERMES-START.md`.
+2. Read `PROJECT.md` for current project state.
+3. Read the assigned GitHub Issue for requested work.
+4. Inspect relevant repository/runtime evidence before changing anything.
 
 ## Priority of truth
 
