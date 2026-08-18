@@ -1,7 +1,13 @@
 # Instagram
 
-Typ: post / Reel cover. Status: draft w Postiz `cmsyslpl6000kmp89rf8jrlps`.
-Kadr: `poster.png` (1080×1920). Lokalizacja — żywa geolokalizacja posta, nie na obrazku.
+Typ: Reel. Status: opublikowany 18.08.2026.
+Postiz: `cmsyve999000tmp8955upjkco`
+Live: https://www.instagram.com/reel/DcMCAsJAZ3B/
+Wideo: Remotion. Audio: Salsa Taxi (Reels Sound — Photo Dump), Ecklectic Music.
+Kadr: `poster.png` (1080×1920).
+Reel ffmpeg: `reel.mp4` — 5 s, najazd, litery stoją.
+Reel Remotion: `reel-remotion.mp4` — 7 s, litery wjeżdżają, lajm/pomarańcz, imię białe, jedna nuta przy START.
+Lokalizacja — żywa geolokalizacja posta, nie na obrazku.
 
 Rumbom Latino w sobotę.
 

@@ -6,7 +6,7 @@ Source: owner plan (this file is the locked scope, not a second task tracker).
 ## Two systems
 
 1. **Content OS** — BrightBean Studio: факты события → 4 канала → approval → публикация.
-2. **Growth OS** — форк AdLoop: GBP, Ads, GA4, GTM, server-side, Choice, потом Meta.
+2. **Growth OS** — измерение и реклама. AdLoop один на все проекты (Ads/GA4). GTM — существующий `gtm-mcp`, не второй AdLoop. sGTM на Dokploy — только после съёма и «можно».
 
 Оба в **существующий Dokploy**. Отдельный инфраз-проект запрещён. Свой код — только если функции нет в BrightBean/AdLoop.
 

@@ -1,6 +1,8 @@
 # Threads
 
-Status: draft w Postiz `cmsyspzdk000nmp894h82y49v`.
+Status: opublikowany 18.08.2026.
+Postiz: `cmsyt4j3c000omp89q6bb8wx5`
+Live: https://www.threads.com/@margariteros.bar/post/DcL6r4XjR7n
 Kadr: `poster.png` (1080×1350). Limit 500 znaków. Link w tekście działa.
 
 Wiecie, kto w sobotę staje u nas za pulpit?

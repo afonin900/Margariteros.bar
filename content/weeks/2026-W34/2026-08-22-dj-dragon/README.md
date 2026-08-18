@@ -7,5 +7,6 @@ Status: draft, bez publikacji.
 | Instagram | [instagram/caption.md](instagram/caption.md) | 9:16 |
 | Threads | [threads/caption.md](threads/caption.md) | 4:5 + link UTM |
 | Google | [gbp/post.md](gbp/post.md) | 4:3 + przycisk BOOK |
+| Facebook | [facebook/caption.md](facebook/caption.md) | 4:3 + adres i link |
 
 Fakty: [brief.md](brief.md).

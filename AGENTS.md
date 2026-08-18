@@ -33,6 +33,7 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 - Визуал: `margariteros_asset_pack_v1_lime_fiesta/09_docs/design.md`
 - Пайплайн контента (черновик): `CONTENT_PIPELINE_DRAFT.md`
 - Куда класть посты: `content/weeks/README.md`
+- Старт облачного Hermes: `docs/growth-os/HERMES-START.md`
 - Секреты: не в Git
 
 `0_hq/tasks.md` больше не канон задач. Не плодить второй трекер.
