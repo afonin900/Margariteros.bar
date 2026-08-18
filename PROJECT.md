@@ -56,10 +56,11 @@ Instagram (основной канал по докам), ChoiceQR, Canva. TikTok
 
 ## Current focus
 
-- BrightBean **поднят**: https://studio.margariteros.bar (Sign in 200).
+- BrightBean **снят** 2026-08-18 (compose, DNS `studio.`, секрет). Не поднимать.
 - Postiz **поднят**: https://postiz.margariteros.bar. Подключены Instagram, Threads, Facebook. GBP в Postiz нет.
+- GTM контейнер назван: `GTM-T5F4VVGF`. Входа в Google у агента нет. Prod GTM не правим.
 - Бронь: https://margariteroswwa.choiceqr.com/booking (форма живая, 18.08).
-- DNS: `studio` / `postiz`.margariteros.bar → Cloudflare. Секреты OpenBao, не Git.
+- DNS: `postiz.margariteros.bar` → Cloudflare. Секреты OpenBao, не Git.
 
 Документы: `docs/growth-os/`.
 

@@ -1,14 +1,14 @@
 # Access inventory — Growth OS
 
-Updated: 2026-08-17
-Status: **не проверено live**. Не считать «есть», пока нет доказательства.
+Updated: 2026-08-18
+Status: live снято с Dokploy/OpenBao/DNS, не с доков истории.
 
 | Система | Статус | Нужно | Блокер для |
 |---|---|---|---|
-| Dokploy (наш) | живой (Hermes/CMS уже там) | отдельное приложение BrightBean | P0 deploy |
+| Dokploy (наш) | живой | Postiz в проекте `postiz` | — |
 | Cloudflare `margariteros.bar` | **есть** в OpenBao `secret/projects/margariteros/cloudflare` (`zone_id` + token) | не печатать ключ | DNS/HTTPS |
-| BrightBean Studio | **live** https://studio.margariteros.bar (login 200) | соц-OAuth ещё нет | P0 каналы |
-| Postiz Self-Hosted | **live** https://postiz.margariteros.bar (`/auth` 200, Register) | первый аккаунт владельца; Pinterest App пустой | публикация/OAuth |
+| BrightBean Studio | **снят** 2026-08-18: compose удалён, `studio.` DNS нет, секрет OpenBao нет | не возвращать | — |
+| Postiz Self-Hosted | **live** https://postiz.margariteros.bar | публикация | — |
 | AdLoop upstream | URL есть: `kLOsk/adloop` | наш fork ещё **не создан** | P0-C, P1 |
 | AdLoop `project_fork` | нет | создать после P0, не выдумывать имя | P1 |
 | Instagram | неизвестно | OAuth / логин владельца | P0 каналы |
@@ -17,11 +17,11 @@ Status: **не проверено live**. Не считать «есть», по
 | Google Business Profile | неизвестно | OAuth + Location ID | P0-B |
 | Google Ads | неизвестно | Customer ID + OAuth | P0-C |
 | GA4 | неизвестно | Property ID | P0-C |
-| GTM | неизвестно | Account + Container ID | P0-C; **prod не трогать** |
+| GTM | контейнер **GTM-T5F4VVGF** (владелец назвал 2026-08-18) | вход в Google / web vs server / куда вставлен | P0-C; **prod не трогать** |
 | Google Cloud | неизвестно | проект под GBP API | P0-B |
 | Choice | неизвестно | URL меню + payload | P1-E |
 | Домен меню / физ. QR | неизвестно | не менять до аудита | P1-E |
 
-Идентификаторы (Ads / GA4 / GTM / GBP / Choice / menu domain / conversions): **не сняты**.
+Идентификаторы: GTM `GTM-T5F4VVGF`. Ads / GA4 / GBP / Choice / menu domain / conversions — не сняты.
 
 Запрет до аудита: правки production GTM, смена доменов меню, перепечатка QR.
