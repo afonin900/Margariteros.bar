@@ -1,0 +1,147 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e11]:
+            - link "Margariteros Cocktail Bar - Warszawa Tacos, baile y Margarita" [ref=e12] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e14]:
+                - generic [ref=e15]: Margariteros Cocktail Bar - Warszawa
+                - generic [ref=e16]: Tacos, baile y Margarita
+            - generic [ref=e17]:
+              - button "pl" [ref=e18] [cursor=pointer]
+              - link [ref=e23] [cursor=pointer]:
+                - /url: https://clients.choiceqr.com/auth/login/me
+                - button "Profil" [ref=e24]
+              - button "Menu" [ref=e27] [cursor=pointer]
+          - navigation [ref=e34]:
+            - generic [ref=e35]:
+              - link "Strona główna" [ref=e36] [cursor=pointer]:
+                - /url: /
+              - link "Menu" [ref=e38] [cursor=pointer]:
+                - /url: /section:menu
+              - link "Rezerwacje" [ref=e39] [cursor=pointer]:
+                - /url: /booking
+              - link "Obszary dostawy" [ref=e40] [cursor=pointer]:
+                - /url: /delivery-areas
+              - link "Zostaw opinię" [ref=e41] [cursor=pointer]:
+                - /url: /feedback
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - list [ref=e46]:
+              - listitem [ref=e47]:
+                - generic [ref=e48]: "Adres:"
+                - paragraph [ref=e49]: Chmielna 7/9, 00-021 Warszawa, Poland
+                - link "Pokaż na mapie" [ref=e50] [cursor=pointer]:
+                  - /url: https://maps.google.com/?q=Chmielna 7/9, 00-021 Warszawa, Poland
+              - listitem [ref=e53]:
+                - generic [ref=e54]: Telefon
+                - paragraph [ref=e55]: +48 728 805 628
+                - link "Zadzwoń" [ref=e56] [cursor=pointer]:
+                  - /url: tel:+48 728 805 628
+            - link [ref=e59] [cursor=pointer]:
+              - /url: /booking
+              - button [ref=e60]
+          - generic [ref=e66]:
+            - generic [ref=e67]: Nasze zdjęcia
+            - generic [ref=e68]:
+              - img "gallery" [ref=e70] [cursor=pointer]
+              - img "gallery" [ref=e72] [cursor=pointer]
+              - img "gallery" [ref=e74] [cursor=pointer]
+              - img "gallery" [ref=e76] [cursor=pointer]
+              - img "gallery" [ref=e78] [cursor=pointer]
+              - img "gallery" [ref=e80] [cursor=pointer]
+              - img "gallery" [ref=e82] [cursor=pointer]
+              - img "gallery" [ref=e84] [cursor=pointer]
+              - img "gallery" [ref=e86] [cursor=pointer]
+              - img "gallery" [ref=e88] [cursor=pointer]
+              - img "gallery" [ref=e90] [cursor=pointer]
+              - img "gallery" [ref=e92] [cursor=pointer]
+              - img "gallery" [ref=e94] [cursor=pointer]
+              - img "gallery" [ref=e96] [cursor=pointer]
+              - img "gallery" [ref=e98] [cursor=pointer]
+              - img "gallery" [ref=e100] [cursor=pointer]
+              - img "gallery" [ref=e102] [cursor=pointer]
+              - img "gallery" [ref=e104] [cursor=pointer]
+              - img "gallery" [ref=e106] [cursor=pointer]
+              - img "gallery" [ref=e108] [cursor=pointer]
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - paragraph [ref=e115]: Dane kontaktowe
+              - generic [ref=e116]: Chmielna 7/9, 00-021 Warszawa, Poland
+              - link "+48 728 805 628" [ref=e118] [cursor=pointer]:
+                - /url: tel:+48 728 805 628
+              - link "margaritabar.pl@gmail.com" [ref=e120] [cursor=pointer]:
+                - /url: mailto:margaritabar.pl@gmail.com
+            - generic [ref=e121]:
+              - paragraph [ref=e122]: Godziny pracy
+              - generic [ref=e123]:
+                - generic [ref=e124]:
+                  - generic [ref=e125]: Poniedziałek
+                  - generic [ref=e126]: Dzień wolny od pracy
+                - generic [ref=e127]:
+                  - generic [ref=e128]: Wtorek
+                  - generic [ref=e129]: 17:00 - 23:00
+                - generic [ref=e130]:
+                  - generic [ref=e131]: Środa
+                  - generic [ref=e132]: 17:00 - 23:00
+                - generic [ref=e133]:
+                  - generic [ref=e134]: Czwartek
+                  - generic [ref=e135]: 17:00 - 23:00
+                - generic [ref=e136]:
+                  - generic [ref=e137]: Piątek
+                  - generic [ref=e138]: 15:00 - 02:00
+                - generic [ref=e139]:
+                  - generic [ref=e140]: Sobota
+                  - generic [ref=e141]: 13:00 - 02:00
+                - generic [ref=e142]:
+                  - generic [ref=e143]: Niedziela
+                  - generic [ref=e144]: 13:00 - 21:00
+          - generic [ref=e146]:
+            - generic [ref=e147]: My w sieciach społecznościowych
+            - link "Instagram" [ref=e148] [cursor=pointer]:
+              - /url: https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx
+            - link "TikTok" [ref=e152] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1
+            - link "Google" [ref=e156] [cursor=pointer]:
+              - /url: https://g.page/r/Cbl9JpsyGsLTEBM/review
+            - link "TripAdvisor" [ref=e160] [cursor=pointer]:
+              - /url: https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html
+            - link "Facebook" [ref=e164] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=61576663994634
+        - generic [ref=e168]:
+          - paragraph [ref=e169]: Na mapie
+          - iframe [ref=e173]:
+            
+          - link [ref=e174] [cursor=pointer]:
+            - /url: https://maps.google.com/?q=Chmielna 7/9, 00-021 Warszawa, Poland
+            - button "Dowiedz się, jak dojechać" [ref=e175]
+      - generic [ref=e180]:
+        - text: © 2026 Margariteros Cocktail Bar - Warszawa
+        - generic [ref=e181]:
+          - link "Polityka Plików Cookie" [ref=e182] [cursor=pointer]:
+            - /url: /cookie-policy
+          - link "Regulamin" [ref=e183] [cursor=pointer]:
+            - /url: /terms-of-use
+          - link "Polityka prywatności" [ref=e184] [cursor=pointer]:
+            - /url: /privacy-policy
+      - generic [ref=e187]:
+        - paragraph [ref=e188]: Obsługiwany przez
+        - link "Obsługiwany przez - Choice" [ref=e189] [cursor=pointer]:
+          - /url: https://choiceqr.com/pl
+    - generic [ref=e199]:
+      - heading "Używamy plików cookie w celu zapewnienia najlepszej jakości korzystania z naszych usług." [level=4] [ref=e200]
+      - paragraph [ref=e201]:
+        - generic [ref=e202]:
+          - text: Używamy plików cookie i podobnych technologii do zapewnienia funkcjonalności strony internetowej, analityki oraz personalizacji reklam. Pliki cookie i identyfikatory reklamowe mogą być wykorzystywane do reklam spersonalizowanych i niespersonalizowanych. Więcej informacji znajduje się w naszej
+          - link "Polityka Plików Cookie" [ref=e203] [cursor=pointer]:
+            - /url: /cookie-policy
+          - text: .
+      - generic [ref=e204]:
+        - button "Zarządzaj" [ref=e206] [cursor=pointer]
+        - button "Tylko niezbędne" [ref=e208] [cursor=pointer]
+        - button "Akceptuj" [ref=e210] [cursor=pointer]
+  - alert [ref=e211]

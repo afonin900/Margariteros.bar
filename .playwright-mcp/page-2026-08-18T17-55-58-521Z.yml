@@ -1,0 +1,42 @@
+- generic [ref=f5e1]:
+  - generic [ref=f5e3]:
+    - generic [ref=f5e4]:
+      - generic [ref=f5e6]:
+        - generic [ref=f5e7]: Загрузка...
+        - progressbar [ref=f5e8]
+      - main [ref=f5e15]:
+        - generic [ref=f5e20]:
+          - heading "Вход" [level=1] [ref=f5e21]
+          - generic [ref=f5e22]: Для перехода к Google Аналитике войдите в свой аккаунт Google. Этот аккаунт будет доступен другим приложениям Google в браузере.
+        - generic [ref=f5e25]:
+          - generic [ref=f5e30]:
+            - generic [ref=f5e35]:
+              - textbox "Телефон или адрес эл. почты" [active] [ref=f5e36]
+              - generic: Телефон или адрес эл. почты
+            - button "Забыли адрес электронной почты?" [ref=f5e40] [cursor=pointer]
+          - generic [ref=f5e43]:
+            - text: Не ваш компьютер? Включите гостевой режим, чтобы защитить данные в аккаунте.
+            - link "Подробнее об использовании гостевого режима (внешняя ссылка, откроется в новом окне)" [ref=f5e44] [cursor=pointer]:
+              - /url: https://support.google.com/chrome/answer/6130773?hl=ru
+              - text: Подробнее об использовании гостевого режима
+        - generic [ref=f5e46]:
+          - button "Далее" [ref=f5e50]
+          - button "Создать аккаунт" [ref=f5e59]
+    - contentinfo [ref=f5e66]:
+      - combobox "Изменение языковых настроек Русский" [ref=f5e70] [cursor=pointer]:
+        - generic: Русский
+      - list [ref=f5e72]:
+        - listitem [ref=f5e73]:
+          - link "Открыть Справочный центр Google Аккаунтов (внешняя ссылка, откроется в новом окне)" [ref=f5e74] [cursor=pointer]:
+            - /url: https://support.google.com/accounts?hl=ru&p=account_iph
+            - text: Справка
+        - listitem [ref=f5e75]:
+          - link "Политика конфиденциальности (внешняя ссылка, откроется в новом окне)" [ref=f5e76] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?loc=PL&hl=ru&privacy=true
+            - text: Конфиденциальность
+        - listitem [ref=f5e77]:
+          - link "Условия использования Google (внешняя ссылка, откроется в новом окне)" [ref=f5e78] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?loc=PL&hl=ru
+            - text: Условия
+  - iframe [ref=f5e79]:
+    
