@@ -45,6 +45,8 @@ clear reporting need.
 The agent-created Chrome window is the `разработка` profile, not a claimed
 owner tab. It opened `https://margariteros.bar/booking`.
 
+The controlled run was completed on 21 August 2026. The earlier pre-submit snapshot below is historical; the verified result follows it.
+
 Observed before a reservation was sent:
 
 - the ChoiceQR booking form is live;
@@ -55,8 +57,16 @@ Observed before a reservation was sent:
 - the final “Reserve a table” button was **not** clicked, so this window did
   not create a reservation and there is no post-submit trace yet.
 
-Do not infer from the empty pre-submit `dataLayer` that ChoiceQR fails to emit
-`booking_request`: the documented event is expected only on the final action.
+Verified after the authorized final submission:
+
+- ChoiceQR created booking `jHSF-mPVO-1787308478384`; the owner later confirmed it in the manager flow.
+- `dataLayer` contained exactly one `booking_request` with `status: CREATED`, technical booking ID, party size, requested date, duration and internal number.
+- The event contained no guest name, phone, e-mail or comment.
+- GTM Preview showed `GA4 - booking_request` fired exactly once on that event; none of the other seven tags fired on the same event.
+- The shared variable `GA4 - Measurement ID` resolved to `G-ZYB0MZ1CSR`.
+- No separate browser `dataLayer` event was observed when staff later confirmed the booking. Confirmation therefore remains a future ChoiceQR API/bridge signal.
+
+This proves the client-side request signal and absence of a duplicate in the controlled path. It does not turn `booking_request` into proof of manager confirmation or completed visit.
 
 ## Current event model
 
@@ -118,9 +128,17 @@ the account actually sees Margariteros bookings. The future bridge must use a
 technical booking ID and idempotency; it must never relay the `customer` object
 to GA4 or Ads.
 
+## GTM draft prepared after the proof
+
+The web workspace contains ten reviewed changes:
+
+- added constant variable `GA4 - Measurement ID` = `G-ZYB0MZ1CSR`;
+- added Custom Event trigger `CE - booking_request`;
+- added GA4 event tag `GA4 - booking_request`;
+- moved all existing GA4 tags to the shared Measurement ID variable.
+
+The workspace had zero conflicts. Publication was explicitly approved by the owner on 21 August 2026, but must be performed only through the project's public MCP endpoint and verified by reading back the live version. Browser publication, SSH, Docker, CLI and direct-container access are forbidden.
+
 ## Next concrete action
 
-Use the already-open separate Chrome window for one controlled final submission
-only after the owner confirms the real reservation creation at action time.
-The agent then records the event and UI transition, not personal data. This is
-the only missing evidence before preparing the GTM draft and Search goal.
+Load the project MCP configuration, call the GTM tools through `https://mcp.afonin.xyz/v0/groups/growth-tools/mcp`, publish the prepared web workspace, then read back the live version and confirm the workspace has no pending changes. After GA4 receives the live event, import it into Google Ads as Secondary before changing Search bidding.

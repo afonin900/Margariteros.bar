@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "margariteros-growth-tools": {
+      "type": "streamable-http",
+      "url": "https://mcp.afonin.xyz/v0/groups/growth-tools/mcp",
+      "headers": {
+        "Authorization": "Bearer ${MCPJUNGLE_MARGARITEROS_TOKEN}"
+      }
+    }
+  }
+}

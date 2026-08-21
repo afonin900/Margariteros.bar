@@ -29,7 +29,7 @@
 
 ## Аналитика
 
-Jungle MCP — уже работающий аналитический контур на `hermes-cloud`: он даёт доступ к GTM и Google Ads без поиска токенов. Для запуска и границ см. `docs/growth-os/JUNGLE-MCP-ACCESS.md`.
+Jungle MCP — публичный аналитический контур проекта на `https://mcp.afonin.xyz/v0/groups/growth-tools/mcp`: он даёт доступ к GTM и Google Ads без прямого входа на сервер. Для запуска и границ см. `docs/growth-os/JUNGLE-MCP-ACCESS.md`.
 AdLoop — не сайт, а набор MCP-инструментов Google Ads внутри этого контура. Отдельного форка Margariteros нет.
 sGTM — свой контейнер **на каждый** проект. Сначала не AdLoop.
 Порядок: Google владельца GTM этого бара → веб-контейнер (уже `GTM-T5F4VVGF`) → server-контейнер → сервер на нашем Dokploy → потом AdLoop.

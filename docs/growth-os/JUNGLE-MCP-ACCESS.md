@@ -2,7 +2,7 @@
 
 Этот файл нужен следующему агенту, чтобы начать работу с аналитикой без поиска по переписке и без лишнего Chrome.
 
-**Проверено 2026-08-21:** шлюз запущен, `gtm-mcp__auth_status` вернул `authenticated: true`, а `gtm-mcp__list_accounts` увидел `Margariteros Bar` (`6313263127`).
+**Проверено 2026-08-21:** GTM-сервис авторизован и видит аккаунт `Margariteros Bar` (`6313263127`). Канонический вход проекта — только публичный HTTPS MCP.
 
 ## Правило выбора инструмента
 
@@ -20,44 +20,20 @@
 
 ## Вход в Jungle MCP
 
-1. Подключиться к серверу через сохраненный SSH-профиль `hermes-cloud`.
-2. Найти работающий шлюз Jungle MCP по Docker label `com.docker.swarm.service.name` с именем `marketing-mcp-gateway`.
-3. Выполнять инструменты внутри шлюза командой `/mcpjungle invoke <tool> --input '<json>'`.
-
-Пример безопасной проверки без секретов:
-
-```sh
-ssh hermes-cloud '
-  jungle=$(docker ps --filter label=com.docker.swarm.service.name=marketing-mcp-gateway-active-u5cf8g_mcpjungle --format "{{.ID}}" | head -n1)
-  docker exec "$jungle" /mcpjungle invoke gtm-mcp__auth_status --input "{}"
-'
-```
-
-Если контейнер не найден по точному label, сначала вывести только имена и labels контейнеров. Не печатать их окружение: оно может содержать секреты.
+- Публичный endpoint проекта: `https://mcp.afonin.xyz/v0/groups/growth-tools/mcp`.
+- Проектная настройка: `.mcp.json`.
+- Токен приходит только из переменной `MCPJUNGLE_MARGARITEROS_TOKEN`; значение не хранится в Git.
+- Клиенту нужны `gtm-mcp` и `adloop`. Права выдаются на уровне шлюза, а не через доступ к серверу.
+- Для GTM запрещены SSH, `docker exec`, `mcpjungle invoke`, localhost, внутренний gateway и прямой адрес контейнера. Они не являются запасным маршрутом.
+- Если публичный MCP не авторизован или инструмент не виден, остановить изменение GTM и исправить клиент публичного шлюза. Не обходить ошибку через сервер или браузер.
 
 ### Стартовая проверка перед каждой аналитической задачей
 
-Выполнить оба read-only вызова ниже. Они не меняют ни Google, ни контейнеры:
-
-```sh
-ssh hermes-cloud '
-  jungle=$(docker ps --filter label=com.docker.swarm.service.name=marketing-mcp-gateway-active-u5cf8g_mcpjungle --format "{{.ID}}" | head -n1)
-  test -n "$jungle" || { echo "Jungle gateway not found"; exit 1; }
-  docker exec "$jungle" /mcpjungle invoke gtm-mcp__auth_status --input "{}"
-  docker exec "$jungle" /mcpjungle invoke gtm-mcp__list_accounts --input "{}"
-'
-```
+Выполнить через подключённый MCP два read-only инструмента: `gtm-mcp__auth_status` и `gtm-mcp__list_accounts`. Они не меняют ни Google, ни контейнеры.
 
 Ожидаемый результат: `authenticated: true` и аккаунт `Margariteros Bar`. Если хотя бы один ответ другой — остановиться, ничего не лечить перезапуском и записать фактическую ошибку в задачу.
 
-Чтобы посмотреть точный контракт инструмента перед вызовом:
-
-```sh
-ssh hermes-cloud '
-  jungle=$(docker ps --filter label=com.docker.swarm.service.name=marketing-mcp-gateway-active-u5cf8g_mcpjungle --format "{{.ID}}" | head -n1)
-  docker exec "$jungle" /mcpjungle usage gtm-mcp__list_tags
-'
-```
+Контракт инструмента читать из схемы, которую отдаёт подключённый MCP-клиент. Не получать схему из контейнера или серверного CLI.
 
 ## Google Tag Manager
 
@@ -77,7 +53,7 @@ ssh hermes-cloud '
 
 Сначала получить список контейнеров, затем рабочих пространств нужного контейнера, затем состояние выбранного workspace. Для чтения допустимы `list_accounts`, `list_containers`, `list_workspaces`, `get_workspace_status`, `list_tags`, `list_triggers`, `list_variables`, `list_versions`.
 
-Через CLI `mcpjungle invoke` не создавать и не обновлять GTM-сущности, у которых есть поле `name`: у этого маршрута зафиксирована коллизия параметра. Для такой работы нужен стандартный MCP endpoint, где имя инструмента и его аргументы разделены, и отдельное разрешение владельца. `publish_version` никогда не вызывать без явного «можно».
+Любые чтение и изменения выполнять только стандартными инструментами публичного MCP, где имя инструмента и аргументы разделены. CLI/direct-container полностью запрещены. `publish_version` никогда не вызывать без явного «можно».
 
 ## Google Ads
 

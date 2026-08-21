@@ -45,13 +45,14 @@ Margariteros — варшавский бар Lime Fiesta. Проект помо�
 | Контент | Готовые пакеты лежат по неделям и каналам; Bachata Night опубликован через Postiz, DJ Dragon подготовлен как draft | `content/weeks/README.md` |
 | Бронь | Форма ChoiceQR живая | `https://margariteroswwa.choiceqr.com/booking` |
 | Бренд | Переносимый брендбук и Canva-набор уже в `main`; реальные медиа — hero | `brandbook-margariteros/`, `margariteros_asset_pack_v2_canva/` |
-| Web GTM и GA4 | Web GTM `GTM-T5F4VVGF`, поток GA4 `G-ZYB0MZ1CSR`; верхние события настроены | `docs/growth-os/HANDOFF-2026-08-20-choiceqr-syrve-analytics.md` |
+| Web GTM и GA4 | Web GTM `GTM-T5F4VVGF`, поток GA4 `G-ZYB0MZ1CSR`; в Preview доказано одно `booking_request` на одну отправленную заявку, без персональных данных; публикация версии ожидает доступного публичного MCP-клиента | `docs/growth-os/HANDOFF-2026-08-21-choiceqr-booking-ads.md` |
 | Server GTM | Версия 3 опубликована; продление cookies ещё не доказано реальным `Set-Cookie` | тот же handoff |
 | Доступ к GTM и Google Ads | Jungle MCP жив и авторизован; для чтения использовать его раньше браузера | `docs/growth-os/JUNGLE-MCP-ACCESS.md` |
 
 ## Что ещё не доказано или только планируется
 
-- `booking_request` должен быть проверен как одно событие на одну успешную заявку; это текущая задача #18 «Проверить, что заявка на бронь попадает в GA4 ровно один раз».
+- `booking_request` проверен в GTM Preview: одна отправленная заявка дала одно событие и одно срабатывание GA4-тега. Это сигнал созданной заявки со статусом `CREATED`, а не подтверждения менеджером.
+- Публикация web GTM должна пройти через публичный MCP и затем быть прочитана обратно; до этого событие не считается работающим для всех гостей.
 - Нет доказанной связки ChoiceQR → подтверждённая бронь → Syrve → реальный визит → Google Ads.
 - Server GTM не доказал продление перечисленных cookies; не заявлять это как работающее.
 - Google Business Profile не подключён к Postiz.
@@ -65,7 +66,7 @@ Margariteros — варшавский бар Lime Fiesta. Проект помо�
 | Готовые посты | `content/weeks/YYYY-Www/YYYY-MM-DD-slug/<канал>/` | Каналы не смешивать в одном файле |
 | Производство | `content/production/html-posters/`, `content/production/remotion/`, Canva | В Git идёт финальный файл канала, не временный `out/` |
 | Публикация | `https://postiz.margariteros.bar` | Только после явного «можно» |
-| GTM и Google Ads | Jungle MCP на `hermes-cloud` | Сначала read-only MCP, затем при необходимости браузер |
+| GTM и Google Ads | публичный Jungle MCP `https://mcp.afonin.xyz/v0/groups/growth-tools/mcp` | Настройки и публикация только через MCP; браузер — только живая проверка событий |
 | Живое событие | ChoiceQR + GTM Preview + Network + GA4 DebugView | Браузер нужен именно для E2E-доказательства |
 | Секреты и инфраструктура | OpenBao, Dokploy, Cloudflare | Значения секретов не попадают в Git, логи или чат |
 
@@ -74,7 +75,7 @@ Margariteros — варшавский бар Lime Fiesta. Проект помо�
 1. Читать в порядке: `AGENTS.md` → `docs/growth-os/HERMES-START.md` → этот файл → назначенная GitHub Issue → README нужного направления → живая проверка.
 2. Публичный контент — современный польский. Не выдумывать дату, время, DJ, цену, акцию, блюдо, гостя или событие.
 3. Не публиковать посты, рекламу, GTM, изменения бюджетов, ставок или конверсий без отдельного «можно».
-4. Для инвентаря GTM и Google Ads использовать Jungle MCP; Chrome — только для Preview, DebugView, Network и поведения реальной формы.
+4. Настройки и публикацию GTM/Google Ads выполнять только через публичный Jungle MCP. Chrome — только для Preview, DebugView, Network и поведения реальной формы.
 5. Не дублировать Meta Pixel/CAPI через GTM и не передавать имя, телефон, e-mail или комментарий гостя в GA4.
 6. BrightBean снят и возвращать его нельзя. Postiz не останавливать ради уборки.
 7. Каждый файл для социальной сети проходит через `content/production/ai-cleanup/README.md` до передачи на одобрение или публикацию — независимо от того, создан он AI, человеком или получен извне.
