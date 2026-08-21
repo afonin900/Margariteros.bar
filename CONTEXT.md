@@ -1,4 +1,6 @@
-# Margariteros — карта проекта
+# Margariteros — старая карта проекта
+
+> Этот файл сохранён для истории. Перед работой читать `AGENTS.md`, затем `docs/growth-os/HERMES-START.md`, затем `PROJECT.md`. Доступ к аналитике и точные команды запуска находятся в `docs/growth-os/JUNGLE-MCP-ACCESS.md`.
 
 ## Зачем существует этот репозиторий
 
@@ -31,7 +33,7 @@ W33 начинается не с автоматизации, а с двух не
 
 ## Удалённый ledger
 
-- Репозиторий: `afonin900/Margariteros.bar` (private).
+- Репозиторий: `afonin900/Margariteros.bar` (public).
 - GitHub Project: `Margariteros Bar Ops` (#8).
 - Родительский трек: Issue #1. Недельные карточки имеют метки `W33` или `W34`;
   их состояние ведётся в Project Status.

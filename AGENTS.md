@@ -14,7 +14,7 @@
 1. Read `docs/growth-os/HERMES-START.md`.
 2. Read `PROJECT.md` for current project state.
 3. Read the assigned GitHub Issue for requested work.
-4. Inspect relevant repository/runtime evidence before changing anything.
+4. Read the README of the needed direction (`content/`, `analytics/` or brandbook) and inspect relevant repository/runtime evidence before changing anything.
 
 ## Priority of truth
 
@@ -55,8 +55,37 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 - Растр/паттерны не растягивать. Маскот — один stem/base, без ног.
 - Реальные фото/видео — hero. Canva — сборка. Remotion сам наружу не публикуется.
 - Публикации, реклама, аккаунты, трекинг — только после «можно».
+- Каждый файл для социальной сети до одобрения проходит очистку AI-артефактов по `content/production/ai-cleanup/README.md`; недоступный сервис означает `draft`, а не обход проверки.
 
 ## Working rules
 
 - Факты снимать самому. Решение владельца — один вопрос с рекомендацией.
 - `corp-*` только когда к делу.
+
+## Manager Config
+
+### GitHub owner
+
+- owner: afonin900
+
+### Repos to scan
+
+- /Users/afonin900/Github/Margariteros.bar
+
+### GitHub Projects integration
+
+- weekly_project: 8
+- weekly_project_owner: afonin900
+- status_field: Status
+- status_in_progress: In Progress
+
+### W-label convention
+
+- enabled: true
+- format: W{NN}
+
+### Standing write authorization
+
+- mode: ask-each-time
+
+`manager` перед любым изменением GitHub показывает краткий план. Он не публикует сайт, GTM, рекламу или контент и не закрывает задачи без отдельного прямого решения владельца.

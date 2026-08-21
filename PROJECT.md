@@ -1,71 +1,106 @@
-# Project Map
+# Margariteros — карта проекта
 
-Updated: 2026-08-18
-Verified against: live Postiz + ChoiceQR booking; clone рядом со штабом
+**Актуально на 2026-08-21.** Это главный входной документ для агента и владельца. Он объясняет, зачем существует проект, что уже работает и куда смотреть дальше. Задачи и их статус — в GitHub Issues; технические доказательства остаются в профильных документах.
 
-## Purpose
+## Зачем существует проект
 
-Система контента варшавского бара Margariteros (Lime Fiesta): из подтверждённых фактов и реальных фото собирать посты без выдуманных событий.
+Margariteros — варшавский бар Lime Fiesta. Проект помогает регулярно приводить реальных гостей, прежде всего по пятницам и субботам: подтверждённые факты и реальные фото/видео превращаются в современный польский контент, а реклама и аналитика показывают, какой путь действительно приводит к брони и визиту.
 
-## Current state
+Здесь нет отдельного сайта или приложения бара. Репозиторий — операционная система бренда, контента, публикаций, аналитики и рекламы.
 
-Confirmed:
+## Две главные линии работы
 
-- Репо `afonin900/Margariteros.bar`, ветка `main`, клон рядом со штабом.
-- Два бренд-пака на диске: v1 Lime Fiesta и v2 Canva.
-- 11 open Issues, эпик `#1` (SMM-ритм). Карточки W33 датированы 10.08 — свежесть не проверял live.
-- В HQ отдел зарегистрирован 2026-08-17. Публикаций из этого клона не делали.
-
-## Architecture / major components
+### 1. Бренд, контент и публикации
 
 ```text
-факт бара → content/weeks/YYYY-Www/YYYY-MM-DD-slug/<канал>/ → «можно» → сеть
+факты бара + реальные фото/видео
+→ brief
+→ польские тексты и визуал по каналам
+→ фактчек и одобрение владельца
+→ Postiz
+→ Instagram / Threads / Facebook
 ```
 
-Автоматизация Remotion и аналитика в документах — после разбора двух post package. Это план, не факт работы.
+Цель — не «заполнить ленту», а дать гостю понятный повод прийти и забронировать стол. Реальные фото и видео всегда важнее шаблона. Google Business Profile готовится отдельным пакетом: в Postiz он пока не подключён.
 
-## Important paths
+### 2. Аналитика и реклама
 
-- `AGENTS.md`, `PROJECT.md`, `README.md`
-- `content/weeks/README.md` — раскладка постов по неделе, дате и сети
-- `content/weeks/2026-W34/2026-08-22-dj-dragon/` — текущий слот субботы
-- `margariteros_asset_pack_v1_lime_fiesta/` + `09_docs/design.md`
-- `margariteros_asset_pack_v2_canva/`
-- `CONTENT_PIPELINE_DRAFT.md`
-- Legacy: `CONTEXT.md`, `0_hq/tasks.md`, `WEEKLY_LOG.md`, `PROJECT_PLAN.md`
+```text
+реклама или QR
+→ margariteros.bar
+→ ChoiceQR
+→ заявка на бронь
+→ подтверждённая бронь
+→ визит и закрытый счёт
+→ GA4 / Google Ads
+```
 
-## Runtime / deployment
+Клик или открытие формы — не бронь. Сейчас измеряется верхняя часть пути; целевое развитие — честно связывать подтверждённую бронь, а затем реальный визит с рекламой без передачи личных данных гостя в GA4.
 
-Сайта/прод-выкладки в этом репо не подтверждено. SMM-аккаунты из клона не трогали.
+## Что работает сейчас
 
-## External dependencies
+| Область | Фактическое состояние | Где смотреть |
+| --- | --- | --- |
+| Postiz | Живой: Instagram, Threads и Facebook подключены в организации Margariteros | `docs/growth-os/HERMES-START.md`, `content/production/postiz/` |
+| Контент | Готовые пакеты лежат по неделям и каналам; Bachata Night опубликован через Postiz, DJ Dragon подготовлен как draft | `content/weeks/README.md` |
+| Бронь | Форма ChoiceQR живая | `https://margariteroswwa.choiceqr.com/booking` |
+| Бренд | Переносимый брендбук и Canva-набор уже в `main`; реальные медиа — hero | `brandbook-margariteros/`, `margariteros_asset_pack_v2_canva/` |
+| Web GTM и GA4 | Web GTM `GTM-T5F4VVGF`, поток GA4 `G-ZYB0MZ1CSR`; верхние события настроены | `docs/growth-os/HANDOFF-2026-08-20-choiceqr-syrve-analytics.md` |
+| Server GTM | Версия 3 опубликована; продление cookies ещё не доказано реальным `Set-Cookie` | тот же handoff |
+| Доступ к GTM и Google Ads | Jungle MCP жив и авторизован; для чтения использовать его раньше браузера | `docs/growth-os/JUNGLE-MCP-ACCESS.md` |
 
-Instagram (основной канал по докам), ChoiceQR, Canva. TikTok / Facebook / планировщик — только с отдельного решения.
+## Что ещё не доказано или только планируется
 
-## Sources of truth
+- `booking_request` должен быть проверен как одно событие на одну успешную заявку; это текущая задача #18 «Проверить, что заявка на бронь попадает в GA4 ровно один раз».
+- Нет доказанной связки ChoiceQR → подтверждённая бронь → Syrve → реальный визит → Google Ads.
+- Server GTM не доказал продление перечисленных cookies; не заявлять это как работающее.
+- Google Business Profile не подключён к Postiz.
+- TikTok, YouTube Shorts, Telegram, Metricool и новые рекламные кампании не являются подтверждёнными рабочими каналами.
 
-- Tasks: GitHub Issues
-- This map: this file
-- Visual law: asset pack `design.md`
+## Инструменты и где они лежат
 
-## Known constraints
+| Что | Инструмент / место | Правило |
+| --- | --- | --- |
+| Бренд | `brandbook-margariteros/BRAND_GUIDE.md`, `DESIGN.md`, `margariteros_asset_pack_v2_canva/` | Сначала реальные материалы, польский текст и фактчек |
+| Готовые посты | `content/weeks/YYYY-Www/YYYY-MM-DD-slug/<канал>/` | Каналы не смешивать в одном файле |
+| Производство | `content/production/html-posters/`, `content/production/remotion/`, Canva | В Git идёт финальный файл канала, не временный `out/` |
+| Публикация | `https://postiz.margariteros.bar` | Только после явного «можно» |
+| GTM и Google Ads | Jungle MCP на `hermes-cloud` | Сначала read-only MCP, затем при необходимости браузер |
+| Живое событие | ChoiceQR + GTM Preview + Network + GA4 DebugView | Браузер нужен именно для E2E-доказательства |
+| Секреты и инфраструктура | OpenBao, Dokploy, Cloudflare | Значения секретов не попадают в Git, логи или чат |
 
-- Не публиковать без «можно»
-- Не выдумывать факты вечера
-- Не растягивать растр; маскот без ног
+## Правила для агента
 
-## Current focus
+1. Читать в порядке: `AGENTS.md` → `docs/growth-os/HERMES-START.md` → этот файл → назначенная GitHub Issue → README нужного направления → живая проверка.
+2. Публичный контент — современный польский. Не выдумывать дату, время, DJ, цену, акцию, блюдо, гостя или событие.
+3. Не публиковать посты, рекламу, GTM, изменения бюджетов, ставок или конверсий без отдельного «можно».
+4. Для инвентаря GTM и Google Ads использовать Jungle MCP; Chrome — только для Preview, DebugView, Network и поведения реальной формы.
+5. Не дублировать Meta Pixel/CAPI через GTM и не передавать имя, телефон, e-mail или комментарий гостя в GA4.
+6. BrightBean снят и возвращать его нельзя. Postiz не останавливать ради уборки.
+7. Каждый файл для социальной сети проходит через `content/production/ai-cleanup/README.md` до передачи на одобрение или публикацию — независимо от того, создан он AI, человеком или получен извне.
 
-- BrightBean **снят** 2026-08-18 (compose, DNS `studio.`, секрет). Не поднимать.
-- Postiz **поднят**: https://postiz.margariteros.bar. Подключены Instagram, Threads, Facebook. GBP в Postiz нет.
-- GTM контейнер назван: `GTM-T5F4VVGF`. Входа в Google у агента нет. Prod GTM не правим.
-- Бронь: https://margariteroswwa.choiceqr.com/booking (форма живая, 18.08).
-- DNS: `postiz.margariteros.bar` → Cloudflare. Секреты OpenBao, не Git.
+## Визуальный канон: минимальный Lime Fiesta
 
-Документы: `docs/growth-os/`.
+Основной рабочий брендбук — переносимый брендбук и Canva v2. Asset pack v1 — библиотека отдельных активов и исторических референсов: брать из него можно только нужный конкретному макету элемент, но не его старую типографику и не «fiesta»-декор по умолчанию.
 
-## Unknown / unverified
+Новый материал строится из малого постоянного набора:
 
-- Живы ли слоты W33 (14–15.08) и есть ли реальные brief/фото
-- PRIVATE vs public: GitHub сейчас public, `CONTEXT.md` пишет private
-- Подключены ли Instagram / ChoiceQR / Metricool фактически
+- один главный логотип: `brandbook-margariteros/visuals/logo-primary-current.png`;
+- чёрный `#0B0B0B`, лайм `#C6FF00`, кремовый `#FFF5E1`; оранжевый `#FF5A2E` — только акцент даты или CTA;
+- один декоративный мотив — флажки `papel picado`, только рамкой сверху или снизу;
+- Barlow Condensed Black Italic для короткого заголовка и Montserrat 700–900 для фактов и CTA;
+- реальное фото или видео — главный визуальный материал.
+
+Маскот, повторяющиеся паттерны, текстуры, иконки, цветы и брызги — только по отдельной необходимости, не обязательные элементы каждого поста.
+
+## Канонические источники
+
+- Правила и безопасность: `AGENTS.md`, `docs/growth-os/HERMES-START.md`.
+- Бренд: `brandbook-margariteros/BRAND_GUIDE.md`, `DESIGN.md`, Canva v2.
+- Контент и структура постов: `content/README.md`, `content/weeks/README.md`.
+- Аналитика и реклама: `analytics/README.md`, `docs/growth-os/JUNGLE-MCP-ACCESS.md`, последний ChoiceQR/Syrve handoff.
+- Задачи: GitHub Issues, активный эпик #17 «Настроить Google Ads на реальные бронирования через посадочную без алкоголя».
+
+## Исторические материалы
+
+`CONTEXT.md`, `PROJECT_PLAN.md`, `WEEKLY_LOG.md`, `0_hq/`, ранние PRD BrightBean, `ROADMAP.md` и `ACCESS.md` могут объяснять прошлые решения, но не являются инструкцией к действию без сверки с этим файлом и HERMES-START.

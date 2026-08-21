@@ -21,9 +21,9 @@
 
 ## Канонические материалы
 
-- `../CONTENT_PIPELINE_DRAFT.md` — последовательность подготовки контента.
-- `../PROJECT_PLAN.md` — цель и ритм пилота.
-- `../margariteros_asset_pack_v1_lime_fiesta/09_docs/design.md` — правила
-  визуала Lime Fiesta.
-- `../WEEKLY_LOG.md` — история недельных решений.
+- `../PROJECT.md` — зачем существует проект, рабочие каналы и общие границы.
+- `weeks/README.md` — каноническая структура готового поста.
+- `../brandbook-margariteros/BRAND_GUIDE.md` и `../DESIGN.md` — текущие переносимые правила бренда.
+- `production/postiz/README.md` — безопасная проверка подключённых каналов и статуса публикации.
 
+`../CONTENT_PIPELINE_DRAFT.md`, `../PROJECT_PLAN.md` и `../WEEKLY_LOG.md` — исторические материалы. Они не отменяют актуальные правила проекта и подключённые каналы Postiz.

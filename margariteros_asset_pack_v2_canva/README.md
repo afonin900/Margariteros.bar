@@ -1,6 +1,6 @@
 # Margariteros Lime Fiesta — Canva Production Pack
 
-A compact production system for posters, carousels, Stories and Reel covers. Public-facing copy is written in natural modern Polish; unknown event facts are never invented.
+Основной компактный брендбук и production-система для новых постеров, каруселей, Stories и обложек Reels. Public-facing copy is written in natural modern Polish; unknown event facts are never invented.
 
 ## Start here
 

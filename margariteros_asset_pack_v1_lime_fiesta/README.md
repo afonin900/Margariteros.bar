@@ -1,6 +1,8 @@
 # MARGARITEROS Asset Pack v1 — Lime Fiesta
 
-Complete production asset system for posters, menus, social media and video.
+Библиотека исторических Lime Fiesta-активов для точечного использования. Это не основной брендбук нового производства: для новых материалов действуют `brandbook-margariteros/BRAND_GUIDE.md`, `DESIGN.md` и Canva v2.
+
+Из v1 можно брать нужный логотипный исходник, флажки `papel picado` или иной отдельный утверждённый актив. Не переносить автоматически старую типографику Bangers/Nunito, паттерны, текстуры и перегруженную композицию.
 
 Start here:
 
