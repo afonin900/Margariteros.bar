@@ -14,7 +14,8 @@
 1. Read `docs/growth-os/HERMES-START.md`.
 2. Read `PROJECT.md` for current project state.
 3. Read the assigned GitHub Issue for requested work.
-4. Read the README of the needed direction (`content/`, `analytics/` or brandbook) and inspect relevant repository/runtime evidence before changing anything.
+4. For infrastructure, DNS, Dokploy or OpenBao work, read `docs/ORG-INFRA.md`.
+5. Read the README of the needed direction (`content/`, `analytics/` or brandbook) and inspect relevant repository/runtime evidence before changing anything.
 
 ## Priority of truth
 
