@@ -1,161 +1,146 @@
-# Входной пакет для PRD Спецификатора: привлечение гостей через подтверждённые брони и Margariteros Club
+# Входной пакет для PRD Спецификатора: партнёрская система Margariteros на базе Syrve
 
 > TARGET_AGENT: PRD Спецификатор
-> PURPOSE: подготовить исследовательскую спецификацию контура привлечения гостей, где Syrve — ядро учёта рефералок и факта покупки, а Telegram — только фронтенд приглашения и выдачи.
-> STATUS: датированный снимок контекста, не источник живого состояния проекта
+> PURPOSE: исследовать собственную партнёрскую и реферальную систему бара, в которой Syrve подтверждает визит и оплату, а web, Telegram Mini App и бот дают партнёру единый интерфейс.
+> STATUS: датированный снимок, не источник живого состояния.
 
 ## 1. Метаданные снимка
 
-- `captured_at`: 2026-08-24T13:46:18+0200
+- `captured_at`: 2026-08-24
 - `repository`: `afonin900/Margariteros.bar`
-- `branch`: `main`
-- `base_commit`: `81f0e3a64b2047a4cdf297ba4943d6f49ec3a929`
-- `working_tree`: уже были чужие незакоммиченные `AGENTS.md`, `docs/ORG-INFRA.md`, `docs/growth-os/RETRO-W34-2026-08-17--2026-08-23.md` и каталог `site/`; `site/` содержит медиафайлы, а не подтверждённый runtime сайта.
-- `github_checked_at`: 2026-08-24, GitHub Project `afonin900/8` и Issues репозитория прочитаны read-only.
-- `runtime_evidence_checked_at`: в этой сессии live runtime ChoiceQR, Syrve, Telegram и секрет-хранилище не проверялись; используем только датированные repository/GitHub evidence.
-- `known_access_limits`: нет подтверждённых ChoiceQR API token/scopes, Syrve API key/webhook access, Telegram runtime/admin access или Google Ads write authorization. Секреты не включены.
-- `known_stale_sources`: `docs/growth-os/ROADMAP.md`, BrightBean PRD и исторические baseline нельзя считать текущими без новой сверки; BrightBean снят и возвращать его нельзя.
+- `branch` / `base_commit`: `main` / `6892004`
+- `working_tree`: этот файл переписан и оставлен незакоммиченным для штабного агента, который ведёт коммит/пуш недельного плана.
+- `github_checked_at`: 2026-08-24; Project #8 и Issues #17–#27 прочитаны read-only.
+- `runtime_evidence_checked_at`: Syrve tenant/API, SyrveFront POS, OAuth, Telegram bot, `club.margariteros.bar` и инфраструктура не проверялись.
+- `known_access_limits`: нет подтверждённых Syrve/ChoiceQR credentials, POS доступа, OAuth keys, Telegram bot token или deploy authority.
+- `known_stale_sources`: `0_hq/tasks.md`, BrightBean PRD и старые roadmaps не канон; BrightBean снят и возвращать его нельзя.
 
 ## 2. Что нужно исследовать и специфицировать
 
-Определить минимальную, безопасную архитектуру для привлечения реальных гостей с двумя связанными модулями:
+Специфицировать **Margariteros Partner System** для гостиниц, хостелов, консьержей, гидов, инфлюенсеров, сотрудников и гостей, которые приводят посетителей.
 
-1. **Conversion Bridge**: детерминированный сервис, который читает подтверждённые брони ChoiceQR, при подтверждении создаёт/синхронизирует reserve в Syrve Cloud и отправляет единственный честный конверсионный сигнал в GA4/Google Ads.
-2. **Margariteros Club**: реферальная логика, факт первой оплаченной покупки и выдача — на базе Syrve; Telegram — только интерфейс для ссылки/QR, показа статуса и выдачи гостю, не источник правды о покупке или награде.
-
-Не проектировать это как единый автономный AI-агент: ни один текущий факт не требует LLM для переходов статусов, расчёта дедупликации или выдачи награды.
+Путь: партнёрская ссылка/QR → бронь или walk-in → заказ Syrve → закрытый оплаченный чек → подтверждённая конверсия → комиссия/выплата. ChoiceQR, собственная landing, QR, Google, Instagram и Telegram — входные каналы, не ядро. Это не AI-агент и не «только Telegram Club»: нужны детерминированные правила, ledger, защита от дублей и admin.
 
 ## 3. Конечный результат для пользователя
 
-У владельца появляются две понятные возможности: видеть, какая **подтверждённая** бронь пришла из рекламы и дошла до резерва/визита, а также запускать Club, где факт покупки и выдача сверяются с Syrve без фальшивых наград и дублей. У гостя остаются привычные ChoiceQR-бронь и Telegram; он не должен видеть технические интеграции.
+Партнёр в web-кабинете или Telegram видит ссылку, QR, promo assets, визиты, заработок и выплаты. Бар видит источник гостя, закрытый чек и начисление. Гость по визитке понимает, куда идти, и может открыть маршрут или присоединиться к Club.
 
 ## 4. Почему это нужно сейчас
 
-[VERIFIED_FACT | evidence=github | source=https://github.com/afonin900/Margariteros.bar/issues/17 | as_of=2026-08-24] Epic #17 ведёт рекламу к честной цели бронирования; нынешний `booking_request` означает создание заявки, а не подтверждение сотрудником.
+[VERIFIED_FACT | evidence=github | source=https://github.com/afonin900/Margariteros.bar/issues/17 | as_of=2026-08-24] Нет доказанной связки от брони до фактического визита и закрытого счёта.
 
-[VERIFIED_FACT | evidence=github | source=https://github.com/afonin900/Margariteros.bar/issues/27 | as_of=2026-08-24] Планируется Margariteros Club, но его runtime и правило награды ещё не приняты.
+[ACCEPTED_DECISION | authority=owner | source=ChatGPT conversation 6a8afeb9-4b94-83ed-84de-849634330625 and owner message 2026-08-24 | as_of=2026-08-24] Нужна партнёрская система на базе факта Syrve; Telegram — один из фронтендов, а не единственный продукт.
 
 ## 5. Контекст обсуждения и принятые решения
 
-- [ACCEPTED_DECISION | authority=project | source=PROJECT.md | as_of=2026-08-21] Воронка: реклама/QR → `margariteros.bar` → ChoiceQR → заявка → подтверждённая бронь → визит/закрытый счёт → аналитика.
-- [ACCEPTED_DECISION | authority=project | source=GitHub Issue #17 | as_of=2026-08-24] `booking_request` не является подтверждённой бронью; не оптимизировать рекламу по клику, просмотру или маршруту.
-- [ACCEPTED_DECISION | authority=project | source=docs/growth-os/HANDOFF-2026-08-20-choiceqr-syrve-analytics.md | as_of=2026-08-20] До подтверждения менеджером в Syrve не создаётся ничего; после подтверждения нужен reserve, не заказ.
-- [ACCEPTED_DECISION | authority=project | source=GitHub Issue #26 | as_of=2026-08-24] `reservation_confirmed` сначала Secondary; повторная обработка не должна создать дубль; CANCELLED и NOT_CAME не являются положительной конверсией.
-- [ACCEPTED_DECISION | authority=owner | source=owner message 2026-08-24 | as_of=2026-08-24] Рефералка строится на Syrve; Telegram — только фронтенд выдачи. Эта свежая owner decision имеет приоритет над старым текстом Issue #27 о ручной qualification.
+- [ACCEPTED_DECISION | authority=owner | source=referenced conversation | as_of=2026-08-24] Один продукт имеет три входа: web, Telegram Mini App, Telegram bot; они используют один backend и одну модель пользователя.
+- [ACCEPTED_DECISION | authority=owner | source=referenced conversation | as_of=2026-08-24] На web нужны Google/Apple login. В Mini App — Telegram auth с серверной проверкой `initData`, без OAuth-кнопок во встроенном webview.
+- [ACCEPTED_DECISION | authority=owner | source=referenced conversation | as_of=2026-08-24] У партнёра есть URL, QR и готовые брендовые story/post/flyer/визитки. Визитка ведёт прежде всего в бар: текстовый адрес и referral landing с маршрутами и join.
+- [ACCEPTED_DECISION | authority=owner | source=referenced conversation | as_of=2026-08-24] Свой backend/ledger хранит партнёров, referral claims, комиссии и выплаты. Syrve — источник факта customer/reserve/order/closed paid check, не единственная база партнёрской программы.
+- [ACCEPTED_DECISION | authority=project | source=PROJECT.md | as_of=2026-08-21] Raw PII запрещён в GA4/Ads/GitHub; клик или открытая форма не равны брони и визиту.
 
 ## 6. Подтверждённое текущее состояние
 
-- [VERIFIED_FACT | evidence=static | source=PROJECT.md | as_of=2026-08-21] ChoiceQR booking жив; web GTM `GTM-T5F4VVGF` и GA4 `G-ZYB0MZ1CSR` существуют.
-- [VERIFIED_FACT | evidence=github | source=GitHub Issue #18 | as_of=2026-08-24] Одна контролируемая заявка дала ровно один `booking_request`/GA4 trigger без имени, телефона, e-mail или комментария. Это доказательство заявки CREATED, не менеджерского CONFIRMED.
-- [VERIFIED_FACT | evidence=static | source=docs/growth-os/HANDOFF-2026-08-20-choiceqr-syrve-analytics.md | as_of=2026-08-20] Для Syrve Cloud описаны reserve API: выбор организации/залов, workload, create, status, change tables, cancel и webhook settings; `reserve/create` требует initial `tableId`.
-- [VERIFIED_FACT | evidence=github | source=GitHub Issue #25 | as_of=2026-08-24] ChoiceQR Open API документирует read-only list/get booking, стабильный ID, UTM и статусы CREATED/CONFIRMED/CANCELLED/IN_PROGRESS/NOT_CAME/COMPLETED; booking webhooks публично не подтверждены.
-- [UNKNOWN | needed_from=ChoiceQR owner/API access] Фактические ChoiceQR token/scopes, доступность брони Margariteros, поля click IDs/metadata, paging/rate limits и возможность получать изменения без webhook.
-- [UNKNOWN | needed_from=Syrve owner/API access] Реальный Syrve organization/sections/tables, API scopes, webhook delivery и связь reserve с закрытым счётом.
-- [UNKNOWN | needed_from=Syrve owner/API access] Syrve loyalty/customer/discount/closed-bill capabilities, подходящий стабильный идентификатор гостя, способ безопасной выдачи и отмены награды.
-- [UNKNOWN | needed_from=owner] Telegram bot/runtime/database, правило награды и какая персональная информация допустима в журнале.
+- [VERIFIED_FACT | evidence=static | source=PROJECT.md | as_of=2026-08-21] Живы ChoiceQR booking, web GTM `GTM-T5F4VVGF`, GA4 `G-ZYB0MZ1CSR`, Postiz и соцканалы.
+- [VERIFIED_FACT | evidence=github | source=GitHub Issue #18 | as_of=2026-08-24] Одна тестовая ChoiceQR заявка дала один `booking_request`; это CREATED, не подтверждённая бронь и не визит.
+- [REPORTED | source=docs/growth-os/HANDOFF-2026-08-20-choiceqr-syrve-analytics.md | as_of=2026-08-20 | verification_needed=live Syrve audit] Документированы Syrve reserve/status/cancel/workload/webhook candidates, но нет доказанного доступа Margariteros.
+- [REPORTED | source=referenced conversation | as_of=2026-08-24 | verification_needed=official docs and live tenant] Syrve Cloud/SyrveFront могут дать customers, orders, external data, paid-close events, loyalty и webhooks.
+- [UNKNOWN | needed_from=live audit] Нет доказанного runtime сайта, PostgreSQL, SyrveFront plugin loading, Syrve tenant rights, Google/Apple OAuth или Telegram bot.
 
 ## 7. Релевантная карта проекта
 
 ```text
-Google Ads / QR / social UTM
-  → margariteros.bar / ChoiceQR booking
-  → ChoiceQR booking GUID + статус
-  → Conversion Bridge (polling + state machine + ledger)
-  → Syrve reserve / Syrve status or closed bill
-  → GA4 + Google Ads offline conversion
-
-Telegram deep link / QR
-  → Margariteros Club frontend
-  → referral binding / status request
-  → Syrve customer + paid check + reward issuance
-  → member status / admin audit
+Partner web / TG Mini App / TG bot
+  → Partner Backend + PostgreSQL ledger
+  → links, QR, claims, commissions, payouts, audit
+  → adapters: ChoiceQR / own landing / QR / walk-in
+  → Syrve Cloud and, if needed, SyrveFront POS plugin
+  → reserve / order / closed paid check
+  → conversion + commission
+  → privacy-safe GA4 / Google Ads analytics
 ```
 
-Существующие границы: ChoiceQR остаётся гостевой формой и менеджерским приложением; Syrve — источник правды о reserve и фактическом визите; GTM/sGTM не заменяет bridge. В репозитории нет подтверждённого кода такого bridge, Telegram bot, БД или production-site runtime.
+Деловой факт оплаты приходит из Syrve. Период атрибуции, расчёт комиссии, payout и audit не должны жить только в POS или Telegram.
 
 ## 8. Scope
 
-- Исследовать и сравнить реализацию bridge как маленького сервиса polling-first, а не webhook-only.
-- Описать state machine, таблицы/журналы, идемпотентность, retries, reconciliation и операторскую диагностику для брони.
-- Описать API boundary ChoiceQR ↔ bridge ↔ Syrve ↔ GA4/Google Ads и допустимую атрибуцию.
-- Описать Club на Syrve: как связать referral code с гостем/продажей, как доказать первую оплаченную покупку, выдать/отозвать награду и аудировать это без дублей; Telegram оставить интерфейсом deep-link/QR, статуса и выдачи.
-- Выдать несколько подходящих вариантов runtime/хостинга/хранилища, но не считать текущий репозиторий runtime сайта.
+- Partner registry: тип, статус, ставка/программа, links, QR, promo assets, payout state.
+- Универсальные referral URLs/QR без телефона или PII; `ReferralClaim` с периодом действия для офлайн-визита без cookie.
+- Booking adapters: связывают claim/reservation/Syrve reserve, но не привязывают ядро к ChoiceQR.
+- Walk-in: POS operator выбирает партнёра, вводит код или сканирует QR; attribution пишется в order external data только при подтверждённом API contract.
+- Closed-check: один раз создаёт conversion/commission; refund/reversal — отдельная корректировка.
+- Web/PWA: Google/Apple, phone binding к Syrve customer, QR/link, visits, earnings, payouts, promo assets.
+- Mini App: Telegram auth; bot: notifications, buttons, deep links. Admin: партнёры, claims, orders, commissions, adjustments, payouts, audit.
 
 ## 9. Non-goals
 
-- Автопубликация, реклама, изменение GTM/Google Ads/ChoiceQR/Syrve, deploy или выдача награды.
-- AI-агент, который сам решает статусы, начисляет деньги или общается с гостями без правил.
-- Массовая Telegram-рассылка, отдельная ручная система лояльности вне Syrve, скидки/платежи вне подтверждённого Syrve-механизма и Meta CAPI.
-- Передача raw PII в GA4, Google Ads, GitHub или технические логи.
-- Возвращение снятого BrightBean или создание второго сайта/планировщика без подтверждённого runtime.
+- Публикация рекламы/GTM/сайта, изменение боевых Syrve/ChoiceQR записей, бюджетов или ставок.
+- AI-агент, который сам начисляет комиссию либо меняет статус заказа.
+- L2/L3 network, массовые Telegram рассылки, Meta CAPI и автоматические выплаты в первом MVP.
+- Telegram как единственный identity provider или база финансовых/заказных данных.
+- PII в GA4, Ads, GitHub или логах.
 
 ## 10. Ограничения и правила сохранения
 
-- Секреты только в утверждённом secret store; в GitHub/репозиторий не попадают.
-- ChoiceQR consent не обходить; Advanced Consent Mode не объявлять работающим без live proof.
+- Секреты только в OpenBao/Dokploy env.
+- Google/Apple не дают надёжный телефон: нужен consent-aware verified phone binding к Syrve customer.
+- `initData` Telegram валидируется на backend; webview OAuth проверяется по официальной документации.
+- Комиссия payable только после closed paid check; повтор/возврат идемпотентны и аудируемы.
 - Не дублировать ChoiceQR Meta Pixel/CAPI через GTM.
-- Любая запись в ChoiceQR/Syrve и любая публикация/изменение рекламной цели требуют отдельного разрешения владельца.
-- Telegram не должен быть источником истины о покупке, балансе или выдаче: он показывает и запускает только разрешённые действия, подтверждённые ядром Syrve.
-- Конверсионный ledger хранит минимум данных; PII из operational mapping изолирован от analytics и логов.
-- Внешний номер Syrve reserve должен связываться со стабильным ChoiceQR booking GUID; каждая бизнес-операция повторяется безопасно.
 
 ## 11. Известные проблемы, риски и конфликты
 
-- [CONFLICT | sources=GitHub Issue #27; owner message 2026-08-24] #27 говорит о ручной qualification до POS-контракта, но владелец уточнил Syrve как основу рефералки. Manager должен внести это изменение в Issue только после отдельного write plan/подтверждения.
-- [CONFLICT | sources=GitHub Issue #27; GitHub Issue #1] #27 указан дочерним к #1, хотя #1 ограничен SMM-ритмом W33–W34 и прямо исключает сервисные подключения. Manager должен отдельно решить корректного родителя до GitHub write.
-- [REPORTED | source=docs/growth-os/HANDOFF-2026-08-21-choiceqr-booking-ads.md | as_of=2026-08-21 | verification_needed=ChoiceQR API live read] Публичная документация не подтверждает booking webhooks, поэтому webhook-only дизайн рискован.
-- [REPORTED | source=PROJECT.md | as_of=2026-08-21 | verification_needed=public MCP readback] Подготовленная GTM-публикация ещё не доказана как live для всех гостей.
-- [UNKNOWN | needed_from=ChoiceQR/Syrve] Без click ID или согласованного consent нельзя обещать индивидуальную offline-attribution Google Ads; остаётся агрегированная UTM-аналитика.
+- [CONFLICT | sources=GitHub Issue #27; owner decision 2026-08-24] #27 — узкий ручной Telegram Club, а цель — Syrve-backed partner system с web, Mini App, bot и commission ledger. Manager правит GitHub contract только после write plan.
+- [CONFLICT | sources=GitHub Issue #27; GitHub Issue #1] #27 является child SMM Epic #1, хотя системная интеграция и payouts шире его scope.
+- [UNKNOWN | needed_from=live Syrve audit] Неизвестно, достаточно ли Cloud API для attribution/paid close или SyrveFront plugin обязателен.
+- [UNKNOWN | needed_from=legal/owner] Consent, retention, partner agreement, tax/payout and phone handling для Польши/EU.
 
 ## 12. Предположения и неизвестное
 
-- [ASSUMPTION | validation_needed=Syrve live API audit] Syrve может стать источником правды для Club: это надо подтвердить на конкретном tenant и его доступных loyalty/customer/discount/bill APIs, а не выводить из наличия reserve API.
-- [ASSUMPTION | validation_needed=ChoiceQR API audit] Polling списка/деталей booking может надёжно заменить webhook при cursor, watermark, overlap window и reconciliation.
-- [UNKNOWN | needed_from=owner] Точная награда Club: размер, получатель, момент выдачи через Syrve, срок действия, правила отмены.
-- [UNKNOWN | needed_from=owner/runtime audit] Приемлемые стоимость, платформа Telegram bot, страна/срок хранения данных, канал операторских уведомлений.
+- [ASSUMPTION | validation_needed=live POC] P0 докажет цепочку на одном test order: attach attribution → paid close → readback → one conversion/commission.
+- [ASSUMPTION | validation_needed=architect] PostgreSQL event/outbox ledger нужен даже если Syrve хранит loyalty/referrer fields.
+- [UNKNOWN | needed_from=owner] Commission model, hold period, refund/reversal, payout method, первые сегменты партнёров и первые три promo assets.
 
 ## 13. Вопросы для внешнего исследования
 
-1. Как безопасно построить polling-first integration для ChoiceQR booking statuses: cursor/watermark, pagination, rate limit, backoff, overlap, reconciliation и dead-letter операции?
-2. Как смоделировать бронь как state machine, включая CREATED → CONFIRMED, отмену/изменение, создание/обновление/cancel Syrve reserve, и какие idempotency keys нужны на каждой границе?
-3. Как корректно использовать Syrve reserve API и webhooks для доказательства визита/закрытого счёта, не назначая стол неверно и не создавая дубль?
-4. Какие Syrve Cloud API/механизмы подходят для customer/loyalty/referral: привязки гостя, доказательства первого оплаченного чека, выдачи/отмены награды и аудита? Какие операции доступны только через POS/UI и как это меняет MVP?
-5. Какие официально поддерживаемые Google Ads offline-conversion варианты возможны при наличии только UTM либо gclid/wbraid/gbraid; где обязателен consent и как проверить diagnostics?
-6. Какой минимальный Telegram frontend обеспечивает signed deep link/QR, one-time binding, duplicate `/start` protection, показ статуса и выдачу, не дублируя Syrve как базу покупки и награды?
-7. Следует ли использовать один технический runtime для двух сервисов или изолировать их с первого релиза; сравнить по риску PII, простоте эксплуатации и стоимости.
+1. Какие текущие Syrve Cloud/Live APIs подтверждены для customers, `referrerId`, loyalty/wallet/cards, orders, paid/closed order, external data, reserves и webhooks?
+2. Когда нужен SyrveFront plugin: можно ли cloud-only надёжно записать attribution и прочитать paid close; какие deployment/compatibility risks plugin?
+3. Как построить idempotent event/outbox/reconciliation/reversal model для claim, closed order, commission и payout?
+4. Как объединить Google/Apple OAuth, verified phone и Telegram identity без takeover/duplicate Syrve binding?
+5. Какие официальные ограничения Google/Apple/Telegram для OAuth webview и Telegram `initData`?
+6. Как генерировать referral card, 9:16 story, 1:1 post, flyer и 85×55 mm визитку из одного referral object; что обязательнее всего на landing?
+7. Какие privacy, retention и DPA требования для телефонов, чека, commission/payout и Telegram уведомлений в Польше/EU?
+8. Как подключать closed-check events к GA4/Google Ads без PII и не смешать measurement с accounting?
 
 ## 14. Решения владельца, которые ещё открыты
 
-- Правило награды Club и разрешение публично его обещать.
-- Правило награды, момент выдачи в Syrve и допустимый Telegram UX для её получения.
-- Согласие на запрос ChoiceQR API application/token и Syrve API credentials.
-- Нужна ли сейчас только подтверждённая бронь или также `visit_completed` из закрытого чека в первом релизе.
+- Commission model, hold, reversal и payout.
+- Первые сегменты партнёров и обязательные promo assets.
+- P0: только paid-check proof или сразу reserve/ChoiceQR adapter.
+- Разрешение на Syrve developer application, POC plugin, OAuth and Telegram credentials.
 
 ## 15. Решения внутреннего Architect после возврата PRD
 
-- Выбрать, остаются ли Conversion Bridge и Telegram frontend разными deployable сервисами или получают общий runtime при сохранении Syrve как источника истины Club.
-- Выбрать конкретные контракты, storage, очередь/retry, authentication, secret injection, observability, schema migration и deployment boundary на основании live доступа.
-- Решить точное соответствие ChoiceQR statuses → Syrve actions → analytics events и контракт Syrve paid check → Club issuance/reversal.
-- Подготовить корректный Epic/Issue graph только после owner choices и проверки API.
+- Cloud-only adapter versus SyrveFront plugin; P0 acceptance path.
+- Data/event schemas, external-data keys, outbox, reconciliation, RBAC/audit.
+- Deploy boundaries API/admin/web/Mini App/bot, after live infrastructure verification.
+- ChoiceQR boundary, walk-in UX and attribution precedence.
 
 ## 16. Что внутренний Architect обязан перепроверить
 
-- Реальные ChoiceQR API response schemas, pagination, status history, UTM/click-ID/metadata and webhook capabilities на тестовой брони.
-- Реальный Syrve Cloud tenant, organization/sections/tables, reserve permissions, webhook contract и связь с закрытым bill.
-- Google consent/legal basis, supported offline-conversion import method, diagnostics и живую публикацию GTM.
-- Telegram runtime, bot ownership, allowed member-data fields, retention, access, deep-link and issuance UX; а также конкретный Syrve flow выдачи/reversal.
-- GitHub Issue #27 parent/drift и текущие Project #8 statuses перед созданием/изменением задач.
+- Live Syrve version, tenant/org/scopes, schemas, webhooks, loyalty and POS plugin capability.
+- Controlled POC reserve/order/close/reversal with no PII logs.
+- Current website runtime, approved domains and OAuth redirect URLs.
+- GitHub Project #8 and weekly-plan changes made by штабной agent before a Manager write.
 
 ## 17. Источники
 
-- `PROJECT.md`, 2026-08-21 — каноническая цель, live/unknown границы воронки.
-- `docs/growth-os/HERMES-START.md`, 2026-08-24 — рабочие сервисы, запреты, секреты и MCP boundary.
-- `docs/growth-os/HANDOFF-2026-08-20-choiceqr-syrve-analytics.md`, 2026-08-20 — proposed bridge, Syrve reserve endpoints and preservation rules.
-- `docs/growth-os/HANDOFF-2026-08-21-choiceqr-booking-ads.md`, 2026-08-21 — доказательство `booking_request`, ChoiceQR API/webhook boundary.
-- GitHub Issues [#17](https://github.com/afonin900/Margariteros.bar/issues/17), [#18](https://github.com/afonin900/Margariteros.bar/issues/18), [#21](https://github.com/afonin900/Margariteros.bar/issues/21), [#23](https://github.com/afonin900/Margariteros.bar/issues/23), [#25](https://github.com/afonin900/Margariteros.bar/issues/25), [#26](https://github.com/afonin900/Margariteros.bar/issues/26), [#27](https://github.com/afonin900/Margariteros.bar/issues/27), checked 2026-08-24.
-- GitHub Project [Margariteros Bar Ops #8](https://github.com/users/afonin900/projects/8), checked 2026-08-24.
-- [ChoiceQR Open API documentation](https://open-api.choiceqr.com/docs) and [Syrve Cloud API documentation](https://api-eu.syrve.live/docs) — official sources to re-check live, since the rendered docs were not machine-readable in this session.
+- `AGENTS.md`, `docs/growth-os/HERMES-START.md`, `PROJECT.md`, checked 2026-08-24.
+- `docs/growth-os/HANDOFF-2026-08-20-choiceqr-syrve-analytics.md`, 2026-08-20 — proposal, not proof of live access.
+- GitHub [#17](https://github.com/afonin900/Margariteros.bar/issues/17), [#18](https://github.com/afonin900/Margariteros.bar/issues/18), [#25](https://github.com/afonin900/Margariteros.bar/issues/25), [#26](https://github.com/afonin900/Margariteros.bar/issues/26), [#27](https://github.com/afonin900/Margariteros.bar/issues/27), [Project #8](https://github.com/users/afonin900/projects/8), read 2026-08-24.
+- Referenced conversation [«Проект партнёрской системы Syrve»](chatgpt-conversation://6a8afeb9-4b94-83ed-84de-849634330625), read 2026-08-24 — owner intent/unverified candidates, not live evidence.
+- [Syrve Cloud API](https://api-eu.syrve.live/docs), [ChoiceQR Open API](https://open-api.choiceqr.com/docs), official Google/Apple/Telegram docs — re-check live.
 
 ## 18. Ожидаемый ответ
 
-Используй настроенный контракт PRD Спецификатора. Верни один скачиваемый Markdown-файл спецификации: conversion bridge и Syrve-based Club с Telegram-only frontend, comparison of Syrve options, contracts/state diagrams, privacy/consent boundaries, verification plan, risk register and owner decisions. Не создавай Epic, GitHub Issues, исполнительные задачи или окончательный план по файлам.
+Верни один скачиваемый Markdown-файл спецификации: P0 proof path, components, state/event diagrams, API/POS evidence checklist, auth/identity, referral/promo UX, commission/reversal/payout rules, privacy/risk register, options and owner decisions. Не создавай Epic, GitHub Issues, исполнительные задачи или окончательный plan by files.
