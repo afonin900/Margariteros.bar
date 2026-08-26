@@ -44,6 +44,14 @@
 - Геометрия: desktop stage 1232 px, mobile gutter 24 px, contact 128/224 px, gallery gap 4 px.
 - Media локальны в `site/public/media/`; provenance — `site/docs/choiceqr-visual-inventory.md`.
 
+## Из таска 03 — consent, атрибуция и analytics
+
+- `readConsent()`, `saveConsent(choice)`, `subscribeConsent(listener)` — единственный versioned consent store.
+- `syncChoiceConsent(consent)` — возвращает `unsupported`, пока нет vendor contract/readback.
+- `captureAttribution(url)`, `decorateOutbound(url, attribution)` — allow-listed UTM/click ID seam без PII.
+- `createAnalyticsTracker(options).track(event)` — consent-gated, deduped browser events и единственная dataLayer/GTM точка.
+- Опциональный server transport задаётся только именем `PUBLIC_SERVER_GTM_TRANSPORT_URL`; отсутствие значения не ломает сайт.
+
 ## Живые внешние значения
 
 - ChoiceQR reference: `https://qr.margariteros.bar/`

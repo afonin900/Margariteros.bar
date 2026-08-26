@@ -1,0 +1,34 @@
+---
+import type { Locale } from "../content/page";
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const copy = {
+  pl: { title: "Twoja prywatność", text: "Używamy opcjonalnej analityki tylko za Twoją zgodą.", accept: "Akceptuję", reject: "Odrzucam", change: "Zmień zgodę" },
+  en: { title: "Your privacy", text: "We use optional analytics only with your consent.", accept: "Accept", reject: "Reject", change: "Change consent" },
+  ru: { title: "Ваша конфиденциальность", text: "Необязательная аналитика работает только с вашего согласия.", accept: "Принять", reject: "Отклонить", change: "Изменить согласие" },
+  es: { title: "Tu privacidad", text: "Usamos analítica opcional solo con tu consentimiento.", accept: "Aceptar", reject: "Rechazar", change: "Cambiar consentimiento" },
+}[locale];
+---
+<aside class="consent-control" data-consent-root>
+  <button class="consent-change" type="button" data-consent-open aria-expanded="false">{copy.change}</button>
+  <section class="consent-panel" data-consent-panel aria-labelledby="consent-title">
+    <h2 id="consent-title">{copy.title}</h2>
+    <p>{copy.text}</p>
+    <div class="consent-actions">
+      <button type="button" data-consent-choice="reject">{copy.reject}</button>
+      <button type="button" data-consent-choice="accept">{copy.accept}</button>
+    </div>
+  </section>
+</aside>
+
+<script>
+  import { mountConsentBanner } from "../lib/analytics/browser";
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-consent-root]")) {
+    mountConsentBanner(root, root.closest("html")?.lang.slice(0, 2) as "pl" | "en" | "ru" | "es", {
+      gtmContainerId: import.meta.env.PUBLIC_GTM_CONTAINER_ID ?? "GTM-T5F4VVGF",
+      serverTransportUrl: import.meta.env.PUBLIC_SERVER_GTM_TRANSPORT_URL,
+    });
+  }
+</script>

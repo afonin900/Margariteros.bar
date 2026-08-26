@@ -4,7 +4,9 @@ import ChoiceQrHeader from "../../components/ChoiceQrHeader.astro";
 import ContactBar from "../../components/ContactBar.astro";
 import PhotoGallery from "../../components/PhotoGallery.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import ConsentBanner from "../../components/ConsentBanner.astro";
 import { getPage, locales, type Locale } from "../../content/page";
+import { captureAttribution } from "../../lib/analytics/attribution";
 import "../../styles/choiceqr.css";
 
 const requestedLocale = Astro.params.locale;
@@ -12,6 +14,7 @@ const isLocale = (value: string | undefined): value is Locale =>
   value !== undefined && locales.includes(value as Locale);
 if (!isLocale(requestedLocale)) return new Response("Not found", { status: 404 });
 const page = getPage(requestedLocale);
+const attribution = captureAttribution(Astro.url);
 const directionContract = `<!--
 THESIS: A first-party guest surface keeps the familiar ChoiceQR spatial rhythm while replacing unsafe sales content with real food, dance and interior proof.
 OWN-WORLD: Lime-photo ground, black 1232px stage, one-pixel acid lines, Hind Siliguri, square four-column media and outlined controls.
@@ -24,8 +27,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <BaseLayout {page}>
   <Fragment set:html={directionContract} />
   <div class="choiceqr-page">
-    <ChoiceQrHeader {page} />
-    <div class="content-stage-wrap"><div class="content-stage"><ContactBar {page} /><PhotoGallery {page} /></div></div>
+    <ChoiceQrHeader {page} {attribution} />
+    <div class="content-stage-wrap"><div class="content-stage"><ContactBar {page} {attribution} /><PhotoGallery {page} /></div></div>
     <SiteFooter {page} />
+    <ConsentBanner locale={page.locale} />
   </div>
 </BaseLayout>

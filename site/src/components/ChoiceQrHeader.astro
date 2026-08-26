@@ -1,7 +1,10 @@
 ---
 import { getPage, locales, type PageContent } from "../content/page";
-interface Props { page: PageContent }
-const { page } = Astro.props;
+import { decorateOutbound, type Attribution } from "../lib/analytics/attribution";
+interface Props { page: PageContent; attribution: Attribution }
+const { page, attribution } = Astro.props;
+const menuUrl = decorateOutbound(page.menuUrl, attribution);
+const bookingUrl = decorateOutbound(page.bookingUrl, attribution);
 ---
 <header class="site-header">
   <div class="header-primary">
@@ -16,11 +19,11 @@ const { page } = Astro.props;
           {locales.map((locale) => (<a href={`/${locale}/`} aria-current={locale === page.locale ? "page" : undefined}>{getPage(locale).languageName}</a>))}
         </nav>
       </details>
-      <a class="icon-control" href={page.menuUrl} aria-label={page.menuLabel}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16" /></svg></a>
-      <a class="icon-control" href={page.bookingUrl} aria-label={page.bookingLabel}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 8h3v3H8z" /></svg></a>
+      <a class="icon-control" href={menuUrl} data-analytics-event="view_menu" data-analytics-destination="menu" aria-label={page.menuLabel}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16" /></svg></a>
+      <a class="icon-control" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking" aria-label={page.bookingLabel}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 8h3v3H8z" /></svg></a>
     </div>
   </div>
   <nav class="desktop-nav" aria-label={page.navigationLabel}>
-    <a class="is-active" href={`/${page.locale}/`}>{page.homeLabel}</a><a href={page.menuUrl}>{page.menuLabel}</a><a href={page.bookingUrl}>{page.bookingLabel}</a><a href="#contact">{page.contactLabel}</a>
+    <a class="is-active" href={`/${page.locale}/`}>{page.homeLabel}</a><a href={menuUrl} data-analytics-event="view_menu" data-analytics-destination="menu">{page.menuLabel}</a><a href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{page.bookingLabel}</a><a href="#contact">{page.contactLabel}</a>
   </nav>
 </header>
