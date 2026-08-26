@@ -1,0 +1,17 @@
+node_modules
+.astro
+dist
+.git
+.gitignore
+.env
+.env.*
+*.log
+coverage
+docs
+tests
+scripts
+*.jpeg
+*.jpg
+*.JPG
+*.mov
+*.mp4
