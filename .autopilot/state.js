@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/afonin900/.codex/plugins/cache/personal/corp/0.5.0+codex.20260826115813/skills/autopilot",
   "startedAt": "2026-08-26T18:01:24+02:00",
-  "updatedAt": "2026-08-26T22:41:00+02:00",
+  "updatedAt": "2026-08-26T23:32:00+02:00",
   "finishedAt": "2026-08-26T23:32:00+02:00",
   "stages": [
     { "id": "preflight", "status": "done", "startedAt": "2026-08-26T18:01:24+02:00", "finishedAt": "2026-08-26T18:12:00+02:00" },
@@ -57,9 +57,9 @@ window.STATE =
     ]
   },
   "concerns": [
-    "ChoiceQR ещё не доказал применение margariteros_consent_v1; bridge остаётся unsupported",
-    "Production Dokploy deploy на new.margariteros.bar разрешён, но требует живого readback перед изменением",
-    "T01: тесты content не проверяют публичные SSR HTTP-швы и hreflang"
+    "REPORT: ChoiceQR ещё не доказал применение margariteros_consent_v1; bridge остаётся unsupported",
+    "DROP resolved: live Dokploy readback и staging deploy завершены",
+    "DROP resolved: SSR HTTP/accessibility швы покрыты production regression suite"
   ],
   "reviewers": { "manifestSpec": "manifest_spec_reviewer", "craft": "craft_reviewer" },
   "blind": {
