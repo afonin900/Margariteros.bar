@@ -1,0 +1,66 @@
+window.STATE =
+{
+  "slug": "first-party-astro-home",
+  "dir": "2026-08-26-first-party-astro-home--wip",
+  "title": "Главная Margariteros для рекламы, бронирований и честной аналитики",
+  "mode": "semi",
+  "depth": "normal",
+  "polish": null,
+  "tier": "T2",
+  "briefFile": "2026-08-26-brief.md",
+  "memoryFile": "AGENTS.md",
+  "skillDir": "/Users/afonin900/.codex/plugins/cache/personal/corp/0.5.0+codex.20260826115813/skills/autopilot",
+  "startedAt": "2026-08-26T18:01:24+02:00",
+  "updatedAt": "2026-08-26T19:48:00+02:00",
+  "finishedAt": null,
+  "stages": [
+    { "id": "preflight", "status": "done", "startedAt": "2026-08-26T18:01:24+02:00", "finishedAt": "2026-08-26T18:12:00+02:00" },
+    { "id": "manifest", "status": "done", "startedAt": "2026-08-26T18:12:00+02:00", "finishedAt": "2026-08-26T18:17:00+02:00" },
+    { "id": "briefing", "status": "done", "startedAt": "2026-08-26T18:17:00+02:00", "finishedAt": "2026-08-26T18:29:00+02:00" },
+    { "id": "spec", "status": "done", "startedAt": "2026-08-26T18:29:00+02:00", "finishedAt": "2026-08-26T19:01:00+02:00" },
+    { "id": "plan", "status": "done", "startedAt": "2026-08-26T19:01:00+02:00", "finishedAt": "2026-08-26T19:17:00+02:00", "note": "5 тасков, ярус T2" },
+    { "id": "build", "status": "active", "startedAt": "2026-08-26T19:17:00+02:00", "note": "0 из 5 тасков готовы" },
+    { "id": "review", "status": "active", "startedAt": "2026-08-26T19:36:00+02:00", "note": "проверяется 1 из 5" },
+    { "id": "final", "status": "pending" }
+  ],
+  "requirements": {
+    "total": 36, "done": 0, "inTicket": 32, "inSpec": 0,
+    "placeholder": 1, "deferred": 3, "dropped": 0
+  },
+  "tickets": [
+    { "id": "01", "title": "Astro SSR-основа и четыре языка", "requirements": ["R01", "R02", "R03", "R07", "R14", "R22", "G01", "G02", "A01"], "blockedBy": [], "wave": 1, "zone": ["site/", "root build config"], "status": "review", "startedAt": "2026-08-26T19:22:00+02:00", "retries": 0, "repairs": 1, "repairFindings": ["Публичные утверждения о кухне, танцах и событиях не подтверждены source brief"], "handoffs": 0 },
+    { "id": "02", "title": "Точная food-safe копия ChoiceQR", "requirements": ["R04", "R05", "R06", "R08", "R09", "R20", "R21", "R24", "R25", "R26", "R27", "R28", "R29", "R32i"], "blockedBy": ["01"], "wave": 2, "zone": ["site/src/components/", "site/src/styles/", "site/public/"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
+    { "id": "03", "title": "Consent, атрибуция и честные события", "requirements": ["R10", "R15", "R16", "R17", "R18", "R19", "R30i", "R31i"], "blockedBy": ["02"], "wave": 3, "zone": ["site/src/lib/consent/", "site/src/lib/analytics/", "site/src/components/Consent*"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
+    { "id": "04", "title": "Production-пакет и полная проверка", "requirements": ["R23", "R31i", "R06"], "blockedBy": ["03"], "wave": 4, "zone": ["site/Dockerfile", "site/tests/", "site/docs/", "CI/build scripts"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
+    { "id": "05", "title": "Тестовый запуск на new.margariteros.bar", "requirements": ["R23", "R25", "G04"], "blockedBy": ["04"], "wave": 5, "zone": ["Dokploy", "DNS/Cloudflare"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 }
+  ],
+  "singlePass": null,
+  "tests": null,
+  "debt": { "placeholders": [], "assumptions": [], "emptyEnv": [] },
+  "additions": [
+    { "at": "2026-08-26T18:12:00+02:00", "text": "PL, EN, RU обязательны; ES поддерживаемый маршрут" },
+    { "at": "2026-08-26T18:12:00+02:00", "text": "Использовать более дешёвые модели для ограниченных подзадач, Sol только там, где оправдан риск" }
+    ,{ "at": "2026-08-26T19:31:00+02:00", "text": "Разрешён тестовый deploy на new.margariteros.bar; основной домен не переключать" }
+  ],
+  "coverage": {
+    "reviewer": "spec_coverage",
+    "findings": 8,
+    "resolved": [
+      "Latin vibe формализован",
+      "pixel-match получил overlay критерий",
+      "asset extraction получил inventory deliverable",
+      "известные GTM IDs и доказательные границы зафиксированы",
+      "ChoiceQR cookie contradiction превращён в видимый unsupported bridge",
+      "Dokploy deploy включён как terminal approval-gated таск",
+      "shared-domain consent cookie включена для qr.margariteros.bar",
+      "ChoiceQR consumption остаётся placeholder до vendor proof"
+    ]
+  },
+  "concerns": [
+    "ChoiceQR ещё не доказал применение margariteros_consent_v1; bridge остаётся unsupported",
+    "Production Dokploy deploy на new.margariteros.bar разрешён, но требует живого readback перед изменением",
+    "T01: тесты content не проверяют публичные SSR HTTP-швы и hreflang"
+  ],
+  "reviewers": { "manifestSpec": "manifest_spec_reviewer", "craft": "craft_reviewer" },
+  "blind": null
+}

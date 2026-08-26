@@ -7,6 +7,7 @@
 # Local build dependencies and design-review snapshots.
 node_modules/
 .impeccable/critique/
+.autopilot/serve.*
 
 # Secrets and local renders.
 .env

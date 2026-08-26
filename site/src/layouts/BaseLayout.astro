@@ -1,0 +1,48 @@
+---
+import { locales, type Locale, type PageContent } from "../content/page";
+
+interface Props {
+  page: PageContent;
+}
+
+const { page } = Astro.props;
+const canonicalOrigin = "https://margariteros.bar";
+const localeTag: Record<Locale, string> = {
+  pl: "pl-PL",
+  en: "en",
+  ru: "ru",
+  es: "es",
+};
+---
+
+<!doctype html>
+<html lang={localeTag[page.locale]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{page.title}</title>
+    <meta name="description" content={page.description} />
+    <link rel="canonical" href={`${canonicalOrigin}/${page.locale}/`} />
+    {
+      locales.map((locale) => (
+        <link rel="alternate" hreflang={localeTag[locale]} href={`${canonicalOrigin}/${locale}/`} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={`${canonicalOrigin}/pl/`} />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #9dd600; color: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-width: 320px; }
+  main { width: min(100% - 48px, 1230px); min-height: 100vh; margin: 0 auto; background: #000; border-inline: 1px solid #c6ff00; }
+  a, button { min-height: 44px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  @media (max-width: 480px) { main { width: calc(100% - 48px); } }
+</style>
