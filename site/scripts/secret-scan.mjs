@@ -1,10 +1,10 @@
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const siteRoot = resolve(fileURLToPath(new URL("..", import.meta.url)));
 const repositoryRoot = resolve(siteRoot, "..");
-const autopilotRoot = resolve(repositoryRoot, ".autopilot/2026-08-26-first-party-astro-home--wip");
+const activeRunSlug = "2026-08-26-first-party-astro-home";
 const ignoredDirectories = new Set(["node_modules", ".astro", "dist", ".git"]);
 const ignoredFiles = new Set(["package-lock.json"]);
 const patterns = [
@@ -28,19 +28,44 @@ async function collectFiles(directory) {
   return files;
 }
 
-const findings = [];
-for (const root of [siteRoot, autopilotRoot]) {
-  for (const file of await collectFiles(root)) {
-    const contents = await readFile(file, "utf8");
-    for (const pattern of patterns) {
-      if (pattern.expression.test(contents)) findings.push(`${relative(repositoryRoot, file)}: ${pattern.name}`);
+export async function resolveActiveAutopilotRoot(root) {
+  const candidates = [
+    join(root, ".autopilot", activeRunSlug),
+    join(root, ".autopilot", `${activeRunSlug}--wip`),
+  ];
+
+  for (const candidate of candidates) {
+    try {
+      if ((await stat(candidate)).isDirectory()) return candidate;
+    } catch (error) {
+      if (error?.code !== "ENOENT") throw error;
     }
   }
+
+  throw new Error(`Active Autopilot run not found: ${candidates.join(" or ")}`);
 }
 
-if (findings.length > 0) {
-  console.error(findings.join("\n"));
-  process.exit(1);
+export async function scanForKnownSecrets(root = repositoryRoot) {
+  const autopilotRoot = await resolveActiveAutopilotRoot(root);
+  const findings = [];
+  for (const scanRoot of [resolve(root, "site"), autopilotRoot]) {
+    for (const file of await collectFiles(scanRoot)) {
+      const contents = await readFile(file, "utf8");
+      for (const pattern of patterns) {
+        if (pattern.expression.test(contents)) findings.push(`${relative(root, file)}: ${pattern.name}`);
+      }
+    }
+  }
+  return findings;
 }
 
-console.log("Secret scan passed: no credential values in site or active Autopilot run.");
+const invokedPath = process.argv[1] ? pathToFileURL(resolve(process.argv[1])).href : undefined;
+if (import.meta.url === invokedPath) {
+  const findings = await scanForKnownSecrets();
+  if (findings.length > 0) {
+    console.error(findings.join("\n"));
+    process.exit(1);
+  }
+
+  console.log("Secret scan passed: no credential values in site or active Autopilot run.");
+}

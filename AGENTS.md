@@ -96,12 +96,29 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 
 Astro SSR-сайт для рекламного трафика, меню, событий, бронирования и измеримых конверсий без алкогольного позиционирования.
 
-## Как здесь работает Autopilot
+## Рабочая память сайта
 
-Сборка ведётся навыком `/autopilot`. Требования, спецификация и таски — в `.autopilot/`.
-Прогресс — `.autopilot/dashboard.html`. Требование из `manifest.md` может снять только пользователь.
+- Приложение: `site/` — Astro 7 SSR, Node adapter standalone, TypeScript strict. `/` даёт server-side `302` на `/pl/`; рабочие SSR-маршруты: `/pl/`, `/en/`, `/ru/`, `/es/`; `/healthz` должен отвечать `200 ok` без внешних зависимостей.
+- Входы: `site/src/pages/[locale]/index.astro` собирает `BaseLayout`, `ChoiceQrHeader`, `ContactBar`, `PhotoGallery`, `SiteFooter`, `ConsentBanner`; `site/src/content/page.ts` — единственная точка локализованных фактов через `getPage(locale)`. Медиа локальны в `site/public/media/`, их происхождение — `site/docs/choiceqr-visual-inventory.md`.
+- Контракты: `site/src/lib/consent/` — versioned first-party cookie и `readConsent/saveConsent/subscribeConsent`; `choice-consent-bridge` возвращает `unsupported`, пока нет доказанного vendor contract/readback. `site/src/lib/analytics/attribution.ts` переносит только allow-listed UTM/click IDs без PII. `site/src/lib/analytics/` — единственный consent-gated/deduped вход в `dataLayer`/GTM; PII запрещены также в логах и GitHub.
+- Публичный текст: PL/EN/RU/ES, только подтверждённые факты, без алкогольного позиционирования. Не трогать существующие `content/`, Remotion и Canva-материалы.
+- Переменные окружения, только имена: `PUBLIC_GTM_CONTAINER_ID`, `PUBLIC_SERVER_GTM_TRANSPORT_URL`, `PORT`, `HOST`. Значения — только deployment environment/Dokploy, не Git, не чат. Без `PUBLIC_GTM_CONTAINER_ID` GTM не грузится; transport optional и не должен ломать сайт.
 
-Если работа продолжается — скажи «продолжи автопилот»: состояние поднимется из `.autopilot/state.js`, переспрашивать ничего не нужно.
+## Команды и проверки
 
-Команды сайта: `cd site && npm ci`; `npm run dev`; `npm test`; `npm run check`; `npm run build`.
+- Установка: `cd site && npm ci` — только когда нужна установка зависимостей; не заменять отсутствующие зависимости глобальной установкой.
+- Разработка: `npm --prefix site run dev`; typecheck: `npm --prefix site run check`; production build: `npm --prefix site run build`; unit/SSR: `npm --prefix site test`.
+- Release gate: `npm --prefix site run verify:release` = `check` + `build` + `test` + secret scan; подтверждено: 15 tests passed, check/build/secret scan green. Secret scan сначала определяет каноническую папку run, затем legacy `--wip`.
+- Container gate: `npm --prefix site run verify:docker`; подтверждено: non-root runtime user `astro` и `/healthz` green. Он намеренно отдельно от release gate, потому что Docker daemon может отсутствовать в CI.
+- Тесты: `site/tests/page.test.ts` покрывает локали, галерею, consent/ChoiceQR bridge, attribution/PII/дедупликацию; `privacy.test.ts` — cookie и consent mode; `production.test.ts` поднимает собранный Node server и проверяет health + SSR surface без JavaScript. Один файл: `npm --prefix site test -- tests/page.test.ts`.
+
+## Деплой и границы
+
+- Docker context `site/`, Dockerfile `site/Dockerfile`, start `node ./dist/server/entry.mjs`, внутренний port `4321`, health path `/healthz`, runtime user `astro` (non-root).
+- Разрешённый staging: `https://new.margariteros.bar`; после Dokploy readback проверить HTTPS/domain binding, `/healthz`, все четыре языковых SSR URL и CTA меню/брони без обязательного JavaScript. Runbook: `site/docs/dokploy-runbook.md`; quality evidence: `site/docs/quality-verification.md` и `site/docs/choiceqr-overlay-evidence.md`.
+- Staging не разрешает cutover: не менять основной `margariteros.bar`, DNS, GTM, ChoiceQR, Ads или Dokploy без отдельного «можно». При откате выбрать предыдущий успешный image tag, дождаться `200 /healthz`, затем проверить `/pl/` и CTA.
+
+## Autopilot
+
+Состояние run: `.autopilot/state.js`; прогресс: `.autopilot/dashboard.html`. Продолжение: «продолжи автопилот». Требование из manifest снимает только пользователь.
 <!-- autopilot:end -->
