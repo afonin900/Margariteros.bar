@@ -5,6 +5,7 @@ const widths = [320, 390, 597, 719, 720, 768, 1024, 1280] as const;
 type Geometry = {
   viewport: { width: number; height: number };
   scrollWidth: number;
+  contentStage: { left: number; right: number; width: number };
   headerOverlap: boolean;
   bookingOverlap: boolean;
   consentGalleryOverlap: boolean;
@@ -24,6 +25,13 @@ describe("responsive SSR geometry", () => {
 
       expect(result.viewport.width).toBe(width);
       expect(result.scrollWidth).toBe(width);
+      if (width <= 719) {
+        expect(result.contentStage.left).toBe(0);
+        expect(result.contentStage.right).toBe(width);
+      } else {
+        expect(result.contentStage.left).toBeGreaterThan(0);
+        expect(result.contentStage.right).toBeLessThan(width);
+      }
       expect(result.headerOverlap).toBe(false);
       expect(result.bookingOverlap).toBe(false);
       expect(result.consentGalleryOverlap).toBe(false);

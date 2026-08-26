@@ -123,12 +123,14 @@ function measurementExpression() {
     const controls = rect(document.querySelector(".header-controls"));
     const facts = union(".contact-quickfacts > div");
     const booking = rect(document.querySelector(".booking-button"));
+    const contentStage = rect(document.querySelector(".content-stage"));
     const gallery = rect(document.querySelector(".photo-gallery"));
     const footer = rect(footerElement);
     const consent = rect(document.querySelector(".consent-control"));
     return {
       viewport: { width: innerWidth, height: innerHeight },
       scrollWidth: document.documentElement.scrollWidth,
+      contentStage,
       headerOverlap: overlaps(brand, controls),
       bookingOverlap: overlaps(facts, booking),
       consentGalleryOverlap: overlaps(consent, gallery),
