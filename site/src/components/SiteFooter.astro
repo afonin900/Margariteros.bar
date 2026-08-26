@@ -5,15 +5,15 @@ const { page } = Astro.props;
 ---
 <footer class="site-footer" id="contact">
   <div class="footer-inner">
-    <div class="footer-column footer-details">
-      <section><h2>{page.contactHeading}</h2><address>{page.address}</address><a href={page.phoneUrl}>{page.phoneDisplay}</a></section>
+    <div class="footer-column footer-primary">
+      <section><h2>{page.contactHeading}</h2><address>{page.address}</address><a href={page.phoneUrl} data-analytics-event="contact_click" data-analytics-destination="phone">{page.phoneDisplay}</a></section>
       <section><h2>{page.hoursHeading}</h2><dl class="hours-list">{page.hours.map((entry) => (<><dt>{entry.day}</dt><dd>{entry.hours}</dd></>))}</dl></section>
     </div>
-    <section class="footer-column footer-socials"><h2>{page.socialsHeading}</h2><a href={page.instagramUrl}>Instagram</a><a href={page.tiktokUrl}>TikTok</a><a href={page.facebookUrl}>Facebook</a></section>
+    <section class="footer-column footer-socials"><h2>{page.socialsHeading}</h2><a href={page.instagramUrl} data-analytics-event="contact_click" data-analytics-destination="instagram" aria-label="Instagram Margariteros">Instagram</a><a href={page.tiktokUrl} data-analytics-event="contact_click" data-analytics-destination="tiktok" aria-label="TikTok Margariteros">TikTok</a><a href={page.facebookUrl} data-analytics-event="contact_click" data-analytics-destination="facebook" aria-label="Facebook Margariteros">Facebook</a></section>
     <section class="footer-column footer-map">
       <h2>{page.mapHeading}</h2>
-      <a class="map-illustration" href={page.mapUrl} aria-label={page.directionsLabel}><svg viewBox="0 0 493 200" role="img" aria-label={page.mapHeading}><rect width="493" height="200" fill="#161d02" /><path d="M-12 150 145 74 260 94 505 20M40-10l80 230M230-10l-4 220M370-10l-72 220" fill="none" stroke="#40510e" stroke-width="14" /><path d="M-12 150 145 74 260 94 505 20M40-10l80 230M230-10l-4 220M370-10l-72 220" fill="none" stroke="#aee01e" stroke-width="2" /><circle cx="257" cy="94" r="12" fill="#aee01e" /><circle cx="257" cy="94" r="5" fill="#000" /></svg></a>
-      <a class="directions-button" href={page.mapUrl}>{page.directionsLabel}</a>
+      <a class="map-illustration" href={page.mapUrl} data-analytics-event="contact_click" data-analytics-destination="map" aria-label={page.directionsLabel}><svg viewBox="0 0 493 200" role="img" aria-label={page.mapHeading}><rect width="493" height="200" fill="#161d02" /><path d="M-12 150 145 74 260 94 505 20M40-10l80 230M230-10l-4 220M370-10l-72 220" fill="none" stroke="#40510e" stroke-width="14" /><path d="M-12 150 145 74 260 94 505 20M40-10l80 230M230-10l-4 220M370-10l-72 220" fill="none" stroke="#aee01e" stroke-width="2" /><circle cx="257" cy="94" r="12" fill="#aee01e" /><circle cx="257" cy="94" r="5" fill="#000" /></svg></a>
+      <a class="directions-button" href={page.mapUrl} data-analytics-event="contact_click" data-analytics-destination="map">{page.directionsLabel}</a>
     </section>
   </div>
   <div class="footer-legal"><span>© 2026 Margariteros</span><span>{page.address}</span></div>

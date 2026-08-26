@@ -88,6 +88,17 @@ describe("production HTTP contract", () => {
       expect(html).toContain(`aria-label="${expected.booking}"`);
       expect(html).toContain(`aria-label="${expected.directions}"`);
       expect(html).toContain(`>${expected.booking}</span>`);
+      expect(html).toContain('viewport-fit=cover');
+      expect(html).toContain('class="footer-column footer-primary"');
+      expect(html).toContain('data-analytics-destination="phone"');
+      expect(html).toContain('data-analytics-destination="map"');
+      expect(html).toContain('data-analytics-destination="instagram"');
+      expect(html).toContain('data-analytics-destination="tiktok"');
+      expect(html).toContain('data-analytics-destination="facebook"');
+      expect(html).toContain(`href="tel:+48728805628" data-analytics-event="contact_click" data-analytics-destination="phone"`);
+      expect(html).toContain('aria-label="Instagram Margariteros"');
+      expect(html).toContain('aria-label="TikTok Margariteros"');
+      expect(html).toContain('aria-label="Facebook Margariteros"');
       expect(html).toMatch(/<img[^>]+alt="[^"]+"/);
       expect(html).toContain('loading="lazy"');
       expect(html).not.toMatch(/cocktail|margarita|tequila|vodka|whisky|piwo|wino|alkohol|drink/i);
