@@ -37,6 +37,13 @@
 - `locales: readonly Locale[]` — поддерживаемые `pl`, `en`, `ru`, `es`.
 - `/` серверно отвечает `302` на `/pl/`; языковые маршруты SSR-рендерят HTML и hreflang.
 
+## Из таска 02 — визуальная поверхность, промежуточный seam
+
+- `PageContent.galleryItems: readonly GalleryItem[]` — локализованный контент поставляет безопасные элементы галереи.
+- Компоненты `ChoiceQrHeader`, `ContactBar`, `PhotoGallery`, `SiteFooter` собирают SSR-поверхность.
+- Геометрия: desktop stage 1232 px, mobile gutter 24 px, contact 128/224 px, gallery gap 4 px.
+- Media локальны в `site/public/media/`; provenance — `site/docs/choiceqr-visual-inventory.md`.
+
 ## Живые внешние значения
 
 - ChoiceQR reference: `https://qr.margariteros.bar/`

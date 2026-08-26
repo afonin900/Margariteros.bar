@@ -1,51 +1,31 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ChoiceQrHeader from "../../components/ChoiceQrHeader.astro";
+import ContactBar from "../../components/ContactBar.astro";
+import PhotoGallery from "../../components/PhotoGallery.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import { getPage, locales, type Locale } from "../../content/page";
+import "../../styles/choiceqr.css";
 
 const requestedLocale = Astro.params.locale;
 const isLocale = (value: string | undefined): value is Locale =>
   value !== undefined && locales.includes(value as Locale);
-
-if (!isLocale(requestedLocale)) {
-  return new Response("Not found", { status: 404 });
-}
-
+if (!isLocale(requestedLocale)) return new Response("Not found", { status: 404 });
 const page = getPage(requestedLocale);
+const directionContract = `<!--
+THESIS: A first-party guest surface keeps the familiar ChoiceQR spatial rhythm while replacing unsafe sales content with real food, dance and interior proof.
+OWN-WORLD: Lime-photo ground, black 1232px stage, one-pixel acid lines, Hind Siliguri, square four-column media and outlined controls.
+STORY: Recognise Margariteros, see the real place, open the menu or booking, then verify contact, hours and route.
+FIRST VIEWPORT: 120px brand header, 24px lime reveal, 128px contact strip and a 4x5 gallery beginning at y=372 on desktop; the same sequence compresses to a 342px mobile stage.
+FORM: Precision reference reproduction, pinned by the brief; seed key choiceqr-live-reference-1744-390.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->`;
 ---
-
 <BaseLayout {page}>
-  <section class="hero" aria-labelledby="page-title">
-    <p class="eyebrow">Margariteros</p>
-    <h1 id="page-title">{page.heading}</h1>
-    <p>{page.intro}</p>
-    <div class="actions">
-      <a href={page.menuUrl}>{page.menuLabel}</a>
-      <a class="booking" href={page.bookingUrl}>{page.bookingLabel}</a>
-    </div>
-  </section>
-
-  <nav aria-label={page.navigationLabel} class="locale-switcher">
-    {locales.map((locale) => (
-      <a href={`/${locale}/`} aria-current={locale === page.locale ? "page" : undefined}>
-        {getPage(locale).languageName}
-      </a>
-    ))}
-  </nav>
-
-  <footer>
-    <p>Margariteros</p>
-  </footer>
+  <Fragment set:html={directionContract} />
+  <div class="choiceqr-page">
+    <ChoiceQrHeader {page} />
+    <div class="content-stage-wrap"><div class="content-stage"><ContactBar {page} /><PhotoGallery {page} /></div></div>
+    <SiteFooter {page} />
+  </div>
 </BaseLayout>
-
-<style>
-  .hero { padding: clamp(4rem, 15vw, 12rem) clamp(1.5rem, 6vw, 6rem); border-bottom: 1px solid #c6ff00; }
-  .eyebrow { color: #c6ff00; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-  h1 { margin: .25rem 0; font-size: clamp(2.5rem, 8vw, 6rem); line-height: .95; }
-  .hero > p:not(.eyebrow) { max-width: 36rem; font-size: 1.2rem; }
-  .actions, .locale-switcher { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .actions { margin-top: 2rem; }
-  .actions a, .locale-switcher a { display: inline-flex; align-items: center; padding: .6rem 1rem; border: 1px solid #c6ff00; color: #c6ff00; text-decoration: none; }
-  .actions .booking, .locale-switcher a[aria-current="page"] { background: #c6ff00; color: #000; font-weight: 700; }
-  .locale-switcher, footer { padding: 1.5rem; border-bottom: 1px solid #c6ff00; }
-  footer { border-bottom: 0; color: #c6ff00; }
-</style>

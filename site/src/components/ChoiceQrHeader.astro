@@ -1,0 +1,26 @@
+---
+import { getPage, locales, type PageContent } from "../content/page";
+interface Props { page: PageContent }
+const { page } = Astro.props;
+---
+<header class="site-header">
+  <div class="header-primary">
+    <a class="brand" href={`/${page.locale}/`} aria-label={page.homeLabel}>
+      <img src="/media/brand/logo.png" width="56" height="56" alt="" />
+      <span class="brand-copy"><strong>{page.heading}</strong><small>{page.tagline}</small></span>
+    </a>
+    <div class="header-controls">
+      <details class="language-menu">
+        <summary aria-label={page.navigationLabel}>{page.languageCode}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5" /></svg></summary>
+        <nav aria-label={page.navigationLabel}>
+          {locales.map((locale) => (<a href={`/${locale}/`} aria-current={locale === page.locale ? "page" : undefined}>{getPage(locale).languageName}</a>))}
+        </nav>
+      </details>
+      <a class="icon-control" href={page.menuUrl} aria-label={page.menuLabel}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16" /></svg></a>
+      <a class="icon-control" href={page.bookingUrl} aria-label={page.bookingLabel}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v3m12-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Zm3 8h3v3H8z" /></svg></a>
+    </div>
+  </div>
+  <nav class="desktop-nav" aria-label={page.navigationLabel}>
+    <a class="is-active" href={`/${page.locale}/`}>{page.homeLabel}</a><a href={page.menuUrl}>{page.menuLabel}</a><a href={page.bookingUrl}>{page.bookingLabel}</a><a href="#contact">{page.contactLabel}</a>
+  </nav>
+</header>

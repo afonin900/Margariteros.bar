@@ -1,0 +1,14 @@
+---
+import type { PageContent } from "../content/page";
+interface Props { page: PageContent }
+const { page } = Astro.props;
+---
+<section class="photo-gallery" aria-labelledby="gallery-title">
+  <h1 id="gallery-title">{page.galleryHeading}</h1>
+  <div class="photo-grid">
+    {page.galleryItems.map((item, index) => (<picture>
+      <source type="image/avif" srcset={item.srcSetAvif} sizes="(max-width: 719px) 67px, (max-width: 1300px) calc((100vw - 124px) / 4), 289px" />
+      <img src={item.src} srcset={item.srcSetWebp} sizes="(max-width: 719px) 67px, (max-width: 1300px) calc((100vw - 124px) / 4), 289px" width={item.width} height={item.height} alt={item.alt} loading={index < 8 ? "eager" : "lazy"} decoding="async" fetchpriority={index < 4 ? "high" : "auto"} />
+    </picture>))}
+  </div>
+</section>

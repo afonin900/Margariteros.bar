@@ -102,4 +102,6 @@ Astro SSR-сайт для рекламного трафика, меню, соб�
 Прогресс — `.autopilot/dashboard.html`. Требование из `manifest.md` может снять только пользователь.
 
 Если работа продолжается — скажи «продолжи автопилот»: состояние поднимется из `.autopilot/state.js`, переспрашивать ничего не нужно.
+
+Команды сайта: `cd site && npm ci`; `npm run dev`; `npm test`; `npm run check`; `npm run build`.
 <!-- autopilot:end -->
