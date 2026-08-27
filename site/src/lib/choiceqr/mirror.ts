@@ -15,6 +15,7 @@ const API_QUERY: Record<string, readonly string[]> = {
   "/api/public/translate/get-available-languages": ["lang"],
 };
 const ATTRIBUTION = new Set(["gclid", "gbraid", "wbraid"]);
+const PUBLIC_HOSTS = new Set(["new.margariteros.bar", "localhost", "127.0.0.1"]);
 
 export const mirrorHeaders = {
   "content-type": "text/html; charset=utf-8",
@@ -64,6 +65,21 @@ export function vendorCookieHeader(cookie: string | null): string | undefined {
   if (!cookie) return undefined;
   const kept = cookie.split(";").map((entry) => entry.trim()).filter((entry) => /^(mguid|placeDbName|lang|language)=/i.test(entry));
   return kept.length ? kept.join("; ") : undefined;
+}
+
+export function publicOrigin(request: Request): string {
+  const url = new URL(request.url);
+  const forwardedHost = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim().toLowerCase();
+  const host = forwardedHost && PUBLIC_HOSTS.has(forwardedHost)
+    ? forwardedHost
+    : PUBLIC_HOSTS.has(url.host.toLowerCase()) ? url.host.toLowerCase() : "new.margariteros.bar";
+  const forwardedProto = request.headers.get("x-forwarded-proto")?.split(",")[0]?.trim().toLowerCase();
+  const protocol = host === "new.margariteros.bar"
+    ? "https"
+    : forwardedProto === "https" || forwardedProto === "http"
+      ? forwardedProto
+      : url.protocol.replace(":", "");
+  return `${protocol}://${host}`;
 }
 
 export function deviceHeaders(headers: Headers): Record<string, string> {
@@ -124,7 +140,7 @@ export async function fetchMirroredHome(locale: string, request: Request): Promi
     const cookie = vendorCookieHeader(request.headers.get("cookie"));
     const response = await fetch(target, { headers: { accept: "text/html", ...deviceHeaders(request.headers), ...(cookie ? { cookie } : {}) }, redirect: "follow", signal: controller.signal });
     if (!response.ok || !response.headers.get("content-type")?.includes("text/html")) return null;
-    return transformHomeHtml(await response.text(), new URL(request.url).origin, locale);
+    return transformHomeHtml(await response.text(), publicOrigin(request), locale);
   } catch { return null; }
   finally { clearTimeout(timer); }
 }

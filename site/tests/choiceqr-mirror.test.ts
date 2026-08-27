@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { deviceHeaders, fetchMirroredHome, officialRedirect, safeApiQuery, safeReadOnlyApi, transformHomeHtml, upstreamHome, vendorCookieHeader } from "../src/lib/choiceqr/mirror";
+import { deviceHeaders, fetchMirroredHome, officialRedirect, publicOrigin, safeApiQuery, safeReadOnlyApi, transformHomeHtml, upstreamHome, vendorCookieHeader } from "../src/lib/choiceqr/mirror";
 
 const request = (url = "https://new.margariteros.bar/pl/?utm_source=ad&unsafe=drop") => new Request(url, { headers: { cookie: "mguid=vendor; placeDbName=; consent=yes; Authorization=bad" } });
 
@@ -20,6 +20,15 @@ describe("ChoiceQR home mirror safety boundary", () => {
     const booking = safeApiQuery("/api/public/booking/blocks", new URL("https://new.margariteros.bar/api/public/booking/blocks?visitDuration=60&date=2026-08-27&email=drop"));
     expect(menu.toString()).toBe("lang=pl&section=menu");
     expect(booking.toString()).toBe("visitDuration=60&date=2026-08-27");
+  });
+
+  it("derives the canonical origin safely behind Dokploy", () => {
+    const dokploy = new Request("http://new.margariteros.bar/pl/", { headers: { host: "new.margariteros.bar", "x-forwarded-host": "new.margariteros.bar", "x-forwarded-proto": "https" } });
+    const hostile = new Request("http://internal:4321/pl/", { headers: { host: "internal:4321", "x-forwarded-host": "evil.example", "x-forwarded-proto": "javascript" } });
+    expect(publicOrigin(dokploy)).toBe("https://new.margariteros.bar");
+    expect(transformHomeHtml('<html><head><link rel="canonical" href="x"><meta property="og:url" content="x"></head><body></body></html>', publicOrigin(dokploy), "pl")).toContain('href="https://new.margariteros.bar/pl/"');
+    expect(publicOrigin(hostile)).toBe("https://new.margariteros.bar");
+    expect(publicOrigin(new Request("http://new.margariteros.bar/pl/", { headers: { "x-forwarded-proto": "http" } }))).toBe("https://new.margariteros.bar");
   });
 
   it("forwards only sanitized device data so ChoiceQR selects the matching SSR template", () => {

@@ -2,9 +2,52 @@
 
 ## Результат
 
-**PASS — безопасное SSR-зеркало главной принято по визуальному, функциональному и privacy gate.** Текущий Astro production build выдаёт настоящую mobile/desktop ветку ChoiceQR, а не уменьшенный desktop: геометрия страницы и 20 фото совпадают на всех семи профилях; статические пиксели, language overlay и drawer совпадают; vendor GTM/Facebook/Cloudflare не попадают в local DOM и сеть.
+**LOCAL PASS; LIVE STAGING FAIL / release пока не принят.** Визуал, адаптивность, consent, интерактивы и privacy на `https://new.margariteros.bar` прошли, но публичная HTTPS-страница публикует canonical и `og:url` с `http://`. Это материальный deployed SEO/origin defect, поэтому общий staging verdict не может быть PASS.
 
-Это acceptance текущего worktree, не разрешение на deploy/cutover и не разрешение на создание брони. Авторитет: `https://qr.margariteros.bar/`. Последний normal server был поднят только локально из fresh build; fallback проверен отдельным локальным запуском с выключенным mirror. Внешние формы не отправлялись.
+Локальный implementation gate остаётся PASS: текущий Astro build выдаёт настоящую mobile/desktop ветку ChoiceQR, а не уменьшенный desktop; геометрия и 20 фото совпадают на семи профилях; статические пиксели, language overlay и drawer совпадают; vendor trackers удалены. Авторитет: `https://qr.margariteros.bar/`. На staging выполнена только разрешённая настройка consent `Tylko niezbędne`; формы брони/auth/order не отправлялись, redirect не follow-ились.
+
+## Live staging `2401e90`
+
+Runtime действительно mirror, не fallback: `/pl/`, `/en/`, `/ru/`, `/es/` отвечают `200` с `data-choiceqr-mirror="home"`; `/healthz` — `200`; upstream `Set-Cookie` отсутствует.
+
+### Consent first visit
+
+- Fresh Android 390: official и staging consent screenshots имеют `RMSE 0`.
+- Panel `48 / 424 / 294 / 184`; три кнопки по `294×56`; font, background, borders и цвета совпадают буквально.
+- В обеих версиях backdrop является реальным hit target над header Menu. Координатный click не открывает drawer.
+- Только на staging выбрано `Tylko niezbędne`; panel исчез и остался скрытым после reload.
+- После выбора на staging нет GTM/GA/Facebook/Cloudflare/TikTok/DoubleClick requests, loading failures, console errors или runtime logs.
+
+Evidence: [staging-consent.json](../../docs/screenshots/choiceqr-exact/acceptance/staging-consent.json), [paired first visit](../../docs/screenshots/choiceqr-exact/acceptance/paired-staging-pl-android-390-consent-first.png), [staging HTTP/privacy](../../docs/screenshots/choiceqr-exact/acceptance/staging-http-security.md).
+
+### Saved-consent geometry и pixels
+
+Все profile dimensions и gallery count совпали с authority: Android `320×3137`, `390×3228`, `398×3247`, `597×3659`, `719×3944`; desktop `1024×2066`, `1280×2386`; везде `20` gallery images.
+
+| Staging capture vs official reference | Normalized RMSE |
+|---|---:|
+| Android 320 full | `0.000782` |
+| Android 390 full | `0.000848` |
+| Android 398 full | `0.000754` |
+| Android 597 full | `0.001443` |
+| Android 719 full | `0.000817` |
+| Desktop 1024 full | `0.000955` |
+| Android 390 top / language / drawer | `0 / 0 / 0` |
+| Desktop 1024 / 1280 top viewport | `0.001330 / 0.001303` |
+
+Full desktop 1280 PNG hit the bounded CDP screenshot timeout; exact `1280×2386` geometry, 20/20 gallery and top viewport pixel comparison were recorded instead. Google Maps dynamic interior remains excluded as upstream content; frame geometry is unchanged.
+
+Language overlay contains human English/Polish/Russian plus machine Spanish and is pixel-identical. Drawer is pixel-identical; X closes on both authority/staging, while Escape is the same vendor no-op on both.
+
+Evidence: [staging-metrics.json](../../docs/screenshots/choiceqr-exact/acceptance/staging-metrics.json), [staging interactions](../../docs/screenshots/choiceqr-exact/acceptance/staging-interactions-local.json), [staging RMSE](../../docs/screenshots/choiceqr-exact/acceptance/rmse-staging.tsv).
+
+### HTTP/privacy gate и единственный blocker
+
+- Main response: `private, no-store`, CSP, referrer policy, nosniff, correct device `Vary`, zero `Set-Cookie`.
+- Delivered HTML: mirror marker present, fallback marker absent, zero GTM/Facebook/Cloudflare tags, unsafe query removed.
+- Localized/unlocalized auth, booking/create, order/create, delivery, feedback and section actions return exact top-level official `302`; only allow-listed attribution survives.
+- Allowed read-only API returns `200` JSON/no-store; disallowed GET returns `404` JSON/no-store; no API `Set-Cookie`.
+- **Blocking deployed mismatch:** public URL is HTTPS, but HTML contains `<link rel="canonical" href="http://new.margariteros.bar/pl/">` and matching HTTP `og:url`. Вероятная граница ошибки — внутренний HTTP origin за Dokploy proxy не нормализован по forwarded protocol. Исправление реализации/deploy в этом независимом аудите не выполнялось.
 
 ## Реальный Chrome и SSR-ветка
 
@@ -76,4 +119,4 @@ Live ChoiceQR буквально содержит алкогольные кат�
 
 ## Final gate
 
-**PASS.** В текущем fresh build нет материальной видимой или функциональной дельты относительно live на проверенной главной. Privacy differences намеренные и невидимые: трекеры удалены до hydration, API/write поверхность ограничена, cookies не протекают, fallback работает. Нерешённое вне gate: deploy/readback на `new.margariteros.bar`, реальная first-party analytics конфигурация и отдельный ad-safe вариант — всё это требует отдельного разрешения владельца.
+**LOCAL PASS; LIVE STAGING FAIL.** На staging нет материальной visible/function/privacy дельты и нет tracker/cookie leakage, но HTTP canonical/`og:url` на публичной HTTPS-странице блокирует release acceptance. После исправления нужен короткий deployed readback canonical/og + один 390 smoke; повторять весь pixel suite не требуется. Отдельно вне этого gate остаются реальная first-party analytics конфигурация и ad-safe рекламный вариант.
