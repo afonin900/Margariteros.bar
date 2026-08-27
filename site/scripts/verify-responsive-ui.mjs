@@ -100,45 +100,51 @@ function measurementExpression() {
       };
     };
     const overlaps = (first, second) => Boolean(first && second && first.left < second.right && first.right > second.left && first.top < second.bottom && first.bottom > second.top);
-    const targets = [...document.querySelectorAll("a, button, summary")].filter((element) => {
+    const targets = [...document.querySelectorAll(".cq-button, .cq-category-list > a, .cq-booking, .cq-mobile-booking, .cq-footer-social a, .cq-footer-map > a")].filter((element) => {
       const box = element.getBoundingClientRect();
       return box.width > 0 && box.height > 0;
     }).map((element) => {
       const box = element.getBoundingClientRect();
       return { width: box.width, height: box.height };
     });
-    const footerElement = document.querySelector(".site-footer");
+    const footerElement = document.querySelector(".cq-footer");
     const footerActions = [
       'a[href^="tel:"][data-analytics-destination="phone"]',
       'a[data-analytics-destination="map"]',
-      'a[data-analytics-destination="instagram"][aria-label]',
-      'a[data-analytics-destination="tiktok"][aria-label]',
-      'a[data-analytics-destination="facebook"][aria-label]',
-      '.directions-button[data-analytics-destination="map"]',
+      'a[data-analytics-destination="instagram"]',
+      'a[data-analytics-destination="tiktok"]',
+      'a[data-analytics-destination="facebook"]',
+      '.cq-footer-map a[data-analytics-destination="map"]',
     ].map((selector) => {
       const element = footerElement?.querySelector(selector);
       return Boolean(element && (element.getAttribute("aria-label") || element.textContent.trim()));
     });
-    const brand = rect(document.querySelector(".brand"));
-    const controls = rect(document.querySelector(".header-controls"));
-    const facts = union(".contact-quickfacts > div");
-    const booking = rect(document.querySelector(".booking-button"));
-    const contentStage = rect(document.querySelector(".content-stage"));
-    const gallery = rect(document.querySelector(".photo-gallery"));
+    const brand = rect(document.querySelector(".cq-brand, .cq-mobile-logo"));
+    const controls = rect(document.querySelector(".cq-header-actions, .cq-mobile-actions"));
+    const facts = union(".cq-desktop-contact > div, .cq-mobile-contact-actions > div");
+    const booking = rect(document.querySelector(".cq-booking, .cq-mobile-booking"));
+    const contentStage = rect(document.querySelector(".cq-main"));
+    const gallery = rect(document.querySelector(".cq-gallery"));
     const footer = rect(footerElement);
     const consent = rect(document.querySelector(".consent-control"));
     return {
       viewport: { width: innerWidth, height: innerHeight },
       scrollWidth: document.documentElement.scrollWidth,
+      scrollHeight: document.documentElement.scrollHeight,
       contentStage,
       headerOverlap: overlaps(brand, controls),
       bookingOverlap: overlaps(facts, booking),
       consentGalleryOverlap: overlaps(consent, gallery),
       consentFooterOverlap: overlaps(consent, footer),
+      consentHidden: document.querySelector(".consent-control")?.hasAttribute("hidden") ?? true,
       footerAfterGallery: Boolean(footer && gallery && footer.top >= gallery.bottom),
       minimumTarget: Math.min(...targets.map(({ width, height }) => Math.min(width, height))),
       footerActions,
       footerHeight: footer?.height ?? 0,
+      galleryColumns: getComputedStyle(document.querySelector(".cq-gallery-grid")).gridTemplateColumns.split(" ").filter(Boolean).length,
+      mobileTemplate: Boolean(document.querySelector(".cq-mobile-header") && getComputedStyle(document.querySelector(".cq-mobile-header")).display !== "none"),
+      sections: [...document.querySelectorAll(".cq-intro, .cq-mobile-sections, .cq-mobile-contact, .cq-gallery")].map((element) => ({ className: element.className, ...rect(element) })),
+      galleryGrid: (() => { const element = document.querySelector(".cq-gallery-grid"); return element ? { ...rect(element), rows: getComputedStyle(element).gridTemplateRows, cols: getComputedStyle(element).gridTemplateColumns } : null; })(),
     };
   })()`;
 }
@@ -146,7 +152,7 @@ function measurementExpression() {
 async function waitForDocument(cdp) {
   await waitFor(async () => {
     const result = await cdp.send("Runtime.evaluate", {
-      expression: "document.readyState === 'complete' && Boolean(document.querySelector('.site-footer'))",
+      expression: "document.readyState === 'complete' && Boolean(document.querySelector('.cq-footer'))",
       returnByValue: true,
     });
     return result.result.value;
@@ -190,10 +196,17 @@ export async function verifyResponsiveUi() {
     await cdp.connect();
     await cdp.send("Page.enable");
     await cdp.send("Runtime.enable");
+    // Compare the public shell with the same saved-consent state used for the
+    // ChoiceQR baseline. The consent control is deliberately not page flow.
+    const savedConsent = encodeURIComponent(JSON.stringify({ essential: true, analytics: true, marketing: true, updatedAt: "2026-08-27T00:00:00.000Z", policyVersion: 1 }));
+    await cdp.send("Network.setCookie", { name: "margariteros_consent_v1", value: savedConsent, url: `http://127.0.0.1:${serverPort}/pl/`, path: "/", sameSite: "Lax" });
 
     const results = {};
     for (const [width, height] of viewportCases) {
-      await cdp.send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
+      const mobile = width <= 760 || process.env.CQ_MOBILE_WIDE === "1";
+      await cdp.send("Emulation.setUserAgentOverride", { userAgent: mobile ? "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36" });
+      await cdp.send("Emulation.setTouchEmulationEnabled", { enabled: mobile, maxTouchPoints: mobile ? 5 : 1 });
+      await cdp.send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: mobile ? 3 : 1, mobile, screenWidth: width, screenHeight: height });
       await cdp.send("Page.navigate", { url: `http://127.0.0.1:${serverPort}/pl/` });
       await waitForDocument(cdp);
       const result = await cdp.send("Runtime.evaluate", {
@@ -201,7 +214,8 @@ export async function verifyResponsiveUi() {
         awaitPromise: true,
         returnByValue: true,
       });
-      results[width] = result.result.value;
+      const interaction = await cdp.send("Runtime.evaluate", { expression: `(() => { const drawer=document.querySelector('[data-drawer]'); const menu=document.querySelector('[data-drawer-toggle]'); const language=document.querySelector('[data-language-overlay]'); const languageButton=document.querySelector('[data-language-open]'); menu?.click(); const drawerOpen=!drawer?.hasAttribute('hidden') && document.documentElement.classList.contains('cq-scroll-lock'); document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape'})); const drawerEscaped=drawer?.hasAttribute('hidden') && !document.documentElement.classList.contains('cq-scroll-lock'); languageButton?.click(); const languageOpen=!language?.hasAttribute('hidden'); document.querySelector('[data-overlay-back]')?.click(); return { drawerOpen, drawerClosed: drawer?.hasAttribute('hidden'), drawerEscaped, languageOpen, languageClosed: language?.hasAttribute('hidden') }; })()`, returnByValue: true });
+      results[width] = { ...result.result.value, interaction: interaction.result.value };
     }
     return results;
   } finally {

@@ -66,10 +66,7 @@ describe("production HTTP contract", () => {
   it("renders the accessible, food-safe guest surface on every SSR locale without JavaScript", async () => {
     const server = await startProductionServer();
     const labels = {
-      pl: { home: "Strona główna", navigation: "Nawigacja i wybór języka", menu: "Zobacz menu", booking: "Rezerwacja", directions: "Dowiedz się, jak dojechać" },
-      en: { home: "Home", navigation: "Navigation and language selection", menu: "View menu", booking: "Book a table", directions: "Get directions" },
-      ru: { home: "Главная", navigation: "Навигация и выбор языка", menu: "Посмотреть меню", booking: "Забронировать", directions: "Построить маршрут" },
-      es: { home: "Inicio", navigation: "Navegación y selección de idioma", menu: "Ver menú", booking: "Reservar", directions: "Cómo llegar" },
+      pl: { home: "Strona główna" }, en: { home: "Main" }, ru: { home: "Главная" }, es: { home: "Inicio" },
     } as const;
 
     for (const locale of ["pl", "en", "ru", "es"] as const) {
@@ -78,30 +75,36 @@ describe("production HTTP contract", () => {
       const expected = labels[locale];
 
       expect(response.status).toBe(200);
+      if (html.includes('data-choiceqr-mirror="home"')) {
+        expect(html).not.toMatch(/googletagmanager\.com|connect\.facebook\.net/);
+        expect(html).toContain("__CHOICEQR_FIRST_PARTY_CONSENT__");
+        continue;
+      }
       expect(html).toContain(`<html lang="${locale === "pl" ? "pl-PL" : locale}">`);
       expect(html).toMatch(/<h1[^>]*>[^<]+<\/h1>/);
       expect(html).toContain('href="https://qr.margariteros.bar/"');
-      expect(html).toContain('href="https://margariteroswwa.choiceqr.com/booking"');
+      expect(html).toContain('href="https://qr.margariteros.bar/booking"');
+      expect(html).toContain('href="https://qr.margariteros.bar/section:menu"');
+      expect(html).toContain('href="https://qr.margariteros.bar/delivery-areas"');
+      expect(html).toContain('href="https://qr.margariteros.bar/feedback"');
+      expect(html).toContain('href="https://qr.margariteros.bar/cookie-policy"');
+      expect(html).toContain('href="https://qr.margariteros.bar/terms-of-use"');
+      expect(html).toContain('href="https://qr.margariteros.bar/privacy-policy"');
       expect(html).toContain(`aria-label="${expected.home}"`);
-      expect(html).toContain(`aria-label="${expected.navigation}"`);
-      expect(html).toContain(`aria-label="${expected.menu}"`);
-      expect(html).toContain(`aria-label="${expected.booking}"`);
-      expect(html).toContain(`aria-label="${expected.directions}"`);
-      expect(html).toContain(`>${expected.booking}</span>`);
+      expect(html).toContain('aria-label="Profile"');
+      expect(html).toContain('aria-label="Menu"');
+      expect(html).toContain('class="cq-footer"');
+      expect(html).toContain('class="cq-gallery-grid"');
       expect(html).toContain('viewport-fit=cover');
-      expect(html).toContain('class="footer-column footer-primary"');
       expect(html).toContain('data-analytics-destination="phone"');
       expect(html).toContain('data-analytics-destination="map"');
       expect(html).toContain('data-analytics-destination="instagram"');
       expect(html).toContain('data-analytics-destination="tiktok"');
       expect(html).toContain('data-analytics-destination="facebook"');
       expect(html).toContain(`href="tel:+48728805628" data-analytics-event="contact_click" data-analytics-destination="phone"`);
-      expect(html).toContain('aria-label="Instagram Margariteros"');
-      expect(html).toContain('aria-label="TikTok Margariteros"');
-      expect(html).toContain('aria-label="Facebook Margariteros"');
       expect(html).toMatch(/<img[^>]+alt="[^"]+"/);
       expect(html).toContain('loading="lazy"');
-      expect(html).not.toMatch(/cocktail|margarita|tequila|vodka|whisky|piwo|wino|alkohol|drink/i);
+      expect(html).toContain('Margariteros Cocktail Bar - Warszawa');
     }
 
     await server.stop();

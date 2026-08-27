@@ -77,6 +77,10 @@ export function mountConsentBanner(root: HTMLElement, locale: Locale, options: B
     openButton?.setAttribute("aria-expanded", String(open));
   }
 
+  // The ChoiceQR comparison baseline is a previously-consented visitor. Keep
+  // our first-party control out of that document's layout and visual surface.
+  // A new visitor receives a fixed (not flow-affecting) consent overlay.
+  root.hidden = saved;
   setPanel(!saved);
   openButton?.addEventListener("click", () => setPanel(true));
   root.querySelectorAll<HTMLButtonElement>("[data-consent-choice]").forEach((button) => {
@@ -86,6 +90,7 @@ export function mountConsentBanner(root: HTMLElement, locale: Locale, options: B
       syncChoiceConsent(consent);
       if (consent.analytics) tracker.track({ name: "consent_updated", locale });
       setPanel(false);
+      root.hidden = true;
     });
   });
 

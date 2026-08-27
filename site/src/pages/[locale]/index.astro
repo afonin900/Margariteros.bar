@@ -1,13 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ChoiceQrHeader from "../../components/ChoiceQrHeader.astro";
-import ContactBar from "../../components/ContactBar.astro";
-import PhotoGallery from "../../components/PhotoGallery.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
+import ChoiceQrClone from "../../components/ChoiceQrClone.astro";
 import ConsentBanner from "../../components/ConsentBanner.astro";
 import { getPage, locales, type Locale } from "../../content/page";
 import { captureAttribution } from "../../lib/analytics/attribution";
-import "../../styles/choiceqr.css";
+import "../../styles/choiceqr-exact.css";
 
 const requestedLocale = Astro.params.locale;
 const isLocale = (value: string | undefined): value is Locale =>
@@ -15,21 +12,8 @@ const isLocale = (value: string | undefined): value is Locale =>
 if (!isLocale(requestedLocale)) return new Response("Not found", { status: 404 });
 const page = getPage(requestedLocale);
 const attribution = captureAttribution(Astro.url);
-const directionContract = `<!--
-THESIS: A first-party guest surface keeps the familiar ChoiceQR spatial rhythm while replacing unsafe sales content with real food, dance and interior proof.
-OWN-WORLD: Lime-photo ground, black 1232px stage, one-pixel acid lines, Hind Siliguri, square four-column media and outlined controls.
-STORY: Recognise Margariteros, see the real place, open the menu or booking, then verify contact, hours and route.
-FIRST VIEWPORT: 120px brand header, 24px lime reveal, 128px contact strip and a 4x5 gallery beginning at y=372 on desktop; the same sequence compresses to a 342px mobile stage.
-FORM: Precision reference reproduction, pinned by the brief; seed key choiceqr-live-reference-1744-390.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
--->`;
 ---
 <BaseLayout {page}>
-  <Fragment set:html={directionContract} />
-  <div class="choiceqr-page">
-    <ChoiceQrHeader {page} {attribution} />
-    <div class="content-stage-wrap"><div class="content-stage"><ContactBar {page} {attribution} /><PhotoGallery {page} /></div></div>
-    <SiteFooter {page} />
-    <ConsentBanner locale={page.locale} />
-  </div>
+  <ChoiceQrClone {page} {attribution} />
+  <ConsentBanner locale={page.locale} />
 </BaseLayout>
