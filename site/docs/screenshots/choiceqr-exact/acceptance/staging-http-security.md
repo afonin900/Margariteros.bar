@@ -1,10 +1,10 @@
 # Live staging HTTP/privacy readback — 2026-08-27
 
-Target: `https://new.margariteros.bar`, expected commit `2401e90`. Read-only except one explicit `Tylko niezbędne` consent preference. No booking/auth/order form was submitted and redirects were not followed.
+Target: `https://new.margariteros.bar`, final commit `902e0d6`. Read-only except one explicit `Tylko niezbędne` consent preference. No booking/auth/order form was submitted and redirects were not followed.
 
 ## Runtime identity and locales
 
-- Repository HEAD: `2401e90` (`mirror ChoiceQR home safely in Astro SSR`).
+- Repository HEAD: `902e0d6` (`fix public HTTPS metadata behind Dokploy`).
 - `/pl/`, `/en/`, `/ru/`, `/es/`: `200`, `data-choiceqr-mirror="home"`, no Astro fallback marker and no `Set-Cookie`.
 - `/healthz`: `200`.
 - `/`: `302 /pl/`.
@@ -15,10 +15,10 @@ Target: `https://new.margariteros.bar`, expected commit `2401e90`. Read-only exc
 - CSP, `Referrer-Policy: strict-origin-when-cross-origin`, `X-Content-Type-Options: nosniff`, and device `Vary` are present.
 - Delivered HTML contains no GTM, Facebook, Cloudflare analytics tag, dropped `unsafe=drop` value, or upstream `Set-Cookie`.
 - Runtime is the mirror, not fallback.
-- **Blocker:** canonical and `og:url` are generated with the internal HTTP scheme:
-  - `<link rel="canonical" href="http://new.margariteros.bar/pl/">`
-  - `<meta property="og:url" content="http://new.margariteros.bar/pl/">`
-  Public staging is HTTPS. This is a deployed reverse-proxy origin/readback defect.
+- Final readback confirms exact public HTTPS metadata:
+  - `<link rel="canonical" href="https://new.margariteros.bar/pl/">`
+  - `<meta property="og:url" content="https://new.margariteros.bar/pl/">`
+  PL/EN/RU/ES each emit their own exact HTTPS locale URL. The previous reverse-proxy internal-HTTP defect is resolved.
 
 ## Action routes
 
@@ -28,7 +28,7 @@ Localized and unlocalized booking, booking/create, auth, order/create, delivery 
 
 - Read-only menu, booking params/blocks, favorites, language and inert analytics-cookie GETs return `200` JSON with `private, no-store` and no `Set-Cookie`.
 - Booking-create and unknown public GETs return `404` JSON with `private, no-store`.
-- The deployed source at `2401e90` uses per-endpoint query allow-lists; unknown query fields are removed before the upstream URL is built.
+- The deployed source uses per-endpoint query allow-lists; unknown query fields are removed before the upstream URL is built.
 
 ## Browser/privacy
 
@@ -38,3 +38,12 @@ Localized and unlocalized booking, booking/create, auth, order/create, delivery 
 - Staging capture has zero GTM/GA/Facebook/Cloudflare/TikTok/DoubleClick requests, zero load failures, zero console errors and zero runtime logs.
 
 Evidence: `staging-consent.json`, `staging-metrics.json`, `staging-interactions-local.json`, `rmse-staging.tsv` and paired PNGs in this directory.
+
+## Final `902e0d6` smoke
+
+- Android SSR source: `is-mobile`; Chrome runtime `390×844`, DPR3, touch5, document `390×3228`.
+- Gallery: 20/20 loaded, exactly three columns.
+- Saved-consent Language and Menu/drawer states work; PL/EN/RU and machine ES are present.
+- Desktop UA source: `is-desktop`.
+- Browser tracker requests, failures, console errors and runtime logs: all empty.
+- Locales, health and localized/unlocalized booking/auth/write handoffs retain the accepted status.

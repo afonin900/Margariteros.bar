@@ -2,11 +2,11 @@
 
 ## Результат
 
-**LOCAL PASS; LIVE STAGING FAIL / release пока не принят.** Визуал, адаптивность, consent, интерактивы и privacy на `https://new.margariteros.bar` прошли, но публичная HTTPS-страница публикует canonical и `og:url` с `http://`. Это материальный deployed SEO/origin defect, поэтому общий staging verdict не может быть PASS.
+**LIVE STAGING PASS.** Последний blocker устранён в deployed `902e0d6`: публичные canonical и `og:url` теперь точно используют `https://new.margariteros.bar/pl/`. Повторный независимый readback подтвердил visual/function/privacy contract на настоящих mobile/desktop SSR-ветках.
 
 Локальный implementation gate остаётся PASS: текущий Astro build выдаёт настоящую mobile/desktop ветку ChoiceQR, а не уменьшенный desktop; геометрия и 20 фото совпадают на семи профилях; статические пиксели, language overlay и drawer совпадают; vendor trackers удалены. Авторитет: `https://qr.margariteros.bar/`. На staging выполнена только разрешённая настройка consent `Tylko niezbędne`; формы брони/auth/order не отправлялись, redirect не follow-ились.
 
-## Live staging `2401e90`
+## Live staging `902e0d6`
 
 Runtime действительно mirror, не fallback: `/pl/`, `/en/`, `/ru/`, `/es/` отвечают `200` с `data-choiceqr-mirror="home"`; `/healthz` — `200`; upstream `Set-Cookie` отсутствует.
 
@@ -41,13 +41,17 @@ Language overlay contains human English/Polish/Russian plus machine Spanish and 
 
 Evidence: [staging-metrics.json](../../docs/screenshots/choiceqr-exact/acceptance/staging-metrics.json), [staging interactions](../../docs/screenshots/choiceqr-exact/acceptance/staging-interactions-local.json), [staging RMSE](../../docs/screenshots/choiceqr-exact/acceptance/rmse-staging.tsv).
 
-### HTTP/privacy gate и единственный blocker
+### HTTP/privacy gate и исправленный blocker
 
 - Main response: `private, no-store`, CSP, referrer policy, nosniff, correct device `Vary`, zero `Set-Cookie`.
 - Delivered HTML: mirror marker present, fallback marker absent, zero GTM/Facebook/Cloudflare tags, unsafe query removed.
 - Localized/unlocalized auth, booking/create, order/create, delivery, feedback and section actions return exact top-level official `302`; only allow-listed attribution survives.
 - Allowed read-only API returns `200` JSON/no-store; disallowed GET returns `404` JSON/no-store; no API `Set-Cookie`.
-- **Blocking deployed mismatch:** public URL is HTTPS, but HTML contains `<link rel="canonical" href="http://new.margariteros.bar/pl/">` and matching HTTP `og:url`. Вероятная граница ошибки — внутренний HTTP origin за Dokploy proxy не нормализован по forwarded protocol. Исправление реализации/deploy в этом независимом аудите не выполнялось.
+- Final deployed readback: `<link rel="canonical" href="https://new.margariteros.bar/pl/">` и `<meta property="og:url" content="https://new.margariteros.bar/pl/">`. Прежний internal-HTTP-origin blocker устранён.
+- Fresh Android 390 after the fix: mirror marker, SSR `is-mobile`, `390×3228`, DPR3/touch5, gallery `20/20` in exactly three columns (`x=16 / 136.656 / 257.328`). Saved-consent Language and Menu/drawer work; full human PL/EN/RU and machine ES are present. Tracker network, failures, console and runtime logs are empty.
+- Fresh desktop-UA SSR source returns `is-desktop`; health, four locales and localized/unlocalized action handoffs remain green.
+
+Final short readback: [390 metrics](../../docs/screenshots/choiceqr-exact/acceptance/staging-final-390-metrics.json), [390 interactions](../../docs/screenshots/choiceqr-exact/acceptance/staging-final-390-interactions.json).
 
 ## Реальный Chrome и SSR-ветка
 
@@ -119,4 +123,4 @@ Live ChoiceQR буквально содержит алкогольные кат�
 
 ## Final gate
 
-**LOCAL PASS; LIVE STAGING FAIL.** На staging нет материальной visible/function/privacy дельты и нет tracker/cookie leakage, но HTTP canonical/`og:url` на публичной HTTPS-странице блокирует release acceptance. После исправления нужен короткий deployed readback canonical/og + один 390 smoke; повторять весь pixel suite не требуется. Отдельно вне этого gate остаются реальная first-party analytics конфигурация и ad-safe рекламный вариант.
+**LIVE STAGING PASS.** В `902e0d6` нет оставшихся material visible/function/privacy/SEO blocker: HTTPS metadata точна, mobile/desktop SSR routing верен, consent и интерактивы работают, trackers/cookie leakage отсутствуют, health/locales/actions зелёные. Полный staging pixel suite из предыдущего gate переиспользован, короткий fresh 390/desktop readback после metadata fix прошёл. Отдельно вне этого gate остаются реальная first-party analytics конфигурация и ad-safe рекламный вариант.
