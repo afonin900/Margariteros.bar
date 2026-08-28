@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/afonin900/.codex/plugins/cache/personal/corp/0.5.0+codex.20260826115813/skills/autopilot",
   "startedAt": "2026-08-28T12:14:46+02:00",
-  "updatedAt": "2026-08-28T19:00:00+02:00",
+  "updatedAt": "2026-08-28T19:35:00+02:00",
   "finishedAt": null,
   "stages": [
     {
@@ -336,16 +336,18 @@ window.STATE =
         "refref/packages/coredb/",
         "docs/club/"
       ],
-      "status": "failed",
-      "retries": 0,
-      "repairs": 0,
+      "status": "done",
+      "retries": 1,
+      "repairs": 2,
       "handoffs": 0,
       "startedAt": "2026-08-28T18:10:00+02:00",
-      "finishedAt": "2026-08-28T19:00:00+02:00",
-      "files": ["docker/margariteros-staging.compose.yml", "docker/Dockerfile.staging", "docker/verify-margariteros-staging.mjs", "docs/margariteros-staging.md", "packages/coredb/src/margariteros-staging-seed.ts"],
+      "finishedAt": "2026-08-28T19:35:00+02:00",
+      "files": ["docker/margariteros-staging.compose.yml", "docker/margariteros-dokploy.compose.yml", "docker/Dockerfile.staging", "docker/verify-margariteros-staging.mjs", "docs/margariteros-staging.md", "packages/coredb/src/margariteros-staging-seed.ts"],
       "tests": {"passed": 80, "failed": 0},
-      "commit": "8b5e09a",
-      "concerns": ["Docker runtime acceptance blocked by non-responsive engine", "replay retention cleanup needed", "health response must redact DB error details", "verify/runbook local secret source must be hardened before shared staging"]
+      "commit": "53ee953",
+      "externalCommit": "d2ebc87",
+      "runtime": {"provider": "dokploy", "composeId": "WYJAhrai2C04gt4BWZ94v", "url": "https://margariteros-r-club-nsdsbv-e6b2f8-37-27-217-246.sslip.io", "readiness": 200},
+      "concerns": ["Syrve adapter intentionally remains not_ready until native program/order readback is proven", "Telegram bot token and registration workflow are not yet live", "replay retention cleanup remains operational debt"]
     },
     {
       "id": "07",
