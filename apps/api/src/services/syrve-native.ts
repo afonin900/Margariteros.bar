@@ -48,6 +48,34 @@ export function readSyrveRuntimeConfig(
   };
 }
 
+let readinessCache: { key: string; ready: boolean; expiresAt: number } | undefined;
+
+export async function checkSyrveRuntimeReadiness(): Promise<boolean> {
+  const config = readSyrveRuntimeConfig();
+  if (!config) return false;
+  const key = `${config.baseUrl}:${config.organizationId}:${config.loyaltyProgramId}`;
+  if (readinessCache?.key === key && readinessCache.expiresAt > Date.now()) {
+    return readinessCache.ready;
+  }
+  try {
+    const gateway = createSyrveHttpGateway({
+      ...config,
+      timeoutMs: Math.min(config.timeoutMs, 1_500),
+    });
+    const program = await gateway.readProgram(config.loyaltyProgramId);
+    const ready = program.id === config.loyaltyProgramId && program.active;
+    readinessCache = {
+      key,
+      ready,
+      expiresAt: Date.now() + (ready ? 60_000 : 15_000),
+    };
+    return ready;
+  } catch {
+    readinessCache = { key, ready: false, expiresAt: Date.now() + 15_000 };
+    return false;
+  }
+}
+
 export type SyrveDeliveryStatus =
   | "processing"
   | "not_ready"
