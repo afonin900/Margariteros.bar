@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getPage, locales, type Locale } from "../../../content/page";
+
+const requestedLocale = Astro.params.locale;
+const isLocale = (value: string | undefined): value is Locale =>
+  value !== undefined && locales.includes(value as Locale);
+if (!isLocale(requestedLocale)) return new Response("Not found", { status: 404 });
+const page = getPage(requestedLocale);
+const refrefPortalUrl = import.meta.env.PUBLIC_RCLUB_PORTAL_URL;
+---
+<BaseLayout {page}>
+  <main class="club-page">
+    <a class="club-back" href={`/${page.locale}/`}>{page.homeLabel}</a>
+    <p class="club-eyebrow">Margariteros</p>
+    <h1>R Club</h1>
+    <p class="club-lead">Zaproszenia R Club będą działać pod jednym adresem w Telegramie i w zwykłej przeglądarce.</p>
+    <section class="club-status" aria-labelledby="club-status-heading">
+      <h2 id="club-status-heading">Status programu</h2>
+      <p>Po aktywacji zobaczysz tutaj swój link, kod QR i status — bez danych osób zaproszonych.</p>
+      {refrefPortalUrl ? <a class="club-action" href={refrefPortalUrl}>Otwórz R Club</a> : <p class="club-pending" data-club-status="not-configured">R Club nie jest jeszcze skonfigurowany. Nie zbieramy tu numeru telefonu ani nie potwierdzamy go bez zgody.</p>}
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .club-page { width: min(100% - 2rem, 42rem); margin: 0 auto; padding: clamp(2rem, 8vw, 6rem) 0; }
+  .club-back { display: inline-flex; align-items: center; margin-bottom: 3rem; color: #c6ff00; font-weight: 700; }
+  .club-eyebrow { margin: 0; color: #c6ff00; font-size: .8rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+  h1 { margin: .5rem 0; font-size: clamp(3rem, 12vw, 5.5rem); line-height: .9; }
+  .club-lead { max-width: 38rem; font-size: clamp(1.1rem, 3vw, 1.4rem); line-height: 1.5; }
+  .club-status { margin-top: 2rem; padding: clamp(1.25rem, 5vw, 2rem); border: 1px solid #c6ff00; border-radius: 1rem; background: #121212; }
+  .club-status h2 { margin-top: 0; }
+  .club-action { display: inline-flex; align-items: center; justify-content: center; margin-top: .75rem; padding: .8rem 1rem; background: #c6ff00; color: #000; font-weight: 800; }
+  .club-pending { margin-bottom: 0; color: #d6d6d6; }
+</style>

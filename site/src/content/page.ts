@@ -27,6 +27,7 @@ export interface PageContent {
   homeLabel: string;
   menuLabel: string;
   bookingLabel: string;
+  clubLabel: string;
   contactLabel: string;
   navigationLabel: string;
   addressLabel: string;
@@ -82,6 +83,7 @@ const pages: Record<Locale, LocalizedPage> = {
     homeLabel: "Strona główna",
     menuLabel: "Zobacz menu",
     bookingLabel: "Rezerwacja",
+    clubLabel: "R Club",
     contactLabel: "Kontakt",
     navigationLabel: "Nawigacja i wybór języka",
     addressLabel: "Adres",
@@ -120,6 +122,7 @@ const pages: Record<Locale, LocalizedPage> = {
     homeLabel: "Home",
     menuLabel: "View menu",
     bookingLabel: "Book a table",
+    clubLabel: "R Club",
     contactLabel: "Contact",
     navigationLabel: "Navigation and language selection",
     addressLabel: "Address",
@@ -158,6 +161,7 @@ const pages: Record<Locale, LocalizedPage> = {
     homeLabel: "Главная",
     menuLabel: "Посмотреть меню",
     bookingLabel: "Забронировать",
+    clubLabel: "R Club",
     contactLabel: "Контакты",
     navigationLabel: "Навигация и выбор языка",
     addressLabel: "Адрес",
@@ -196,6 +200,7 @@ const pages: Record<Locale, LocalizedPage> = {
     homeLabel: "Inicio",
     menuLabel: "Ver menú",
     bookingLabel: "Reservar",
+    clubLabel: "R Club",
     contactLabel: "Contacto",
     navigationLabel: "Navegación y selección de idioma",
     addressLabel: "Dirección",

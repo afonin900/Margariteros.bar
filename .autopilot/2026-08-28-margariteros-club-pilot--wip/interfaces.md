@@ -10,6 +10,21 @@
 - Upstream `/r` переносит base64 participant fields в URL; для публичного QR нужен отдельный privacy-safe seam.
 - Bootstrap evidence: `/Users/afonin900/Github/refref/docs/margariteros-bootstrap.md`.
 
+## Из таска 04 — Syrve native readback boundary
+
+- Hook: штатный `apps/api/src/services/events.ts:createEvent` после записи RefRef event; adapter opt-in.
+- `syrve-native` проверяет paid+closed order и читает native transaction outcome; он не рассчитывает 10%/5 PLN и не вызывает `wallet/topup`.
+- `packages/coredb` хранит только delivery/idempotency/reconciliation metadata, не reward balance.
+- Без подтверждённого credential/OpenAPI runtime возвращает `not_ready`; live HTTP write path отсутствует.
+
+## Из таска 05 — R Club web и Telegram Mini App
+
+- RefRef `/r` передаёт только opaque `refcode`; base64 participant/name/email удалены из public URL.
+- Общий responsive `/club` работает в браузере и Mini App; сервер валидирует raw Telegram `initData` через HMAC и свежий `auth_date`.
+- Единственное имя Telegram secret: `TELEGRAM_CLUB_BOT_TOKEN`; `initDataUnsafe` не является источником identity.
+- Margariteros `/<locale>/club/` ведёт в portal через `PUBLIC_RCLUB_PORTAL_URL`; без URL показывает honest not-configured.
+- Durable participant creation остаётся на штатном `POST /v1/widget/init` после настройки RefRef product/program и identity mapping.
+
 ## Границы, решённые в спецификации
 
 - Syrve Loyalty — источник идентичности гостя, оплаченного чека, скидки, баланса и транзакции.

@@ -9,7 +9,7 @@
 | R03 | «где-то есть PRD агентской системы, в предыдущих сессиях было» | done | PRD 2026-08-24 найден и сверён | evidence/01-evidence-pack.md |
 | R04 | «Сервер Loyalty у нас подключено, API работает» | in-ticket | Live UI подтвердил Margariteros Loyalty и свежий POS exchange; application API credential ещё не найден | ticket 01 |
 | R05 | «если ... создание удаленных партнеров нужно включить API, у нас доступ в техподдержку есть» | deferred | Сначала доказать необходимость; обращение наружу требует разрешения | — |
-| R06 | «для как фронтенда хотелось использовать проект на GitHub'е RefRef» | in-ticket | Владелец подтвердил обязательный self-host RefRef; alpha/AGPL учитываются, но не отменяют использование | ticket 03 |
+| R06 | «для как фронтенда хотелось использовать проект на GitHub'е RefRef» | done | Official RefRef checkout поднят отдельно, upstream/pin/license/extension points зафиксированы | /Users/afonin900/Github/refref |
 | R07 | «использовать его в виде чат-бота, чат Телеграма, сайта» | in-ticket | Выбрать минимальный пилот без потери будущих поверхностей | ticket 03 |
 | R08 | «именно как выдача партнерских ссылок» | in-ticket | Live UI показывает активную action с кодом ANDREI10, но доступный CouponsList пуст; реальный coupon/series остаётся доказать | ticket 03 |
 | R09 | «упрощенная партнерская система» | in-ticket | Упрощение реализуется конфигурацией RefRef + штатным Syrve, без custom domain | ticket 03 |
@@ -18,7 +18,7 @@
 | R12 | «Основной у нас, наверное, будет телефон» | in-ticket | Identity flow проектируется в RefRef R Club для Telegram и web | ticket 05 |
 | R13 | «Телефон подтверждается ... запрос в Телеграм-боте номера телефона» | in-ticket | Проверить Telegram contact flow и подтверждение владения | ticket 03 |
 | R14 | «создание партнера в сервере» | in-ticket | Нужен идемпотентный API-контракт и readback | ticket 02 |
-| R15 | «ограниченное количество партнеров» | in-ticket | Ограниченный P0 задаётся RefRef program/approval policy | ticket 04 |
+| R15 | «ограниченное количество партнеров» | done | Native provider включается только explicit program customData; остальные программы RefRef не меняются | /Users/afonin900/Github/refref/apps/api/src/services/events.ts |
 | R16 | «человек, приходя по ссылке партнера, просто получает скидку» | in-ticket | Live UI подтверждает активную 10% action, которая ссылается на ANDREI10/PARTNER-REFERRALS; сам coupon и кассовый чек не подтверждены | ticket 03 |
 | R17 | «сервер начисляет партнеру, который его привел, бонусные баллы» | in-ticket | Live: Reward 5 PLN существует, но выключена и не синхронизирована с POS; начисление не доказано | ticket 02 |
 | R18 | «бонусный счет в виде злотых» | in-ticket | Проверить валютную модель и отображение баланса | ticket 02 |
@@ -35,13 +35,13 @@
 | R29 | «Максимально закрой самостоятельно» | done | Безопасные исследовательские решения закрыты автономно | evidence/01-evidence-pack.md |
 | R30 | «используй все возможные доступы, не ищи обходных путей» | done | Использованы канонические repo/history/OpenAPI/live UI источники | evidence/01-evidence-pack.md |
 | R31 | «постарайся максимально через API, MCP или какие другие варианты» | done | API/CLI были приоритетом, browser использован только для live UI readback | evidence/01-evidence-pack.md |
-| R32i | *(подразумевается)* повторный запуск ссылки или регистрации не создаёт дубль | in-ticket | Идемпотентность должна быть на RefRef/Syrve integration boundary | ticket 04 |
+| R32i | *(подразумевается)* повторный запуск ссылки или регистрации не создаёт дубль | done | Durable unique claim сериализует concurrent RefRef/Syrve delivery | /Users/afonin900/Github/refref/packages/coredb/src/schema.ts |
 | R33i | *(подразумевается)* телефон, баланс и связи партнёров не попадают в Git, аналитику и обычные логи | in-ticket | Privacy проверяется в RefRef adapter и R Club auth | ticket 04, 05 |
 | R34i | *(подразумевается)* скидка и начисление можно доказать и отменить без двойной выдачи | in-ticket | Нужны ledger, reconciliation и reversal | ticket 02 |
 | R35i | *(подразумевается)* бармен видит простой и безопасный сценарий на кассе | in-ticket | Нужен POS runbook и тест | ticket 03 |
 | G01 | «браузерные все остальные функции, которые не требуют режима высокого интеллекта, используй, пожалуйста, модели попроще» | done | Luna выполнила read-only evidence и независимые проверки; дальнейшая реализация закреплена за Terra | evidence/01-evidence-pack.md |
 | D01 | *(обнаружено в отменённой custom ветке)* referral URL требовал lookup кандидата | dropped | Custom Club-domain отменён владельцем; штатный RefRef уже владеет participant/refcode | D02 |
-| D02 | *(коррекция владельца)* custom Club-domain/ledger не является заказанной архитектурой | in-ticket | RefRef владеет партнёрами и attribution, Syrve штатно владеет скидкой и 5 PLN; custom ветка удаляется | ticket 03 |
+| D02 | *(коррекция владельца)* custom Club-domain/ledger не является заказанной архитектурой | done | Ошибочный custom Club/domain/routes/tests удалён; канон RefRef → штатный Syrve | commit b3dc7b7 |
 | R36 | «Телеграм-бот должен регистрировать» | in-ticket | Bot запускает общую R Club Mini App; Telegram identity принимается только после server-side initData validation | ticket 05 |
 | R37 | «веб-приложение, которое внутри телеграм-бота, как телеграм-апп, будет открываться» | in-ticket | Один RefRef-based UI работает как Telegram Mini App и обычный web | ticket 05 |
 | R38 | «польскоязычных партнеров, у которых нет Телеграма ... могли спокойно пользоваться через сайт» | in-ticket | Польская web-регистрация не требует Telegram; identity/phone verification проектируются отдельно | ticket 05 |
