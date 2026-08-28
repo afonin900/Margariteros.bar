@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/afonin900/.codex/plugins/cache/personal/corp/0.5.0+codex.20260826115813/skills/autopilot",
   "startedAt": "2026-08-28T12:14:46+02:00",
-  "updatedAt": "2026-08-28T15:08:00+02:00",
+  "updatedAt": "2026-08-28T15:18:00+02:00",
   "finishedAt": null,
   "stages": [
     {
@@ -50,13 +50,13 @@ window.STATE =
       "id": "build",
       "status": "active",
       "startedAt": "2026-08-28T13:55:00+02:00",
-      "note": "1 из 4 тасков готовы"
+      "note": "2 из 4 тасков готовы"
     },
     {
       "id": "review",
       "status": "active",
       "startedAt": "2026-08-28T14:14:00+02:00",
-      "note": "проверяется 2 из 4"
+      "note": "проверено 2 из 4"
     },
     {
       "id": "final",
@@ -64,9 +64,9 @@ window.STATE =
     }
   ],
   "requirements": {
-    "total": 36,
-    "done": 9,
-    "inTicket": 22,
+    "total": 37,
+    "done": 14,
+    "inTicket": 18,
     "inSpec": 0,
     "placeholder": 0,
     "deferred": 5,
@@ -95,16 +95,21 @@ window.STATE =
     {
       "id": "02",
       "title": "Надёжное ядро регистрации и начислений",
-      "requirements": ["R09", "R12", "R14", "R15", "R17", "R18", "R19", "R20", "R24", "R32i", "R33i", "R34i"],
+      "requirements": ["R09", "R12", "R14", "R15", "R17", "R18", "R19", "R20", "R24", "R32i", "R33i", "R34i", "D01"],
       "blockedBy": ["01"],
       "wave": 2,
       "zone": ["site/src/lib/club/", "site/tests/club/"],
-      "status": "review",
+      "status": "repair",
       "startedAt": "2026-08-28T14:48:00+02:00",
+      "finishedAt": "2026-08-28T15:18:00+02:00",
       "retries": 0,
-      "repairs": 1,
-      "repairFindings": ["параллельные одинаковые check events могут создать две ledger entries"],
-      "handoffs": 0
+      "repairs": 2,
+      "repairFindings": ["параллельные одинаковые check events могут создать две ledger entries", "referral surface требует read-only lookup кандидата по referral code"],
+      "handoffs": 0,
+      "files": ["site/src/lib/club/club-domain.ts", "site/src/lib/club/syrve-adapter.ts", "site/src/lib/club/index.ts", "site/tests/club/club-domain.test.ts"],
+      "tests": {"passed": 28, "failed": 0},
+      "commit": "bbc6c8e",
+      "concerns": ["process-local idempotency; multi-instance needs durable transaction store"]
     },
     {
       "id": "03",
@@ -112,8 +117,9 @@ window.STATE =
       "requirements": ["R07", "R08", "R13", "R16", "R20", "R21", "R24", "R35i"],
       "blockedBy": ["02"],
       "wave": 3,
-      "zone": ["site/src/pages/api/club/", "site/src/pages/r/", "site/src/pages/[locale]/club/"],
-      "status": "pending",
+      "zone": ["site/src/pages/api/club/", "site/src/pages/r/", "site/src/pages/[locale]/club/", "site/tests/club/registration-and-link.test.ts"],
+      "status": "in-progress",
+      "startedAt": "2026-08-28T15:18:00+02:00",
       "retries": 0,
       "repairs": 0,
       "handoffs": 0

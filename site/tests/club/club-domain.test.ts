@@ -71,4 +71,22 @@ describe("club-domain", () => {
     expect(await club.activatePartner({ candidateId: pending.id, correlationId: "corr_16" })).toMatchObject({ status: "retryable", candidate: { status: "pending" } });
     expect(JSON.stringify(club.listAudit())).not.toMatch(/hash_5|tg_5|phone|card|secret/i);
   });
+
+  it("finds a public referral view without exposing candidate identity fields", async () => {
+    const club = createClubDomain({ syrve: createFakeSyrveAdapter() });
+    const pending = (await club.registerCandidate({ telegramUserId: "tg_7", phoneHash: "hash_7", correlationId: "corr_21" })).candidate;
+    const active = (await club.registerCandidate({ telegramUserId: "tg_8", phoneHash: "hash_8", correlationId: "corr_22" })).candidate;
+    const suspended = (await club.registerCandidate({ telegramUserId: "tg_9", phoneHash: "hash_9", correlationId: "corr_23" })).candidate;
+    await club.activatePartner({ candidateId: active.id, correlationId: "corr_24" });
+    await club.activatePartner({ candidateId: suspended.id, correlationId: "corr_25" });
+    club.suspendPartner({ candidateId: suspended.id, correlationId: "corr_26" });
+
+    expect(club.findCandidateByReferralCode(pending.referralCode)).toEqual({ referralCode: pending.referralCode, status: "pending" });
+    expect(club.findCandidateByReferralCode(active.referralCode)).toEqual({ referralCode: active.referralCode, status: "active" });
+    expect(club.findCandidateByReferralCode(suspended.referralCode)).toEqual({ referralCode: suspended.referralCode, status: "suspended" });
+    expect(club.findCandidateByReferralCode("unknown-code")).toBeUndefined();
+    expect(club.findCandidateByReferralCode(active.referralCode)).not.toHaveProperty("phoneHash");
+    expect(club.findCandidateByReferralCode(active.referralCode)).not.toHaveProperty("telegramUserId");
+    expect(club.findCandidateByReferralCode(active.referralCode)).not.toHaveProperty("syrveCustomerId");
+  });
 });

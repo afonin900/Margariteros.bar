@@ -2,7 +2,7 @@
 
 **Требования:** R07, R08, R13, R16, R20, R21, R24, R35i
 **Blocked by:** 02
-**Зона:** `site/src/pages/api/club/` · `site/src/pages/r/` · `site/src/pages/[locale]/club/`
+**Зона:** `site/src/pages/api/club/` · `site/src/pages/r/` · `site/src/pages/[locale]/club/` · `site/tests/club/registration-and-link.test.ts`
 **Волна:** 3
 **Status:** ready
 

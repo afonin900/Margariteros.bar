@@ -2,10 +2,12 @@ import type { SyrveAdapter } from "./syrve-adapter";
 
 export type CandidateStatus = "pending" | "active" | "rejected" | "suspended";
 export type Candidate = { id: string; telegramUserId: string; phoneHash: string; status: CandidateStatus; referralCode: string; syrveCustomerId?: string; activatedAt?: string };
+export type PublicReferralView = { referralCode: string; status: CandidateStatus };
 export type RewardLedgerEntry = { id: string; partnerId: string; externalCheckId: string; kind: "credit" | "reversal"; amountMinor: number; currency: "PLN"; idempotencyKey: string; status: "credited" | "awaiting_reversal_contract"; syrveTransactionRevision?: string; createdAt: string; reason?: string };
 export type AuditEvent = { actorType: "system" | "admin"; action: string; subjectOpaqueId: string; correlationId: string; occurredAt: string };
 export type ClubDomain = {
   registerCandidate(input: { telegramUserId: string; phoneHash: string; correlationId: string }): Promise<{ candidate: Candidate }>;
+  findCandidateByReferralCode(code: string): PublicReferralView | undefined;
   activatePartner(input: { candidateId: string; correlationId: string }): Promise<{ status: "active" | "retryable"; candidate: Candidate }>;
   rejectCandidate(input: { candidateId: string; correlationId: string }): Candidate;
   suspendPartner(input: { candidateId: string; correlationId: string }): Candidate;
@@ -42,6 +44,10 @@ export function createClubDomain({ syrve, now = () => new Date(), createOpaqueId
       candidateIdByPhoneHash.set(input.phoneHash, id);
       appendAudit("system", "candidate_registered", id, input.correlationId);
       return { candidate: created };
+    },
+    findCandidateByReferralCode(code) {
+      const found = [...candidatesById.values()].find((value) => value.referralCode === code);
+      return found ? { referralCode: found.referralCode, status: found.status } : undefined;
     },
     async activatePartner(input) {
       const value = candidate(input.candidateId);
