@@ -95,7 +95,7 @@ describe("Referral Redirect Endpoint", () => {
   });
 
   describe("GET /:code - Refcode Success Cases", () => {
-    it("should redirect with encoded params when all data is present", async () => {
+    it("redirects with the opaque refcode only", async () => {
       // Mock complete happy path with nested data (relational query)
       mockDb.query.refcode.findFirst.mockResolvedValueOnce({
         id: "rc_happy",
@@ -127,8 +127,10 @@ describe("Referral Redirect Endpoint", () => {
       expect(location).toBeDefined();
       expect(location).toContain("https://example.com");
       expect(location).toContain("refcode=abc1234");
-      expect(location).toContain("name="); // Base64 encoded name
-      expect(location).toContain("participantId="); // Base64 encoded participant ID
+      const url = new URL(location!);
+      expect(url.searchParams.get("name")).toBeNull();
+      expect(url.searchParams.get("email")).toBeNull();
+      expect(url.searchParams.get("participantId")).toBeNull();
     });
 
     it("should handle missing optional fields gracefully", async () => {
@@ -163,7 +165,7 @@ describe("Referral Redirect Endpoint", () => {
       expect(location).toBeDefined();
       expect(location).toContain("https://minimal.example.com");
       expect(location).toContain("refcode=xyz5678");
-      // Should not include empty encoded params
+      // Public redirect never includes participant fields.
       expect(location).not.toContain("name=");
     });
 
@@ -311,13 +313,13 @@ describe("Referral Redirect Endpoint", () => {
       expect(location).toBeDefined();
       expect(location).toContain("https://acme.example.com");
       expect(location).toContain("refcode=abc1234");
-      expect(location).toContain("name=");
-      expect(location).toContain("email=");
+      expect(location).not.toContain("name=");
+      expect(location).not.toContain("email=");
     });
   });
 
-  describe("GET /:code - Parameter Encoding", () => {
-    it("should base64 encode participant details", async () => {
+  describe("GET /:code - Referral privacy", () => {
+    it("does not expose reversible participant fields in a referral URL", async () => {
       // Mock with nested data (relational query)
       mockDb.query.refcode.findFirst.mockResolvedValueOnce({
         id: "rc_encode",
@@ -348,28 +350,11 @@ describe("Referral Redirect Endpoint", () => {
       const location = response.headers()["location"];
       const url = new URL(location!);
 
-      // Verify base64 encoding
-      const nameParam = url.searchParams.get("name");
-      const participantIdParam = url.searchParams.get("participantId");
-
-      expect(nameParam).toBeDefined();
-      expect(participantIdParam).toBeDefined();
-
-      // Decode and verify
-      if (nameParam) {
-        const decodedName = Buffer.from(nameParam, "base64").toString("utf-8");
-        expect(decodedName).toBe("Test User");
-      }
-
-      if (participantIdParam) {
-        const decodedId = Buffer.from(participantIdParam, "base64").toString(
-          "utf-8",
-        );
-        expect(decodedId).toBe("prt_encode");
-      }
+      expect([...url.searchParams.keys()]).toEqual(["refcode"]);
+      expect(url.searchParams.get("refcode")).toBe("enc0123");
     });
 
-    it("should handle special characters in participant data", async () => {
+    it("keeps special participant data out of the public redirect", async () => {
       // Mock with nested data (relational query)
       mockDb.query.refcode.findFirst.mockResolvedValueOnce({
         id: "rc_special",
@@ -401,14 +386,7 @@ describe("Referral Redirect Endpoint", () => {
       expect(location).toBeDefined();
 
       const url = new URL(location!);
-      const nameParam = url.searchParams.get("name");
-
-      // Should handle special characters through base64 encoding
-      expect(nameParam).toBeDefined();
-      if (nameParam) {
-        const decodedName = Buffer.from(nameParam, "base64").toString("utf-8");
-        expect(decodedName).toBe("John O'Brien & Co.");
-      }
+      expect([...url.searchParams.keys()]).toEqual(["refcode"]);
     });
   });
 
