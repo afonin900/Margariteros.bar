@@ -50,6 +50,10 @@ services:
       timeout: 3s
       retries: 30
     restart: unless-stopped
+    networks:
+      default:
+        aliases:
+          - rclub-api-internal
 
   refer:
     build:
@@ -85,7 +89,7 @@ services:
       BETTER_AUTH_URL: ${PUBLIC_BASE_URL}
       NEXT_PUBLIC_APP_URL: ${PUBLIC_BASE_URL}
       NEXT_PUBLIC_ASSETS_URL: ${PUBLIC_BASE_URL}
-      REFREF_API_URL: http://api:3001
+      REFREF_API_URL: http://rclub-api-internal:3001
       TELEGRAM_CLUB_BOT_TOKEN: ${TELEGRAM_CLUB_BOT_TOKEN}
       NODE_ENV: production
     depends_on:
