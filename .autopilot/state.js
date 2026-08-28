@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/afonin900/.codex/plugins/cache/personal/corp/0.5.0+codex.20260826115813/skills/autopilot",
   "startedAt": "2026-08-28T12:14:46+02:00",
-  "updatedAt": "2026-08-28T14:14:00+02:00",
+  "updatedAt": "2026-08-28T15:08:00+02:00",
   "finishedAt": null,
   "stages": [
     {
@@ -50,13 +50,13 @@ window.STATE =
       "id": "build",
       "status": "active",
       "startedAt": "2026-08-28T13:55:00+02:00",
-      "note": "0 из 4 тасков готовы"
+      "note": "1 из 4 тасков готовы"
     },
     {
       "id": "review",
       "status": "active",
       "startedAt": "2026-08-28T14:14:00+02:00",
-      "note": "проверяется 1 из 4"
+      "note": "проверяется 2 из 4"
     },
     {
       "id": "final",
@@ -65,8 +65,8 @@ window.STATE =
   ],
   "requirements": {
     "total": 36,
-    "done": 0,
-    "inTicket": 31,
+    "done": 9,
+    "inTicket": 22,
     "inSpec": 0,
     "placeholder": 0,
     "deferred": 5,
@@ -80,12 +80,17 @@ window.STATE =
       "blockedBy": [],
       "wave": 1,
       "zone": ["run/evidence/", "docs/club/"],
-      "status": "review",
+      "status": "done",
       "startedAt": "2026-08-28T14:07:00+02:00",
+      "finishedAt": "2026-08-28T14:48:00+02:00",
       "retries": 0,
       "repairs": 1,
       "repairFindings": ["evidence pack обнулил уже полученный live-readback и не дал официальные paths"],
-      "handoffs": 0
+      "handoffs": 0,
+      "files": [".autopilot/2026-08-28-margariteros-club-pilot--wip/evidence/01-evidence-pack.md", "docs/club/README.md"],
+      "tests": {"passed": 23, "failed": 0},
+      "commit": "72495a5",
+      "concerns": []
     },
     {
       "id": "02",
@@ -94,9 +99,11 @@ window.STATE =
       "blockedBy": ["01"],
       "wave": 2,
       "zone": ["site/src/lib/club/", "site/tests/club/"],
-      "status": "pending",
+      "status": "review",
+      "startedAt": "2026-08-28T14:48:00+02:00",
       "retries": 0,
-      "repairs": 0,
+      "repairs": 1,
+      "repairFindings": ["параллельные одинаковые check events могут создать две ledger entries"],
       "handoffs": 0
     },
     {

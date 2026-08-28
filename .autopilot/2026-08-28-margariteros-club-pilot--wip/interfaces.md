@@ -33,3 +33,12 @@
 - Ключ идемпотентности начисления: `syrve-check:<externalCheckId>:partner-reward:v1`.
 - Live guest/coupon/paid-close/transaction считаются `unknown`, пока ticket 04 не даст отдельный readback; историческое свидетельство их не заменяет.
 - Evidence pack: `.autopilot/2026-08-28-margariteros-club-pilot--wip/evidence/01-evidence-pack.md`; краткий вход: `docs/club/README.md`.
+
+## Из таска 02 — Club core
+
+- Вход модуля: `site/src/lib/club/index.ts`.
+- `createClubDomain()` создаёт изолированный in-memory domain для P0 и тестов.
+- Регистрация и модерация: `registerCandidate`, `activatePartner`, `rejectCandidate`, `suspendPartner`.
+- Чеки и ledger: `qualifyCheck`, `reverseReward`, `listLedger`, `listAudit`.
+- Syrve boundary: `SyrveAdapter`; реализации `createFakeSyrveAdapter` и `createNotReadySyrveAdapter`.
+- Reversal пока создаёт компенсирующую запись `awaiting_reversal_contract` и не вызывает Syrve без доказанного контракта.
