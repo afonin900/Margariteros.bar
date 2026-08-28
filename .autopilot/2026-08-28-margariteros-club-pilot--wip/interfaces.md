@@ -1,0 +1,35 @@
+# Границы реализации
+
+## Границы, решённые в спецификации
+
+- Syrve Loyalty — источник идентичности гостя, оплаченного чека, скидки, баланса и транзакции.
+- Собственный Club-модуль хранит только техническое состояние регистрации, opaque referral code, idempotency keys, связь с Syrve IDs и журнал обработки без PII в логах.
+- Публичный контракт ссылки стабилен: `/r/<opaque-code>`. Для POC он ведёт в ANDREI10 flow; дальнейшее подключение RefRef не должно менять уже выданные URL и QR.
+- Telegram запрашивает номер через native contact request, сверяет `contact.user_id` с отправителем и сразу выдаёт provisional link. До активации URL показывает `pending`.
+- Регистрация кандидата и активация партнёра — разные состояния. Автоматическое одобрение, многоуровневая сеть и POS-регистрация не входят в P0.
+- Начисление 5 PLN выполняется ровно один раз на закрытый оплаченный чек; повторная доставка события не создаёт вторую транзакцию.
+- Если актуальный Syrve API credential или официальный post-close contract не доказаны, интеграция остаётся в `not_ready`, а начисление не имитируется.
+- Физическая кассовая проверка — отдельная ступень приёмки. Staging честно показывает `awaiting_pos_check`.
+
+## Стек и команды
+
+- Существующее приложение: Astro 7 SSR, Node adapter standalone, TypeScript strict в `site/`.
+- Установка только при необходимости: `npm --prefix site ci`.
+- Проверки: `npm --prefix site run check`, `npm --prefix site run build`, `npm --prefix site test`.
+- Полный release gate: `npm --prefix site run verify:release`.
+
+## Правила для исполнителей
+
+- Сначала прочитать корневой `AGENTS.md`, `docs/growth-os/HERMES-START.md`, `PROJECT.md`, этот файл и свой ticket.
+- Не изменять существующие unrelated dirty files. Добавлять Club вертикально и изолированно.
+- Не делать deploy, публикацию, GitHub write, обращение в поддержку или включение общей live-программы.
+- Не выводить телефон, card number, API token, guest ID или machine/POS ID в Git, тестовые snapshots, логи и отчёт.
+- Не устанавливать отсутствующие зависимости самостоятельно: вернуть `BLOCKED` с точным названием зависимости.
+- Любая live-операция Syrve должна быть узкой, обратимой, иметь readback и выполняться только в ticket 04.
+
+## Из таска 01 — доказательства и контракт
+
+- Публичная ссылка: `/r/<opaque-code>`; до активации статус `pending`, после — `active`.
+- Ключ идемпотентности начисления: `syrve-check:<externalCheckId>:partner-reward:v1`.
+- Live guest/coupon/paid-close/transaction считаются `unknown`, пока ticket 04 не даст отдельный readback; историческое свидетельство их не заменяет.
+- Evidence pack: `.autopilot/2026-08-28-margariteros-club-pilot--wip/evidence/01-evidence-pack.md`; краткий вход: `docs/club/README.md`.

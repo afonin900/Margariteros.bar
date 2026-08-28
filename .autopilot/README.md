@@ -14,3 +14,4 @@
 | Начат | Папка | Статус | Итог |
 |---|---|---|---|
 | 2026-08-26 | `2026-08-26-first-party-astro-home` | сдан | Astro SSR staging на new.margariteros.bar с четырьмя языками, consent и conversion-ready слоем |
+| 2026-08-28 | `2026-08-28-margariteros-club-pilot--wip` | в работе | — |
