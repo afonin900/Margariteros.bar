@@ -9,9 +9,13 @@
 Появится ограниченный пилот из двух последовательных контуров:
 
 1. **Кассовое доказательство** — один тестовый партнёр, один тестовый купон, один оплаченный закрытый чек: гость получает 10%, партнёр получает ровно 5 PLN, повторный readback не создаёт дубль.
-2. **Основа автоматизации** — собственный Club backend с адаптером Syrve, статусами регистрации, безопасной партнёрской ссылкой и Telegram-контрактом. До доказанного POC новые заявки получают `pending`; администратор активирует партнёра.
+2. **Основа автоматизации** — self-hosted RefRef управляет партнёрами, регистрацией, referral links, атрибуцией и кабинетом; интеграционный адаптер связывает RefRef с нативными программами Syrve. Telegram-бот и обычный польский web открывают одну R Club Mini App.
 
-Syrve остаётся источником истины для гостя, категории, карты, кошелька и транзакции. Собственный ledger хранит техническую связь регистрации, referral code, кассового доказательства и идемпотентности. RefRef рассматривается как будущая оболочка кабинета, но не включается целиком в P0 из-за alpha-статуса, AGPL и отсутствия готового Syrve-адаптера.
+Syrve остаётся источником истины для гостя, категории, карты, кошелька, скидки и бонусной транзакции. RefRef — источник истины для партнёра, referral code, attribution и partner portal. Допустим только технический integration log для доставки событий и reconciliation; он не рассчитывает награду, не хранит бонусный баланс и не подменяет Syrve Loyalty.
+
+### Архитектурная коррекция владельца 2026-08-28
+
+Эта коррекция отменяет все ниже расположенные формулировки про «собственный Club backend/domain/reward ledger» и про перенос полного RefRef за пределы P0. Созданный в ticket 02 custom Club-domain является ошибочной веткой и должен быть удалён отдельным исправляющим ticket. Обязательная архитектура: **RefRef → интеграционный адаптер → штатный Syrve Loyalty**, с Telegram Mini App и обычным web R Club как двумя входами в один интерфейс.
 
 ## Результат исследования
 
@@ -80,29 +84,9 @@ Syrve остаётся источником истины для гостя, ка
 
 Если Syrve Loyalty не умеет выразить «5 PLN после закрытого оплаченного чека» без преждевременного начисления, нативную Reward-программу не включать. Тогда P0 доказывает скидку, а начисление выполняется вручную через официальный `wallet/topup` только после получения application API credential и повторного readback. Это честный fallback, а не имитация автоматики.
 
-### Модель данных
+### Модель данных RefRef и интеграции
 
-```text
-PartnerCandidate
-  id, telegramUserId, phoneHash, status[pending|active|blocked]
-  syrveCustomerId?, referralCode?, activatedAt?
-
-ReferralClaim
-  id, referralCode, inviteeIdentityHash, status[pending|qualified|reversed]
-  createdAt, qualifiedAt?, source
-
-RewardLedger
-  id, partnerId, externalCheckId, kind[credit|reversal]
-  amountMinor, currency[PLN], idempotencyKey, status
-  syrveTransactionRevision?, createdAt
-
-AuditEvent
-  actorType, action, subjectOpaqueId, correlationId, occurredAt
-```
-
-Телефон не хранится в аналитическом ledger. Для поиска дубликатов используется нормализованный phone hash; расшифровываемое значение находится только в зашифрованном operational store либо запрашивается из Syrve по защищённому идентификатору.
-
-Обнаружено в ticket 03: публичной поверхности нужен read-only lookup кандидата по `referralCode`; без него `/r/<opaque-code>` не может честно показать состояние после модерации. Core выставляет этот lookup без phone hash и Syrve IDs.
+Используются штатные сущности RefRef `program`, `participant`, `refcode`, `referral`, `event`, `reward` и штатные guest/program/wallet/transaction сущности Syrve. Между ними хранится только secret-safe mapping opaque RefRef participant/event ID ↔ Syrve customer/order/transaction ID и delivery status. Сумма 5 PLN задаётся нативным правилом Syrve; RefRef не является кошельком.
 
 ### Контракты Syrve
 
@@ -127,9 +111,9 @@ Application API credential хранится только в OpenBao/Dokploy env.
 
 ### RefRef
 
-Переиспользовать после P0 только те модули, которые проходят license/upgrade spike: partner portal, referral code UI, reward history patterns и promo generation. Syrve adapter, accounting ledger, consent и POS evidence остаются собственными. Не форкать всю alpha-платформу до такого spike.
+Self-host официальный `amicalhq/refref` обязателен в P0. Используются его participant signup, refcode redirect, referral attribution, event tracking и partner portal. Так как upstream не содержит Syrve provider/payout connector, добавляется узкий adapter на event boundary; внутренний RefRef reward record может быть только отображением статуса нативной операции Syrve, но не источником суммы или баланса.
 
-P0 оставляет работающий first-party `/r/<opaque-code>` seam и Telegram-выдачу ссылки, чтобы переход на RefRef не менял напечатанные QR. Полный RefRef UI deferred, но его интеграционная граница и spike входят в поставку.
+RefRef разворачивается отдельным приложением, чтобы AGPL-код и upstream updates не смешивались с Astro-сайтом. Основной Margariteros показывает вкладку R Club, ведущую на один URL RefRef-based web app; тот же URL открывает Telegram Mini App.
 
 ### Экономный маршрут моделей
 
@@ -150,13 +134,13 @@ P0 оставляет работающий first-party `/r/<opaque-code>` seam �
 
 | Модуль | Владеет | Выставляет | Прячет |
 |---|---|---|---|
-| `club-domain` | статусы кандидата, claim и reward ledger | `registerCandidate`, `activatePartner`, `qualifyCheck`, `reverseReward` | переходы состояний и idempotency |
-| `syrve-adapter` | HTTP-контракт Syrve | `findCustomer`, `ensurePartner`, `readWallet`, `topupWallet`, `readTransactions` | auth, retries, schemas, redaction |
-| `telegram-adapter` | update parsing и ответы | `handleStart`, `handleContact`, `renderStatus` | Bot API и проверку contact owner |
-| `club-api` | transport/auth/RBAC | `/healthz`, `/readyz`, partner/admin endpoints | session, validation, rate limits |
+| `refref-upstream` | participant, refcode, referral, events, portal | штатные RefRef API/routes | attribution и partner UI |
+| `syrve-native-adapter` | доставка RefRef conversion в Syrve | customer/program/order readback и native Loyalty trigger | auth, retries, schemas, redaction |
+| `r-club-app` | Telegram Mini App + обычный web вход | validated `initData`, web auth, partner portal | session, consent, locale |
+| `margariteros-site` | навигация в клуб | R Club tab/link | не хранит partner/loyalty state |
 | `pilot-evidence` | кассовый runbook и readback | `verifyPilot(evidence) -> verdict` | PII-safe evidence normalization |
 
-Главный тестовый шов — `club-domain` с подменяемым `syrve-adapter`. Интеграционные tests бьют официальный adapter через recorded redacted fixtures; live POC проверяется отдельным evidence verifier.
+Главный тестовый шов — RefRef event → Syrve native adapter → Syrve transaction readback. Интеграционные tests используют recorded redacted fixtures; live POC проверяется отдельным evidence verifier.
 
 ## POC: порядок и приёмка
 
@@ -176,7 +160,7 @@ POC не считается завершённым без физического
 | Требование | Почему не сейчас |
 |---|---|
 | R05 — обращение в техподдержку | только если readback докажет отсутствующий API scope; внешнее сообщение требует отдельного разрешения |
-| R06–R07 — полный RefRef/web/Google/Apple | P0 сначала доказывает кассовую экономику; alpha/AGPL spike отдельно |
+| Google/Apple auth | Telegram Mini App и обычный web R Club входят в P0; дополнительные identity providers после пилота |
 | R10 — многоуровневая сеть | высокий fraud/accounting риск, не нужна для первого чека |
 | R22 — регистрация на кассе | POS UX сначала наблюдаем; P0 использует готового партнёра |
 | R27 — публичный launch | deploy/staging возможен после кода; публичная активация отдельно разрешается владельцем |

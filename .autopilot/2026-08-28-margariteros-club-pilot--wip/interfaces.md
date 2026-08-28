@@ -1,5 +1,15 @@
 # Границы реализации
 
+> **Коррекция 2026-08-28:** блоки «Из таска 02» ниже описывают отменённый prototype и не являются интерфейсом для новых tickets. Ticket 03 удаляет этот код. Канон: RefRef владеет partner/referral/portal; Syrve штатно владеет discount/reward/balance; Margariteros хранит только integration delivery/reconciliation metadata.
+
+## Из исправленного таска 03 — официальный RefRef
+
+- Canonical checkout: `/Users/afonin900/Github/refref`, upstream `https://github.com/amicalhq/refref.git`, pinned audited HEAD `81af934fec3b20990a4d9af7ed472d0d14d73a82`.
+- Штатные seams: `POST /v1/track/signup`, `POST /v1/track/purchase`, `GET /r/:code`, `GET /r/:productSlug/:code`.
+- RefRef владеет participant/refcode/referral/event/portal; Syrve adapter доставляет native Loyalty event/readback.
+- Upstream `/r` переносит base64 participant fields в URL; для публичного QR нужен отдельный privacy-safe seam.
+- Bootstrap evidence: `/Users/afonin900/Github/refref/docs/margariteros-bootstrap.md`.
+
 ## Границы, решённые в спецификации
 
 - Syrve Loyalty — источник идентичности гостя, оплаченного чека, скидки, баланса и транзакции.
@@ -42,3 +52,12 @@
 - Чеки и ledger: `qualifyCheck`, `reverseReward`, `listLedger`, `listAudit`.
 - Syrve boundary: `SyrveAdapter`; реализации `createFakeSyrveAdapter` и `createNotReadySyrveAdapter`.
 - Reversal пока создаёт компенсирующую запись `awaiting_reversal_contract` и не вызывает Syrve без доказанного контракта.
+- Concurrent одинаковые `qualifyCheck` сериализуются process-local через in-flight idempotency key; multi-instance гарантия потребует durable transactional store.
+- `findCandidateByReferralCode(code) -> PublicReferralView | undefined`; public view содержит только `referralCode` и текущий `status`.
+
+## Из таска 03 — регистрация и referral surface
+
+- `POST /api/club/register` и `POST /api/club/telegram-contact` возвращают `{status: "pending", provisionalUrl: "/r/<opaque-code>"}`.
+- Telegram contact endpoint принимает только contact текущего Telegram user; чужой contact отклоняется.
+- `GET /r/<code>` использует core lookup и показывает public states без PII; pending не обещает скидку.
+- Локальная registration page: `/<locale>/club/`; runtime намеренно in-memory до выбора durable store.

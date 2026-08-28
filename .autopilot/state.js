@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/afonin900/.codex/plugins/cache/personal/corp/0.5.0+codex.20260826115813/skills/autopilot",
   "startedAt": "2026-08-28T12:14:46+02:00",
-  "updatedAt": "2026-08-28T15:18:00+02:00",
+  "updatedAt": "2026-08-28T16:30:00+02:00",
   "finishedAt": null,
   "stages": [
     {
@@ -44,19 +44,19 @@ window.STATE =
       "status": "done",
       "startedAt": "2026-08-28T13:47:00+02:00",
       "finishedAt": "2026-08-28T13:55:00+02:00",
-      "note": "4 таска, ярус T2"
+      "note": "план исправлен: 7 тасков, RefRef → Syrve"
     },
     {
       "id": "build",
       "status": "active",
       "startedAt": "2026-08-28T13:55:00+02:00",
-      "note": "2 из 4 тасков готовы"
+      "note": "1 из 7 тасков готов; custom prototype отменён"
     },
     {
       "id": "review",
       "status": "active",
       "startedAt": "2026-08-28T14:14:00+02:00",
-      "note": "проверено 2 из 4"
+      "note": "проверяется исправленный таск 03"
     },
     {
       "id": "final",
@@ -64,73 +64,244 @@ window.STATE =
     }
   ],
   "requirements": {
-    "total": 37,
-    "done": 14,
-    "inTicket": 18,
+    "total": 41,
+    "done": 9,
+    "inTicket": 27,
     "inSpec": 0,
     "placeholder": 0,
-    "deferred": 5,
-    "dropped": 0
+    "deferred": 4,
+    "dropped": 1
   },
   "tickets": [
     {
       "id": "01",
       "title": "Доказанная карта Loyalty и контракт пилота",
-      "requirements": ["R01", "R02", "R03", "R04", "R11", "R23", "R26", "R28", "R29", "R30", "R31", "G01"],
+      "requirements": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R11",
+        "R23",
+        "R26",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "G01"
+      ],
       "blockedBy": [],
       "wave": 1,
-      "zone": ["run/evidence/", "docs/club/"],
+      "zone": [
+        "run/evidence/",
+        "docs/club/"
+      ],
       "status": "done",
       "startedAt": "2026-08-28T14:07:00+02:00",
       "finishedAt": "2026-08-28T14:48:00+02:00",
       "retries": 0,
       "repairs": 1,
-      "repairFindings": ["evidence pack обнулил уже полученный live-readback и не дал официальные paths"],
+      "repairFindings": [
+        "evidence pack обнулил уже полученный live-readback и не дал официальные paths"
+      ],
       "handoffs": 0,
-      "files": [".autopilot/2026-08-28-margariteros-club-pilot--wip/evidence/01-evidence-pack.md", "docs/club/README.md"],
-      "tests": {"passed": 23, "failed": 0},
+      "files": [
+        ".autopilot/2026-08-28-margariteros-club-pilot--wip/evidence/01-evidence-pack.md",
+        "docs/club/README.md"
+      ],
+      "tests": {
+        "passed": 23,
+        "failed": 0
+      },
       "commit": "72495a5",
       "concerns": []
     },
     {
       "id": "02",
-      "title": "Надёжное ядро регистрации и начислений",
-      "requirements": ["R09", "R12", "R14", "R15", "R17", "R18", "R19", "R20", "R24", "R32i", "R33i", "R34i", "D01"],
-      "blockedBy": ["01"],
+      "title": "Отменённый самописный Club prototype",
+      "requirements": [
+        "R09",
+        "R12",
+        "R14",
+        "R15",
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R24",
+        "R32i",
+        "R33i",
+        "R34i",
+        "D01"
+      ],
+      "blockedBy": [
+        "01"
+      ],
       "wave": 2,
-      "zone": ["site/src/lib/club/", "site/tests/club/"],
-      "status": "repair",
+      "zone": [
+        "site/src/lib/club/",
+        "site/tests/club/"
+      ],
+      "status": "failed",
       "startedAt": "2026-08-28T14:48:00+02:00",
       "finishedAt": "2026-08-28T15:18:00+02:00",
       "retries": 0,
       "repairs": 2,
-      "repairFindings": ["параллельные одинаковые check events могут создать две ledger entries", "referral surface требует read-only lookup кандидата по referral code"],
+      "repairFindings": [
+        "параллельные одинаковые check events могут создать две ledger entries",
+        "referral surface требует read-only lookup кандидата по referral code"
+      ],
       "handoffs": 0,
-      "files": ["site/src/lib/club/club-domain.ts", "site/src/lib/club/syrve-adapter.ts", "site/src/lib/club/index.ts", "site/tests/club/club-domain.test.ts"],
-      "tests": {"passed": 28, "failed": 0},
-      "commit": "bbc6c8e",
-      "concerns": ["process-local idempotency; multi-instance needs durable transaction store"]
+      "files": [
+        "site/src/lib/club/club-domain.ts",
+        "site/src/lib/club/syrve-adapter.ts",
+        "site/src/lib/club/index.ts",
+        "site/tests/club/club-domain.test.ts"
+      ],
+      "tests": {
+        "passed": 28,
+        "failed": 0
+      },
+      "commit": "29c171e",
+      "concerns": [
+        "process-local idempotency; multi-instance needs durable transaction store",
+        "public referral lookup test does not cover rejected status",
+        "владелец подтвердил обязательный RefRef; prototype удаляется ticket 03"
+      ]
     },
     {
       "id": "03",
-      "title": "Регистрация партнёра и постоянная ссылка",
-      "requirements": ["R07", "R08", "R13", "R16", "R20", "R21", "R24", "R35i"],
-      "blockedBy": ["02"],
+      "title": "Перейти с самописного Club на официальный RefRef",
+      "requirements": [
+        "R06",
+        "R08",
+        "R09",
+        "R24",
+        "D02"
+      ],
+      "blockedBy": [
+        "01"
+      ],
       "wave": 3,
-      "zone": ["site/src/pages/api/club/", "site/src/pages/r/", "site/src/pages/[locale]/club/", "site/tests/club/registration-and-link.test.ts"],
-      "status": "in-progress",
-      "startedAt": "2026-08-28T15:18:00+02:00",
+      "zone": [
+        "site custom Club paths",
+        "/Users/afonin900/Github/refref/"
+      ],
+      "status": "review",
+      "startedAt": "2026-08-28T16:05:00+02:00",
       "retries": 0,
       "repairs": 0,
       "handoffs": 0
     },
     {
       "id": "04",
-      "title": "Один контролируемый чек: скидка 10% и бонус 5 PLN",
-      "requirements": ["R04", "R11", "R16", "R17", "R18", "R19", "R25", "R26", "R34i", "R35i"],
-      "blockedBy": ["01", "02", "03"],
+      "title": "Подключить RefRef к штатному Syrve Loyalty",
+      "requirements": [
+        "R04",
+        "R11",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R25",
+        "R26",
+        "R32i",
+        "R33i",
+        "R34i"
+      ],
+      "blockedBy": [
+        "03"
+      ],
       "wave": 4,
-      "zone": ["run/live-poc/", "docs/club/pos-pilot.md"],
+      "zone": [
+        "refref/apps/api/",
+        "refref/packages/"
+      ],
+      "status": "pending",
+      "retries": 0,
+      "repairs": 0,
+      "handoffs": 0
+    },
+    {
+      "id": "05",
+      "title": "R Club для Telegram и обычного польского веба",
+      "requirements": [
+        "R07",
+        "R12",
+        "R13",
+        "R20",
+        "R21",
+        "R24",
+        "R33i",
+        "R36",
+        "R37",
+        "R38"
+      ],
+      "blockedBy": [
+        "03",
+        "04"
+      ],
+      "wave": 5,
+      "zone": [
+        "refref/apps/refer/",
+        "refref/apps/webapp/",
+        "site/src/"
+      ],
+      "status": "pending",
+      "retries": 0,
+      "repairs": 0,
+      "handoffs": 0
+    },
+    {
+      "id": "06",
+      "title": "Подготовить проверяемый staging R Club",
+      "requirements": [
+        "R24",
+        "R27",
+        "R37",
+        "R38"
+      ],
+      "blockedBy": [
+        "04",
+        "05"
+      ],
+      "wave": 6,
+      "zone": [
+        "refref/docker/",
+        "refref/docs/",
+        "docs/club/"
+      ],
+      "status": "pending",
+      "retries": 0,
+      "repairs": 0,
+      "handoffs": 0
+    },
+    {
+      "id": "07",
+      "title": "Проверить нативные 10% и 5 PLN одним кассовым чеком",
+      "requirements": [
+        "R04",
+        "R11",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R25",
+        "R26",
+        "R34i",
+        "R35i"
+      ],
+      "blockedBy": [
+        "04",
+        "06"
+      ],
+      "wave": 7,
+      "zone": [
+        "run/live-poc/",
+        "docs/club/pos-pilot.md"
+      ],
       "status": "pending",
       "retries": 0,
       "repairs": 0,
@@ -152,6 +323,10 @@ window.STATE =
     {
       "at": "2026-08-28T13:05:00+02:00",
       "text": "Live Syrve подтвердил ранее настроенную пару 10% + 5 PLN; скидка активна, бонусная программа выключена"
+    },
+    {
+      "at": "2026-08-28T16:05:00+02:00",
+      "text": "Owner correction: mandatory self-host RefRef; Syrve native discount/reward; one R Club UI for Telegram Mini App and ordinary Polish web"
     }
   ],
   "coverage": {
