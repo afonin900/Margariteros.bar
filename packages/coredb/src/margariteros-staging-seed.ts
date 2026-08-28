@@ -128,7 +128,10 @@ async function seed() {
   );
 }
 
-seed().catch((error) => {
-  console.error("Margariteros staging seed failed", error);
-  process.exitCode = 1;
-});
+seed().then(
+  () => process.exit(0),
+  (error) => {
+    console.error("Margariteros staging seed failed", error);
+    process.exit(1);
+  },
+);
