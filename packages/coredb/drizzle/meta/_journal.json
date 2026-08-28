@@ -29,6 +29,13 @@
       "when": 1787916179000,
       "tag": "0003_syrve_native_delivery",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1787918184824,
+      "tag": "0004_telegram_replay_claim",
+      "breakpoints": true
     }
   ]
 }

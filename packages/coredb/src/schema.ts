@@ -459,6 +459,26 @@ export const syrveIntegrationDelivery = pgTable(
   ],
 );
 
+// A hashed Telegram launch claim. This is deliberately separate from the
+// Syrve delivery log: its only job is a short-lived, multi-instance replay
+// guard. Raw initData, Telegram user IDs and phone numbers never enter it.
+export const telegramReplayClaim = pgTable(
+  "telegram_replay_claim",
+  {
+    replayKey: text("replay_key").primaryKey(),
+    expiresAt: timestamp("expires_at").notNull(),
+    createdAt: timestamp("created_at")
+      .notNull()
+      .default(sql`now()`),
+    updatedAt: timestamp("updated_at")
+      .notNull()
+      .default(sql`now()`),
+  },
+  (table) => [
+    index("telegram_replay_claim_expires_at_idx").on(table.expiresAt),
+  ],
+);
+
 export const referralRelations = relations(referral, ({ one }) => ({
   referrer: one(participant, {
     fields: [referral.referrerId],

@@ -35,7 +35,10 @@ export function validateTelegramInitData(
     .digest("hex");
   const expected = Buffer.from(expectedHash, "utf8");
   const received = Buffer.from(receivedHash, "utf8");
-  if (expected.length !== received.length || !timingSafeEqual(expected, received)) {
+  if (
+    expected.length !== received.length ||
+    !timingSafeEqual(expected, received)
+  ) {
     return { ok: false, reason: "invalid_init_data" };
   }
 
@@ -51,12 +54,13 @@ export function validateTelegramInitData(
     if (typeof user.id !== "number" && typeof user.id !== "string") {
       return { ok: false, reason: "invalid_init_data" };
     }
-    const queryId = params.get("query_id");
     const digest = createHash("sha256").update(rawInitData).digest("hex");
     return {
       ok: true,
       subject: String(user.id),
-      replayKey: queryId ? `telegram-query:${queryId}` : `telegram-init:${digest}`,
+      // Store only a digest. query_id and raw initData are Telegram payloads,
+      // not a durable identity record for RefRef.
+      replayKey: `telegram-init:${digest}`,
       replayTtlSeconds: Math.max(1, authDate + MAX_AGE_SECONDS - now),
     };
   } catch {
