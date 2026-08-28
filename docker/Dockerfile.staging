@@ -19,11 +19,13 @@ WORKDIR /app/apps/refer
 CMD ["pnpm", "start"]
 
 FROM packages AS webapp
+ARG NEXT_PUBLIC_APP_URL=http://localhost:3000
+ARG NEXT_PUBLIC_ASSETS_URL=http://localhost:3002
 ENV DATABASE_URL=postgresql://build:build@localhost:5432/build
 ENV BETTER_AUTH_SECRET=build-only-placeholder
 ENV BETTER_AUTH_URL=http://localhost:3000
-ENV NEXT_PUBLIC_APP_URL=http://localhost:3000
-ENV NEXT_PUBLIC_ASSETS_URL=http://localhost:3002
+ENV NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL}
+ENV NEXT_PUBLIC_ASSETS_URL=${NEXT_PUBLIC_ASSETS_URL}
 RUN pnpm --filter @refref/webapp build
 WORKDIR /app/apps/webapp
 CMD ["pnpm", "start"]

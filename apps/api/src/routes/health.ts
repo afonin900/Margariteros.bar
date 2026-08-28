@@ -22,7 +22,8 @@ async function healthHandler(request: FastifyRequest, reply: FastifyReply) {
     checks.database = {
       ok: false,
       status: "not_ready",
-      error: error instanceof Error ? error.message : "Unknown error",
+      // Health is public in staging; never return driver/connection details.
+      error: "database_unavailable",
     };
   }
 

@@ -1,0 +1,104 @@
+name: margariteros-r-club
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: refref
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - margariteros_refref_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d refref"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  migrate:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.staging
+      target: migrate
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/refref
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.staging
+      target: api
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/refref
+      HOST: 0.0.0.0
+      PORT: 3001
+      REFERRAL_HOST_URL: ${PUBLIC_BASE_URL}
+      SYRVE_API_LOGIN: ${SYRVE_API_LOGIN:-}
+      SYRVE_LOYALTY_PROGRAM_ID: ${SYRVE_LOYALTY_PROGRAM_ID:-}
+      LOG_LEVEL: warn
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3001/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  refer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.staging
+      target: refer
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/refref
+      HOST: 0.0.0.0
+      PORT: 3002
+      LOG_LEVEL: warn
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3002/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+  webapp:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.staging
+      target: webapp
+      args:
+        NEXT_PUBLIC_APP_URL: ${PUBLIC_BASE_URL}
+        NEXT_PUBLIC_ASSETS_URL: ${PUBLIC_BASE_URL}
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/refref
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      BETTER_AUTH_URL: ${PUBLIC_BASE_URL}
+      NEXT_PUBLIC_APP_URL: ${PUBLIC_BASE_URL}
+      NEXT_PUBLIC_ASSETS_URL: ${PUBLIC_BASE_URL}
+      REFREF_API_URL: http://api:3001
+      TELEGRAM_CLUB_BOT_TOKEN: ${TELEGRAM_CLUB_BOT_TOKEN}
+      NODE_ENV: production
+    depends_on:
+      api:
+        condition: service_healthy
+      refer:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000/api/ready').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+
+volumes:
+  margariteros_refref_postgres:
