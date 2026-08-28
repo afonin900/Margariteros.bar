@@ -427,6 +427,38 @@ export const event = pgTable(
   ],
 );
 
+// Technical delivery/reconciliation metadata for a native Syrve outcome.
+// No amount, balance, phone, card number, coupon payload, or guest profile is
+// stored here; Syrve remains the source of truth for all Loyalty economics.
+export const syrveIntegrationDelivery = pgTable(
+  "syrve_integration_delivery",
+  {
+    ...baseFields("syrveIntegrationDelivery"),
+    productId: text("product_id")
+      .notNull()
+      .references(() => product.id, { onDelete: "cascade" }),
+    eventId: text("event_id")
+      .notNull()
+      .references(() => event.id, { onDelete: "cascade" }),
+    participantId: text("participant_id").references(() => participant.id),
+    referralId: text("referral_id").references(() => referral.id),
+    idempotencyKey: text("idempotency_key").notNull(),
+    externalCheckId: text("external_check_id").notNull(),
+    syrveCustomerId: text("syrve_customer_id").notNull(),
+    syrveOrderId: text("syrve_order_id"),
+    syrveTransactionId: text("syrve_transaction_id"),
+    status: text("status").notNull(),
+    correlationId: text("correlation_id").notNull(),
+  },
+  (table) => [
+    uniqueIndex("syrve_delivery_idempotency_key_unique_idx").on(
+      table.idempotencyKey,
+    ),
+    index("syrve_delivery_event_id_idx").on(table.eventId),
+    index("syrve_delivery_status_idx").on(table.status),
+  ],
+);
+
 export const referralRelations = relations(referral, ({ one }) => ({
   referrer: one(participant, {
     fields: [referral.referrerId],

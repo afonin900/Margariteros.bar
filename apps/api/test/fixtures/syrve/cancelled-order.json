@@ -1,0 +1,10 @@
+{
+  "customer": { "id": "cust_redacted_003" },
+  "program": { "id": "program_redacted_001", "active": true },
+  "order": {
+    "id": "order_redacted_003",
+    "revision": "revision_redacted_003",
+    "paymentStatus": "unpaid",
+    "status": "cancelled"
+  }
+}
