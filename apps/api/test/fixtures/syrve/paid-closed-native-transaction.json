@@ -3,7 +3,7 @@
   "program": { "id": "program_redacted_001", "active": true },
   "order": {
     "id": "order_redacted_001",
-    "revision": "revision_redacted_001",
+    "posOrderId": "pos_order_redacted_001",
     "paymentStatus": "paid",
     "status": "closed"
   },

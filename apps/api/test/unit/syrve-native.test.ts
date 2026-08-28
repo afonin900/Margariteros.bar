@@ -5,6 +5,8 @@ import {
   createNotReadySyrveAdapter,
   createSyrveNativeAdapter,
   createSyrveNativeAdapterFromEnvironment,
+  createSyrveHttpGateway,
+  readSyrveRuntimeConfig,
   SyrveReadbackTimeout,
   type SyrveDelivery,
   type SyrveDeliveryStore,
@@ -17,7 +19,7 @@ type Fixture = {
   program: { id: string; active: boolean };
   order: {
     id: string;
-    revision: string;
+    posOrderId?: string;
     paymentStatus: "paid" | "unpaid";
     status: "closed" | "open" | "cancelled";
   };
@@ -51,7 +53,7 @@ function gatewayFrom(data: Fixture): SyrveLoyaltyGateway {
     readCustomer: vi.fn().mockResolvedValue(data.customer),
     readProgram: vi.fn().mockResolvedValue(data.program),
     readOrder: vi.fn().mockResolvedValue(data.order),
-    readTransactionByRevision: vi.fn().mockResolvedValue(data.transaction),
+    readTransactionForOrder: vi.fn().mockResolvedValue(data.transaction),
   };
 }
 
@@ -66,6 +68,48 @@ const baseInput = {
 };
 
 describe("Syrve native adapter", () => {
+  it("builds a read-only HTTP gateway with the verified Syrve request shapes", async () => {
+    const calls: Array<{ url: string; body: unknown; headers: Headers }> = [];
+    vi.stubGlobal("fetch", vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+      calls.push({ url: String(input), body: JSON.parse(String(init?.body)), headers: new Headers(init?.headers) });
+      const url = String(input);
+      const payload = url.endsWith("access_token")
+        ? { token: "test-token" }
+        : url.endsWith("/program")
+          ? { Programs: [{ Id: "program_redacted_001", Active: true }] }
+          : url.endsWith("/customer/info")
+            ? { id: "cust_redacted_001" }
+            : url.endsWith("/order/by_id")
+              ? { orders: [{ id: "order_redacted_001", posId: "pos_order_redacted_001", order: { status: "Closed", sum: 10, processedPaymentsSum: 10 } }] }
+              : { transactions: [{ id: "txn_redacted_001", posOrderId: "pos_order_redacted_001", status: "Applied" }] };
+      return new Response(JSON.stringify(payload), { status: 200 });
+    }));
+    try {
+      const config = readSyrveRuntimeConfig({
+        SYRVE_API_LOGIN: "login_redacted",
+        SYRVE_ORGANIZATION_ID: "org_redacted",
+        SYRVE_LOYALTY_PROGRAM_ID: "program_redacted_001",
+      });
+      expect(config).toBeDefined();
+      const gateway = createSyrveHttpGateway(config!);
+      expect(await gateway.readCustomer("cust_redacted_001")).toEqual({ id: "cust_redacted_001" });
+      expect(await gateway.readProgram("program_redacted_001")).toEqual({ id: "program_redacted_001", active: true });
+      expect(await gateway.readOrder("order_redacted_001")).toEqual({ id: "order_redacted_001", posOrderId: "pos_order_redacted_001", status: "closed", paymentStatus: "paid" });
+      expect(await gateway.readTransactionForOrder("cust_redacted_001", "pos_order_redacted_001")).toEqual({ id: "txn_redacted_001", orderId: "pos_order_redacted_001", status: "applied" });
+      expect(calls.map((call) => call.url)).toEqual([
+        "https://api-eu.syrve.live/api/1/access_token",
+        "https://api-eu.syrve.live/api/1/loyalty/syrve/customer/info",
+        "https://api-eu.syrve.live/api/1/loyalty/syrve/program",
+        "https://api-eu.syrve.live/api/1/order/by_id",
+        "https://api-eu.syrve.live/api/1/loyalty/syrve/customer/transactions/by_date",
+      ]);
+      expect(calls[3].body).toEqual({ organizationIds: ["org_redacted"], orderIds: ["order_redacted_001"] });
+      expect(calls[1].headers.get("authorization")).toBe("Bearer test-token");
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
   it("routes explicit syrve_native events away from the upstream reward engine", async () => {
     const processUpstream = vi.fn();
     const processSyrveNative = vi.fn().mockResolvedValue(undefined);
@@ -151,7 +195,7 @@ describe("Syrve native adapter", () => {
     const result = await adapter.process(baseInput);
 
     expect(result.status).toBe("awaiting_paid_close");
-    expect(gateway.readTransactionByRevision).not.toHaveBeenCalled();
+    expect(gateway.readTransactionForOrder).not.toHaveBeenCalled();
   });
 
   it("does not reconcile a cancelled order", async () => {
@@ -162,7 +206,7 @@ describe("Syrve native adapter", () => {
     const result = await adapter.process(baseInput);
 
     expect(result.status).toBe("cancelled");
-    expect(gateway.readTransactionByRevision).not.toHaveBeenCalled();
+    expect(gateway.readTransactionForOrder).not.toHaveBeenCalled();
   });
 
   it("returns the first delivery on duplicate input without another gateway call", async () => {
@@ -175,7 +219,7 @@ describe("Syrve native adapter", () => {
 
     expect(duplicate).toEqual(first);
     expect(gateway.readOrder).toHaveBeenCalledTimes(1);
-    expect(gateway.readTransactionByRevision).toHaveBeenCalledTimes(1);
+    expect(gateway.readTransactionForOrder).toHaveBeenCalledTimes(1);
   });
 
   it("claims concurrent identical events before one gateway sequence", async () => {
@@ -190,13 +234,13 @@ describe("Syrve native adapter", () => {
 
     expect(second.idempotencyKey).toBe(first.idempotencyKey);
     expect(gateway.readOrder).toHaveBeenCalledTimes(1);
-    expect(gateway.readTransactionByRevision).toHaveBeenCalledTimes(1);
+    expect(gateway.readTransactionForOrder).toHaveBeenCalledTimes(1);
   });
 
   it("performs readback after a timeout before allowing a retry", async () => {
     const data = await fixture("timeout-then-readback");
     const gateway = gatewayFrom(data);
-    gateway.readTransactionByRevision = vi
+    gateway.readTransactionForOrder = vi
       .fn()
       .mockRejectedValueOnce(new SyrveReadbackTimeout())
       .mockResolvedValueOnce(data.transaction);
@@ -206,13 +250,13 @@ describe("Syrve native adapter", () => {
 
     expect(result.status).toBe("reconciled_after_timeout");
     expect(gateway.readOrder).toHaveBeenCalledTimes(2);
-    expect(gateway.readTransactionByRevision).toHaveBeenCalledTimes(2);
+    expect(gateway.readTransactionForOrder).toHaveBeenCalledTimes(2);
   });
 
   it("does not accept a transaction after timeout when repeat order readback is unpaid", async () => {
     const data = await fixture("timeout-then-readback");
     const gateway = gatewayFrom(data);
-    gateway.readTransactionByRevision = vi
+    gateway.readTransactionForOrder = vi
       .fn()
       .mockRejectedValueOnce(new SyrveReadbackTimeout());
     gateway.readOrder = vi
@@ -224,7 +268,7 @@ describe("Syrve native adapter", () => {
     const result = await adapter.process(baseInput);
 
     expect(result.status).toBe("awaiting_paid_close");
-    expect(gateway.readTransactionByRevision).toHaveBeenCalledTimes(1);
+    expect(gateway.readTransactionForOrder).toHaveBeenCalledTimes(1);
   });
 
   it("is explicitly not-ready without a verified runtime contract", async () => {

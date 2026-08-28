@@ -62,7 +62,9 @@ export async function dispatchSyrveNativeEvent(input: {
     syrveCustomerId: metadata.syrveCustomerId,
     syrveProgramId: metadata.syrveProgramId,
   };
-  const delivery = await createSyrveNativeAdapterFromEnvironment().process(
+  const delivery = await createSyrveNativeAdapterFromEnvironment(
+    createSyrveDeliveryStore(input.db),
+  ).process(
     conversion,
   );
   await createSyrveDeliveryStore(input.db).save(delivery);

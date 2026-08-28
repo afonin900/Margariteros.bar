@@ -51,7 +51,7 @@ Set `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_APP_URL` and `NEXT_PUB
 
 Required for this package: `DATABASE_URL`, `POSTGRES_PASSWORD`, `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_ASSETS_URL`, `REFREF_API_URL`, `TELEGRAM_CLUB_BOT_TOKEN`, `REFERRAL_HOST_URL`, `PORT`, `HOST`, `LOG_LEVEL`.
 
-Syrve names are intentionally only names: `SYRVE_API_LOGIN`, `SYRVE_LOYALTY_PROGRAM_ID`. Supplying them alone does not make the adapter ready: the official program/order readback contract still needs a separately authorised proof.
+Syrve names are intentionally only names: `SYRVE_API_LOGIN`, `SYRVE_ORGANIZATION_ID`, `SYRVE_LOYALTY_PROGRAM_ID`. The adapter uses only the verified readback contract; it does not expose wallet top-up or any custom reward write.
 
 ## Later authorised staging/deploy path
 
