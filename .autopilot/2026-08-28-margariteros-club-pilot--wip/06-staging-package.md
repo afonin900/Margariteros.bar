@@ -2,7 +2,7 @@
 
 **Требования:** R24, R27, R37, R38
 **Blocked by:** 04, 05
-**Зона:** `/Users/afonin900/Github/refref/docker/` · `/Users/afonin900/Github/refref/docs/` · `docs/club/`
+**Зона:** `/Users/afonin900/Github/refref/docker/` · `/Users/afonin900/Github/refref/docs/` · `/Users/afonin900/Github/refref/apps/api/` · `/Users/afonin900/Github/refref/apps/webapp/` · `/Users/afonin900/Github/refref/packages/coredb/` · `docs/club/`
 **Волна:** 6
 **Status:** ready
 
@@ -13,6 +13,8 @@ RefRef/R Club имеет воспроизводимый local container/package,
 ## Критерии приёмки
 
 - [ ] PostgreSQL/RefRef local stack стартует по документированной команде
+- [ ] Один Margariteros product/program seed создаёт штатный participant/refcode flow
+- [ ] Durable PostgreSQL replay store подключён к Telegram route; без DB fail-closed
 - [ ] Health/readiness различают UI, database, RefRef и Syrve adapter
 - [ ] Env example содержит только имена и безопасные placeholders
 - [ ] Runbook описывает fork/upstream sync, deploy и rollback

@@ -36,12 +36,13 @@
 | R30 | «используй все возможные доступы, не ищи обходных путей» | done | Использованы канонические repo/history/OpenAPI/live UI источники | evidence/01-evidence-pack.md |
 | R31 | «постарайся максимально через API, MCP или какие другие варианты» | done | API/CLI были приоритетом, browser использован только для live UI readback | evidence/01-evidence-pack.md |
 | R32i | *(подразумевается)* повторный запуск ссылки или регистрации не создаёт дубль | done | Durable unique claim сериализует concurrent RefRef/Syrve delivery | /Users/afonin900/Github/refref/packages/coredb/src/schema.ts |
-| R33i | *(подразумевается)* телефон, баланс и связи партнёров не попадают в Git, аналитику и обычные логи | in-ticket | Privacy проверяется в RefRef adapter и R Club auth | ticket 04, 05 |
+| R33i | *(подразумевается)* телефон, баланс и связи партнёров не попадают в Git, аналитику и обычные логи | done | Referral URL opaque, Telegram raw data валидируется сервером, adapter/logs secret-safe и без PII | /Users/afonin900/Github/refref/apps/webapp/src/lib/club/ |
 | R34i | *(подразумевается)* скидка и начисление можно доказать и отменить без двойной выдачи | in-ticket | Нужны ledger, reconciliation и reversal | ticket 02 |
 | R35i | *(подразумевается)* бармен видит простой и безопасный сценарий на кассе | in-ticket | Нужен POS runbook и тест | ticket 03 |
 | G01 | «браузерные все остальные функции, которые не требуют режима высокого интеллекта, используй, пожалуйста, модели попроще» | done | Luna выполнила read-only evidence и независимые проверки; дальнейшая реализация закреплена за Terra | evidence/01-evidence-pack.md |
 | D01 | *(обнаружено в отменённой custom ветке)* referral URL требовал lookup кандидата | dropped | Custom Club-domain отменён владельцем; штатный RefRef уже владеет participant/refcode | D02 |
 | D02 | *(коррекция владельца)* custom Club-domain/ledger не является заказанной архитектурой | done | Ошибочный custom Club/domain/routes/tests удалён; канон RefRef → штатный Syrve | commit b3dc7b7 |
 | R36 | «Телеграм-бот должен регистрировать» | in-ticket | Bot запускает общую R Club Mini App; Telegram identity принимается только после server-side initData validation | ticket 05 |
-| R37 | «веб-приложение, которое внутри телеграм-бота, как телеграм-апп, будет открываться» | in-ticket | Один RefRef-based UI работает как Telegram Mini App и обычный web | ticket 05 |
+| R37 | «веб-приложение, которое внутри телеграм-бота, как телеграм-апп, будет открываться» | done | Один `/club` UI имеет browser path и validated Telegram Mini App launch contract | /Users/afonin900/Github/refref/apps/webapp/src/app/club/ |
 | R38 | «польскоязычных партнеров, у которых нет Телеграма ... могли спокойно пользоваться через сайт» | in-ticket | Польская web-регистрация не требует Telegram; identity/phone verification проектируются отдельно | ticket 05 |
+| D03 | *(обнаружено в ticket 06)* локальный Docker Desktop запущен, но engine/socket не отвечает | placeholder | Compose/runtime acceptance и downstream POS pilot нельзя доказать без restart/working daemon | ticket 06, 07 |

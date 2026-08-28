@@ -25,6 +25,14 @@
 - Margariteros `/<locale>/club/` ведёт в portal через `PUBLIC_RCLUB_PORTAL_URL`; без URL показывает honest not-configured.
 - Durable participant creation остаётся на штатном `POST /v1/widget/init` после настройки RefRef product/program и identity mapping.
 
+## Из таска 06 — local staging package
+
+- Compose: `/Users/afonin900/Github/refref/docker/margariteros-staging.compose.yml`; safe env example и runbook лежат рядом/в `docs/margariteros-staging.md`.
+- Seed создаёт штатные RefRef product/program/participant/refcode с `provider=syrve_native`, без reward amount или balance.
+- Telegram replay store использует PostgreSQL atomic claim; без `DATABASE_URL`/DB маршрут fail-closed `503 not_ready`.
+- API `/health` и webapp `/api/ready` различают DB, RefRef API/UI и Syrve adapter status.
+- Runtime acceptance требует доступный Docker daemon; текущий host подтвердил только compose config/build/typecheck/tests.
+
 ## Границы, решённые в спецификации
 
 - Syrve Loyalty — источник идентичности гостя, оплаченного чека, скидки, баланса и транзакции.
