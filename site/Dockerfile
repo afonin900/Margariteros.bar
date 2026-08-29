@@ -19,8 +19,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 RUN addgroup -S astro && adduser -S astro -G astro
+RUN mkdir /app/data && chown astro:astro /app/data
 COPY --from=build --chown=astro:astro /app/dist ./dist
-
 USER astro
 EXPOSE 4321
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \

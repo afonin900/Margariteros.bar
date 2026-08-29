@@ -1,9 +1,11 @@
 ---
 import type { PageContent } from "../content/page";
+import type { MonthEvents } from "../lib/content/events";
+import EventCards from "./EventCards.astro";
 import { decorateOutbound, type Attribution } from "../lib/analytics/attribution";
 
-interface Props { page: PageContent; attribution: Attribution }
-const { page, attribution } = Astro.props;
+interface Props { page: PageContent; attribution: Attribution; eventGroups: MonthEvents[] | null }
+const { page, attribution, eventGroups } = Astro.props;
 const qr = "https://qr.margariteros.bar";
 const route = (path: string) => decorateOutbound(`${qr}${path}`, attribution);
 const bookingUrl = route("/booking");
@@ -98,6 +100,7 @@ const copy = {
       <div><b>{copy.phone}</b><p>{page.phoneDisplay}</p><a href={page.phoneUrl} data-analytics-event="contact_click" data-analytics-destination="phone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.9883 2.00294C13.8776 2.00954 13.7655 2.02788 13.6543 2.05763L5.5957 4.21779C4.7057 4.45679 4.17897 5.37076 4.41797 6.26076L8.30273 20.7647C8.54073 21.6547 9.4557 22.1824 10.3457 21.9443L18.4023 19.7842C19.2923 19.5462 19.82 18.6312 19.582 17.7412L15.6973 3.23732C15.489 2.45857 14.7629 1.95673 13.9883 2.00294ZM14.5176 5.28029L17.5391 16.5615L9.48242 18.7217L6.46094 7.44044L14.5176 5.28029ZM20.75 5.33888L18.8184 5.85646L20.9766 13.9151L22.9082 13.3975L20.75 5.33888ZM3.02344 10.0889L1.0918 10.6065L3.25 18.6631L5.18164 18.1455L3.02344 10.0889Z" fill="currentColor"/></svg>{copy.dial}</a></div>
       <a class="cq-booking" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 12c-3.302 0-6 2.698-6 6s2.698 6 6 6 6-2.698 6-6-2.698-6-6-6Zm0 2c2.221 0 4 1.779 4 4s-1.779 4-4 4-4-1.779-4-4 1.779-4 4-4Zm.428 1.117-1.6 3.022 2.098 2.097 1.06-1.06-1.314-1.315 1.082-2.043-1.326-.7Z" fill="currentColor"/><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M2 8V6h20v2h-1.686l.378 2.464A7.988 7.988 0 0 0 18 10h.596l-.301-2H5.656l-.29 2H18a7.97 7.97 0 0 0-5.292 2H5.074l-1.021 7H2L3.639 8H2Z"/></svg>{copy.booking}</a>
     </section>
+    {eventGroups && <EventCards locale={page.locale} groups={eventGroups} />}
     <section class="cq-gallery" aria-labelledby="cq-gallery-title"><h2 id="cq-gallery-title">{copy.gallery}</h2><div class="cq-gallery-grid">{gallery.map((asset) => <img src={`/media/choiceqr-gallery/${asset}`} alt="gallery" width="400" height="400" loading="eager" />)}</div></section>
   </main>
 

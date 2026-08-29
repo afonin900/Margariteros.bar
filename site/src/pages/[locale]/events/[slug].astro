@@ -1,0 +1,37 @@
+---
+import { PortableText } from "emdash/ui";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getPage, locales, type Locale } from "../../../content/page";
+import { captureAttribution, decorateOutbound } from "../../../lib/analytics/attribution";
+import { getPublicEvent, localizedEvent } from "../../../lib/content/events";
+
+const requestedLocale = Astro.params.locale;
+const slug = Astro.params.slug;
+if (!requestedLocale || !locales.includes(requestedLocale as Locale) || !slug) return new Response("Not found", { status: 404 });
+const locale = requestedLocale as Locale;
+const page = getPage(locale);
+const result = await getPublicEvent(locale, slug);
+if (result.unavailable) return new Response("Service unavailable", { status: 503 });
+if (!result.event) return new Response("Not found", { status: 404 });
+const event = result.event;
+const text = localizedEvent(event, locale);
+const startsAt = new Date(event.starts_at);
+const localeTag = { pl: "pl-PL", en: "en", ru: "ru", es: "es" }[locale];
+const state = { pl: { cancelled: "Odwołane", postponed: "Przełożone", booking: "Rezerwacje" }, en: { cancelled: "Cancelled", postponed: "Postponed", booking: "Booking" }, ru: { cancelled: "Отменено", postponed: "Перенесено", booking: "Бронирование" }, es: { cancelled: "Cancelado", postponed: "Aplazado", booking: "Reservar" } }[locale];
+const bookingUrl = event.booking_url ? decorateOutbound(event.booking_url, captureAttribution(Astro.url)) : undefined;
+---
+<BaseLayout {page}>
+  <main class="event-page">
+    {event.hero_image.src && <img class="hero" src={event.hero_image.src} alt={text.title} width={event.hero_image.width} height={event.hero_image.height} />}
+    <article>
+      {event.event_state !== "scheduled" && <p class="state">{event.event_state === "cancelled" ? state.cancelled : state.postponed}</p>}
+      <time datetime={event.starts_at}>{new Intl.DateTimeFormat(localeTag, { dateStyle: "full", timeStyle: "short", timeZone: "Europe/Warsaw" }).format(startsAt)}</time>
+      <h1>{text.title}</h1><p class="summary">{text.summary}</p>
+      <PortableText value={text.details} />
+      {event.event_state !== "cancelled" && bookingUrl && <a class="booking" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{state.booking}</a>}
+    </article>
+  </main>
+</BaseLayout>
+<style>
+  .event-page { min-height: 100vh; background: #0b0b0b; color: #fff; }.hero { width: 100%; max-height: 60vh; object-fit: cover; }.event-page article { max-width: 760px; padding: 2rem; margin: auto; }.event-page time { color: #c6ff00; font-weight: 800; }.event-page h1 { font-size: clamp(2rem, 7vw, 4rem); line-height: .95; }.summary { font-size: 1.25rem; }.state { display: inline-block; background: #ff5a2e; color: #0b0b0b; font-weight: 800; padding: .3rem .5rem; }.booking { display: inline-block; margin-top: 1.5rem; padding: .8rem 1rem; color: #0b0b0b; background: #c6ff00; font-weight: 800; }
+</style>

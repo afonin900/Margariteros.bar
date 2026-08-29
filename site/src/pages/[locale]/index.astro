@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ChoiceQrClone from "../../components/ChoiceQrClone.astro";
 import ConsentBanner from "../../components/ConsentBanner.astro";
 import { getPage, locales, type Locale } from "../../content/page";
+import { listUpcomingEvents } from "../../lib/content/events";
 import { captureAttribution } from "../../lib/analytics/attribution";
 import "../../styles/choiceqr-exact.css";
 
@@ -12,8 +13,9 @@ const isLocale = (value: string | undefined): value is Locale =>
 if (!isLocale(requestedLocale)) return new Response("Not found", { status: 404 });
 const page = getPage(requestedLocale);
 const attribution = captureAttribution(Astro.url);
+const eventGroups = await listUpcomingEvents(page.locale, new Date());
 ---
 <BaseLayout {page}>
-  <ChoiceQrClone {page} {attribution} />
+  <ChoiceQrClone {page} {attribution} {eventGroups} />
   <ConsentBanner locale={page.locale} />
 </BaseLayout>

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": {
+    "name": "Margariteros content hub",
+    "description": "Events, creative assets, and publication planning for Margariteros."
+  },
+  "collections": [
+    {
+      "slug": "events",
+      "label": "Wydarzenia",
+      "labelSingular": "Wydarzenie",
+      "supports": ["drafts", "revisions", "preview", "scheduling"],
+      "titleField": "title",
+      "dateField": "starts_at",
+      "fields": [
+        { "slug": "starts_at", "label": "Data rozpoczęcia", "type": "datetime", "required": true, "indexed": true },
+        { "slug": "ends_at", "label": "Data zakończenia", "type": "datetime" },
+        { "slug": "event_state", "label": "Stan wydarzenia", "type": "select", "required": true, "indexed": true, "defaultValue": "scheduled", "validation": { "options": ["scheduled", "postponed", "cancelled"] } },
+        { "slug": "title", "label": "Tytuł (PL)", "type": "string", "required": true },
+        { "slug": "summary", "label": "Opis krótki (PL)", "type": "text", "required": true },
+        { "slug": "details", "label": "Opis (PL)", "type": "portableText", "required": true },
+        { "slug": "title_en", "label": "Tytuł (EN)", "type": "string" },
+        { "slug": "summary_en", "label": "Opis krótki (EN)", "type": "text" },
+        { "slug": "details_en", "label": "Opis (EN)", "type": "portableText" },
+        { "slug": "title_ru", "label": "Tytuł (RU)", "type": "string" },
+        { "slug": "summary_ru", "label": "Opis krótki (RU)", "type": "text" },
+        { "slug": "details_ru", "label": "Opis (RU)", "type": "portableText" },
+        { "slug": "title_es", "label": "Tytuł (ES)", "type": "string" },
+        { "slug": "summary_es", "label": "Opis krótki (ES)", "type": "text" },
+        { "slug": "details_es", "label": "Opis (ES)", "type": "portableText" },
+        { "slug": "published_locales", "label": "Opublikowane języki", "type": "multiSelect", "required": true, "validation": { "options": ["pl", "en", "ru", "es"] } },
+        { "slug": "hero_image", "label": "Zdjęcie główne", "type": "image", "required": true },
+        { "slug": "booking_url", "label": "Adres rezerwacji", "type": "url", "defaultValue": "https://qr.margariteros.bar/booking" },
+        { "slug": "fact_sources", "label": "Źródła faktów", "type": "text", "required": true },
+        { "slug": "facts_confirmed_at", "label": "Fakty potwierdzone", "type": "datetime", "required": true },
+        { "slug": "legacy_path", "label": "Ścieżka archiwalna", "type": "string", "unique": true }
+      ]
+    },
+    {
+      "slug": "creative_assets",
+      "label": "Materiały",
+      "labelSingular": "Materiał",
+      "supports": ["revisions"],
+      "titleField": "name",
+      "fields": [
+        { "slug": "name", "label": "Nazwa", "type": "string", "required": true },
+        { "slug": "kind", "label": "Rodzaj", "type": "select", "required": true, "validation": { "options": ["source-photo", "source-video", "banner", "poster", "reel", "story", "gallery"] } },
+        { "slug": "media", "label": "Plik", "type": "file", "required": true },
+        { "slug": "event", "label": "Wydarzenie", "type": "reference", "options": { "collection": "events" } },
+        { "slug": "rights_state", "label": "Prawa", "type": "select", "required": true, "validation": { "options": ["unknown", "owner-provided", "licensed", "cleared"] } },
+        { "slug": "cleanup_state", "label": "Kontrola AI", "type": "select", "required": true, "validation": { "options": ["pending", "passed", "failed", "not-required"] } },
+        { "slug": "source_note", "label": "Źródło", "type": "text", "required": true },
+        { "slug": "legacy_path", "label": "Ścieżka archiwalna", "type": "string", "unique": true }
+      ]
+    },
+    {
+      "slug": "publications",
+      "label": "Publikacje",
+      "labelSingular": "Publikacja",
+      "supports": ["revisions"],
+      "titleField": "title",
+      "dateField": "publish_at",
+      "fields": [
+        { "slug": "title", "label": "Tytuł", "type": "string", "required": true },
+        { "slug": "channel", "label": "Kanał", "type": "select", "required": true, "validation": { "options": ["instagram", "threads", "facebook", "gbp"] } },
+        { "slug": "format", "label": "Format", "type": "select", "required": true, "validation": { "options": ["feed", "reel", "story", "text", "gbp"] } },
+        { "slug": "publication_locale", "label": "Język", "type": "select", "required": true, "validation": { "options": ["pl", "en", "ru", "es"] } },
+        { "slug": "caption", "label": "Podpis", "type": "text", "required": true },
+        { "slug": "event", "label": "Wydarzenie", "type": "reference", "options": { "collection": "events" } },
+        { "slug": "assets", "label": "Materiały", "type": "reference", "options": { "collection": "creative_assets", "allowMultiple": true } },
+        { "slug": "workflow_state", "label": "Stan pracy", "type": "select", "required": true, "indexed": true, "defaultValue": "draft", "validation": { "options": ["draft", "review", "approved", "postiz-draft", "scheduled", "published", "error"] } },
+        { "slug": "publish_at", "label": "Termin publikacji", "type": "datetime", "required": true, "indexed": true },
+        { "slug": "copy_cleanup_state", "label": "Kontrola tekstu AI", "type": "select", "required": true, "defaultValue": "pending", "validation": { "options": ["pending", "passed", "failed", "not-required"] } },
+        { "slug": "owner_approved_at", "label": "Zatwierdzone przez właściciela", "type": "datetime" },
+        { "slug": "postiz_id", "label": "Identyfikator Postiz", "type": "string" },
+        { "slug": "postiz_state", "label": "Stan Postiz", "type": "string" },
+        { "slug": "release_url", "label": "Adres publikacji", "type": "url" },
+        { "slug": "postiz_synced_at", "label": "Ostatnia synchronizacja", "type": "datetime" },
+        { "slug": "last_error", "label": "Ostatni bezpieczny błąd", "type": "text" },
+        { "slug": "legacy_path", "label": "Ścieżka archiwalna", "type": "string", "unique": true }
+      ]
+    }
+  ]
+}

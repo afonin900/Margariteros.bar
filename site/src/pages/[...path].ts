@@ -1,4 +1,4 @@
-import { officialRedirect } from "../lib/choiceqr/mirror";
+import { officialRedirect } from "../lib/choiceqr/redirect";
 
 const ACTIONS = new Set([
   "booking", "delivery-areas", "feedback", "search", "menu", "takeaway", "delivery",
