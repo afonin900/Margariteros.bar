@@ -19,7 +19,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 RUN addgroup -S astro && adduser -S astro -G astro
-RUN mkdir /app/data && chown astro:astro /app/data
+RUN mkdir -p /app/data /app/node_modules/.astro/sessions \
+    && chown -R astro:astro /app/data /app/node_modules/.astro
 COPY --from=build --chown=astro:astro /app/dist ./dist
 USER astro
 EXPOSE 4321
