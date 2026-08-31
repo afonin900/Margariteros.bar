@@ -2,7 +2,7 @@
 
 **Сначала:** `docs/growth-os/HERMES-START.md`. Без этого файл не трогать.
 
-Штаб: `/opt/data/workspace/HQ/AGENTS.md`. Скиллы: `corp-*`.
+Штаб: `/Users/afonin900/Github/afonin-hq/AGENTS.md`. Скиллы: `corp-*`.
 Задачи: GitHub Issues `afonin900/Margariteros.bar`.
 Факты домена: `PROJECT.md`.
 Доска: Margariteros Bar Ops (#8).
@@ -38,6 +38,7 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 - Пайплайн контента (черновик): `CONTENT_PIPELINE_DRAFT.md`
 - Куда класть посты: `content/weeks/README.md`
 - Секреты: не в Git
+- Buffer для Margariteros: `.agents/skills/buffer/SKILL.md`; `.buffer/config.json` хранит только несекретные настройки
 
 `0_hq/tasks.md` больше не канон задач. Не плодить второй трекер.
 
@@ -56,6 +57,7 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 - Растр/паттерны не растягивать. Маскот — один stem/base, без ног.
 - Реальные фото/видео — hero. Canva — сборка. Remotion сам наружу не публикуется.
 - Публикации, реклама, аккаунты, трекинг — только после «можно».
+- Buffer не считать подключённым, пока аккаунт, организация и каналы не подтверждены чтением. Черновик, расписание и публикация требуют отдельного «можно» и предварительной безопасной проверки команды.
 - Каждый файл для социальной сети до одобрения проходит очистку AI-артефактов по `content/production/ai-cleanup/README.md`; недоступный сервис означает `draft`, а не обход проверки.
 
 ## Working rules

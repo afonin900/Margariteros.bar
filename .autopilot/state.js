@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/afonin900/.codex/plugins/cache/personal/corp/0.5.0+codex.20260826115813/skills/autopilot",
   "startedAt": "2026-08-28T12:14:46+02:00",
-  "updatedAt": "2026-08-28T19:35:00+02:00",
+  "updatedAt": "2026-08-31T23:00:00+02:00",
   "finishedAt": null,
   "stages": [
     {
@@ -48,19 +48,22 @@ window.STATE =
     },
     {
       "id": "build",
-      "status": "active",
+      "status": "done",
       "startedAt": "2026-08-28T13:55:00+02:00",
-      "note": "4 полезных таска готовы; staging runtime заблокирован Docker engine"
+      "finishedAt": "2026-08-28T19:35:00+02:00",
+      "note": "RefRef, адаптер, web/Mini App и Dokploy staging собраны; физический POS POC вынесен в ticket 07"
     },
     {
       "id": "review",
-      "status": "active",
+      "status": "done",
       "startedAt": "2026-08-28T14:14:00+02:00",
-      "note": "таск 06 принят статически, runtime blocked"
+      "finishedAt": "2026-08-28T19:35:00+02:00",
+      "note": "staging принят по HTTPS и /api/ready; это не доказательство скидки, награды или закрытого чека"
     },
     {
       "id": "final",
-      "status": "pending"
+      "status": "pending",
+      "note": "ожидается ticket 07: один paid+closed POS-чек, 10% гостю, 5 PLN партнёру, повторное чтение без дубля"
     }
   ],
   "requirements": {

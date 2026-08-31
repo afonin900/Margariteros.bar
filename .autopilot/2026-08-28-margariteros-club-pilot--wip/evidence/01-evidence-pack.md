@@ -31,6 +31,8 @@ OpenAPI paths (application API contract; credential and tenant access still requ
 
 ## RefRef verdict
 
+> **Отменено более поздним решением владельца 2026-08-28.** Ниже сохранён исходный исследовательский вывод, но он больше не задаёт архитектуру. Канон после коррекции: официальный self-hosted RefRef → узкий адаптер → штатный Syrve Loyalty; см. `../spec.md` и `docs/club/README.md`.
+
 RefRef repository `https://github.com/amicalhq/refref` is AGPL-3.0 and explicitly alpha/breaking-change risk (official README, checked 2026-08-28). P0 verdict: **do not fork or deploy whole RefRef**. Keep own `/r/<opaque-code>` seam, ledger, consent, Syrve adapter and POS evidence; consider only isolated UI/pattern reuse after license and upgrade spike.
 
 ## Reproducible next readback (read-only first)
