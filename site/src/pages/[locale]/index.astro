@@ -15,7 +15,12 @@ const page = getPage(requestedLocale);
 const attribution = captureAttribution(Astro.url);
 const now = new Date();
 const previewEvents = Astro.url.searchParams.get("preview") === "events";
-const eventGroups = previewEvents ? previewEventGroups(now) : await listUpcomingEvents(page.locale, now);
+const liveEventGroups = previewEvents ? null : await listUpcomingEvents(page.locale, now);
+const publicOrigin = process.env.PUBLIC_SITE_ORIGIN || import.meta.env.PUBLIC_SITE_ORIGIN || Astro.url.origin;
+const isStaging = new URL(publicOrigin).hostname === "new.margariteros.bar";
+const eventGroups = previewEvents || (isStaging && (!liveEventGroups || liveEventGroups.length === 0))
+  ? previewEventGroups(now)
+  : liveEventGroups;
 ---
 <BaseLayout {page}>
   <ChoiceQrClone {page} {attribution} {eventGroups} />

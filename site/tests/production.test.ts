@@ -16,11 +16,11 @@ async function freePort(): Promise<number> {
   return port;
 }
 
-async function startProductionServer(): Promise<{ url: string; stop(): Promise<void> }> {
+async function startProductionServer(extraEnv: Record<string, string> = {}): Promise<{ url: string; stop(): Promise<void> }> {
   const port = await freePort();
   const child = spawn("node", ["./dist/server/entry.mjs"], {
     cwd: new URL("..", import.meta.url),
-    env: { ...process.env, HOST: "127.0.0.1", PORT: String(port) },
+    env: { ...process.env, ...extraEnv, HOST: "127.0.0.1", PORT: String(port) },
     stdio: "ignore",
   });
   processes.push(child);
@@ -117,6 +117,20 @@ describe("production HTTP contract", () => {
       expect(previewHtml).toContain("preview-event-2");
       expect(previewHtml).not.toContain(`/${locale}/events/preview-event-`);
     }
+
+    await server.stop();
+  });
+
+  it("keeps two clearly labelled preview events visible on the staging domain", async () => {
+    const server = await startProductionServer({ PUBLIC_SITE_ORIGIN: "https://new.margariteros.bar" });
+    const response = await fetch(`${server.url}/en/`);
+    const html = await response.text();
+
+    expect(response.status).toBe(200);
+    expect(html.match(/class="event-card"/g)).toHaveLength(2);
+    expect(html).toContain("preview-event-1");
+    expect(html).toContain("preview-event-2");
+    expect(html).toContain("TEST — not a real event");
 
     await server.stop();
   });
