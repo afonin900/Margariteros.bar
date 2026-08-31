@@ -10,7 +10,7 @@ const qr = "https://qr.margariteros.bar";
 const route = (path: string) => decorateOutbound(`${qr}${path}`, attribution);
 const bookingUrl = route("/booking");
 const links = {
-  home: route("/"), menu: route("/section:menu"), booking: bookingUrl,
+  home: `/${page.locale}/`, menu: route("/section:menu"), booking: bookingUrl,
   delivery: route("/delivery-areas"), feedback: route("/feedback"), search: route("/search"),
   profile: "https://clients.choiceqr.com/auth/login/me",
   map: page.mapUrl,
@@ -20,12 +20,6 @@ const links = {
   tripadvisor: "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
   facebook: "https://www.facebook.com/profile.php?id=61576663994634",
 };
-const gallery = [
-  "thumbnail_G-Q-I.webp", "thumbnail_X-H-i.webp", "thumbnail_H-c-s.webp", "thumbnail_I-r-I.webp", "thumbnail_R-A-B.webp",
-  "thumbnail_C-J-T.webp", "thumbnail_o-b-l.webp", "thumbnail_S-G-A.webp", "thumbnail_G-p-g.webp", "thumbnail_J-u-k.webp",
-  "thumbnail_E-m-n.webp", "thumbnail_f-x-f.webp", "thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp", "thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp", "thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
-  "thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp", "thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp", "thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp", "thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp", "thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
-] as const;
 const languageNames = { pl: "Polish", en: "English", ru: "Russian", es: "Spanish" };
 const machineLanguages = ["French", "German", "Italian", "Spanish", "Turkish", "Abkhaz", "Acehnese", "Acholi", "Afrikaans", "Albanian", "Alur", "Amharic", "Arabic", "Armenian", "Assamese", "Awadhi", "Aymara", "Azerbaijani", "Balinese", "Bambara", "Bashkir", "Basque", "Batak Karo", "Batak Simalungun", "Batak Toba", "Belarusian", "Bemba", "Bengali", "Betawi", "Bhojpuri", "Bikol", "Bosnian", "Breton", "Bulgarian", "Buryat", "Cantonese", "Catalan", "Cebuano", "Chichewa", "Chinese (Simplified)", "Chuvash", "Corsican", "Crimean Tatar", "Croatian", "Czech", "Danish", "Dhivehi", "Dinka", "Dogri", "Dombe", "Dutch", "Dzongkha", "Esperanto", "Estonian", "Ewe", "Fijian", "Filipino", "Finnish", "Frisian", "Fulani", "Ga", "Galician", "Georgian", "Greek", "Guarani", "Gujarati", "Haitian Creole", "Hakha Chin", "Hausa", "Hawaiian", "Hebrew", "Hindi", "Hmong", "Hungarian", "Icelandic", "Igbo", "Ilocano", "Indonesian", "Irish", "Japanese", "Javanese", "Kannada", "Kazakh", "Khmer", "Korean", "Krio", "Kurdish (Kurmanji)", "Kyrgyz", "Lao", "Latin", "Latvian", "Lithuanian", "Luxembourgish", "Macedonian", "Maithili", "Malagasy", "Malay", "Malayalam", "Maltese", "Maori", "Marathi", "Mongolian", "Myanmar (Burmese)", "Nepali", "Norwegian", "Occitan", "Odia (Oriya)", "Oromo", "Pashto", "Persian", "Portuguese (Brazil)", "Punjabi (Gurmukhi)", "Quechua", "Romanian", "Russian", "Samoan", "Sanskrit", "Serbian", "Sinhala", "Slovak", "Slovenian", "Somali", "Sundanese", "Swahili", "Swedish", "Tajik", "Tamil", "Tatar", "Telugu", "Tetum", "Thai", "Tigrinya", "Tsonga", "Turkmen", "Twi", "Ukrainian", "Urdu", "Uyghur", "Uzbek", "Vietnamese", "Welsh", "Xhosa", "Yiddish", "Yoruba", "Yucatec Maya", "Zulu"];
 const socialIconPaths: Record<string, string[]> = {
@@ -36,18 +30,24 @@ const socialIconPaths: Record<string, string[]> = {
   facebook: ["M12 2C6.489 2 2 6.489 2 12C2 17.511 6.489 22 12 22C17.511 22 22 17.511 22 12C22 6.489 17.511 2 12 2ZM12 4C16.4301 4 20 7.56988 20 12C20 16.0145 17.0653 19.313 13.2188 19.8984V14.3848H15.5469L15.9121 12.0195H13.2188V10.7266C13.2188 9.74356 13.539 8.87109 14.459 8.87109H15.9355V6.80664C15.6755 6.77164 15.1268 6.69531 14.0898 6.69531C11.9238 6.69531 10.6543 7.83931 10.6543 10.4453V12.0195H8.42773V14.3848H10.6543V19.8789C6.87029 19.2408 4 15.9702 4 12C4 7.56988 7.56988 4 12 4Z"],
 };
 const copy = {
-  pl: { nav: ["Strona główna", "Menu", "Rezerwacje", "Obszary dostawy", "Prześlij opinię"], here: "Na miejscu", takeaway: "Odbiór osobisty", delivery: "Dostawa", digital: "DIGITAL MENU", opening: "Restauracja będzie otwarta Dzisiaj od 17:00", links: "LINKI:", about: "O tym miejscu:", intro: "Meksykanski Cocktail Bar w samym centrum Warszawy.\nWyjątkowe miejsce przy ulicy Chmielna.\nKlimatyczny bar z najlepszą margaritą, autorskimi koktajlami, kuchnią meksykańską i niekończącą się tequilą!", show: "pokaż", contact: "Dane kontaktowe", hours: "Godziny pracy", socials: "My w sieciach społecznościowych", map: "Na mapie", directions: "Dowiedz się, jak dojechać", booking: "Rezerwacje", gallery: "Nasze zdjęcia", address: "Adres:", phone: "Telefon:", dial: "Zadzwoń", mapLink: "Pokaż na mapie", login: "Zaloguj się", loginText: "Zaloguj się aby uprościć proces zamawiania i korzystać z dodatkowych funkcji.", legal: "Przydatne informacje", food: ["Menu", "Cocktails", "Chupitos", "Cervezas", "Napoje alkoholowe", "Agave Spirits", "Napoje"] },
+  pl: { nav: ["Strona główna", "Menu", "Rezerwacje", "Obszary dostawy", "Prześlij opinię"], here: "Na miejscu", takeaway: "Odbiór osobisty", delivery: "Dostawa", digital: "MENU", opening: "Sprawdź aktualne godziny", links: "LINKI:", about: "O tym miejscu:", intro: "Kuchnia, taniec i wydarzenia przy Chmielnej w centrum Warszawy.", show: "pokaż", contact: "Dane kontaktowe", hours: "Godziny pracy", socials: "My w sieciach społecznościowych", map: "Na mapie", directions: "Dowiedz się, jak dojechać", booking: "Rezerwacje", gallery: "Nasze zdjęcia", address: "Adres:", phone: "Telefon:", dial: "Zadzwoń", mapLink: "Pokaż na mapie", login: "Zaloguj się", loginText: "Zaloguj się aby uprościć proces zamawiania i korzystać z dodatkowych funkcji.", legal: "Przydatne informacje", food: ["Menu", "Kuchnia", "Na miejscu", "Odbiór", "Dostawa", "Wydarzenia", "Informacje"] },
   en: { nav: ["Main", "Menu", "Reservation", "Delivery Areas", "Send feedback"], here: "Here", takeaway: "Takeaway", delivery: "Delivery", digital: "DIGITAL MENU", opening: "The restaurant will open Tomorrow at 17:00", links: "LINKS:", about: "About the place:", intro: "A place on Chmielna in central Warsaw.", show: "show", contact: "Contact details", hours: "Working hours", socials: "We are on social networks", map: "On the map", directions: "Get directions", booking: "Booking", gallery: "Our photos", address: "Address:", phone: "Phone", dial: "Dial", mapLink: "See on map", login: "Log in", loginText: "Log in to simplify the ordering process and use additional features.", legal: "Useful information", food: ["Menu", "Food", "Here", "Takeaway", "Delivery", "Drinks", "Information"] },
   ru: { nav: ["Главная", "Меню", "Бронирование", "Зоны доставки", "Оставить отзыв"], here: "В зале", takeaway: "С собой", delivery: "Доставка", digital: "ЦИФРОВОЕ МЕНЮ", opening: "Ресторан откроется завтра в 17:00", links: "ССЫЛКИ:", about: "О месте:", intro: "Место на Хмельной в центре Варшавы.", show: "показать", contact: "Контакты", hours: "Часы работы", socials: "Мы в социальных сетях", map: "На карте", directions: "Построить маршрут", booking: "Бронирование", gallery: "Наши фотографии", address: "Адрес:", phone: "Телефон", dial: "Позвонить", mapLink: "Показать на карте", login: "Войти", loginText: "Войдите, чтобы упростить оформление заказа и пользоваться дополнительными функциями.", legal: "Полезная информация", food: ["Меню", "Кухня", "В зале", "С собой", "Доставка", "Напитки", "Информация"] },
   es: { nav: ["Inicio", "Menú", "Reserva", "Zonas de entrega", "Enviar opinión"], here: "Aquí", takeaway: "Para llevar", delivery: "Entrega", digital: "MENÚ DIGITAL", opening: "El restaurante abrirá mañana a las 17:00", links: "ENLACES:", about: "Sobre el lugar:", intro: "Un lugar en Chmielna, en el centro de Varsovia.", show: "mostrar", contact: "Datos de contacto", hours: "Horario", socials: "Estamos en redes sociales", map: "En el mapa", directions: "Cómo llegar", booking: "Reserva", gallery: "Nuestras fotos", address: "Dirección:", phone: "Teléfono", dial: "Llamar", mapLink: "Ver en el mapa", login: "Iniciar sesión", loginText: "Inicia sesión para simplificar el pedido y usar funciones adicionales.", legal: "Información útil", food: ["Menú", "Cocina", "Aquí", "Para llevar", "Entrega", "Bebidas", "Información"] },
+}[page.locale];
+const campaignCopy = {
+  pl: { eyebrow: "CHMIELNA 7/9 · WARSZAWA", title: "WYDARZENIA W CENTRUM WARSZAWY", text: "Muzyka, taniec i meksykańska kuchnia. Zobacz program i wybierz swój wieczór.", booking: "ZAREZERWUJ STOLIK", menu: "ZOBACZ MENU", photos: "ZOBACZ, JAK JEST U NAS" },
+  en: { eyebrow: "CHMIELNA 7/9 · WARSAW", title: "EVENTS IN CENTRAL WARSAW", text: "Music, dance and Mexican food. Explore the programme and choose your evening.", booking: "BOOK A TABLE", menu: "VIEW MENU", photos: "SEE THE ATMOSPHERE" },
+  ru: { eyebrow: "CHMIELNA 7/9 · WARSZAWA", title: "СОБЫТИЯ В ЦЕНТРЕ ВАРШАВЫ", text: "Музыка, танцы и мексиканская кухня. Посмотрите программу и выберите свой вечер.", booking: "ЗАБРОНИРОВАТЬ", menu: "ПОСМОТРЕТЬ МЕНЮ", photos: "ПОСМОТРЕТЬ АТМОСФЕРУ" },
+  es: { eyebrow: "CHMIELNA 7/9 · VARSOVIA", title: "EVENTOS EN EL CENTRO DE VARSOVIA", text: "Música, baile y cocina mexicana. Descubre el programa y elige tu noche.", booking: "RESERVAR MESA", menu: "VER MENÚ", photos: "DESCUBRE EL AMBIENTE" },
 }[page.locale];
 ---
 <div class="cq-shell" data-choiceqr-shell>
   <div class="cq-background" aria-hidden="true"></div>
   <header class="cq-desktop-header">
-    <a class="cq-brand" href={links.home} aria-label="Margariteros Cocktail Bar - Warszawa / Tacos, baile y Margarita">
+    <a class="cq-brand" href={links.home} aria-label="Margariteros — wydarzenia i kuchnia w Warszawie">
       <span class="cq-logo" style="background-image:url('/media/choiceqr-brand/logo.png')"></span>
-      <span><b>Margariteros Cocktail Bar - Warszawa</b><small>Tacos, baile y Margarita</small></span>
+      <span><b>Margariteros — Warszawa</b><small>{page.tagline}</small></span>
     </a>
     <nav class="cq-desktop-nav" aria-label="Primary navigation">
       {copy.nav.map((label, index) => <a class:list={["cq-nav-link", { active: index === 0 }]} href={[links.home, links.menu, links.booking, links.delivery, links.feedback][index]} data-analytics-event={index === 1 ? "view_menu" : index === 2 ? "reservation_click" : undefined} data-analytics-destination={index === 1 ? "menu" : index === 2 ? "booking" : undefined}>{label}</a>)}
@@ -72,36 +72,12 @@ const copy = {
   </header>
 
   <main class="cq-main">
-    <section class="cq-intro">
-      <h1>Margariteros Cocktail Bar - Warszawa</h1>
-      <p>{page.address}</p>
-      <p class="cq-description">{copy.intro} <button type="button">{copy.show}</button></p>
+    <section class="ad-hero" data-campaign-surface={page.locale}>
+      <div class="ad-hero-copy"><p>{campaignCopy.eyebrow}</p><h1>{campaignCopy.title}</h1><span>{campaignCopy.text}</span><div class="ad-hero-actions"><a class="primary" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking">{campaignCopy.booking}</a><a href={links.menu} data-analytics-event="view_menu" data-analytics-destination="menu">{campaignCopy.menu}</a></div></div>
+      <img src="/media/gallery/dance-floor-400.webp" alt={page.galleryAltDance} width="400" height="400" loading="eager" />
     </section>
-    <section class="cq-mobile-sections">
-      <div class="cq-area-switcher">
-        <a href={route(`/${page.locale}/menu`)}><svg class="cq-service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M10 3v8M7 7h3M8.5 11v10M16 3v7a3 3 0 0 1-3 3V3M13 13v8"/></svg><b>{copy.here}</b><span>17:00 - 23:00</span></a>
-        <a href={route(`/${page.locale}/takeaway`)}><svg class="cq-service-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6" r="2"/><path d="M8 21l2-8 2 2 3 1M10 9l-2 4 3 2 2-3"/></svg><b>{copy.takeaway}</b><span>17:00 - 23:00</span><i>-10%</i></a>
-        <a href={route(`/${page.locale}/delivery`)}><svg class="cq-service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11v8H3zM14 11h3l3 3v2h-6z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><b>{copy.delivery}</b><span>17:00 - 22:00</span></a>
-      </div>
-      <p class="cq-section-title"><span>{copy.digital}</span></p>
-      <p class="cq-opening-status"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg>{copy.opening}</p>
-      <div class="cq-category-list">
-        {copy.food.map((label, index) => <a href={route(["/section:menu", "/section:cocktails", "/section:chupitos", "/section:cervezas", "/section:napoje-alkoholowe", "/section:agave-spirits", "/section:napoje"][index])}>{label}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L15 12L9 6"/></svg></a>)}
-      </div>
-      <p class="cq-section-title"><span>{copy.links}</span></p>
-      <div class="cq-category-list cq-link-list">
-        <a href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking">{copy.booking}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L15 12L9 6"/></svg></a>
-        <a href={links.delivery}>{copy.nav[3]}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L15 12L9 6"/></svg></a>
-        <a href={links.feedback}>{copy.nav[4]}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L15 12L9 6"/></svg></a>
-      </div>
-    </section>
-    <section class="cq-desktop-contact">
-      <div><b>{copy.address}</b><address>{page.address}</address><a href={links.map} target="_blank" rel="noreferrer" data-analytics-event="contact_click" data-analytics-destination="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 0C15.791 0 14 1.791 14 4C14 6.857 18 11 18 11C18 11 22 6.857 22 4C22 1.791 20.209 0 18 0ZM18 2.57031C18.789 2.57031 19.4297 3.211 19.4297 4C19.4297 4.789 18.789 5.42969 18 5.42969C17.211 5.42969 16.5703 4.789 16.5703 4C16.5703 3.211 17.211 2.57031 18 2.57031ZM8.96875 2.93555L3.62891 5.07227C3.24891 5.22427 3 5.591 3 6V20C3 20.707 3.71409 21.1917 4.37109 20.9297L9.03125 19.0645L15.0312 21.0645L20.3711 18.9297C20.7511 18.7767 21 18.409 21 18V10.5859C20.308 11.4659 19.6965 12.1226 19.4375 12.3906L19 12.8438V17.3242L16 18.5234V11.7812C15.471 11.1873 14.716 10.2848 14 9.21484V18.6133L10 17.2812V5.38672L12.4277 6.19531C12.1657 5.46031 12 4.718 12 4C12 3.982 12.0039 3.96527 12.0039 3.94727L8.96875 2.93555ZM8 5.47656V17.3223L5 18.5234V6.67773L8 5.47656Z" fill="currentColor"/></svg>{copy.mapLink}</a></div>
-      <div><b>{copy.phone}</b><p>{page.phoneDisplay}</p><a href={page.phoneUrl} data-analytics-event="contact_click" data-analytics-destination="phone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.9883 2.00294C13.8776 2.00954 13.7655 2.02788 13.6543 2.05763L5.5957 4.21779C4.7057 4.45679 4.17897 5.37076 4.41797 6.26076L8.30273 20.7647C8.54073 21.6547 9.4557 22.1824 10.3457 21.9443L18.4023 19.7842C19.2923 19.5462 19.82 18.6312 19.582 17.7412L15.6973 3.23732C15.489 2.45857 14.7629 1.95673 13.9883 2.00294ZM14.5176 5.28029L17.5391 16.5615L9.48242 18.7217L6.46094 7.44044L14.5176 5.28029ZM20.75 5.33888L18.8184 5.85646L20.9766 13.9151L22.9082 13.3975L20.75 5.33888ZM3.02344 10.0889L1.0918 10.6065L3.25 18.6631L5.18164 18.1455L3.02344 10.0889Z" fill="currentColor"/></svg>{copy.dial}</a></div>
-      <a class="cq-booking" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 12c-3.302 0-6 2.698-6 6s2.698 6 6 6 6-2.698 6-6-2.698-6-6-6Zm0 2c2.221 0 4 1.779 4 4s-1.779 4-4 4-4-1.779-4-4 1.779-4 4-4Zm.428 1.117-1.6 3.022 2.098 2.097 1.06-1.06-1.314-1.315 1.082-2.043-1.326-.7Z" fill="currentColor"/><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M2 8V6h20v2h-1.686l.378 2.464A7.988 7.988 0 0 0 18 10h.596l-.301-2H5.656l-.29 2H18a7.97 7.97 0 0 0-5.292 2H5.074l-1.021 7H2L3.639 8H2Z"/></svg>{copy.booking}</a>
-    </section>
-    {eventGroups && <EventCards locale={page.locale} groups={eventGroups} />}
-    <section class="cq-gallery" aria-labelledby="cq-gallery-title"><h2 id="cq-gallery-title">{copy.gallery}</h2><div class="cq-gallery-grid">{gallery.map((asset) => <img src={`/media/choiceqr-gallery/${asset}`} alt="gallery" width="400" height="400" loading="eager" />)}</div></section>
+    <EventCards locale={page.locale} groups={eventGroups ?? []} unavailable={eventGroups === null} />
+    <section class="ad-gallery" aria-labelledby="ad-gallery-title"><h2 id="ad-gallery-title">{campaignCopy.photos}</h2><div>{page.galleryItems.slice(0, 4).map((asset) => <img src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading="lazy" />)}</div></section>
   </main>
 
   <footer class="cq-footer">
@@ -122,7 +98,7 @@ const copy = {
       <section class="cq-footer-map"><h2>{copy.map}</h2><a class="cq-map-image" href={links.map} target="_blank" rel="noreferrer" aria-label={copy.directions} data-analytics-event="contact_click" data-analytics-destination="map"><img src="/media/choiceqr-map/chmielna-390.png" alt="Mapa dojazdu do Margariteros" width="358" height="200" loading="lazy" /></a><a href={links.map} target="_blank" rel="noreferrer" data-analytics-event="contact_click" data-analytics-destination="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12v12H4zM8 8h12v12H8"/></svg>{copy.directions}</a></section>
     </div>
   </footer>
-  <div class="cq-footer-legal"><span>© 2026 Margariteros Cocktail Bar - Warszawa</span><span><a href={route("/cookie-policy")}>Cookie Policy</a><a href={route("/terms-of-use")}>Terms of Use</a><a href={route("/privacy-policy")}>Privacy Policy</a></span></div>
+  <div class="cq-footer-legal"><span>© 2026 Margariteros — Warszawa</span><span><a href={route("/cookie-policy")}>Cookie Policy</a><a href={route("/terms-of-use")}>Terms of Use</a><a href={route("/privacy-policy")}>Privacy Policy</a></span></div>
   <div class="cq-powered">Obsługiwany przez <a href="https://choiceqr.com/en" target="_blank" rel="noreferrer">Choice</a></div>
 
   <aside class="cq-language-overlay" data-language-overlay hidden aria-label="Language selector"><div class="cq-overlay-header"><button type="button" data-overlay-back aria-label="Wstecz"><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></button><b>Język menu: <em>{languageNames[page.locale]}</em></b></div><div class="cq-language-content"><label><input type="search" placeholder="Wyszukiwanie języka" data-language-search /><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 5 5"/></svg></label><h2>Tłumaczone przez człowieka:</h2><div class="cq-language-group">{(["en", "pl", "ru"] as const).map((locale) => <a class:list={{selected: locale === page.locale}} href={`/${locale}/`}>{languageNames[locale]}{locale === page.locale && <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8 12 2.5 2.5L16 9"/></svg>}</a>)}</div><h2>Tłumaczenie maszynowe:</h2><div class="cq-language-group">{machineLanguages.slice(0, 5).map((language) => <a href={language === "Spanish" ? "/es/" : `https://qr.margariteros.bar/?lang=${encodeURIComponent(language)}`}>{language}</a>)}</div><div class="cq-language-group">{machineLanguages.slice(5).map((language) => <a href={`https://qr.margariteros.bar/?lang=${encodeURIComponent(language)}`}>{language}</a>)}</div></div></aside>

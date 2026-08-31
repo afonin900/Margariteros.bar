@@ -82,7 +82,7 @@ describe("production HTTP contract", () => {
       }
       expect(html).toContain(`<html lang="${locale === "pl" ? "pl-PL" : locale}">`);
       expect(html).toMatch(/<h1[^>]*>[^<]+<\/h1>/);
-      expect(html).toContain('href="https://qr.margariteros.bar/"');
+      expect(html).toContain(`href="/${locale}/"`);
       expect(html).toContain('href="https://qr.margariteros.bar/booking"');
       expect(html).toContain('href="https://qr.margariteros.bar/section:menu"');
       expect(html).toContain('href="https://qr.margariteros.bar/delivery-areas"');
@@ -94,7 +94,7 @@ describe("production HTTP contract", () => {
       expect(html).toContain('aria-label="Profile"');
       expect(html).toContain('aria-label="Menu"');
       expect(html).toContain('class="cq-footer"');
-      expect(html).toContain('class="cq-gallery-grid"');
+      expect(html).toContain('class="ad-gallery"');
       expect(html).toContain('viewport-fit=cover');
       expect(html).toContain('data-analytics-destination="phone"');
       expect(html).toContain('data-analytics-destination="map"');
@@ -104,7 +104,10 @@ describe("production HTTP contract", () => {
       expect(html).toContain(`href="tel:+48728805628" data-analytics-event="contact_click" data-analytics-destination="phone"`);
       expect(html).toMatch(/<img[^>]+alt="[^"]+"/);
       expect(html).toContain('loading="lazy"');
-      expect(html).toContain('Margariteros Cocktail Bar - Warszawa');
+      expect(html).toContain('data-campaign-surface');
+      if (["pl", "en", "es"].includes(locale)) {
+        expect(html).not.toMatch(/cocktail|tequila|vodka|whisky|piwo|wino|alkohol/i);
+      }
     }
 
     await server.stop();

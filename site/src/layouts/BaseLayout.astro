@@ -7,9 +7,7 @@ interface Props {
 
 const { page } = Astro.props;
 const canonicalOrigin = (import.meta.env.PUBLIC_SITE_ORIGIN ?? "https://new.margariteros.bar").replace(/\/$/, "");
-const choiceQrTitle = page.locale === "pl"
-  ? "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje"
-  : page.title;
+const choiceQrTitle = page.title;
 const localeTag: Record<Locale, string> = {
   pl: "pl-PL",
   en: "en",

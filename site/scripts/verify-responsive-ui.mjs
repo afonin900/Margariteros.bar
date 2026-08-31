@@ -124,7 +124,7 @@ function measurementExpression() {
     const facts = union(".cq-desktop-contact > div, .cq-mobile-contact-actions > div");
     const booking = rect(document.querySelector(".cq-booking, .cq-mobile-booking"));
     const contentStage = rect(document.querySelector(".cq-main"));
-    const gallery = rect(document.querySelector(".cq-gallery"));
+    const gallery = rect(document.querySelector(".ad-gallery"));
     const footer = rect(footerElement);
     const consent = rect(document.querySelector(".consent-control"));
     return {
@@ -141,10 +141,10 @@ function measurementExpression() {
       minimumTarget: Math.min(...targets.map(({ width, height }) => Math.min(width, height))),
       footerActions,
       footerHeight: footer?.height ?? 0,
-      galleryColumns: getComputedStyle(document.querySelector(".cq-gallery-grid")).gridTemplateColumns.split(" ").filter(Boolean).length,
+      galleryColumns: getComputedStyle(document.querySelector(".ad-gallery > div")).gridTemplateColumns.split(" ").filter(Boolean).length,
       mobileTemplate: Boolean(document.querySelector(".cq-mobile-header") && getComputedStyle(document.querySelector(".cq-mobile-header")).display !== "none"),
-      sections: [...document.querySelectorAll(".cq-intro, .cq-mobile-sections, .cq-mobile-contact, .cq-gallery")].map((element) => ({ className: element.className, ...rect(element) })),
-      galleryGrid: (() => { const element = document.querySelector(".cq-gallery-grid"); return element ? { ...rect(element), rows: getComputedStyle(element).gridTemplateRows, cols: getComputedStyle(element).gridTemplateColumns } : null; })(),
+      sections: [...document.querySelectorAll(".ad-hero, .events, .ad-gallery")].map((element) => ({ className: element.className, ...rect(element) })),
+      galleryGrid: (() => { const element = document.querySelector(".ad-gallery > div"); return element ? { ...rect(element), rows: getComputedStyle(element).gridTemplateRows, cols: getComputedStyle(element).gridTemplateColumns } : null; })(),
     };
   })()`;
 }
