@@ -151,3 +151,28 @@ html,body{font-family:"Hind Siliguri",Inter,-apple-system,BlinkMacSystemFont,"Se
   .cq-footer-social a{min-height:40px;justify-content:flex-start;background:transparent;border-radius:0}
   .cq-footer-social a svg{width:24px;height:24px;margin-right:8px;fill:currentColor}
 }
+
+/* Final responsive polish against the saved ChoiceQR and EventON references. */
+.ad-gallery img{height:auto}
+.cq-footer-social a svg,.cq-footer-mobile-social a svg{fill:currentColor;stroke:none}
+.cq-footer-social a svg path,.cq-footer-mobile-social a svg path{fill:currentColor;stroke:none}
+.cq-map-cta svg,.cq-footer-map>a:not(.cq-map-image) svg{fill:currentColor;stroke:none}
+@media(min-width:761px){
+  .cq-main{width:100%;max-width:none;margin-top:0;padding:0;border-radius:0}
+  .cq-footer{height:auto;min-height:381px}
+  .cq-footer-content{grid-template-columns:minmax(0,2fr) minmax(160px,1fr) minmax(0,2fr);gap:24px;transform:none}
+  .cq-footer-map{width:auto;transform:none}
+}
+@media(max-width:760px),(pointer:coarse){
+  .cq-footer,.cq-footer-mobile-live{height:auto;min-height:0}
+  .cq-footer-mobile-live{overflow:visible}
+  .cq-footer-mobile-details,.cq-footer-mobile-social,.cq-footer-mobile-map{height:auto}
+  .cq-footer-mobile-details{padding-top:16px}.cq-footer-mobile-social{padding-top:0}.cq-footer-mobile-map{padding:16px 0 0;transform:none}
+  .cq-footer-mobile-social{margin-top:0;padding-bottom:16px}
+  .cq-footer-contact-row>svg{fill:currentColor;stroke:none}
+  .cq-map-cta svg{width:20px;height:20px}
+}
+@media(min-width:561px) and (max-width:760px){
+  .ad-hero-copy{padding:2rem 1.5rem}.ad-hero-copy h1{font-size:clamp(3rem,9vw,4.2rem)}
+  .ad-hero-actions{grid-template-columns:1fr 1fr}.ad-hero>img{height:42vw;min-height:280px;max-height:340px}
+}
