@@ -1,0 +1,15 @@
+---
+import type { Locale } from "../content/page";
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const names = { pl: "Polish", en: "English", ru: "Russian", es: "Spanish" };
+const machine = ["French", "German", "Italian", "Spanish", "Turkish", "Abkhaz", "Acehnese", "Acholi", "Afrikaans", "Albanian", "Alur", "Amharic", "Arabic", "Armenian", "Assamese", "Awadhi", "Aymara", "Azerbaijani", "Balinese", "Bambara", "Bashkir", "Basque", "Batak Karo", "Batak Simalungun", "Batak Toba", "Belarusian", "Bemba", "Bengali", "Betawi", "Bhojpuri", "Bikol", "Bosnian", "Breton", "Bulgarian", "Buryat", "Cantonese", "Catalan", "Cebuano", "Chichewa", "Chinese (Simplified)"];
+---
+<div class="cq-language-content">
+  <label><input type="search" placeholder="Wyszukiwanie języka" data-language-search /><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 5 5"/></svg></label>
+  <div class="cq-language-scroll">
+    <section class="cq-language-block"><h2>Tłumaczone przez człowieka:</h2><div class="cq-language-group">{(["en", "pl", "ru"] as const).map((item) => <a class:list={{selected: item === locale}} href={`/${item}/`}>{names[item]}<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8 12 2.5 2.5L16 9"/></svg></a>)}</div></section>
+    <section class="cq-language-block"><h2>Tłumaczenie maszynowe:</h2><div class="cq-language-group">{machine.slice(0, 5).map((language) => <a href={language === "Spanish" ? "/es/" : `https://qr.margariteros.bar/?lang=${encodeURIComponent(language)}`}>{language}<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8 12 2.5 2.5L16 9"/></svg></a>)}</div><div class="cq-language-group">{machine.slice(5).map((language) => <a href={`https://qr.margariteros.bar/?lang=${encodeURIComponent(language)}`}>{language}<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8 12 2.5 2.5L16 9"/></svg></a>)}</div></section>
+  </div>
+</div>

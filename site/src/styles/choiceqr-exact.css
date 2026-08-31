@@ -173,7 +173,7 @@ html,body{font-family:"Hind Siliguri",Inter,-apple-system,BlinkMacSystemFont,"Se
   .cq-language-content a:last-child{border-bottom:0}.cq-language-content a.selected{border-radius:0;background:#161d02}
   .cq-language-content a.selected svg{display:block;width:24px;height:24px;margin-left:auto;fill:none;stroke:currentColor;stroke-width:2}
   .cq-footer{height:auto;min-height:381px}
-  .cq-footer-content{grid-template-columns:minmax(0,2fr) minmax(160px,1fr) minmax(0,2fr);gap:24px;transform:none}
+  .cq-footer{max-width:1280px}.cq-footer-content{box-sizing:border-box;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:0;padding:24px;transform:none}.cq-footer-left{display:grid;grid-template-columns:minmax(0,2fr) minmax(160px,1fr);gap:24px;padding-right:24px}.cq-footer-details{grid-template-columns:1fr 1fr;gap:24px}
   .cq-footer-map{width:auto;transform:none}
 }
 @media(max-width:760px),(pointer:coarse){
@@ -190,3 +190,45 @@ html,body{font-family:"Hind Siliguri",Inter,-apple-system,BlinkMacSystemFont,"Se
   .ad-hero-actions{grid-template-columns:1fr 1fr}.ad-hero>img{height:42vw;min-height:280px;max-height:340px}
 }
 .consent-control:not(.is-open){display:block;padding:0;background:transparent;pointer-events:none}.consent-change{pointer-events:auto}.consent-control.is-open .consent-change{display:none}
+
+/* Source-measured ChoiceQR desktop language selector and media geometry. */
+:root{--cq-radius-control:8px;--cq-radius-group:12px;--cq-radius-media:16px}
+.ad-gallery h2{max-width:1168px;margin:0 auto 32px;font-size:32px;line-height:48px;font-weight:700}.ad-gallery>div{max-width:1168px;margin:auto;overflow:hidden;border-radius:var(--cq-radius-media)}
+.cq-map-frame{position:relative;width:100%;height:200px;margin:0 0 16px;overflow:hidden;border-radius:var(--cq-radius-control);background:#161d02}
+.cq-map-frame iframe{display:block;width:100%;height:200px;border:0;border-radius:var(--cq-radius-control);opacity:1;transition:opacity .9s ease-out}
+.cq-button,.cq-booking,.cq-mobile-booking,.cq-map-cta,.cq-footer-map>a:not(.cq-map-image){border-radius:var(--cq-radius-control);transition:background-color .225s,color .225s,border-color .225s,filter .225s,box-shadow .225s}
+.cq-button:hover,.cq-booking:hover,.cq-mobile-booking:hover,.cq-map-cta:hover,.cq-footer-map>a:not(.cq-map-image):hover{border-color:var(--cq-primary);filter:brightness(1.08)}
+@media(min-width:761px){
+  .cq-desktop-header{position:sticky;z-index:10;top:0;box-sizing:border-box;width:100%;max-width:1280px;background:rgba(0,0,0,.3);transition:background-color .225s,box-shadow .225s}
+  .cq-language-button{font-size:14px;line-height:16.8px;font-weight:700}
+  .cq-desktop-language{position:relative}.cq-language-button svg{transition:transform .225s ease-out}.cq-language-button[aria-expanded="true"] svg{transform:rotate(-180deg)}
+  .cq-language-popover{position:absolute;z-index:9;top:100%;right:0;width:360px;min-width:360px;overflow:hidden;border-radius:var(--cq-radius-control);background:#161d02;box-shadow:0 0 24px rgba(0,0,0,.1);animation:cq-popover-in .225s ease-out both}
+  .cq-language-popover .cq-language-content{width:360px;height:auto;padding:0;overflow:visible;background:#161d02}
+  .cq-language-popover .cq-language-content label{position:static;display:block;height:56px}
+  .cq-language-popover .cq-language-content input{box-sizing:border-box;width:360px;height:56px;padding:0 46px 0 16px;border:1px solid var(--cq-primary);border-radius:8px 8px 0 0;background:#000;font-size:16px;line-height:16px;font-weight:500}
+  .cq-language-popover .cq-language-content label svg{left:auto;right:16px;top:16px;width:24px;height:24px;stroke:var(--cq-400)}
+  .cq-language-popover .cq-language-scroll{box-sizing:border-box;max-height:420px;padding:0 7px 0 16px;overflow-y:scroll;border:0 solid var(--cq-primary);border-width:0 1px 1px;border-radius:0 0 8px 8px;scrollbar-width:thin;scrollbar-color:var(--cq-primary) #161d02}
+  .cq-language-popover .cq-language-block{padding-top:16px}.cq-language-popover .cq-language-block:last-child{padding-top:24px;padding-bottom:16px}
+  .cq-language-popover .cq-language-content h2{height:auto;margin:0;padding:0;color:var(--cq-400);font-size:14px;line-height:24px;font-weight:600;text-align:left}
+  .cq-language-popover .cq-language-group{margin:8px 0 0;overflow:hidden;border:1px solid var(--cq-primary);border-radius:var(--cq-radius-group);background:#000}
+  .cq-language-popover .cq-language-content a{min-height:56px;padding:16px;display:flex;justify-content:space-between;align-items:center;border:0;border-top:1px solid var(--cq-primary);border-radius:0;background:#000;font-size:16px;line-height:19.2px;font-weight:600;transition:all .2s ease-out}
+  .cq-language-popover .cq-language-content a:first-child{border-top:0}.cq-language-popover .cq-language-content a:hover{color:var(--cq-primary)}
+  .cq-language-popover .cq-language-content a svg{width:24px;height:24px;opacity:0;fill:none;stroke:currentColor;stroke-width:2}.cq-language-popover .cq-language-content a.selected{color:var(--cq-primary);pointer-events:none}.cq-language-popover .cq-language-content a.selected svg{margin-left:auto;opacity:1}
+  .cq-language-overlay{inset:75px auto auto auto;right:calc(max(0px,(100vw - 1280px)/2) + 136px);width:360px;height:min(476px,calc(100vh - 91px));overflow:hidden;border:1px solid var(--cq-primary);border-radius:var(--cq-radius-control);background:#161d02;box-shadow:0 12px 32px rgba(0,0,0,.36);animation:cq-language-in .225s ease-out both}
+  .cq-overlay-header{display:none}.cq-language-content{width:360px;height:100%;padding:0;overflow-y:auto;background:#161d02;scrollbar-width:thin;scrollbar-color:var(--cq-primary) #161d02}
+  .cq-language-content label{position:sticky;z-index:2;top:0;display:block;height:56px;background:#161d02}
+  .cq-language-content input{width:100%;height:56px;padding:0 46px 0 16px;border:0;border-bottom:1px solid var(--cq-primary);border-radius:0;background:#000;font-size:16px;line-height:16px;font-weight:500;transition:box-shadow .225s,border-color .225s}
+  .cq-language-content label svg{left:auto;right:16px;top:16px;width:24px;height:24px;stroke:var(--cq-400)}
+  .cq-language-content h2{height:auto;margin:0;padding:24px 16px 8px;color:var(--cq-400);font-size:13px;line-height:16px;font-weight:600}
+  .cq-language-group{margin:0 16px 8px;overflow:hidden;border:1px solid var(--cq-primary);border-radius:var(--cq-radius-group);background:#000}
+  .cq-language-content a{min-height:57px;padding:16px;display:flex;align-items:center;border:0;border-bottom:1px solid var(--cq-primary);border-radius:0;background:#000;font-size:16px;line-height:19.2px;font-weight:600;transition:color .2s ease-out,background-color .2s ease-out}
+  .cq-language-content a:hover{background:#161d02;color:var(--cq-primary)}.cq-language-content a:last-child{border-bottom:0}.cq-language-content a.selected{background:#000;color:var(--cq-primary)}
+  .cq-language-content a.selected svg{width:24px;height:24px;margin-left:auto;fill:none;stroke:currentColor;stroke-width:2}
+}
+@keyframes cq-popover-in{from{opacity:0;transform:translateY(0)}to{opacity:1;transform:translateY(16px)}}
+@media(max-width:760px),(pointer:coarse){.cq-language-overlay .cq-language-scroll{overflow:visible}.cq-language-overlay .cq-language-block{padding-top:0}.cq-language-overlay .cq-language-block h2{height:40px}.cq-language-overlay .cq-language-content a svg{display:none}}
+@keyframes cq-language-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.cq-language-overlay,.cq-map-frame iframe{animation:none;transition:none}}
+
+/* ChoiceQR keeps the mobile photo wall in three columns too. */
+@media(max-width:760px){.ad-gallery>div{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}}

@@ -40,7 +40,7 @@ describe("responsive SSR geometry", () => {
         expect(result.contentStage.left).toBe(0);
         expect(result.contentStage.right).toBe(width);
         expect(result.mobileTemplate).toBe(true);
-        expect(result.galleryColumns).toBe(2);
+        expect(result.galleryColumns).toBe(3);
       } else {
         expect(result.mobileTemplate).toBe(false);
         expect(result.galleryColumns).toBe(4);
