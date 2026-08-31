@@ -131,6 +131,9 @@ describe("production HTTP contract", () => {
     expect(html).toContain("preview-event-1");
     expect(html).toContain("preview-event-2");
     expect(html).toContain("TEST — not a real event");
+    expect(html.match(/class="event-dialog"/g)).toHaveLength(2);
+    expect(html.match(/data-event-dialog-open=/g)).toHaveLength(2);
+    expect(html).toContain('href="https://qr.margariteros.bar/booking"');
 
     await server.stop();
   });
