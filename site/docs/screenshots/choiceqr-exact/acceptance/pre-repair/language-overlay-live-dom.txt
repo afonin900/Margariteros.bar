@@ -1,0 +1,341 @@
+- link "Strona główna":
+  - /url: /
+- button "Język" [active]: pl
+- link "Szukaj":
+  - /url: /search
+  - button "Szukaj":
+- link "Profil":
+  - /url: https://clients.choiceqr.com/auth/login/me
+  - button "Profil":
+- button "Menu":
+- banner:
+  - button "Powrót":
+  - generic: "Język menu: Polish"
+- generic: "Język menu: Polish"
+- textbox "Wyszukiwanie języka"
+- generic: "Tłumaczone przez człowieka:"
+- list:
+  - text: English
+  - text: Polish
+  - text: Russian
+- generic: "Tłumaczenie maszynowe:"
+- list:
+  - text: French
+  - text: German
+  - text: Italian
+  - text: Spanish
+  - text: Turkish
+- list:
+  - text: Abkhaz
+  - text: Acehnese
+  - text: Acholi
+  - text: Afrikaans
+  - text: Albanian
+  - text: Alur
+  - text: Amharic
+  - text: Arabic
+  - text: Armenian
+  - text: Assamese
+  - text: Awadhi
+  - text: Aymara
+  - text: Azerbaijani
+  - text: Balinese
+  - text: Bambara
+  - text: Bashkir
+  - text: Basque
+  - text: Batak Karo
+  - text: Batak Simalungun
+  - text: Batak Toba
+  - text: Belarusian
+  - text: Bemba
+  - text: Bengali
+  - text: Betawi
+  - text: Bhojpuri
+  - text: Bikol
+  - text: Bosnian
+  - text: Breton
+  - text: Bulgarian
+  - text: Buryat
+  - text: Cantonese
+  - text: Catalan
+  - text: Cebuano
+  - text: Chichewa
+  - text: Chinese (Simplified)
+  - text: Chuvash
+  - text: Corsican
+  - text: Crimean Tatar
+  - text: Croatian
+  - text: Czech
+  - text: Danish
+  - text: Dhivehi
+  - text: Dinka
+  - text: Dogri
+  - text: Dombe
+  - text: Dutch
+  - text: Dzongkha
+  - text: Esperanto
+  - text: Estonian
+  - text: Ewe
+  - text: Fijian
+  - text: Filipino
+  - text: Finnish
+  - text: Frisian
+  - text: Fulani
+  - text: Ga
+  - text: Galician
+  - text: Georgian
+  - text: Greek
+  - text: Guarani
+  - text: Gujarati
+  - text: Haitian Creole
+  - text: Hakha Chin
+  - text: Hausa
+  - text: Hawaiian
+  - text: Hebrew
+  - text: Hiligaynon
+  - text: Hindi
+  - text: Hmong
+  - text: Hungarian
+  - text: Hunsrik
+  - text: Icelandic
+  - text: Igbo
+  - text: Ilocano
+  - text: Indonesian
+  - text: Irish
+  - text: Japanese
+  - text: Javanese
+  - text: Kannada
+  - text: Kapampangan
+  - text: Kazakh
+  - text: Khmer
+  - text: Kiga
+  - text: Kinyarwanda
+  - text: Kituba
+  - text: Konkani
+  - text: Korean
+  - text: Krio
+  - text: Kurdish (Kurmanji)
+  - text: Kurdish (Sorani)
+  - text: Kyrgyz
+  - text: Lao
+  - text: Latgalian
+  - text: Latin
+  - text: Latvian
+  - text: Ligurian
+  - text: Limburgish
+  - text: Lingala
+  - text: Lithuanian
+  - text: Lombard
+  - text: Luganda
+  - text: Luo
+  - text: Luxembourgish
+  - text: Macedonian
+  - text: Maithili
+  - text: Makassar
+  - text: Malagasy
+  - text: Malay
+  - text: Malay (Jawi)
+  - text: Malayalam
+  - text: Maltese
+  - text: Maori
+  - text: Marathi
+  - text: Meadow Mari
+  - text: Meiteilon (Manipuri)
+  - text: Minang
+  - text: Mizo
+  - text: Mongolian
+  - text: Myanmar (Burmese)
+  - text: Ndebele (South)
+  - text: Nepalbhasa (Newari)
+  - text: Nepali
+  - text: Norwegian
+  - text: Nuer
+  - text: Occitan
+  - text: Odia (Oriya)
+  - text: Oromo
+  - text: Pangasinan
+  - text: Papiamento
+  - text: Pashto
+  - text: Persian
+  - text: Portuguese (Brazil)
+  - text: Punjabi (Gurmukhi)
+  - text: Punjabi (Shahmukhi)
+  - text: Quechua
+  - text: Romani
+  - text: Romanian
+  - text: Rundi
+  - text: Samoan
+  - text: Sango
+  - text: Sanskrit
+  - text: Scots Gaelic
+  - text: Sepedi
+  - text: Serbian
+  - text: Sesotho
+  - text: Seychellois Creole
+  - text: Shan
+  - text: Shona
+  - text: Sicilian
+  - text: Silesian
+  - text: Sindhi
+  - text: Sinhala
+  - text: Slovak
+  - text: Slovenian
+  - text: Somali
+  - text: Sundanese
+  - text: Swahili
+  - text: Swati
+  - text: Swedish
+  - text: Tajik
+  - text: Tamil
+  - text: Tatar
+  - text: Telugu
+  - text: Tetum
+  - text: Thai
+  - text: Tigrinya
+  - text: Tsonga
+  - text: Tswana
+  - text: Turkmen
+  - text: Twi
+  - text: Ukrainian
+  - text: Urdu
+  - text: Uyghur
+  - text: Uzbek
+  - text: Vietnamese
+  - text: Welsh
+  - text: Xhosa
+  - text: Yiddish
+  - text: Yoruba
+  - text: Yucatec Maya
+  - text: Zulu
+  - text: Hebrew
+  - text: Javanese
+  - text: Chinese (Simplified)
+- generic: Margariteros Cocktail Bar - Warszawa
+- paragraph: Chmielna 7/9, 00-021 Warszawa, Poland
+- generic: Meksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy ulicy Chmielna. Klimatyczny bar z najlepszą margaritą, autorskimi koktajlami, kuchnią meksykańską i niekończącą się tequilą!
+- generic: pokaż
+- link "Na miejscu 17:00 - 23:00":
+  - /url: /pl/menu
+  - generic: Na miejscu
+  - generic: 17:00 - 23:00
+- link "Odbiór osobisty 17:00 - 23:00 -10%":
+  - /url: /pl/takeaway
+  - generic: Odbiór osobisty
+  - generic: 17:00 - 23:00
+  - generic: "-10%"
+- link "Dostawa 17:00 - 22:00":
+  - /url: /pl/delivery
+  - generic: Dostawa
+  - generic: 17:00 - 22:00
+- generic: Digital menu
+- generic: Restauracja będzie otwarta Dzisiaj od 17:00
+- link "Menu":
+  - /url: /section:menu
+  - generic: Menu
+- link "Cocktails":
+  - /url: /section:cocktails
+  - generic: Cocktails
+- link "Chupitos":
+  - /url: /section:chupitos
+  - generic: Chupitos
+- link "Cervezas":
+  - /url: /section:cervezas
+  - generic: Cervezas
+- link "Napoje alkoholowe":
+  - /url: /section:napoje-alkoholowe
+  - generic: Napoje alkoholowe
+- link "Agave Spirits":
+  - /url: /section:agave-spirits
+  - generic: Agave Spirits
+- link "Napoje":
+  - /url: /section:napoje
+  - generic: Napoje
+- generic: "Linki:"
+- link "Rezerwacje":
+  - /url: /booking
+  - generic: Rezerwacje
+- link "Obszary dostawy":
+  - /url: /delivery-areas
+  - text: Obszary dostawy
+- link "Prześlij opinię":
+  - /url: /feedback
+  - generic: Prześlij opinię
+- generic: Nasze zdjęcia
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- generic: "O tym miejscu:"
+- generic: Meksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy...Pokaż więcej
+- generic: "Adres:"
+- generic: Chmielna 7/9, 00-021 Warszawa, Poland
+- generic: "Telefon:"
+- link "+48 728 805 628":
+  - /url: tel:+48 728 805 628
+- generic: "E-mail:"
+- link "margaritabar.pl@gmail.com":
+  - /url: mailto:margaritabar.pl@gmail.com
+- generic: "Godziny pracy:"
+- generic: 17:00 - 23:00 Сzw
+- text: Rozkład
+- generic: My w sieciach społecznościowych
+- link "Instagram":
+  - /url: https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx
+  - generic: Instagram
+- link "TikTok":
+  - /url: https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1
+  - generic: TikTok
+- link "Google":
+  - /url: https://g.page/r/Cbl9JpsyGsLTEBM/review
+  - generic: Google
+- link "TripAdvisor":
+  - /url: https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html
+  - generic: TripAdvisor
+- link "Facebook":
+  - /url: https://www.facebook.com/profile.php?id=61576663994634
+  - generic: Facebook
+- paragraph: Na mapie
+- iframe [name="Google Maps"]:
+  - link "Otwórz w Mapach (otwiera się w nowej karcie)":
+    - /url: https://maps.google.com/maps?ll=52.232579,21.017815&z=15&t=m&hl=pl-PL&gl=US&mapclient=embed&q=Chmielna%207%2F9%2000-021%20Warszawa
+    - text: Otwórz w Mapach
+  - button "Skróty klawiszowe"
+  - region "Mapa"
+  - iframe
+  - button "Sterowanie kamerą na mapie"
+  - button "Pokaż zdjęcia satelitarne":
+    - region
+    - iframe
+  - img "Google"
+  - button "Skróty klawiszowe"
+  - generic: Dane mapy ©2026 Google
+  - link "Warunki (otwiera się w nowej karcie)":
+    - /url: https://www.google.com/intl/pl-PL_US/help/terms_maps.html
+    - text: Warunki
+  - link "Zgłoś błąd w mapach (otwiera się w nowej karcie)":
+    - /url: https://www.google.com/maps/@52.2325793,21.0178147,15z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+    - text: Zgłoś błąd w mapach
+- link "Dowiedz się, jak dojechać":
+  - /url: https://maps.google.com/?q=Chmielna 7/9, 00-021 Warszawa, Poland
+  - button "Dowiedz się, jak dojechać":
+    - text: Dowiedz się, jak dojechać
+- paragraph: Obsługiwany przez
+- link "Obsługiwany przez - Choice":
+  - /url: https://choiceqr.com/pl
+- alert

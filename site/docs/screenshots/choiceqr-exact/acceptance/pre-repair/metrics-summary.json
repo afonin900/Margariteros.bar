@@ -1,0 +1,156 @@
+{
+  "mobile": {
+    "320": {
+      "live": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 320,
+        "loadedGalleryImages": 20,
+        "scrollHeight": 3137,
+        "scrollWidth": 320,
+        "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+        "visibleAnchors": 25
+      },
+      "local": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 320,
+        "loadedGalleryImages": 15,
+        "scrollHeight": 3715,
+        "scrollWidth": 320,
+        "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+        "visibleAnchors": 31
+      },
+      "heightDelta": 578
+    },
+    "398": {
+      "live": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 398,
+        "loadedGalleryImages": 20,
+        "scrollHeight": 3247,
+        "scrollWidth": 398,
+        "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+        "visibleAnchors": 25
+      },
+      "local": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 398,
+        "loadedGalleryImages": 15,
+        "scrollHeight": 3815,
+        "scrollWidth": 398,
+        "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+        "visibleAnchors": 31
+      },
+      "heightDelta": 568
+    },
+    "597": {
+      "live": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 597,
+        "loadedGalleryImages": 17,
+        "scrollHeight": 3659,
+        "scrollWidth": 597,
+        "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+        "visibleAnchors": 25
+      },
+      "local": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 597,
+        "loadedGalleryImages": 9,
+        "scrollHeight": 4227,
+        "scrollWidth": 597,
+        "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+        "visibleAnchors": 31
+      },
+      "heightDelta": 568
+    },
+    "719": {
+      "live": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 719,
+        "loadedGalleryImages": 20,
+        "scrollHeight": 3944,
+        "scrollWidth": 719,
+        "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+        "visibleAnchors": 25
+      },
+      "local": {
+        "dpr": 3,
+        "galleryImages": 20,
+        "innerHeight": 844,
+        "innerWidth": 719,
+        "loadedGalleryImages": 9,
+        "scrollHeight": 4512,
+        "scrollWidth": 719,
+        "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+        "visibleAnchors": 31
+      },
+      "heightDelta": 568
+    }
+  },
+  "desktop": {
+    "1024": {
+      "live": {
+        "dpr": 1,
+        "galleryImages": 20,
+        "innerHeight": 768,
+        "innerWidth": 1024,
+        "loadedGalleryImages": 20,
+        "scrollHeight": 2066,
+        "scrollWidth": 1024,
+        "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+        "visibleAnchors": 22
+      },
+      "local": {
+        "dpr": 1,
+        "galleryImages": 20,
+        "innerHeight": 768,
+        "innerWidth": 1024,
+        "loadedGalleryImages": 20,
+        "scrollHeight": 2820,
+        "scrollWidth": 1024,
+        "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+        "visibleAnchors": 17
+      },
+      "heightDelta": 754
+    },
+    "1280": {
+      "live": {
+        "dpr": 1,
+        "galleryImages": 20,
+        "innerHeight": 1024,
+        "innerWidth": 1280,
+        "loadedGalleryImages": 20,
+        "scrollHeight": 2386,
+        "scrollWidth": 1280,
+        "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+        "visibleAnchors": 22
+      },
+      "local": {
+        "dpr": 1,
+        "galleryImages": 20,
+        "innerHeight": 1024,
+        "innerWidth": 1280,
+        "loadedGalleryImages": 20,
+        "scrollHeight": 2632,
+        "scrollWidth": 1280,
+        "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+        "visibleAnchors": 22
+      },
+      "heightDelta": 246
+    }
+  }
+}

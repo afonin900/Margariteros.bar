@@ -109,4 +109,22 @@ describe("production HTTP contract", () => {
 
     await server.stop();
   });
+
+  it("renders the responsive R Club entry without requiring Telegram or JavaScript", async () => {
+    const server = await startProductionServer();
+
+    for (const locale of ["pl", "en", "ru", "es"] as const) {
+      const response = await fetch(`${server.url}/${locale}/club/`);
+      const html = await response.text();
+
+      expect(response.status).toBe(200);
+      expect(html).toMatch(/<h1[^>]*>R Club<\/h1>/);
+      expect(html).toContain('data-club-status="not-configured"');
+      expect(html).toContain("Telegramie i w zwykłej przeglądarce");
+      expect(html).toContain("width:min(100% - 2rem,42rem)");
+      expect(html).not.toMatch(/type="tel"|phone_verified|telefon.*zweryfikowany/i);
+    }
+
+    await server.stop();
+  });
 });

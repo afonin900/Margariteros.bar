@@ -1,0 +1,62 @@
+{
+  "live": {
+    "languageOpen": true,
+    "languageCount": 244,
+    "drawerLinkCount": 34,
+    "escapeBefore": false,
+    "escapeAfter": false
+  },
+  "local": {
+    "languageOpen": true,
+    "languageCount": 211,
+    "drawerLinkCount": 196,
+    "escapeBefore": true,
+    "escapeAfter": false,
+    "drawerButtons": [
+      {
+        "text": "PL",
+        "aria": null,
+        "expanded": "false",
+        "rect": {
+          "x": 169.28125,
+          "y": 16,
+          "width": 60.71875,
+          "height": 40
+        }
+      },
+      {
+        "text": "",
+        "aria": "Menu",
+        "expanded": "true",
+        "rect": {
+          "x": 334,
+          "y": 16,
+          "width": 40,
+          "height": 40
+        }
+      },
+      {
+        "text": "pokaż",
+        "aria": null,
+        "expanded": null,
+        "rect": {
+          "x": 273.25,
+          "y": 228,
+          "width": 38.109375,
+          "height": 44
+        }
+      },
+      {
+        "text": "×",
+        "aria": "Zamknij",
+        "expanded": null,
+        "rect": {
+          "x": 318,
+          "y": 16,
+          "width": 40,
+          "height": 44
+        }
+      }
+    ]
+  }
+}

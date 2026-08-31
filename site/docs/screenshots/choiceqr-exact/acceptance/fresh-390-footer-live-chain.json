@@ -1,0 +1,112 @@
+[
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_blockLabel__s6vwi",
+    "display": "block",
+    "h": 16,
+    "i": 0,
+    "tag": "DIV",
+    "w": 282,
+    "x": 76,
+    "y": 2274.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_blockBody__YZI2b",
+    "display": "block",
+    "h": 84,
+    "i": 1,
+    "tag": "DIV",
+    "w": 298,
+    "x": 76,
+    "y": 2270.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_blockBodyWrapper__s_gPh",
+    "display": "flex",
+    "h": 84,
+    "i": 2,
+    "tag": "DIV",
+    "w": 298,
+    "x": 76,
+    "y": 2270.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_block__gG8qD",
+    "display": "flex",
+    "h": 84,
+    "i": 3,
+    "tag": "DIV",
+    "w": 358,
+    "x": 16,
+    "y": 2270.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_FooterBlockWrap__Aiz1e",
+    "display": "block",
+    "h": 341,
+    "i": 4,
+    "tag": "DIV",
+    "w": 358,
+    "x": 16,
+    "y": 2254.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_FooterBlocks__rhvNv",
+    "display": "flex",
+    "h": 565,
+    "i": 5,
+    "tag": "DIV",
+    "w": 358,
+    "x": 16,
+    "y": 2254.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_FooterContent__x9t8y",
+    "display": "flex",
+    "h": 917,
+    "i": 6,
+    "tag": "DIV",
+    "w": 358,
+    "x": 16,
+    "y": 2254.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "styles_container__ImQx_",
+    "display": "flex",
+    "h": 917,
+    "i": 7,
+    "tag": "DIV",
+    "w": 358,
+    "x": 16,
+    "y": 2254.1484375
+  },
+  {
+    "bg": "rgb(0, 0, 0)",
+    "cls": "styles_FooterWrapper__Ji6dI",
+    "display": "block",
+    "h": 917,
+    "i": 8,
+    "tag": "DIV",
+    "w": 390,
+    "x": 0,
+    "y": 2254.1484375
+  },
+  {
+    "bg": "rgba(0, 0, 0, 0)",
+    "cls": "PageLayout_wrapper__XhOiu",
+    "display": "flex",
+    "h": 3228.1484375,
+    "i": 9,
+    "tag": "DIV",
+    "w": 390,
+    "x": 0,
+    "y": 0
+  }
+]

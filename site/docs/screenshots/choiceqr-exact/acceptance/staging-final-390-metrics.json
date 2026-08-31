@@ -1,0 +1,582 @@
+{
+  "chrome": {
+    "product": "Chrome/152.0.7977.65",
+    "protocol": "1.3",
+    "androidUa": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36",
+    "desktopUa": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+  },
+  "profiles": {
+    "android-390": {
+      "local": {
+        "url": "https://new.margariteros.bar/pl/",
+        "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+        "viewport": {
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 390,
+          "documentHeight": 3228,
+          "bodyHeight": 3228
+        },
+        "gallery": {
+          "heading": {
+            "x": 97.890625,
+            "y": 1309.5,
+            "width": 194.21875,
+            "height": 48,
+            "bottom": 1357.5
+          },
+          "root": {
+            "x": 16,
+            "y": 1309.5,
+            "width": 358,
+            "height": 920.703125,
+            "bottom": 2230.203125
+          },
+          "grid": {
+            "x": 16,
+            "y": 1389.5,
+            "width": 357.984375,
+            "height": 840.703125,
+            "bottom": 2230.203125
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1389.5,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1506.171875
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1389.5,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1506.171875
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1389.5,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1506.171875
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1510.171875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1626.84375
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1510.171875,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1626.84375
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1510.171875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1626.84375
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1630.84375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1747.515625
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1630.84375,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1747.515625
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1630.84375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1747.515625
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1751.515625,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1868.1875
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1751.515625,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1868.1875
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1751.515625,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1868.1875
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1872.1875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1988.859375
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1872.1875,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1988.859375
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1872.1875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1988.859375
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1992.859375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 2109.53125
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1992.859375,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 2109.53125
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1992.859375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 2109.53125
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2113.53125,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 2230.203125
+              }
+            },
+            {
+              "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 2113.53125,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 2230.203125
+              }
+            }
+          ]
+        },
+        "footer": null,
+        "consent": null,
+        "consentPanel": {
+          "hidden": null,
+          "rect": null
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 2883.203125,
+            "width": 358,
+            "height": 200,
+            "bottom": 3083.203125
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        },
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"57ef247b72093c4761960c883aa91052-6c07b492066ad86b\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 97.890625,
+              "y": 1309.5,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 1357.5
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"57ef247b72093c4761960c883aa91052-6c07b492066ad86b\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"57ef247b72093c4761960c883aa91052-6c07b492066ad86b\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "powered": [],
+        "changeConsent": [],
+        "header": {
+          "language": {
+            "rect": {
+              "x": 169.28125,
+              "y": 16,
+              "width": 60.71875,
+              "height": 40,
+              "bottom": 56
+            },
+            "border": "rgb(172, 224, 30)",
+            "background": "rgb(0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "font": "700 14px / 16.8px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "menu": {
+            "x": 334,
+            "y": 16,
+            "width": 40,
+            "height": 40,
+            "bottom": 56
+          },
+          "logo": {
+            "x": 16,
+            "y": 16,
+            "width": 64,
+            "height": 64,
+            "bottom": 80
+          }
+        },
+        "cards": {
+          "dineIn": {
+            "rect": {
+              "x": 16,
+              "y": 300,
+              "width": 116.65625,
+              "height": 68.5,
+              "bottom": 368.5
+            },
+            "border": "rgb(0, 0, 0)",
+            "background": "rgb(172, 224, 30)",
+            "color": "rgb(0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "pickup": {
+            "rect": {
+              "x": 136.65625,
+              "y": 300,
+              "width": 116.671875,
+              "height": 68.5,
+              "bottom": 368.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgb(0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "localPickup": null,
+          "delivery": {
+            "rect": {
+              "x": 257.328125,
+              "y": 300,
+              "width": 116.671875,
+              "height": 68.5,
+              "bottom": 368.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgb(0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 534,
+              "width": 358,
+              "height": 80,
+              "bottom": 614
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "font": "16px / 24px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          }
+        },
+        "links": [
+          {
+            "text": "",
+            "href": "https://new.margariteros.bar/pl",
+            "target": ""
+          },
+          {
+            "text": "",
+            "href": "https://new.margariteros.bar/pl/search",
+            "target": ""
+          },
+          {
+            "text": "",
+            "href": "https://clients.choiceqr.com/auth/login/me",
+            "target": ""
+          },
+          {
+            "text": "Na miejscu17:00 - 23:00",
+            "href": "https://new.margariteros.bar/pl/menu",
+            "target": ""
+          },
+          {
+            "text": "Odbiór osobisty17:00 - 23:00-10%",
+            "href": "https://new.margariteros.bar/pl/takeaway",
+            "target": ""
+          },
+          {
+            "text": "Dostawa17:00 - 22:00",
+            "href": "https://new.margariteros.bar/pl/delivery",
+            "target": ""
+          },
+          {
+            "text": "Menu",
+            "href": "https://new.margariteros.bar/pl/section:menu",
+            "target": ""
+          },
+          {
+            "text": "Cocktails",
+            "href": "https://new.margariteros.bar/pl/section:cocktails",
+            "target": ""
+          },
+          {
+            "text": "Chupitos",
+            "href": "https://new.margariteros.bar/pl/section:chupitos",
+            "target": ""
+          },
+          {
+            "text": "Cervezas",
+            "href": "https://new.margariteros.bar/pl/section:cervezas",
+            "target": ""
+          },
+          {
+            "text": "Napoje alkoholowe",
+            "href": "https://new.margariteros.bar/pl/section:napoje-alkoholowe",
+            "target": ""
+          },
+          {
+            "text": "Agave Spirits",
+            "href": "https://new.margariteros.bar/pl/section:agave-spirits",
+            "target": ""
+          },
+          {
+            "text": "Napoje",
+            "href": "https://new.margariteros.bar/pl/section:napoje",
+            "target": ""
+          },
+          {
+            "text": "Rezerwacje",
+            "href": "https://new.margariteros.bar/pl/booking",
+            "target": ""
+          },
+          {
+            "text": "Obszary dostawy",
+            "href": "https://new.margariteros.bar/pl/delivery-areas",
+            "target": ""
+          },
+          {
+            "text": "Prześlij opinię",
+            "href": "https://new.margariteros.bar/pl/feedback",
+            "target": ""
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48 728 805 628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "Dowiedz się, jak dojechać",
+            "href": "https://maps.google.com/?q=Chmielna%207/9,%2000-021%20Warszawa,%20Poland",
+            "target": "_blank"
+          },
+          {
+            "text": "",
+            "href": "https://choiceqr.com/pl",
+            "target": "_blank"
+          }
+        ]
+      }
+    }
+  },
+  "states": {}
+}

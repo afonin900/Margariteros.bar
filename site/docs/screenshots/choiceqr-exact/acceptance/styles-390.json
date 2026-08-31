@@ -1,0 +1,195 @@
+{
+  "live": {
+    "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+    "header": {
+      "language": {
+        "rect": {
+          "x": 169.28125,
+          "y": 16,
+          "width": 60.71875,
+          "height": 40,
+          "bottom": 56
+        },
+        "border": "rgb(172, 224, 30)",
+        "background": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "700 14px / 16.8px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+      },
+      "menu": {
+        "x": 334,
+        "y": 16,
+        "width": 40,
+        "height": 40,
+        "bottom": 56
+      },
+      "logo": {
+        "x": 16,
+        "y": 16,
+        "width": 64,
+        "height": 64,
+        "bottom": 80
+      }
+    },
+    "cards": {
+      "dineIn": {
+        "rect": {
+          "x": 16,
+          "y": 300,
+          "width": 116.65625,
+          "height": 68.5,
+          "bottom": 368.5
+        },
+        "border": "rgb(0, 0, 0)",
+        "background": "rgb(172, 224, 30)",
+        "color": "rgb(0, 0, 0)",
+        "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+      },
+      "pickup": {
+        "rect": {
+          "x": 136.65625,
+          "y": 300,
+          "width": 116.671875,
+          "height": 68.5,
+          "bottom": 368.5
+        },
+        "border": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+      },
+      "localPickup": null,
+      "delivery": {
+        "rect": {
+          "x": 257.328125,
+          "y": 300,
+          "width": 116.671875,
+          "height": 68.5,
+          "bottom": 368.5
+        },
+        "border": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+      },
+      "cocktails": {
+        "rect": {
+          "x": 16,
+          "y": 534,
+          "width": 358,
+          "height": 80,
+          "bottom": 614
+        },
+        "border": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "16px / 24px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+      }
+    },
+    "map": {
+      "rect": {
+        "x": 16,
+        "y": 2883.203125,
+        "width": 358,
+        "height": 200,
+        "bottom": 3083.203125
+      },
+      "loaded": true,
+      "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+    },
+    "links": 25
+  },
+  "local": {
+    "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+    "header": {
+      "language": {
+        "rect": {
+          "x": 169.28125,
+          "y": 16,
+          "width": 60.71875,
+          "height": 40,
+          "bottom": 56
+        },
+        "border": "rgb(172, 224, 30)",
+        "background": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "700 14px / 16.8px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+      },
+      "menu": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "bottom": 0
+      },
+      "logo": {
+        "x": 16,
+        "y": 16,
+        "width": 64,
+        "height": 64,
+        "bottom": 80
+      }
+    },
+    "cards": {
+      "dineIn": {
+        "rect": {
+          "x": 16,
+          "y": 300,
+          "width": 116.65625,
+          "height": 68,
+          "bottom": 368
+        },
+        "border": "rgb(0, 0, 0)",
+        "background": "rgb(172, 224, 30)",
+        "color": "rgb(0, 0, 0)",
+        "font": "11px / 16.5px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+      },
+      "pickup": {
+        "rect": {
+          "x": 136.65625,
+          "y": 300,
+          "width": 116.671875,
+          "height": 68,
+          "bottom": 368
+        },
+        "border": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "11px / 16.5px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+      },
+      "localPickup": null,
+      "delivery": {
+        "rect": {
+          "x": 257.328125,
+          "y": 300,
+          "width": 116.671875,
+          "height": 68,
+          "bottom": 368
+        },
+        "border": "rgb(255, 255, 255)",
+        "background": "rgb(0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "font": "11px / 16.5px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+      },
+      "cocktails": null
+    },
+    "map": {
+      "rect": {
+        "x": 16,
+        "y": 2910.203125,
+        "width": 358,
+        "height": 200,
+        "bottom": 3110.203125
+      },
+      "loaded": true,
+      "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+    },
+    "links": 200,
+    "consent": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "bottom": 0
+    }
+  }
+}

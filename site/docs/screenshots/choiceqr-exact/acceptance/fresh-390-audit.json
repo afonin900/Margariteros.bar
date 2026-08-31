@@ -1,0 +1,163 @@
+{
+  "live": {
+    "device": {
+      "coarse": true,
+      "dpr": 3,
+      "hoverNone": true,
+      "innerHeight": 844,
+      "innerWidth": 390,
+      "scrollHeight": 3228
+    },
+    "gallery": {
+      "columns": "116.664px 116.664px 116.664px",
+      "count": 20,
+      "gap": "4px",
+      "h": 840.6484375,
+      "order": [
+        "thumbnail_G-Q-I.webp",
+        "thumbnail_X-H-i.webp",
+        "thumbnail_H-c-s.webp",
+        "thumbnail_I-r-I.webp",
+        "thumbnail_R-A-B.webp",
+        "thumbnail_C-J-T.webp",
+        "thumbnail_o-b-l.webp",
+        "thumbnail_S-G-A.webp",
+        "thumbnail_G-p-g.webp",
+        "thumbnail_J-u-k.webp",
+        "thumbnail_E-m-n.webp",
+        "thumbnail_f-x-f.webp",
+        "thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+        "thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+        "thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+        "thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+        "thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+        "thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+        "thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+        "thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp"
+      ],
+      "w": 358,
+      "x": 16,
+      "y": 1389.5
+    },
+    "choiceChain": [
+      {
+        "cls": "",
+        "h": 24,
+        "i": 0,
+        "tag": "A",
+        "w": 69,
+        "x": 213.453125,
+        "y": 3188.1484375
+      },
+      {
+        "cls": "PoweredBy_root__EBzVI",
+        "h": 24,
+        "i": 1,
+        "tag": "DIV",
+        "w": 390,
+        "x": 0,
+        "y": 3188.1484375
+      },
+      {
+        "cls": "styles_container__ImQx_",
+        "h": 24,
+        "i": 2,
+        "tag": "DIV",
+        "w": 390,
+        "x": 0,
+        "y": 3188.1484375
+      },
+      {
+        "cls": "styles_FooterLogo__tdSAB",
+        "h": 57,
+        "i": 3,
+        "tag": "DIV",
+        "w": 390,
+        "x": 0,
+        "y": 3171.1484375
+      },
+      {
+        "cls": "PageLayout_wrapper__XhOiu",
+        "h": 3228.1484375,
+        "i": 4,
+        "tag": "DIV",
+        "w": 390,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "cls": "PageLayout_root__ek_Dw",
+        "h": 3228.1484375,
+        "i": 5,
+        "tag": "DIV",
+        "w": 390,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "cls": "is-mobile",
+        "h": 3228.1484375,
+        "i": 6,
+        "tag": "DIV",
+        "w": 390,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "cls": "",
+        "h": 3228.1484375,
+        "i": 7,
+        "tag": "DIV",
+        "w": 390,
+        "x": 0,
+        "y": 0
+      }
+    ]
+  },
+  "local": {
+    "device": {
+      "coarse": true,
+      "dpr": 3,
+      "hoverNone": true,
+      "innerHeight": 844,
+      "innerWidth": 390,
+      "scrollHeight": 3512
+    },
+    "gallery": {
+      "columns": "116.664px 116.664px 116.664px",
+      "count": 20,
+      "gap": "4px",
+      "h": 840.6484375,
+      "order": [
+        "thumbnail_G-Q-I.webp",
+        "thumbnail_X-H-i.webp",
+        "thumbnail_H-c-s.webp",
+        "thumbnail_I-r-I.webp",
+        "thumbnail_R-A-B.webp",
+        "thumbnail_C-J-T.webp",
+        "thumbnail_o-b-l.webp",
+        "thumbnail_S-G-A.webp",
+        "thumbnail_G-p-g.webp",
+        "thumbnail_J-u-k.webp",
+        "thumbnail_E-m-n.webp",
+        "thumbnail_f-x-f.webp",
+        "thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+        "thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+        "thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+        "thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+        "thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+        "thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+        "thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+        "thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp"
+      ],
+      "w": 358,
+      "x": 16,
+      "y": 1348
+    },
+    "footer": {
+      "h": 917,
+      "w": 390,
+      "y": 2212.6484375
+    }
+  }
+}

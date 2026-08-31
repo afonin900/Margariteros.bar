@@ -1,0 +1,183 @@
+- banner:
+  - link "Strona główna":
+    - /url: https://qr.margariteros.bar/
+  - button "PL" [expanded] [active]
+  - link "Search":
+    - /url: https://qr.margariteros.bar/search
+  - link "Profile":
+    - /url: https://clients.choiceqr.com/auth/login/me?lang=en
+  - button "Menu":
+- main:
+  - heading "Margariteros Cocktail Bar - Warszawa" [level=1]
+  - paragraph: Chmielna 7/9, 00-021 Warszawa, Poland
+  - paragraph:
+    - text: Miejsce przy Chmielnej w centrum Warszawy.
+    - button "pokaż"
+  - link "Na miejscu 17:00 - 23:00":
+    - /url: https://qr.margariteros.bar/en/menu
+    - generic: Na miejscu
+    - generic: 17:00 - 23:00
+  - link "Na wynos 17:00 - 23:00":
+    - /url: https://qr.margariteros.bar/en/takeaway
+    - generic: Na wynos
+    - generic: 17:00 - 23:00
+  - link "Dostawa 17:00 - 22:00":
+    - /url: https://qr.margariteros.bar/en/delivery
+    - generic: Dostawa
+    - generic: 17:00 - 22:00
+  - paragraph:
+    - generic: MENU CYFROWE
+  - link "Menu":
+    - /url: https://qr.margariteros.bar/section:menu
+    - text: Menu
+  - link "Kuchnia":
+    - /url: https://qr.margariteros.bar/section:kuchnia
+    - text: Kuchnia
+  - link "Na miejscu":
+    - /url: https://qr.margariteros.bar/section:na-miejscu
+    - text: Na miejscu
+  - link "Na wynos":
+    - /url: https://qr.margariteros.bar/section:na-wynos
+    - text: Na wynos
+  - link "Dostawa":
+    - /url: https://qr.margariteros.bar/section:dostawa
+    - text: Dostawa
+  - link "Napoje":
+    - /url: https://qr.margariteros.bar/section:napoje
+    - text: Napoje
+  - link "Informacje":
+    - /url: https://qr.margariteros.bar/section:informacje
+    - text: Informacje
+  - paragraph:
+    - generic: "LINKI:"
+  - link "Rezerwacja":
+    - /url: https://qr.margariteros.bar/booking
+    - text: Rezerwacja
+  - link "Obszary dostawy":
+    - /url: https://qr.margariteros.bar/delivery-areas
+    - text: Obszary dostawy
+  - link "Zostaw opinię":
+    - /url: https://qr.margariteros.bar/feedback
+    - text: Zostaw opinię
+  - paragraph:
+    - generic: "O miejscu:"
+  - paragraph: Miejsce przy Chmielnej w centrum Warszawy.
+  - generic: "Adres:"
+  - generic: Chmielna 7/9, 00-021 Warszawa, Poland
+  - link "Pokaż na mapie":
+    - /url: https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland
+  - generic: Telefon
+  - paragraph: +48 728 805 628
+  - link "Zadzwoń":
+    - /url: tel:+48728805628
+  - link "Rezerwacja":
+    - /url: https://qr.margariteros.bar/booking
+  - region "Nasze zdjęcia":
+    - heading "Nasze zdjęcia" [level=2]
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+    - img "gallery"
+- contentinfo:
+  - heading "Dane kontaktowe" [level=2]
+  - generic: Chmielna 7/9, 00-021 Warszawa, Poland
+  - link "+48 728 805 628":
+    - /url: tel:+48728805628
+  - link "margaritabar.pl@gmail.com":
+    - /url: mailto:margaritabar.pl@gmail.com
+  - heading "Godziny pracy" [level=2]
+  - term: Poniedziałek
+  - definition: Zamknięte
+  - term: Wtorek
+  - definition: 17:00–23:00
+  - term: Środa
+  - definition: 17:00–23:00
+  - term: Czwartek
+  - definition: 17:00–23:00
+  - term: Piątek
+  - definition: 15:00–02:00
+  - term: Sobota
+  - definition: 13:00–02:00
+  - term: Niedziela
+  - definition: 13:00–21:00
+  - heading "Jesteśmy w mediach społecznościowych" [level=2]
+  - link "◌ Instagram":
+    - /url: https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx
+  - link "◌ TikTok":
+    - /url: https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1
+  - link "◌ Google":
+    - /url: https://g.page/r/Cbl9JpsyGsLTEBM/review
+  - link "◌ TripAdvisor":
+    - /url: https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html
+  - link "◌ Facebook":
+    - /url: https://www.facebook.com/profile.php?id=61576663994634
+  - heading "Na mapie" [level=2]
+  - iframe:
+    - link "Otwórz w Mapach (otwiera się w nowej karcie)":
+      - /url: https://maps.google.com/maps?ll=52.232579,21.017815&z=15&t=m&hl=pl-PL&gl=US&mapclient=embed&q=Chmielna%207%2F9%2000-021%20Warszawa
+      - text: Otwórz w Mapach
+    - button "Skróty klawiszowe"
+    - region "Mapa"
+    - iframe
+    - button "Sterowanie kamerą na mapie"
+    - button "Pokaż zdjęcia satelitarne":
+      - region
+      - iframe
+    - img "Google"
+    - button "Skróty klawiszowe"
+    - generic: Dane mapy ©2026 Google
+    - link "Warunki (otwiera się w nowej karcie)":
+      - /url: https://www.google.com/intl/pl-PL_US/help/terms_maps.html
+      - text: Warunki
+    - link "Zgłoś błąd w mapach (otwiera się w nowej karcie)":
+      - /url: https://www.google.com/maps/@52.2325793,21.0178147,15z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+      - text: Zgłoś błąd w mapach
+  - link "⌁ Dowiedz się, jak dojechać":
+    - /url: https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland
+  - generic: © 2026 Margariteros Cocktail Bar - Warszawa
+  - link "Cookie Policy":
+    - /url: https://qr.margariteros.bar/cookie-policy
+  - link "Terms of Use":
+    - /url: https://qr.margariteros.bar/terms-of-use
+  - link "Privacy Policy":
+    - /url: https://qr.margariteros.bar/privacy-policy
+  - text: Powered by
+  - link "Choice":
+    - /url: https://choiceqr.com/en
+- complementary "Language selector":
+  - button "←"
+  - generic: Language
+  - searchbox "Search"
+  - heading "Human translation:" [level=2]
+  - link "English":
+    - /url: /en/
+  - link "Polish":
+    - /url: /pl/
+  - link "Russian":
+    - /url: /ru/
+  - heading "Machine translation:" [level=2]
+  - link "Spanish":
+    - /url: /es/
+- complementary:
+  - button "Zmień zgodę" [expanded]
+  - region "Twoja prywatność":
+    - heading "Twoja prywatność" [level=2]
+    - paragraph: Używamy opcjonalnej analityki tylko za Twoją zgodą.
+    - button "Odrzucam"
+    - button "Akceptuję"

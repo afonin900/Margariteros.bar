@@ -1,0 +1,185 @@
+- link "Strona główna":
+  - /url: /
+- button "Język": pl
+- link "Szukaj":
+  - /url: /search
+  - button "Szukaj":
+- link "Profil":
+  - /url: https://clients.choiceqr.com/auth/login/me
+  - button "Profil":
+- button "Menu" [active]:
+- generic: Margariteros Cocktail Bar - Warszawa
+- paragraph: Chmielna 7/9, 00-021 Warszawa, Poland
+- generic: Meksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy ulicy Chmielna. Klimatyczny bar z najlepszą margaritą, autorskimi koktajlami, kuchnią meksykańską i niekończącą się tequilą!
+- generic: pokaż
+- link "Na miejscu 17:00 - 23:00":
+  - /url: /pl/menu
+  - generic: Na miejscu
+  - generic: 17:00 - 23:00
+- link "Odbiór osobisty 17:00 - 23:00 -10%":
+  - /url: /pl/takeaway
+  - generic: Odbiór osobisty
+  - generic: 17:00 - 23:00
+  - generic: "-10%"
+- link "Dostawa 17:00 - 22:00":
+  - /url: /pl/delivery
+  - generic: Dostawa
+  - generic: 17:00 - 22:00
+- generic: Digital menu
+- generic: Restauracja będzie otwarta Dzisiaj od 17:00
+- link "Menu":
+  - /url: /section:menu
+  - generic: Menu
+- link "Cocktails":
+  - /url: /section:cocktails
+  - generic: Cocktails
+- link "Chupitos":
+  - /url: /section:chupitos
+  - generic: Chupitos
+- link "Cervezas":
+  - /url: /section:cervezas
+  - generic: Cervezas
+- link "Napoje alkoholowe":
+  - /url: /section:napoje-alkoholowe
+  - generic: Napoje alkoholowe
+- link "Agave Spirits":
+  - /url: /section:agave-spirits
+  - generic: Agave Spirits
+- link "Napoje":
+  - /url: /section:napoje
+  - generic: Napoje
+- generic: "Linki:"
+- link "Rezerwacje":
+  - /url: /booking
+  - generic: Rezerwacje
+- link "Obszary dostawy":
+  - /url: /delivery-areas
+  - text: Obszary dostawy
+- link "Prześlij opinię":
+  - /url: /feedback
+  - generic: Prześlij opinię
+- generic: Nasze zdjęcia
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- img "gallery"
+- generic: "O tym miejscu:"
+- generic: Meksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy...Pokaż więcej
+- generic: "Adres:"
+- generic: Chmielna 7/9, 00-021 Warszawa, Poland
+- generic: "Telefon:"
+- link "+48 728 805 628":
+  - /url: tel:+48 728 805 628
+- generic: "E-mail:"
+- link "margaritabar.pl@gmail.com":
+  - /url: mailto:margaritabar.pl@gmail.com
+- generic: "Godziny pracy:"
+- generic: 17:00 - 23:00 Сzw
+- text: Rozkład
+- generic: My w sieciach społecznościowych
+- link "Instagram":
+  - /url: https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx
+  - generic: Instagram
+- link "TikTok":
+  - /url: https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1
+  - generic: TikTok
+- link "Google":
+  - /url: https://g.page/r/Cbl9JpsyGsLTEBM/review
+  - generic: Google
+- link "TripAdvisor":
+  - /url: https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html
+  - generic: TripAdvisor
+- link "Facebook":
+  - /url: https://www.facebook.com/profile.php?id=61576663994634
+  - generic: Facebook
+- paragraph: Na mapie
+- iframe [name="Google Maps"]:
+  - link "Otwórz w Mapach (otwiera się w nowej karcie)":
+    - /url: https://maps.google.com/maps?ll=52.232579,21.017815&z=15&t=m&hl=pl-PL&gl=US&mapclient=embed&q=Chmielna%207%2F9%2000-021%20Warszawa
+    - text: Otwórz w Mapach
+  - button "Skróty klawiszowe"
+  - region "Mapa"
+  - iframe
+  - button "Sterowanie kamerą na mapie"
+  - button "Pokaż zdjęcia satelitarne":
+    - region
+    - iframe
+  - img "Google"
+  - button "Skróty klawiszowe"
+  - generic: Dane mapy ©2026 Google
+  - link "Warunki (otwiera się w nowej karcie)":
+    - /url: https://www.google.com/intl/pl-PL_US/help/terms_maps.html
+    - text: Warunki
+  - link "Zgłoś błąd w mapach (otwiera się w nowej karcie)":
+    - /url: https://www.google.com/maps/@52.2325793,21.0178147,15z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+    - text: Zgłoś błąd w mapach
+- link "Dowiedz się, jak dojechać":
+  - /url: https://maps.google.com/?q=Chmielna 7/9, 00-021 Warszawa, Poland
+  - button "Dowiedz się, jak dojechać":
+    - text: Dowiedz się, jak dojechać
+- paragraph: Obsługiwany przez
+- link "Obsługiwany przez - Choice":
+  - /url: https://choiceqr.com/pl
+- link "Zaloguj się":
+  - /url: https://clients.choiceqr.com/auth/login/me
+  - button "Zaloguj się":
+    - text: Zaloguj się
+- generic: Zaloguj się aby uprościć proces zamawiania i korzystać z dodatkowych funkcji.
+- generic: Kontakt
+- link "Chmielna 7/9, 00-021 Warszawa, Poland":
+  - /url: https://maps.google.com/?q=Chmielna 7/9, 00-021 Warszawa, Poland
+  - generic: Chmielna 7/9, 00-021 Warszawa, Poland
+- link "+48 728 805 628":
+  - /url: tel:+48 728 805 628
+  - generic: +48 728 805 628
+- link "margaritabar.pl@gmail.com":
+  - /url: mailto:margaritabar.pl@gmail.com
+  - generic: margaritabar.pl@gmail.com
+- generic: My w sieciach społecznościowych
+- link "Instagram":
+  - /url: https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx
+  - generic: Instagram
+- link "TikTok":
+  - /url: https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1
+  - generic: TikTok
+- link "Google":
+  - /url: https://g.page/r/Cbl9JpsyGsLTEBM/review
+  - generic: Google
+- link "TripAdvisor":
+  - /url: https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html
+  - generic: TripAdvisor
+- link "Facebook":
+  - /url: https://www.facebook.com/profile.php?id=61576663994634
+  - generic: Facebook
+- generic: Przydatne informacje
+- generic: Lista alergenów
+- link "O firmie":
+  - /url: /about-company
+  - generic: O firmie
+- link "Polityka Plików Cookie":
+  - /url: /cookie-policy
+  - generic: Polityka Plików Cookie
+- link "Regulamin":
+  - /url: /terms-of-use
+  - generic: Regulamin
+- link "Polityka prywatności":
+  - /url: /privacy-policy
+  - generic: Polityka prywatności
+- button:
+- alert

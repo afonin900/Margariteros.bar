@@ -1,0 +1,527 @@
+{
+  "buttons": [
+    {
+      "aria": "Language",
+      "class": "styles_button___Dvql styles_sizeSmall__NCTix styles_appearanceStroke__LKd1h styles_button__01Xtp styles_language__ITSHb",
+      "text": "EN",
+      "title": "Language"
+    },
+    {
+      "aria": "Search",
+      "class": "styles_button___Dvql styles_sizeSmall__NCTix styles_appearanceStroke__LKd1h styles_button__01Xtp",
+      "text": "",
+      "title": "Search"
+    },
+    {
+      "aria": "Profile",
+      "class": "styles_button___Dvql styles_sizeSmall__NCTix styles_appearanceStroke__LKd1h styles_button__01Xtp",
+      "text": "",
+      "title": "Profile"
+    },
+    {
+      "aria": "Menu",
+      "class": "styles_button___Dvql styles_sizeSmall__NCTix styles_appearanceStroke__LKd1h styles_button__01Xtp",
+      "text": "",
+      "title": "Menu"
+    },
+    {
+      "aria": null,
+      "class": "styles_button___Dvql styles_appearanceStroke__LKd1h styles_fullWidth__x3ayC styles_FooterMapButton__0wAgp",
+      "text": "Get directions",
+      "title": null
+    }
+  ],
+  "fonts": [],
+  "links": [
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/",
+      "text": ""
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/search",
+      "text": ""
+    },
+    {
+      "class": "",
+      "href": "https://clients.choiceqr.com/auth/login/me",
+      "text": ""
+    },
+    {
+      "class": "styles_areaItem__OJ1R8 styles_areaItemSelected__G2mIk",
+      "href": "https://qr.margariteros.bar/en/menu",
+      "text": "Here\n17:00 - 23:00"
+    },
+    {
+      "class": "styles_areaItem__OJ1R8",
+      "href": "https://qr.margariteros.bar/en/takeaway",
+      "text": "Takeaway\n17:00 - 23:00\n-10%"
+    },
+    {
+      "class": "styles_areaItem__OJ1R8",
+      "href": "https://qr.margariteros.bar/en/delivery",
+      "text": "Delivery\n17:00 - 22:00"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/section:menu",
+      "text": "Menu"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/section:cocktails",
+      "text": "Cocktails"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/section:chupitos",
+      "text": "Chupitos"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/section:cervezas",
+      "text": "Cervezas"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/section:napoje-alkoholowe",
+      "text": "Napoje alkoholowe"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/section:agave-spirits",
+      "text": "Agave Spirits"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/section:napoje",
+      "text": "Napoje"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/booking",
+      "text": "Reservation"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/delivery-areas",
+      "text": "Delivery Areas"
+    },
+    {
+      "class": "",
+      "href": "https://qr.margariteros.bar/feedback",
+      "text": "Send feedback"
+    },
+    {
+      "class": "",
+      "href": "tel:+48 728 805 628",
+      "text": "+48 728 805 628"
+    },
+    {
+      "class": "",
+      "href": "mailto:margaritabar.pl@gmail.com",
+      "text": "margaritabar.pl@gmail.com"
+    },
+    {
+      "class": "styles_FooterSocials__81qRl",
+      "href": "https://www.instagram.com/margariteros.bar",
+      "text": "Instagram"
+    },
+    {
+      "class": "styles_FooterSocials__81qRl",
+      "href": "https://www.tiktok.com/@margariteros.bar",
+      "text": "TikTok"
+    },
+    {
+      "class": "styles_FooterSocials__81qRl",
+      "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+      "text": "Google"
+    },
+    {
+      "class": "styles_FooterSocials__81qRl",
+      "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+      "text": "TripAdvisor"
+    },
+    {
+      "class": "styles_FooterSocials__81qRl",
+      "href": "https://www.facebook.com/profile.php",
+      "text": "Facebook"
+    },
+    {
+      "class": "",
+      "href": "https://maps.google.com/",
+      "text": "Get directions"
+    },
+    {
+      "class": "",
+      "href": "https://choiceqr.com/en",
+      "text": ""
+    }
+  ],
+  "localeText": "EN\nMargariteros Cocktail Bar - Warszawa\n\nChmielna 7/9, 00-021 Warszawa, Poland\n\nMeksykanski Cocktail Bar w samym centrum Warszawy. \nWyjątkowe miejsce przy ulicy Chmielna. \nKlimatyczny bar z najlepszą margaritą, autorskimi koktajlami, kuchnią meksykańską i niekończącą się tequilą!\nshow\nHere\n17:00 - 23:00\nTakeaway\n17:00 - 23:00\n-10%\nDelivery\n17:00 - 22:00\nDIGITAL MENU\nThe restaurant will open Tomorrow at 17:00\nMenu\nCocktails\nChupitos\nCervezas\nNapoje alkoholowe\nAgave Spirits\nNapoje\nLINKS:\nReservation\nDelivery Areas\nSend feedback\nOur photos\nAbout the place:\nMeksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy...show more\nAddress:\nChmielna 7/9, 00-021 Warszawa, Poland\nPhone:\n+48 728 805 628\nEmail:\nmargaritabar.pl@gmail.com\nWorking hours:\n17:00 - 23:00 Wed\nSchedule\nWe are on social networks\nInstagram\nTikTok\nGoogle\nTripAdvisor\nFacebook\n\nOn the map\n\nGet directions\n\nPowered by",
+  "media": [
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-Q-I.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-Q-I.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_X-H-i.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_X-H-i.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_H-c-s.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_H-c-s.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_I-r-I.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_I-r-I.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_R-A-B.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_R-A-B.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_C-J-T.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_C-J-T.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_o-b-l.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_o-b-l.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_S-G-A.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_S-G-A.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-p-g.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-p-g.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_J-u-k.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_J-u-k.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_E-m-n.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_E-m-n.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_f-x-f.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_f-x-f.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+      "srcset": null,
+      "tag": "IMG"
+    },
+    {
+      "alt": null,
+      "class": "",
+      "naturalHeight": null,
+      "naturalWidth": null,
+      "src": null,
+      "srcset": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+      "tag": "SOURCE"
+    },
+    {
+      "alt": "gallery",
+      "class": "Image_root__3IkpI",
+      "naturalHeight": 400,
+      "naturalWidth": 400,
+      "src": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+      "srcset": null,
+      "tag": "IMG"
+    }
+  ],
+  "source": "https://qr.margariteros.bar/",
+  "title": "Margariteros Bar – Mexican Cocktail Bar in Central Warsaw - Delivery, Takeaway, Reservation"
+}

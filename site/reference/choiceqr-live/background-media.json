@@ -1,0 +1,14 @@
+{
+  "source": "https://qr.margariteros.bar/",
+  "background": {
+    "selector": ".styles_backgroundPattern__dvQPZ",
+    "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/background-image/tkWNEbA-WeAQsJh-YsAUzqH.webp",
+    "local": "media/background.webp"
+  },
+  "logo": {
+    "selector": ".styles_logo__Oh6eI",
+    "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/logo/thumbnail_JjcXQWp-HJkyyaA-eHlllGV_K-K-Y.png",
+    "local": "media/logo.png"
+  },
+  "evidence": "Read from live element inline style and computed backgroundImage via Chrome Runtime.evaluate."
+}

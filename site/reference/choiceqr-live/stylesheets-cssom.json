@@ -1,0 +1,139 @@
+[
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@100;200;300;400;500;600;700&display=swap",
+    "index": 0,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/6856bd2a9a01d8d3.css",
+    "index": 1,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/ada20e0263f38d1b.css",
+    "index": 2,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/f4a8bef1a50be5f0.css",
+    "index": 3,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/4e0e7fbe6f03ebbe.css",
+    "index": 4,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/0598231e055814fb.css",
+    "index": 5,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/0e6d29f5b95273ee.css",
+    "index": 6,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/da99c062128db85d.css",
+    "index": 7,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": true,
+    "disabled": false,
+    "error": null,
+    "href": null,
+    "index": 8,
+    "ruleCount": 1,
+    "rules": [
+      ":root { --primary-color: #ace01e; --primary-shadow-color: #688712; --primary-shadow-color-dark: #688712; --primary-shadow-color-light: #d6f08f; --primary-color-a25: #ace01e25; --secondary-font-color: #000000; --font-family: \"Hind Siliguri\",  'Inter',\n\t\t\t\t\t\t\t-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,\n\t\t\t\t\t\t\tFira Sans, Droid Sans, Helvetica Neue, sans-serif; --theme-colors-100: #000000; --theme-colors-200: #161d02; --theme-colors-300: #ace01e; --theme-colors-400: rgba(255, 255, 255, 0.5); --theme-colors-500: #ffffff; --theme-colors-100-a0: #00000000; --theme-colors-100-a10: #00000010; --theme-colors-100-a15: #00000015; --theme-colors-100-a20: #00000020; --theme-colors-100-a30: #00000030; --theme-colors-100-a50: #00000050; --theme-colors-100-a60: #00000060; --theme-colors-100-a70: #00000070; --theme-colors-100-a80: #00000080; --theme-colors-100-a90: #00000090; --theme-colors-200-a95: #161d02f2; --theme-colors-200-a0: #161d0200; --theme-colors-300-a20: #ace01e20; --theme-colors-300-a50: #ace01e50; --theme-colors-500-a0: #ffffff00; --theme-colors-500-a05: #ffffff05; --theme-colors-500-a10: #ffffff10; --theme-colors-500-a15: #ffffff15; --theme-colors-500-a20: #ffffff20; --theme-colors-500-a25: #ffffff25; --theme-colors-500-a50: #ffffff50; --background-popup: rgba(51, 51, 51, 0.5); --payment-wallet-color: #fff; --payment-wallet-text-color: #111; }"
+    ]
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/e81ae569f6167127.css",
+    "index": 9,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/8529f31c20c0c423.css",
+    "index": 10,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/bbbcbf2234891e53.css",
+    "index": 11,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/fdea4cf6690b79ba.css",
+    "index": 12,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/7480da4d59bd7eff.css",
+    "index": 13,
+    "ruleCount": 0,
+    "rules": []
+  },
+  {
+    "cssRulesAccessible": false,
+    "disabled": false,
+    "error": "SecurityError: Failed to read the 'cssRules' property from 'CSSStyleSheet': Cannot access rules",
+    "href": "https://cdn-clients.choiceqr.com/client/_next/static/css/b5fc8c8ed481b0d7.css",
+    "index": 14,
+    "ruleCount": 0,
+    "rules": []
+  }
+]

@@ -1,0 +1,4227 @@
+{
+  "profiles": {
+    "android-320": {
+      "live": {
+        "h": 3137,
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 62.890625,
+              "y": 1342,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 1390
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"0664c3fcb96d70e5711ba79c7bad0367-358660cbcd8d4e85\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"0664c3fcb96d70e5711ba79c7bad0367-358660cbcd8d4e85\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"0664c3fcb96d70e5711ba79c7bad0367-358660cbcd8d4e85\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "footer": null,
+        "cards": {
+          "dineIn": {
+            "rect": {
+              "x": 36.328125,
+              "y": 340.25,
+              "width": 52.671875,
+              "height": 16.5,
+              "bottom": 356.75
+            },
+            "border": "rgb(0, 0, 0)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "pickup": {
+            "rect": {
+              "x": 121.328125,
+              "y": 332,
+              "width": 77.34375,
+              "height": 33,
+              "bottom": 365
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "localPickup": null,
+          "delivery": {
+            "rect": {
+              "x": 236.09375,
+              "y": 340.25,
+              "width": 42.484375,
+              "height": 16.5,
+              "bottom": 356.75
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 566.5,
+              "width": 288,
+              "height": 80,
+              "bottom": 646.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "16px / 24px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          }
+        }
+      },
+      "local": {
+        "h": 3085,
+        "gallery": {
+          "heading": {
+            "x": 16,
+            "y": 1329.5,
+            "width": 288,
+            "height": 48,
+            "bottom": 1377.5
+          },
+          "root": {
+            "x": 0,
+            "y": 1329.5,
+            "width": 320,
+            "height": 781.390625,
+            "bottom": 2110.890625
+          },
+          "grid": {
+            "x": 16,
+            "y": 1409.5,
+            "width": 288,
+            "height": 677.390625,
+            "bottom": 2086.890625
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1409.5,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1502.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 113.328125,
+                "y": 1409.5,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1502.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 210.65625,
+                "y": 1409.5,
+                "width": 93.34375,
+                "height": 93.34375,
+                "bottom": 1502.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1506.84375,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1600.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 113.328125,
+                "y": 1506.84375,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1600.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 210.65625,
+                "y": 1506.84375,
+                "width": 93.34375,
+                "height": 93.34375,
+                "bottom": 1600.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1604.1875,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1697.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 113.328125,
+                "y": 1604.1875,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1697.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 210.65625,
+                "y": 1604.1875,
+                "width": 93.34375,
+                "height": 93.34375,
+                "bottom": 1697.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1701.53125,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1794.875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 113.328125,
+                "y": 1701.53125,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1794.875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 210.65625,
+                "y": 1701.53125,
+                "width": 93.34375,
+                "height": 93.34375,
+                "bottom": 1794.875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1798.875,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1892.21875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 113.328125,
+                "y": 1798.875,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1892.21875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 210.65625,
+                "y": 1798.875,
+                "width": 93.34375,
+                "height": 93.34375,
+                "bottom": 1892.21875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1896.21875,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1989.5625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 113.328125,
+                "y": 1896.21875,
+                "width": 93.328125,
+                "height": 93.34375,
+                "bottom": 1989.5625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 210.65625,
+                "y": 1896.21875,
+                "width": 93.34375,
+                "height": 93.34375,
+                "bottom": 1989.5625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1993.5625,
+                "width": 93.328125,
+                "height": 93.328125,
+                "bottom": 2086.890625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 113.328125,
+                "y": 1993.5625,
+                "width": 93.328125,
+                "height": 93.328125,
+                "bottom": 2086.890625
+              }
+            }
+          ]
+        },
+        "photos": [
+          {
+            "tag": "H2",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 16,
+              "y": 1329.5,
+              "width": 288,
+              "height": 48,
+              "bottom": 1377.5
+            },
+            "display": "block"
+          }
+        ],
+        "status": [
+          {
+            "tag": "P",
+            "text": "Restauracja będzie otwarta jutro o 17:00",
+            "rect": {
+              "x": 16,
+              "y": 432,
+              "width": 288,
+              "height": 41.5,
+              "bottom": 473.5
+            },
+            "display": "flex"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 16,
+              "y": 2134.890625,
+              "width": 288,
+              "height": 24,
+              "bottom": 2158.890625
+            },
+            "display": "block"
+          },
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 2110.890625,
+          "width": 320,
+          "height": 917,
+          "bottom": 3027.890625
+        },
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 553.5,
+              "width": 288,
+              "height": 72,
+              "bottom": 625.5
+            },
+            "border": "rgb(54, 64, 12)",
+            "background": "rgb(0, 0, 0)",
+            "font": "600 20px / 32px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+          }
+        },
+        "consent": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0
+        }
+      }
+    },
+    "android-390": {
+      "live": {
+        "h": 3228,
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 97.890625,
+              "y": 1309.5,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 1357.5
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"b5691d1553e2b8f9cdc9d0564a2781a8-a5e94e079a78cae9\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"b5691d1553e2b8f9cdc9d0564a2781a8-a5e94e079a78cae9\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"b5691d1553e2b8f9cdc9d0564a2781a8-a5e94e079a78cae9\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "footer": null,
+        "cards": {
+          "dineIn": {
+            "rect": {
+              "x": 47.984375,
+              "y": 332,
+              "width": 52.671875,
+              "height": 16.5,
+              "bottom": 348.5
+            },
+            "border": "rgb(0, 0, 0)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "pickup": {
+            "rect": {
+              "x": 156.125,
+              "y": 332,
+              "width": 77.734375,
+              "height": 16.5,
+              "bottom": 348.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "localPickup": null,
+          "delivery": {
+            "rect": {
+              "x": 294.421875,
+              "y": 332,
+              "width": 42.484375,
+              "height": 16.5,
+              "bottom": 348.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 534,
+              "width": 358,
+              "height": 80,
+              "bottom": 614
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "16px / 24px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          }
+        }
+      },
+      "local": {
+        "h": 3228,
+        "gallery": {
+          "heading": {
+            "x": 16,
+            "y": 1309.5,
+            "width": 358,
+            "height": 48,
+            "bottom": 1357.5
+          },
+          "root": {
+            "x": 0,
+            "y": 1309.5,
+            "width": 390,
+            "height": 944.703125,
+            "bottom": 2254.203125
+          },
+          "grid": {
+            "x": 16,
+            "y": 1389.5,
+            "width": 358,
+            "height": 840.703125,
+            "bottom": 2230.203125
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1389.5,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1506.171875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1389.5,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1506.171875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1389.5,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1506.171875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1510.171875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1626.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1510.171875,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1626.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1510.171875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1626.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1630.84375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1747.515625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1630.84375,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1747.515625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1630.84375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1747.515625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1751.515625,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1868.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1751.515625,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1868.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1751.515625,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1868.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1872.1875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1988.859375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1872.1875,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 1988.859375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1872.1875,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 1988.859375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1992.859375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 2109.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 1992.859375,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 2109.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 257.328125,
+                "y": 1992.859375,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 2109.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2113.53125,
+                "width": 116.65625,
+                "height": 116.671875,
+                "bottom": 2230.203125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 136.65625,
+                "y": 2113.53125,
+                "width": 116.671875,
+                "height": 116.671875,
+                "bottom": 2230.203125
+              }
+            }
+          ]
+        },
+        "photos": [
+          {
+            "tag": "H2",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 16,
+              "y": 1309.5,
+              "width": 358,
+              "height": 48,
+              "bottom": 1357.5
+            },
+            "display": "block"
+          }
+        ],
+        "status": [
+          {
+            "tag": "P",
+            "text": "Restauracja będzie otwarta jutro o 17:00",
+            "rect": {
+              "x": 16,
+              "y": 412,
+              "width": 358,
+              "height": 41.5,
+              "bottom": 453.5
+            },
+            "display": "flex"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 16,
+              "y": 2278.203125,
+              "width": 358,
+              "height": 24,
+              "bottom": 2302.203125
+            },
+            "display": "block"
+          },
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 2254.203125,
+          "width": 390,
+          "height": 917,
+          "bottom": 3171.203125
+        },
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 533.5,
+              "width": 358,
+              "height": 72,
+              "bottom": 605.5
+            },
+            "border": "rgb(54, 64, 12)",
+            "background": "rgb(0, 0, 0)",
+            "font": "600 20px / 32px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+          }
+        },
+        "consent": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0
+        }
+      }
+    },
+    "android-398": {
+      "live": {
+        "h": 3247,
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 101.890625,
+              "y": 1309.5,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 1357.5
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"97b941e8feb5b156943a81fab816cda5-a1da9861c256b450\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"97b941e8feb5b156943a81fab816cda5-a1da9861c256b450\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"97b941e8feb5b156943a81fab816cda5-a1da9861c256b450\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "footer": null,
+        "cards": {
+          "dineIn": {
+            "rect": {
+              "x": 49.328125,
+              "y": 332,
+              "width": 52.671875,
+              "height": 16.5,
+              "bottom": 348.5
+            },
+            "border": "rgb(0, 0, 0)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "pickup": {
+            "rect": {
+              "x": 160.125,
+              "y": 332,
+              "width": 77.734375,
+              "height": 16.5,
+              "bottom": 348.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "localPickup": null,
+          "delivery": {
+            "rect": {
+              "x": 301.09375,
+              "y": 332,
+              "width": 42.484375,
+              "height": 16.5,
+              "bottom": 348.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 534,
+              "width": 366,
+              "height": 80,
+              "bottom": 614
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "16px / 24px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          }
+        }
+      },
+      "local": {
+        "h": 3247,
+        "gallery": {
+          "heading": {
+            "x": 16,
+            "y": 1309.5,
+            "width": 366,
+            "height": 48,
+            "bottom": 1357.5
+          },
+          "root": {
+            "x": 0,
+            "y": 1309.5,
+            "width": 398,
+            "height": 963.390625,
+            "bottom": 2272.890625
+          },
+          "grid": {
+            "x": 16,
+            "y": 1389.5,
+            "width": 366,
+            "height": 859.390625,
+            "bottom": 2248.890625
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1389.5,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1508.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 139.328125,
+                "y": 1389.5,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1508.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 262.65625,
+                "y": 1389.5,
+                "width": 119.34375,
+                "height": 119.34375,
+                "bottom": 1508.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1512.84375,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1632.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 139.328125,
+                "y": 1512.84375,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1632.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 262.65625,
+                "y": 1512.84375,
+                "width": 119.34375,
+                "height": 119.34375,
+                "bottom": 1632.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1636.1875,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1755.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 139.328125,
+                "y": 1636.1875,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1755.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 262.65625,
+                "y": 1636.1875,
+                "width": 119.34375,
+                "height": 119.34375,
+                "bottom": 1755.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1759.53125,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1878.875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 139.328125,
+                "y": 1759.53125,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 1878.875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 262.65625,
+                "y": 1759.53125,
+                "width": 119.34375,
+                "height": 119.34375,
+                "bottom": 1878.875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1882.875,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 2002.21875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 139.328125,
+                "y": 1882.875,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 2002.21875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 262.65625,
+                "y": 1882.875,
+                "width": 119.34375,
+                "height": 119.34375,
+                "bottom": 2002.21875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2006.21875,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 2125.5625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 139.328125,
+                "y": 2006.21875,
+                "width": 119.328125,
+                "height": 119.34375,
+                "bottom": 2125.5625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 262.65625,
+                "y": 2006.21875,
+                "width": 119.34375,
+                "height": 119.34375,
+                "bottom": 2125.5625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2129.5625,
+                "width": 119.328125,
+                "height": 119.328125,
+                "bottom": 2248.890625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 139.328125,
+                "y": 2129.5625,
+                "width": 119.328125,
+                "height": 119.328125,
+                "bottom": 2248.890625
+              }
+            }
+          ]
+        },
+        "photos": [
+          {
+            "tag": "H2",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 16,
+              "y": 1309.5,
+              "width": 366,
+              "height": 48,
+              "bottom": 1357.5
+            },
+            "display": "block"
+          }
+        ],
+        "status": [
+          {
+            "tag": "P",
+            "text": "Restauracja będzie otwarta jutro o 17:00",
+            "rect": {
+              "x": 16,
+              "y": 412,
+              "width": 366,
+              "height": 41.5,
+              "bottom": 453.5
+            },
+            "display": "flex"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 16,
+              "y": 2296.890625,
+              "width": 366,
+              "height": 24,
+              "bottom": 2320.890625
+            },
+            "display": "block"
+          },
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 2272.890625,
+          "width": 398,
+          "height": 917,
+          "bottom": 3189.890625
+        },
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 533.5,
+              "width": 366,
+              "height": 72,
+              "bottom": 605.5
+            },
+            "border": "rgb(54, 64, 12)",
+            "background": "rgb(0, 0, 0)",
+            "font": "600 20px / 32px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+          }
+        },
+        "consent": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0
+        }
+      }
+    },
+    "android-597": {
+      "live": {
+        "h": 3659,
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 201.390625,
+              "y": 1277.5,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 1325.5
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"c2ec74193877b5ff0e2077e90aa59c79-cb40a580052aad5f\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"c2ec74193877b5ff0e2077e90aa59c79-cb40a580052aad5f\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"c2ec74193877b5ff0e2077e90aa59c79-cb40a580052aad5f\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "footer": null,
+        "cards": {
+          "dineIn": {
+            "rect": {
+              "x": 82.484375,
+              "y": 300,
+              "width": 52.671875,
+              "height": 16.5,
+              "bottom": 316.5
+            },
+            "border": "rgb(0, 0, 0)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "pickup": {
+            "rect": {
+              "x": 259.625,
+              "y": 300,
+              "width": 77.734375,
+              "height": 16.5,
+              "bottom": 316.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "localPickup": null,
+          "delivery": {
+            "rect": {
+              "x": 466.921875,
+              "y": 300,
+              "width": 42.484375,
+              "height": 16.5,
+              "bottom": 316.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 502,
+              "width": 565,
+              "height": 80,
+              "bottom": 582
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "16px / 24px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          }
+        }
+      },
+      "local": {
+        "h": 3679,
+        "gallery": {
+          "heading": {
+            "x": 16,
+            "y": 1277.5,
+            "width": 565,
+            "height": 48,
+            "bottom": 1325.5
+          },
+          "root": {
+            "x": 0,
+            "y": 1277.5,
+            "width": 597,
+            "height": 1427.703125,
+            "bottom": 2705.203125
+          },
+          "grid": {
+            "x": 16,
+            "y": 1357.5,
+            "width": 565,
+            "height": 1323.703125,
+            "bottom": 2681.203125
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1357.5,
+                "width": 185.65625,
+                "height": 185.671875,
+                "bottom": 1543.171875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 205.65625,
+                "y": 1357.5,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 1543.171875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 395.328125,
+                "y": 1357.5,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 1543.171875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1547.171875,
+                "width": 185.65625,
+                "height": 185.671875,
+                "bottom": 1732.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 205.65625,
+                "y": 1547.171875,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 1732.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 395.328125,
+                "y": 1547.171875,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 1732.84375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1736.84375,
+                "width": 185.65625,
+                "height": 185.671875,
+                "bottom": 1922.515625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 205.65625,
+                "y": 1736.84375,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 1922.515625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 395.328125,
+                "y": 1736.84375,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 1922.515625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1926.515625,
+                "width": 185.65625,
+                "height": 185.671875,
+                "bottom": 2112.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 205.65625,
+                "y": 1926.515625,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 2112.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 395.328125,
+                "y": 1926.515625,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 2112.1875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2116.1875,
+                "width": 185.65625,
+                "height": 185.671875,
+                "bottom": 2301.859375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 205.65625,
+                "y": 2116.1875,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 2301.859375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 395.328125,
+                "y": 2116.1875,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 2301.859375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2305.859375,
+                "width": 185.65625,
+                "height": 185.671875,
+                "bottom": 2491.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 205.65625,
+                "y": 2305.859375,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 2491.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 395.328125,
+                "y": 2305.859375,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 2491.53125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2495.53125,
+                "width": 185.65625,
+                "height": 185.671875,
+                "bottom": 2681.203125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 205.65625,
+                "y": 2495.53125,
+                "width": 185.671875,
+                "height": 185.671875,
+                "bottom": 2681.203125
+              }
+            }
+          ]
+        },
+        "photos": [
+          {
+            "tag": "H2",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 16,
+              "y": 1277.5,
+              "width": 565,
+              "height": 48,
+              "bottom": 1325.5
+            },
+            "display": "block"
+          }
+        ],
+        "status": [
+          {
+            "tag": "P",
+            "text": "Restauracja będzie otwarta jutro o 17:00",
+            "rect": {
+              "x": 16,
+              "y": 380,
+              "width": 565,
+              "height": 41.5,
+              "bottom": 421.5
+            },
+            "display": "flex"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 16,
+              "y": 2729.203125,
+              "width": 565,
+              "height": 24,
+              "bottom": 2753.203125
+            },
+            "display": "block"
+          },
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 2705.203125,
+          "width": 597,
+          "height": 917,
+          "bottom": 3622.203125
+        },
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 501.5,
+              "width": 565,
+              "height": 72,
+              "bottom": 573.5
+            },
+            "border": "rgb(54, 64, 12)",
+            "background": "rgb(0, 0, 0)",
+            "font": "600 20px / 32px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+          }
+        },
+        "consent": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0
+        }
+      }
+    },
+    "android-719": {
+      "live": {
+        "h": 3944,
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 262.390625,
+              "y": 1277.5,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 1325.5
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"8f968d6cbf6389847400348968954f47-cb495db0f29e6b78\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"8f968d6cbf6389847400348968954f47-cb495db0f29e6b78\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"8f968d6cbf6389847400348968954f47-cb495db0f29e6b78\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "footer": null,
+        "cards": {
+          "dineIn": {
+            "rect": {
+              "x": 102.828125,
+              "y": 300,
+              "width": 52.671875,
+              "height": 16.5,
+              "bottom": 316.5
+            },
+            "border": "rgb(0, 0, 0)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "pickup": {
+            "rect": {
+              "x": 320.625,
+              "y": 300,
+              "width": 77.734375,
+              "height": 16.5,
+              "bottom": 316.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "localPickup": null,
+          "delivery": {
+            "rect": {
+              "x": 568.59375,
+              "y": 300,
+              "width": 42.484375,
+              "height": 16.5,
+              "bottom": 316.5
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "600 11px / 16.5px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          },
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 502,
+              "width": 687,
+              "height": 80,
+              "bottom": 582
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "16px / 24px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif"
+          }
+        }
+      },
+      "local": {
+        "h": 3944,
+        "gallery": {
+          "heading": {
+            "x": 16,
+            "y": 1257.5,
+            "width": 687,
+            "height": 48,
+            "bottom": 1305.5
+          },
+          "root": {
+            "x": 0,
+            "y": 1257.5,
+            "width": 719,
+            "height": 1712.296875,
+            "bottom": 2969.796875
+          },
+          "grid": {
+            "x": 16,
+            "y": 1337.5,
+            "width": 687,
+            "height": 1608.296875,
+            "bottom": 2945.796875
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1337.5,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 1563.828125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 246.328125,
+                "y": 1337.5,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 1563.828125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 476.65625,
+                "y": 1337.5,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 1563.828125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1567.828125,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 1794.15625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 246.328125,
+                "y": 1567.828125,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 1794.15625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 476.65625,
+                "y": 1567.828125,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 1794.15625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 1798.15625,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2024.484375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 246.328125,
+                "y": 1798.15625,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2024.484375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 476.65625,
+                "y": 1798.15625,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2024.484375
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2028.484375,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2254.8125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 246.328125,
+                "y": 2028.484375,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2254.8125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 476.65625,
+                "y": 2028.484375,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2254.8125
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2258.8125,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2485.140625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 246.328125,
+                "y": 2258.8125,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2485.140625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 476.65625,
+                "y": 2258.8125,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2485.140625
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2489.140625,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2715.46875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 246.328125,
+                "y": 2489.140625,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2715.46875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 476.65625,
+                "y": 2489.140625,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2715.46875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 16,
+                "y": 2719.46875,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2945.796875
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 246.328125,
+                "y": 2719.46875,
+                "width": 226.328125,
+                "height": 226.328125,
+                "bottom": 2945.796875
+              }
+            }
+          ]
+        },
+        "photos": [
+          {
+            "tag": "H2",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 16,
+              "y": 1257.5,
+              "width": 687,
+              "height": 48,
+              "bottom": 1305.5
+            },
+            "display": "block"
+          }
+        ],
+        "status": [
+          {
+            "tag": "P",
+            "text": "Restauracja będzie otwarta jutro o 17:00",
+            "rect": {
+              "x": 16,
+              "y": 360,
+              "width": 687,
+              "height": 41.5,
+              "bottom": 401.5
+            },
+            "display": "flex"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 16,
+              "y": 2993.796875,
+              "width": 687,
+              "height": 24,
+              "bottom": 3017.796875
+            },
+            "display": "block"
+          },
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 2969.796875,
+          "width": 719,
+          "height": 917,
+          "bottom": 3886.796875
+        },
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": {
+            "rect": {
+              "x": 16,
+              "y": 481.5,
+              "width": 687,
+              "height": 72,
+              "bottom": 553.5
+            },
+            "border": "rgb(54, 64, 12)",
+            "background": "rgb(0, 0, 0)",
+            "font": "600 20px / 32px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+          }
+        },
+        "consent": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0
+        }
+      }
+    },
+    "desktop-1024": {
+      "live": {
+        "h": 2066,
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 414.890625,
+              "y": 292,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 340
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"8180ff2ec9ccf35fea89b94582c2fd43-f1135d32e7841f1f\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"8180ff2ec9ccf35fea89b94582c2fd43-f1135d32e7841f1f\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "P",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 24,
+              "y": 1593,
+              "width": 292.015625,
+              "height": 24,
+              "bottom": 1617
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"8180ff2ec9ccf35fea89b94582c2fd43-f1135d32e7841f1f\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "footer": null,
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": null
+        }
+      },
+      "local": {
+        "h": 2603,
+        "gallery": {
+          "heading": {
+            "x": 32,
+            "y": 372,
+            "width": 960,
+            "height": 48,
+            "bottom": 420
+          },
+          "root": {
+            "x": 0,
+            "y": 372,
+            "width": 1024,
+            "height": 1305,
+            "bottom": 1677
+          },
+          "grid": {
+            "x": 32,
+            "y": 452,
+            "width": 960,
+            "height": 1201,
+            "bottom": 1653
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 32,
+                "y": 452,
+                "width": 237,
+                "height": 237,
+                "bottom": 689
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 273,
+                "y": 452,
+                "width": 237,
+                "height": 237,
+                "bottom": 689
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 514,
+                "y": 452,
+                "width": 237,
+                "height": 237,
+                "bottom": 689
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 755,
+                "y": 452,
+                "width": 237,
+                "height": 237,
+                "bottom": 689
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 32,
+                "y": 693,
+                "width": 237,
+                "height": 237,
+                "bottom": 930
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 273,
+                "y": 693,
+                "width": 237,
+                "height": 237,
+                "bottom": 930
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 514,
+                "y": 693,
+                "width": 237,
+                "height": 237,
+                "bottom": 930
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 755,
+                "y": 693,
+                "width": 237,
+                "height": 237,
+                "bottom": 930
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 32,
+                "y": 934,
+                "width": 237,
+                "height": 237,
+                "bottom": 1171
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 273,
+                "y": 934,
+                "width": 237,
+                "height": 237,
+                "bottom": 1171
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 514,
+                "y": 934,
+                "width": 237,
+                "height": 237,
+                "bottom": 1171
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 755,
+                "y": 934,
+                "width": 237,
+                "height": 237,
+                "bottom": 1171
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 32,
+                "y": 1175,
+                "width": 237,
+                "height": 237,
+                "bottom": 1412
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 273,
+                "y": 1175,
+                "width": 237,
+                "height": 237,
+                "bottom": 1412
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 514,
+                "y": 1175,
+                "width": 237,
+                "height": 237,
+                "bottom": 1412
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 755,
+                "y": 1175,
+                "width": 237,
+                "height": 237,
+                "bottom": 1412
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 32,
+                "y": 1416,
+                "width": 237,
+                "height": 237,
+                "bottom": 1653
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 273,
+                "y": 1416,
+                "width": 237,
+                "height": 237,
+                "bottom": 1653
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 514,
+                "y": 1416,
+                "width": 237,
+                "height": 237,
+                "bottom": 1653
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 755,
+                "y": 1416,
+                "width": 237,
+                "height": 237,
+                "bottom": 1653
+              }
+            }
+          ]
+        },
+        "photos": [
+          {
+            "tag": "H2",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 32,
+              "y": 372,
+              "width": 960,
+              "height": 48,
+              "bottom": 420
+            },
+            "display": "block"
+          }
+        ],
+        "status": [
+          {
+            "tag": "P",
+            "text": "Restauracja będzie otwarta jutro o 17:00",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 32,
+              "y": 1701,
+              "width": 468,
+              "height": 24,
+              "bottom": 1725
+            },
+            "display": "block"
+          },
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "footer": {
+          "x": 0,
+          "y": 1677,
+          "width": 1024,
+          "height": 792,
+          "bottom": 2469
+        },
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "16px / 24px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+          }
+        },
+        "consent": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0
+        }
+      }
+    },
+    "desktop-1280": {
+      "live": {
+        "h": 2386,
+        "photos": [
+          {
+            "tag": "DIV",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 542.890625,
+              "y": 292,
+              "width": 194.21875,
+              "height": 48,
+              "bottom": 340
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"b43267872b1993512faa4f6127401647-40743d60379e1857\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "status": [
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"b43267872b1993512faa4f6127401647-40743d60379e1857\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "P",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 24,
+              "y": 1913,
+              "width": 371.890625,
+              "height": 24,
+              "bottom": 1937
+            },
+            "display": "block"
+          },
+          {
+            "tag": "SCRIPT",
+            "text": "{\"props\":{\"pageProps\":{\"_sentryTraceData\":\"b43267872b1993512faa4f6127401647-40743d60379e1857\",\"_sentryBaggage\":\"sentry-environment=production,sentry-public_key=",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "none"
+          }
+        ],
+        "footer": null,
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": null
+        }
+      },
+      "local": {
+        "h": 2415,
+        "gallery": {
+          "heading": {
+            "x": 56,
+            "y": 372,
+            "width": 1168,
+            "height": 48,
+            "bottom": 420
+          },
+          "root": {
+            "x": 24,
+            "y": 372,
+            "width": 1232,
+            "height": 1565,
+            "bottom": 1937
+          },
+          "grid": {
+            "x": 56,
+            "y": 452,
+            "width": 1168,
+            "height": 1461,
+            "bottom": 1913
+          },
+          "count": 20,
+          "loaded": 20,
+          "images": [
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 56,
+                "y": 452,
+                "width": 289,
+                "height": 289,
+                "bottom": 741
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 349,
+                "y": 452,
+                "width": 289,
+                "height": 289,
+                "bottom": 741
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 642,
+                "y": 452,
+                "width": 289,
+                "height": 289,
+                "bottom": 741
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 935,
+                "y": 452,
+                "width": 289,
+                "height": 289,
+                "bottom": 741
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 56,
+                "y": 745,
+                "width": 289,
+                "height": 289,
+                "bottom": 1034
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 349,
+                "y": 745,
+                "width": 289,
+                "height": 289,
+                "bottom": 1034
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 642,
+                "y": 745,
+                "width": 289,
+                "height": 289,
+                "bottom": 1034
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 935,
+                "y": 745,
+                "width": 289,
+                "height": 289,
+                "bottom": 1034
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 56,
+                "y": 1038,
+                "width": 289,
+                "height": 289,
+                "bottom": 1327
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 349,
+                "y": 1038,
+                "width": 289,
+                "height": 289,
+                "bottom": 1327
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 642,
+                "y": 1038,
+                "width": 289,
+                "height": 289,
+                "bottom": 1327
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 935,
+                "y": 1038,
+                "width": 289,
+                "height": 289,
+                "bottom": 1327
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 56,
+                "y": 1331,
+                "width": 289,
+                "height": 289,
+                "bottom": 1620
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 349,
+                "y": 1331,
+                "width": 289,
+                "height": 289,
+                "bottom": 1620
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 642,
+                "y": 1331,
+                "width": 289,
+                "height": 289,
+                "bottom": 1620
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 935,
+                "y": 1331,
+                "width": 289,
+                "height": 289,
+                "bottom": 1620
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 56,
+                "y": 1624,
+                "width": 289,
+                "height": 289,
+                "bottom": 1913
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 349,
+                "y": 1624,
+                "width": 289,
+                "height": 289,
+                "bottom": 1913
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 642,
+                "y": 1624,
+                "width": 289,
+                "height": 289,
+                "bottom": 1913
+              }
+            },
+            {
+              "src": "http://127.0.0.1:4326/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+              "complete": true,
+              "naturalWidth": 400,
+              "rect": {
+                "x": 935,
+                "y": 1624,
+                "width": 289,
+                "height": 289,
+                "bottom": 1913
+              }
+            }
+          ]
+        },
+        "photos": [
+          {
+            "tag": "H2",
+            "text": "Nasze zdjęcia",
+            "rect": {
+              "x": 56,
+              "y": 372,
+              "width": 1168,
+              "height": 48,
+              "bottom": 420
+            },
+            "display": "block"
+          }
+        ],
+        "status": [
+          {
+            "tag": "P",
+            "text": "Restauracja będzie otwarta jutro o 17:00",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "contact": [
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 56,
+              "y": 1961,
+              "width": 221.140625,
+              "height": 24,
+              "bottom": 1985
+            },
+            "display": "block"
+          },
+          {
+            "tag": "H2",
+            "text": "Dane kontaktowe",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "display": "block"
+          }
+        ],
+        "footer": {
+          "x": 24,
+          "y": 1937,
+          "width": 1232,
+          "height": 344,
+          "bottom": 2281
+        },
+        "cards": {
+          "dineIn": null,
+          "pickup": null,
+          "localPickup": null,
+          "delivery": null,
+          "cocktails": {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "bottom": 0
+            },
+            "border": "rgb(255, 255, 255)",
+            "background": "rgba(0, 0, 0, 0)",
+            "font": "16px / 24px HindSiliguri, Inter, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif"
+          }
+        },
+        "consent": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "bottom": 0
+        }
+      }
+    }
+  },
+  "states": {
+    "live": {
+      "languageOpen": false,
+      "languageState": {
+        "text": "PL\nMargariteros Cocktail Bar - Warszawa\n\nChmielna 7/9, 00-021 Warszawa, Poland\n\nMeksykanski Cocktail Bar w samym centrum Warszawy. \nWyjątkowe miejsce przy ulicy Chmielna. \nKlimatyczny bar z najlepszą margaritą, autorskimi koktajlami, kuchnią meksykańską i niekończącą się tequilą!\npokaż\nNa miejscu\n17:00 - 23:00\nOdbiór osobisty\n17:00 - 23:00\n-10%\nDostawa\n17:00 - 22:00\nDIGITAL MENU\nRestauracja będzie otwarta Dzisiaj od 17:00\nMenu\nCocktails\nChupitos\nCervezas\nNapoje alkoholowe\nAgave Spirits\nNapoje\nLINKI:\nRezerwacje\nObszary dostawy\nPrześlij opinię\nNasze zdjęcia\nO tym miejscu:\nMeksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy...pokaż więcej\nAdres:\nChmielna 7/9, 00-021 Warszawa, Poland\nTelefon:\n+48 728 805 628\nE-mail:\nmargaritabar.pl@gmail.com\nGodziny pracy:\n17:00 - 23:00 Сzw\nRozkład\nMy w sieciach społecznościowych\nInstagram\nTikTok\nGoogle\nTripAdvisor\nFacebook\n\nNa mapie\n\nDowiedz się, jak dojechać\n\nObsługiwany przez",
+        "buttons": [
+          {
+            "text": "pl",
+            "aria": "Język",
+            "expanded": null,
+            "rect": {
+              "x": 169.28125,
+              "y": 16,
+              "width": 60.71875,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "aria": "Szukaj",
+            "expanded": null,
+            "rect": {
+              "x": 238,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "aria": "Profil",
+            "expanded": null,
+            "rect": {
+              "x": 286,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "aria": "Menu",
+            "expanded": null,
+            "rect": {
+              "x": 334,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "Dowiedz się, jak dojechać",
+            "aria": null,
+            "expanded": null,
+            "rect": {
+              "x": 16,
+              "y": 3099.203125,
+              "width": 358,
+              "height": 48
+            }
+          }
+        ],
+        "links": [
+          {
+            "text": "Na miejscu17:00 - 23:00",
+            "href": "https://qr.margariteros.bar/pl/menu",
+            "target": ""
+          },
+          {
+            "text": "Odbiór osobisty17:00 - 23:00-10%",
+            "href": "https://qr.margariteros.bar/pl/takeaway",
+            "target": ""
+          },
+          {
+            "text": "Dostawa17:00 - 22:00",
+            "href": "https://qr.margariteros.bar/pl/delivery",
+            "target": ""
+          },
+          {
+            "text": "Menu",
+            "href": "https://qr.margariteros.bar/section:menu",
+            "target": ""
+          },
+          {
+            "text": "Cocktails",
+            "href": "https://qr.margariteros.bar/section:cocktails",
+            "target": ""
+          },
+          {
+            "text": "Chupitos",
+            "href": "https://qr.margariteros.bar/section:chupitos",
+            "target": ""
+          },
+          {
+            "text": "Cervezas",
+            "href": "https://qr.margariteros.bar/section:cervezas",
+            "target": ""
+          },
+          {
+            "text": "Napoje alkoholowe",
+            "href": "https://qr.margariteros.bar/section:napoje-alkoholowe",
+            "target": ""
+          },
+          {
+            "text": "Agave Spirits",
+            "href": "https://qr.margariteros.bar/section:agave-spirits",
+            "target": ""
+          },
+          {
+            "text": "Napoje",
+            "href": "https://qr.margariteros.bar/section:napoje",
+            "target": ""
+          },
+          {
+            "text": "Rezerwacje",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "Obszary dostawy",
+            "href": "https://qr.margariteros.bar/delivery-areas",
+            "target": ""
+          },
+          {
+            "text": "Prześlij opinię",
+            "href": "https://qr.margariteros.bar/feedback",
+            "target": ""
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48 728 805 628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "Dowiedz się, jak dojechać",
+            "href": "https://maps.google.com/?q=Chmielna%207/9,%2000-021%20Warszawa,%20Poland",
+            "target": "_blank"
+          }
+        ]
+      },
+      "menuOpen": true,
+      "drawerState": {
+        "text": "PL\nMargariteros Cocktail Bar - Warszawa\n\nChmielna 7/9, 00-021 Warszawa, Poland\n\nMeksykanski Cocktail Bar w samym centrum Warszawy. \nWyjątkowe miejsce przy ulicy Chmielna. \nKlimatyczny bar z najlepszą margaritą, autorskimi koktajlami, kuchnią meksykańską i niekończącą się tequilą!\npokaż\nNa miejscu\n17:00 - 23:00\nOdbiór osobisty\n17:00 - 23:00\n-10%\nDostawa\n17:00 - 22:00\nDIGITAL MENU\nRestauracja będzie otwarta Dzisiaj od 17:00\nMenu\nCocktails\nChupitos\nCervezas\nNapoje alkoholowe\nAgave Spirits\nNapoje\nLINKI:\nRezerwacje\nObszary dostawy\nPrześlij opinię\nNasze zdjęcia\nO tym miejscu:\nMeksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy...pokaż więcej\nAdres:\nChmielna 7/9, 00-021 Warszawa, Poland\nTelefon:\n+48 728 805 628\nE-mail:\nmargaritabar.pl@gmail.com\nGodziny pracy:\n17:00 - 23:00 Сzw\nRozkład\nMy w sieciach społecznościowych\nInstagram\nTikTok\nGoogle\nTripAdvisor\nFacebook\n\nNa mapie\n\nDowiedz się, jak dojechać\n\nObsługiwany przez\n\nZaloguj się\nZaloguj się aby uprościć proces zamawiania i korzystać z dodatkowych funkcji.\nKontakt\nChmielna 7/9, 00-021 Warszawa, Poland\n+48 728 805 628\nmargaritabar.pl@gmail.com\nMy w sieciach społecznościowych\nInstagram\nTikTok\nGoogle\nTripAdvisor\nFacebook\nPrzydatne informacje\nLista alergenów\nO firmie\nPolityka Plików Cookie\nRegulamin\nPolityka prywatności",
+        "htmlClass": "blockScroll",
+        "buttons": [
+          {
+            "text": "pl",
+            "aria": "Język",
+            "expanded": null,
+            "rect": {
+              "x": 169.28125,
+              "y": 16,
+              "width": 60.71875,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "aria": "Szukaj",
+            "expanded": null,
+            "rect": {
+              "x": 238,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "aria": "Profil",
+            "expanded": null,
+            "rect": {
+              "x": 286,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "",
+            "aria": "Menu",
+            "expanded": null,
+            "rect": {
+              "x": 334,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "Dowiedz się, jak dojechać",
+            "aria": null,
+            "expanded": null,
+            "rect": {
+              "x": 16,
+              "y": 3099.203125,
+              "width": 358,
+              "height": 48
+            }
+          },
+          {
+            "text": "Zaloguj się",
+            "aria": null,
+            "expanded": null,
+            "rect": {
+              "x": 16,
+              "y": 16,
+              "width": 286,
+              "height": 58
+            }
+          },
+          {
+            "text": "",
+            "aria": null,
+            "expanded": null,
+            "rect": {
+              "x": 334,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          }
+        ],
+        "links": [
+          {
+            "text": "Na miejscu17:00 - 23:00",
+            "href": "https://qr.margariteros.bar/pl/menu",
+            "target": ""
+          },
+          {
+            "text": "Odbiór osobisty17:00 - 23:00-10%",
+            "href": "https://qr.margariteros.bar/pl/takeaway",
+            "target": ""
+          },
+          {
+            "text": "Dostawa17:00 - 22:00",
+            "href": "https://qr.margariteros.bar/pl/delivery",
+            "target": ""
+          },
+          {
+            "text": "Menu",
+            "href": "https://qr.margariteros.bar/section:menu",
+            "target": ""
+          },
+          {
+            "text": "Cocktails",
+            "href": "https://qr.margariteros.bar/section:cocktails",
+            "target": ""
+          },
+          {
+            "text": "Chupitos",
+            "href": "https://qr.margariteros.bar/section:chupitos",
+            "target": ""
+          },
+          {
+            "text": "Cervezas",
+            "href": "https://qr.margariteros.bar/section:cervezas",
+            "target": ""
+          },
+          {
+            "text": "Napoje alkoholowe",
+            "href": "https://qr.margariteros.bar/section:napoje-alkoholowe",
+            "target": ""
+          },
+          {
+            "text": "Agave Spirits",
+            "href": "https://qr.margariteros.bar/section:agave-spirits",
+            "target": ""
+          },
+          {
+            "text": "Napoje",
+            "href": "https://qr.margariteros.bar/section:napoje",
+            "target": ""
+          },
+          {
+            "text": "Rezerwacje",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "Obszary dostawy",
+            "href": "https://qr.margariteros.bar/delivery-areas",
+            "target": ""
+          },
+          {
+            "text": "Prześlij opinię",
+            "href": "https://qr.margariteros.bar/feedback",
+            "target": ""
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48 728 805 628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "Dowiedz się, jak dojechać",
+            "href": "https://maps.google.com/?q=Chmielna%207/9,%2000-021%20Warszawa,%20Poland",
+            "target": "_blank"
+          },
+          {
+            "text": "Zaloguj się",
+            "href": "https://clients.choiceqr.com/auth/login/me",
+            "target": ""
+          },
+          {
+            "text": "Chmielna 7/9, 00-021 Warszawa, Poland",
+            "href": "https://maps.google.com/?q=Chmielna%207/9,%2000-021%20Warszawa,%20Poland",
+            "target": "_blank"
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48 728 805 628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "O firmie",
+            "href": "https://qr.margariteros.bar/about-company",
+            "target": ""
+          },
+          {
+            "text": "Polityka Plików Cookie",
+            "href": "https://qr.margariteros.bar/cookie-policy",
+            "target": ""
+          },
+          {
+            "text": "Regulamin",
+            "href": "https://qr.margariteros.bar/terms-of-use",
+            "target": ""
+          },
+          {
+            "text": "Polityka prywatności",
+            "href": "https://qr.margariteros.bar/privacy-policy",
+            "target": ""
+          }
+        ]
+      },
+      "escapeBefore": false,
+      "escapeAfter": false
+    },
+    "local": {
+      "languageOpen": true,
+      "languageState": {
+        "text": "PL\nMargariteros Cocktail Bar - Warszawa\n\nChmielna 7/9, 00-021 Warszawa, Poland\n\nMeksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy ulicy Chmielna. pokaż\n\nNa miejscu\n17:00 - 23:00\nNa wynos\n17:00 - 23:00\n-10%\nDostawa\n17:00 - 22:00\n\nMENU CYFROWE\n\nRestauracja będzie otwarta jutro o 17:00\n\nMenu\nCocktails\nChupitos\nCervezas\nNapoje alkoholowe\nAgave Spirits\nNapoje\n\nLINKI:\n\nRezerwacja\nObszary dostawy\nZostaw opinię\nNasze zdjęcia\nDane kontaktowe\nChmielna 7/9, 00-021 Warszawa, Poland\n+48 728 805 628\nmargaritabar.pl@gmail.com\nGodziny pracy\nPoniedziałek\nZamknięte\nWtorek\n17:00–23:00\nŚroda\n17:00–23:00\nCzwartek\n17:00–23:00\nPiątek\n15:00–02:00\nSobota\n13:00–02:00\nNiedziela\n13:00–21:00\nJesteśmy w mediach społecznościowych\n◌ Instagram\n◌ TikTok\n◌ Google\n◌ TripAdvisor\n◌ Facebook\nNa mapie\n⌁ Dowiedz się, jak dojechać\nPowered by Choice\n←\nLanguage\nHuman translation:\nEnglish\nPolish\nRussian\nMachine translation:\nSpanish",
+        "buttons": [
+          {
+            "text": "PL",
+            "aria": null,
+            "expanded": "true",
+            "rect": {
+              "x": 176,
+              "y": 16,
+              "width": 54,
+              "height": 48
+            }
+          },
+          {
+            "text": "",
+            "aria": "Menu",
+            "expanded": "false",
+            "rect": {
+              "x": 334,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "pokaż",
+            "aria": null,
+            "expanded": null,
+            "rect": {
+              "x": 273.25,
+              "y": 228,
+              "width": 38.109375,
+              "height": 44
+            }
+          },
+          {
+            "text": "←",
+            "aria": null,
+            "expanded": null,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 56,
+              "height": 56
+            }
+          }
+        ],
+        "links": [
+          {
+            "text": "Margariteros Cocktail Bar - WarszawaTacos, baile y Margarita",
+            "href": "https://qr.margariteros.bar/",
+            "target": ""
+          },
+          {
+            "text": "Strona główna",
+            "href": "https://qr.margariteros.bar/",
+            "target": ""
+          },
+          {
+            "text": "Menu",
+            "href": "https://qr.margariteros.bar/section:menu",
+            "target": ""
+          },
+          {
+            "text": "Rezerwacje",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "Obszary dostawy",
+            "href": "https://qr.margariteros.bar/delivery-areas",
+            "target": ""
+          },
+          {
+            "text": "Zostaw opinię",
+            "href": "https://qr.margariteros.bar/feedback",
+            "target": ""
+          },
+          {
+            "text": "Na miejscu17:00 - 23:00",
+            "href": "https://qr.margariteros.bar/pl/menu",
+            "target": ""
+          },
+          {
+            "text": "Na wynos17:00 - 23:00-10%",
+            "href": "https://qr.margariteros.bar/pl/takeaway",
+            "target": ""
+          },
+          {
+            "text": "Dostawa17:00 - 22:00",
+            "href": "https://qr.margariteros.bar/pl/delivery",
+            "target": ""
+          },
+          {
+            "text": "Menu",
+            "href": "https://qr.margariteros.bar/section:menu",
+            "target": ""
+          },
+          {
+            "text": "Cocktails",
+            "href": "https://qr.margariteros.bar/section:cocktails",
+            "target": ""
+          },
+          {
+            "text": "Chupitos",
+            "href": "https://qr.margariteros.bar/section:chupitos",
+            "target": ""
+          },
+          {
+            "text": "Cervezas",
+            "href": "https://qr.margariteros.bar/section:cervezas",
+            "target": ""
+          },
+          {
+            "text": "Napoje alkoholowe",
+            "href": "https://qr.margariteros.bar/section:napoje-alkoholowe",
+            "target": ""
+          },
+          {
+            "text": "Agave Spirits",
+            "href": "https://qr.margariteros.bar/section:agave-spirits",
+            "target": ""
+          },
+          {
+            "text": "Napoje",
+            "href": "https://qr.margariteros.bar/section:napoje",
+            "target": ""
+          },
+          {
+            "text": "Rezerwacja",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "Obszary dostawy",
+            "href": "https://qr.margariteros.bar/delivery-areas",
+            "target": ""
+          },
+          {
+            "text": "Zostaw opinię",
+            "href": "https://qr.margariteros.bar/feedback",
+            "target": ""
+          },
+          {
+            "text": "⌁ Pokaż na mapie",
+            "href": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland",
+            "target": "_blank"
+          },
+          {
+            "text": "⌕ Zadzwoń",
+            "href": "tel:+48728805628",
+            "target": ""
+          },
+          {
+            "text": "▣ Rezerwacja",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48728805628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "◌ Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "⌁ Dowiedz się, jak dojechać",
+            "href": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland",
+            "target": "_blank"
+          },
+          {
+            "text": "Cookie Policy",
+            "href": "https://qr.margariteros.bar/cookie-policy",
+            "target": ""
+          },
+          {
+            "text": "Terms of Use",
+            "href": "https://qr.margariteros.bar/terms-of-use",
+            "target": ""
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://qr.margariteros.bar/privacy-policy",
+            "target": ""
+          },
+          {
+            "text": "Choice",
+            "href": "https://choiceqr.com/en",
+            "target": "_blank"
+          },
+          {
+            "text": "English",
+            "href": "http://127.0.0.1:4326/en/",
+            "target": ""
+          },
+          {
+            "text": "Polish",
+            "href": "http://127.0.0.1:4326/pl/",
+            "target": ""
+          },
+          {
+            "text": "Russian",
+            "href": "http://127.0.0.1:4326/ru/",
+            "target": ""
+          },
+          {
+            "text": "Spanish",
+            "href": "http://127.0.0.1:4326/es/",
+            "target": ""
+          },
+          {
+            "text": "Zaloguj sięZaloguj się, aby uprościć składanie zamówień i korzystać z dodatkowych funkcji.",
+            "href": "https://clients.choiceqr.com/auth/login/me?lang=en",
+            "target": ""
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48728805628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "Cookie Policy",
+            "href": "https://qr.margariteros.bar/cookie-policy",
+            "target": ""
+          },
+          {
+            "text": "Terms of Use",
+            "href": "https://qr.margariteros.bar/terms-of-use",
+            "target": ""
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://qr.margariteros.bar/privacy-policy",
+            "target": ""
+          }
+        ]
+      },
+      "menuOpen": true,
+      "drawerState": {
+        "text": "PL\nMargariteros Cocktail Bar - Warszawa\n\nChmielna 7/9, 00-021 Warszawa, Poland\n\nMeksykanski Cocktail Bar w samym centrum Warszawy. Wyjątkowe miejsce przy ulicy Chmielna. pokaż\n\nNa miejscu\n17:00 - 23:00\nNa wynos\n17:00 - 23:00\n-10%\nDostawa\n17:00 - 22:00\n\nMENU CYFROWE\n\nRestauracja będzie otwarta jutro o 17:00\n\nMenu\nCocktails\nChupitos\nCervezas\nNapoje alkoholowe\nAgave Spirits\nNapoje\n\nLINKI:\n\nRezerwacja\nObszary dostawy\nZostaw opinię\nNasze zdjęcia\nDane kontaktowe\nChmielna 7/9, 00-021 Warszawa, Poland\n+48 728 805 628\nmargaritabar.pl@gmail.com\nGodziny pracy\nPoniedziałek\nZamknięte\nWtorek\n17:00–23:00\nŚroda\n17:00–23:00\nCzwartek\n17:00–23:00\nPiątek\n15:00–02:00\nSobota\n13:00–02:00\nNiedziela\n13:00–21:00\nJesteśmy w mediach społecznościowych\n◌ Instagram\n◌ TikTok\n◌ Google\n◌ TripAdvisor\n◌ Facebook\nNa mapie\n⌁ Dowiedz się, jak dojechać\nPowered by Choice\nZaloguj się\nZaloguj się, aby uprościć składanie zamówień i korzystać z dodatkowych funkcji.\nDane kontaktowe\nChmielna 7/9, 00-021 Warszawa, Poland\n+48 728 805 628\nmargaritabar.pl@gmail.com\nJesteśmy w mediach społecznościowych\nInstagram\nTikTok\nGoogle\nTripAdvisor\nFacebook\nPrzydatne informacje\nCookie Policy\nTerms of Use\nPrivacy Policy",
+        "htmlClass": "cq-scroll-lock",
+        "buttons": [
+          {
+            "text": "PL",
+            "aria": null,
+            "expanded": "false",
+            "rect": {
+              "x": 176,
+              "y": 16,
+              "width": 54,
+              "height": 48
+            }
+          },
+          {
+            "text": "",
+            "aria": "Menu",
+            "expanded": "true",
+            "rect": {
+              "x": 334,
+              "y": 16,
+              "width": 40,
+              "height": 40
+            }
+          },
+          {
+            "text": "pokaż",
+            "aria": null,
+            "expanded": null,
+            "rect": {
+              "x": 273.25,
+              "y": 228,
+              "width": 38.109375,
+              "height": 44
+            }
+          }
+        ],
+        "links": [
+          {
+            "text": "Margariteros Cocktail Bar - WarszawaTacos, baile y Margarita",
+            "href": "https://qr.margariteros.bar/",
+            "target": ""
+          },
+          {
+            "text": "Strona główna",
+            "href": "https://qr.margariteros.bar/",
+            "target": ""
+          },
+          {
+            "text": "Menu",
+            "href": "https://qr.margariteros.bar/section:menu",
+            "target": ""
+          },
+          {
+            "text": "Rezerwacje",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "Obszary dostawy",
+            "href": "https://qr.margariteros.bar/delivery-areas",
+            "target": ""
+          },
+          {
+            "text": "Zostaw opinię",
+            "href": "https://qr.margariteros.bar/feedback",
+            "target": ""
+          },
+          {
+            "text": "Na miejscu17:00 - 23:00",
+            "href": "https://qr.margariteros.bar/pl/menu",
+            "target": ""
+          },
+          {
+            "text": "Na wynos17:00 - 23:00-10%",
+            "href": "https://qr.margariteros.bar/pl/takeaway",
+            "target": ""
+          },
+          {
+            "text": "Dostawa17:00 - 22:00",
+            "href": "https://qr.margariteros.bar/pl/delivery",
+            "target": ""
+          },
+          {
+            "text": "Menu",
+            "href": "https://qr.margariteros.bar/section:menu",
+            "target": ""
+          },
+          {
+            "text": "Cocktails",
+            "href": "https://qr.margariteros.bar/section:cocktails",
+            "target": ""
+          },
+          {
+            "text": "Chupitos",
+            "href": "https://qr.margariteros.bar/section:chupitos",
+            "target": ""
+          },
+          {
+            "text": "Cervezas",
+            "href": "https://qr.margariteros.bar/section:cervezas",
+            "target": ""
+          },
+          {
+            "text": "Napoje alkoholowe",
+            "href": "https://qr.margariteros.bar/section:napoje-alkoholowe",
+            "target": ""
+          },
+          {
+            "text": "Agave Spirits",
+            "href": "https://qr.margariteros.bar/section:agave-spirits",
+            "target": ""
+          },
+          {
+            "text": "Napoje",
+            "href": "https://qr.margariteros.bar/section:napoje",
+            "target": ""
+          },
+          {
+            "text": "Rezerwacja",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "Obszary dostawy",
+            "href": "https://qr.margariteros.bar/delivery-areas",
+            "target": ""
+          },
+          {
+            "text": "Zostaw opinię",
+            "href": "https://qr.margariteros.bar/feedback",
+            "target": ""
+          },
+          {
+            "text": "⌁ Pokaż na mapie",
+            "href": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland",
+            "target": "_blank"
+          },
+          {
+            "text": "⌕ Zadzwoń",
+            "href": "tel:+48728805628",
+            "target": ""
+          },
+          {
+            "text": "▣ Rezerwacja",
+            "href": "https://qr.margariteros.bar/booking",
+            "target": ""
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48728805628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "◌ Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "◌ Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "⌁ Dowiedz się, jak dojechać",
+            "href": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland",
+            "target": "_blank"
+          },
+          {
+            "text": "Cookie Policy",
+            "href": "https://qr.margariteros.bar/cookie-policy",
+            "target": ""
+          },
+          {
+            "text": "Terms of Use",
+            "href": "https://qr.margariteros.bar/terms-of-use",
+            "target": ""
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://qr.margariteros.bar/privacy-policy",
+            "target": ""
+          },
+          {
+            "text": "Choice",
+            "href": "https://choiceqr.com/en",
+            "target": "_blank"
+          },
+          {
+            "text": "English",
+            "href": "http://127.0.0.1:4326/en/",
+            "target": ""
+          },
+          {
+            "text": "Polish",
+            "href": "http://127.0.0.1:4326/pl/",
+            "target": ""
+          },
+          {
+            "text": "Russian",
+            "href": "http://127.0.0.1:4326/ru/",
+            "target": ""
+          },
+          {
+            "text": "Spanish",
+            "href": "http://127.0.0.1:4326/es/",
+            "target": ""
+          },
+          {
+            "text": "Zaloguj sięZaloguj się, aby uprościć składanie zamówień i korzystać z dodatkowych funkcji.",
+            "href": "https://clients.choiceqr.com/auth/login/me?lang=en",
+            "target": ""
+          },
+          {
+            "text": "+48 728 805 628",
+            "href": "tel:+48728805628",
+            "target": ""
+          },
+          {
+            "text": "margaritabar.pl@gmail.com",
+            "href": "mailto:margaritabar.pl@gmail.com",
+            "target": ""
+          },
+          {
+            "text": "Instagram",
+            "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+            "target": "_blank"
+          },
+          {
+            "text": "TikTok",
+            "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+            "target": "_blank"
+          },
+          {
+            "text": "Google",
+            "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+            "target": "_blank"
+          },
+          {
+            "text": "TripAdvisor",
+            "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+            "target": "_blank"
+          },
+          {
+            "text": "Facebook",
+            "href": "https://www.facebook.com/profile.php?id=61576663994634",
+            "target": "_blank"
+          },
+          {
+            "text": "Cookie Policy",
+            "href": "https://qr.margariteros.bar/cookie-policy",
+            "target": ""
+          },
+          {
+            "text": "Terms of Use",
+            "href": "https://qr.margariteros.bar/terms-of-use",
+            "target": ""
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://qr.margariteros.bar/privacy-policy",
+            "target": ""
+          }
+        ]
+      },
+      "escapeBefore": true,
+      "escapeAfter": true
+    }
+  }
+}

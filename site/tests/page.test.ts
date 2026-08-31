@@ -44,6 +44,7 @@ describe("getPage", () => {
       expect(page.hoursHeading).not.toHaveLength(0);
       expect(page.socialsHeading).not.toHaveLength(0);
       expect(page.mapHeading).not.toHaveLength(0);
+      expect(page.clubLabel).toBe("R Club");
       expect(page.hours).toHaveLength(7);
     }
   });

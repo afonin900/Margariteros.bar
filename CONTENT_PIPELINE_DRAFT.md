@@ -47,7 +47,20 @@ Canva: compose supplied real photos/video with approved assets,
 Human fact + brand check
                          |
                          v
-Meta / TikTok / YouTube / Telegram draft calendar
+Finalny montaż każdego pliku kanału
+                         |
+                         v
+Kontrola i oczyszczenie gotowego pliku po montażu
+                         |
+                         v
+        ┌────────────────┴────────────────┐
+        v                                 v
+Facebook + Threads через Postiz      Instagram: wewnętrzny pakiet
+po osobnym „wykładaj”               do grupy SMM na Telegramie
+                                           |
+                                           v
+                            Człowiek dodaje muzykę w aplikacji Instagram
+                            i publikuje Reel
                          |
                          v
 Explicit approval before any publication
@@ -67,12 +80,13 @@ Explicit approval before any publication
 
 | Channel | Job | Default cadence | Native treatment |
 |---|---|---:|---|
-| Instagram | trust, bookings, current events | 3–4 feed/Reels + daily Stories | branded covers, event information, saveable weekly plan |
-| TikTok | discovery among local new guests | 3 videos | 7–15 sec real hook, Polish subtitles, less poster-like |
-| Facebook Page | local search, events, Meta operations | reuse selected IG posts/events | booking, events, Messenger, connected Meta calendar |
+| Instagram | trust, bookings, current events | 3–4 feed/Reels + daily Stories | gotowy czysty plik + tekst trafiają do wewnętrznej grupy SMM na Telegramie; operator dodaje muzykę natywnie w Instagramie |
+| Facebook Page | local search, events, Meta operations | reuse selected IG posts/events | tekst może wyjść przez Postiz po osobnym „wykładaj” |
+| Threads | szybki tekstowy powód do wizyty | wybrane wydarzenia | tekst może wyjść przez Postiz po osobnym „wykładaj” |
 | Google Business Profile | intent and trust | weekly update + review response routine | factual updates, photos, menu and booking accuracy |
 | YouTube Shorts | lightweight archive/search | 1–2 best videos | clear Warsaw/search title and description |
-| Telegram pilot | retention for opt-in audience | 2–3 exclusive posts | tomorrow/today plan, promo code, backstage; Polish first |
+| Telegram — grupa SMM | wewnętrzne przekazanie materiału do ręcznej publikacji Instagramu | jeden pakiet na Reel | bot wysyła gotowe wideo, podpis, fakty i propozycję muzyki; to nie jest publiczny kanał dla gości |
+| Telegram pilot dla gości | retention for opt-in audience | 2–3 exclusive posts | osobna przyszła decyzja; nie mieszać z grupą SMM |
 
 ## Competitive intelligence
 
@@ -101,7 +115,17 @@ One reviewable package, prepared before publishing:
 
 - No invented event, performer, price, offer, product, review or availability.
 - No automatic publication or paid promotion without explicit approval.
+- Każdy finalny plik kanału przechodzi kontrolę AI-artefaktów **po montażu**,
+  nie tylko przy przyjęciu zdjęcia lub wideo źródłowego. Oczyszczenie źródła
+  nie zastępuje kontroli gotowego eksportu; jeśli narzędzie nie obsługuje
+  formatu albo jest niedostępne, materiał pozostaje `draft`. Dla MP4 po
+  usunięciu metadanych wymagane są zarówno ponowne `/inspect`, jak i pełna
+  kontrola dekodowania; szczegóły są w `content/production/ai-cleanup/README.md`.
 - No posts in Russian on the main public channels unless a separately approved campaign requires it.
+- Reel do Instagramu nie trafia do Postiz jako draft ani do publikacji. Bot Telegrama
+  przekazuje operatorowi wyłącznie oczyszczony finalny MP4, podpis i instrukcję.
+  Propozycja muzyki jest hasłem do wyszukania w aplikacji, nie obietnicą dostępności
+  w bibliotece konta; operator potwierdza ją na urządzeniu przed publikacją.
 - Polish copy is reviewed for natural local phrasing before first use, ideally by a Polish-speaking team member.
 - Track outcomes per item: reach, saves, shares, profile visits, booking clicks, messages and attributable visits where possible.
 

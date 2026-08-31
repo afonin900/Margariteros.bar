@@ -1,0 +1,550 @@
+{
+  "profiles": {
+    "android-320": {
+      "live": {
+        "viewport": {
+          "innerWidth": 320,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 320,
+          "documentHeight": 3137,
+          "bodyHeight": 3137
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1422,
+            "width": 288,
+            "height": 677.390625,
+            "bottom": 2099.390625
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 2792.390625,
+            "width": 288,
+            "height": 200,
+            "bottom": 2992.390625
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        }
+      },
+      "local": {
+        "viewport": {
+          "innerWidth": 320,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 320,
+          "documentHeight": 3137,
+          "bodyHeight": 3137
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1422,
+            "width": 288,
+            "height": 677.390625,
+            "bottom": 2099.390625
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 2792.390625,
+            "width": 288,
+            "height": 200,
+            "bottom": 2992.390625
+          },
+          "loaded": false,
+          "src": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland"
+        }
+      }
+    },
+    "android-390": {
+      "live": {
+        "viewport": {
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 390,
+          "documentHeight": 3228,
+          "bodyHeight": 3228
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1389.5,
+            "width": 357.984375,
+            "height": 840.703125,
+            "bottom": 2230.203125
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 2883.203125,
+            "width": 358,
+            "height": 200,
+            "bottom": 3083.203125
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        }
+      },
+      "local": {
+        "viewport": {
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 390,
+          "documentHeight": 3228,
+          "bodyHeight": 3228
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1389.5,
+            "width": 357.984375,
+            "height": 840.703125,
+            "bottom": 2230.203125
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 2883.703125,
+            "width": 358,
+            "height": 200,
+            "bottom": 3083.703125
+          },
+          "loaded": false,
+          "src": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland"
+        }
+      }
+    },
+    "android-398": {
+      "live": {
+        "viewport": {
+          "innerWidth": 398,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 398,
+          "documentHeight": 3247,
+          "bodyHeight": 3247
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1389.5,
+            "width": 366,
+            "height": 859.390625,
+            "bottom": 2248.890625
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 2901.890625,
+            "width": 366,
+            "height": 200,
+            "bottom": 3101.890625
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        }
+      },
+      "local": {
+        "viewport": {
+          "innerWidth": 398,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 398,
+          "documentHeight": 3246,
+          "bodyHeight": 3246
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1389.5,
+            "width": 366,
+            "height": 859.390625,
+            "bottom": 2248.890625
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 2902.390625,
+            "width": 366,
+            "height": 200,
+            "bottom": 3102.390625
+          },
+          "loaded": false,
+          "src": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland"
+        }
+      }
+    },
+    "android-597": {
+      "live": {
+        "viewport": {
+          "innerWidth": 597,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 597,
+          "documentHeight": 3659,
+          "bodyHeight": 3659
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1357.5,
+            "width": 565,
+            "height": 1323.703125,
+            "bottom": 2681.203125
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 3314.203125,
+            "width": 565,
+            "height": 200,
+            "bottom": 3514.203125
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        }
+      },
+      "local": {
+        "viewport": {
+          "innerWidth": 597,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 597,
+          "documentHeight": 3659,
+          "bodyHeight": 3659
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1357.5,
+            "width": 565,
+            "height": 1323.703125,
+            "bottom": 2681.203125
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 3314.203125,
+            "width": 565,
+            "height": 200,
+            "bottom": 3514.203125
+          },
+          "loaded": false,
+          "src": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland"
+        }
+      }
+    },
+    "android-719": {
+      "live": {
+        "viewport": {
+          "innerWidth": 719,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 719,
+          "documentHeight": 3944,
+          "bodyHeight": 3944
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1357.5,
+            "width": 686.984375,
+            "height": 1608.296875,
+            "bottom": 2965.796875
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 3598.796875,
+            "width": 687,
+            "height": 200,
+            "bottom": 3798.796875
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        }
+      },
+      "local": {
+        "viewport": {
+          "innerWidth": 719,
+          "innerHeight": 844,
+          "dpr": 3,
+          "coarse": true,
+          "hoverNone": true,
+          "touch": 5,
+          "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 719,
+          "documentHeight": 3944,
+          "bodyHeight": 3944
+        },
+        "gallery": {
+          "grid": {
+            "x": 16,
+            "y": 1357.5,
+            "width": 686.984375,
+            "height": 1608.296875,
+            "bottom": 2965.796875
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 16,
+            "y": 3598.796875,
+            "width": 687,
+            "height": 200,
+            "bottom": 3798.796875
+          },
+          "loaded": false,
+          "src": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland"
+        }
+      }
+    },
+    "desktop-1024": {
+      "live": {
+        "viewport": {
+          "innerWidth": 1024,
+          "innerHeight": 768,
+          "dpr": 1,
+          "coarse": false,
+          "hoverNone": false,
+          "touch": 0,
+          "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 1024,
+          "documentHeight": 2066,
+          "bodyHeight": 2066
+        },
+        "gallery": {
+          "grid": {
+            "x": 56,
+            "y": 372,
+            "width": 912,
+            "height": 1141,
+            "bottom": 1513
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 609.609375,
+            "y": 1625,
+            "width": 390.390625,
+            "height": 200,
+            "bottom": 1825
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        }
+      },
+      "local": {
+        "viewport": {
+          "innerWidth": 1024,
+          "innerHeight": 768,
+          "dpr": 1,
+          "coarse": false,
+          "hoverNone": false,
+          "touch": 0,
+          "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 1024,
+          "documentHeight": 2066,
+          "bodyHeight": 2066
+        },
+        "gallery": {
+          "grid": {
+            "x": 56,
+            "y": 372,
+            "width": 912,
+            "height": 1141,
+            "bottom": 1513
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 609.609375,
+            "y": 1625,
+            "width": 390.390625,
+            "height": 200,
+            "bottom": 1825
+          },
+          "loaded": false,
+          "src": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland"
+        }
+      }
+    },
+    "desktop-1280": {
+      "live": {
+        "viewport": {
+          "innerWidth": 1280,
+          "innerHeight": 1024,
+          "dpr": 1,
+          "coarse": false,
+          "hoverNone": false,
+          "touch": 0,
+          "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 1280,
+          "documentHeight": 2386,
+          "bodyHeight": 2386
+        },
+        "gallery": {
+          "grid": {
+            "x": 56,
+            "y": 372,
+            "width": 1168,
+            "height": 1461,
+            "bottom": 1833
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 763.203125,
+            "y": 1945,
+            "width": 492.796875,
+            "height": 200,
+            "bottom": 2145
+          },
+          "loaded": true,
+          "src": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15"
+        }
+      },
+      "local": {
+        "viewport": {
+          "innerWidth": 1280,
+          "innerHeight": 1024,
+          "dpr": 1,
+          "coarse": false,
+          "hoverNone": false,
+          "touch": 0,
+          "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+        },
+        "dimensions": {
+          "documentWidth": 1280,
+          "documentHeight": 2386,
+          "bodyHeight": 2386
+        },
+        "gallery": {
+          "grid": {
+            "x": 56,
+            "y": 372,
+            "width": 1168,
+            "height": 1461,
+            "bottom": 1833
+          },
+          "count": 20,
+          "loaded": 20
+        },
+        "map": {
+          "rect": {
+            "x": 763.2062377929688,
+            "y": 1945,
+            "width": 492.78131103515625,
+            "height": 200,
+            "bottom": 2145
+          },
+          "loaded": false,
+          "src": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland"
+        }
+      }
+    }
+  }
+}

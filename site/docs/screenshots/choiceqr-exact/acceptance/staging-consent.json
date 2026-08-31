@@ -1,0 +1,988 @@
+{
+  "chrome": "Chrome/152.0.7977.65",
+  "live": {
+    "requests": [
+      {
+        "url": "https://qr.margariteros.bar/",
+        "method": "GET",
+        "type": "Document"
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@100;200;300;400;500;600;700&display=swap",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/6856bd2a9a01d8d3.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/ada20e0263f38d1b.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/f4a8bef1a50be5f0.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/4e0e7fbe6f03ebbe.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/0598231e055814fb.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/0e6d29f5b95273ee.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/da99c062128db85d.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/6307-965e8e77b13791fc.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/1699.cc6280e5748cfcad.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/2945.a6ed69a322ff7315.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/webpack-6b7e9aaee18de54d.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/framework-b3dfd693dfff3295.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/main-c8b60745739d2957.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/pages/_app-c7573cf7f45061ff.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/pages/index-a88d51bff28b62f5.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/5pF4zzuxXwGTuBBPFKIVA/_buildManifest.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/5pF4zzuxXwGTuBBPFKIVA/_ssgManifest.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/775.4c2ff358b29005be.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/e81ae569f6167127.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/3130-89b9b9d05ebae16f.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/937.ec9cbadadd705319.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/8529f31c20c0c423.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/2396.bf1370b52549f0c7.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/bbbcbf2234891e53.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/7710.78fc492f9333fb8f.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-0uYVKwOs1to.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRG_50uYVKwOs1to.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_0uYVKwOs1to.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTJzax8s3Jik.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRG_50ugVKwOs1tqhwg.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/fonts/inter/Inter-Medium.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_0ugVKwOs1tqhwg.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTJLax8s3JimW3w.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15",
+        "method": "GET",
+        "type": "Document"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/logo/thumbnail_JjcXQWp-HJkyyaA-eHlllGV_K-K-Y.png",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-0ugVKwOs1tqhwg.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-Q-I.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_X-H-i.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_H-c-s.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_I-r-I.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_R-A-B.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_C-J-T.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_o-b-l.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_S-G-A.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-p-g.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_J-u-k.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_E-m-n.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_f-x-f.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://qr.margariteros.bar/cdn-cgi/rum?",
+        "method": "POST",
+        "type": "XHR"
+      }
+    ],
+    "failures": [],
+    "console": [],
+    "logs": [],
+    "before": {
+      "url": "https://qr.margariteros.bar/",
+      "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "touch": 5,
+        "coarse": true,
+        "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+      },
+      "mirror": null,
+      "panel": {
+        "x": 48,
+        "y": 424,
+        "width": 294,
+        "height": 184,
+        "right": 342,
+        "bottom": 608
+      },
+      "panelText": "Zarządzaj\nTylko niezbędne\nAkceptuj",
+      "buttons": {
+        "manage": {
+          "text": "Zarządzaj",
+          "rect": {
+            "x": 48,
+            "y": 424,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 480
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "necessary": {
+          "text": "Tylko niezbędne",
+          "rect": {
+            "x": 48,
+            "y": 488,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 544
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "accept": {
+          "text": "Akceptuj",
+          "rect": {
+            "x": 48,
+            "y": 552,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 608
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(172, 224, 30)",
+          "color": "rgb(0, 0, 0)",
+          "border": "0px none rgb(0, 0, 0)"
+        }
+      },
+      "menu": {
+        "x": 334,
+        "y": 16,
+        "width": 40,
+        "height": 40,
+        "right": 374,
+        "bottom": 56
+      },
+      "hitAtMenu": {
+        "tag": "DIV",
+        "class": "styles_weUseCookiesBlock__CMc_K",
+        "text": ""
+      },
+      "drawerVisible": false
+    },
+    "afterBlockedClick": {
+      "url": "https://qr.margariteros.bar/",
+      "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "touch": 0,
+        "coarse": true,
+        "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+      },
+      "mirror": null,
+      "panel": {
+        "x": 48,
+        "y": 424,
+        "width": 294,
+        "height": 184,
+        "right": 342,
+        "bottom": 608
+      },
+      "panelText": "Zarządzaj\nTylko niezbędne\nAkceptuj",
+      "buttons": {
+        "manage": {
+          "text": "Zarządzaj",
+          "rect": {
+            "x": 48,
+            "y": 424,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 480
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "necessary": {
+          "text": "Tylko niezbędne",
+          "rect": {
+            "x": 48,
+            "y": 488,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 544
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "accept": {
+          "text": "Akceptuj",
+          "rect": {
+            "x": 48,
+            "y": 552,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 608
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(172, 224, 30)",
+          "color": "rgb(0, 0, 0)",
+          "border": "0px none rgb(0, 0, 0)"
+        }
+      },
+      "menu": {
+        "x": 334,
+        "y": 16,
+        "width": 40,
+        "height": 40,
+        "right": 374,
+        "bottom": 56
+      },
+      "hitAtMenu": {
+        "tag": "DIV",
+        "class": "styles_weUseCookiesBlock__CMc_K",
+        "text": ""
+      },
+      "drawerVisible": false
+    }
+  },
+  "staging": {
+    "requests": [
+      {
+        "url": "https://new.margariteros.bar/pl/",
+        "method": "GET",
+        "type": "Document"
+      },
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@100;200;300;400;500;600;700&display=swap",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/6856bd2a9a01d8d3.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/ada20e0263f38d1b.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/f4a8bef1a50be5f0.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/4e0e7fbe6f03ebbe.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/0598231e055814fb.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/0e6d29f5b95273ee.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/da99c062128db85d.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/6307-965e8e77b13791fc.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/1699.cc6280e5748cfcad.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/2945.a6ed69a322ff7315.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/webpack-6b7e9aaee18de54d.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/framework-b3dfd693dfff3295.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/main-c8b60745739d2957.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/pages/_app-c7573cf7f45061ff.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/pages/index-a88d51bff28b62f5.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/5pF4zzuxXwGTuBBPFKIVA/_buildManifest.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/5pF4zzuxXwGTuBBPFKIVA/_ssgManifest.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/775.4c2ff358b29005be.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/e81ae569f6167127.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/3130-89b9b9d05ebae16f.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/937.ec9cbadadd705319.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/8529f31c20c0c423.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/2396.bf1370b52549f0c7.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/logo/thumbnail_JjcXQWp-HJkyyaA-eHlllGV_K-K-Y.png",
+        "method": "GET",
+        "type": "Other"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/css/bbbcbf2234891e53.css",
+        "method": "GET",
+        "type": "Stylesheet"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/_next/static/chunks/7710.78fc492f9333fb8f.js",
+        "method": "GET",
+        "type": "Script"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-0uYVKwOs1to.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRG_50uYVKwOs1to.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_0uYVKwOs1to.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTJzax8s3Jik.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRG_50ugVKwOs1tqhwg.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://cdn-clients.choiceqr.com/client/fonts/inter/Inter-Medium.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoRCf_0ugVKwOs1tqhwg.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwTs5juQtsyLLR5jN4cxBEoTJLax8s3JimW3w.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://www.google.com/maps/embed/v1/place?key=AIzaSyAfO5fPtb7KcOZUMGDSjSJ0N4EV_Eiyp0s&q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&zoom=15",
+        "method": "GET",
+        "type": "Document"
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/hindsiliguri/v14/ijwOs5juQtsyLLR5jN4cxBEoREP-0ugVKwOs1tqhwg.woff2",
+        "method": "GET",
+        "type": "Font"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-Q-I.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_X-H-i.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_H-c-s.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_I-r-I.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_R-A-B.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_C-J-T.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_o-b-l.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_S-G-A.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_G-p-g.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_J-u-k.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_E-m-n.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_f-x-f.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+        "method": "GET",
+        "type": "Image"
+      },
+      {
+        "url": "https://cdn-media.choiceqr.com/prod-eat-margariteroswwa/template-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+        "method": "GET",
+        "type": "Image"
+      }
+    ],
+    "failures": [],
+    "console": [],
+    "logs": [],
+    "before": {
+      "url": "https://new.margariteros.bar/pl/",
+      "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "touch": 5,
+        "coarse": true,
+        "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+      },
+      "mirror": "home",
+      "panel": {
+        "x": 48,
+        "y": 424,
+        "width": 294,
+        "height": 184,
+        "right": 342,
+        "bottom": 608
+      },
+      "panelText": "Zarządzaj\nTylko niezbędne\nAkceptuj",
+      "buttons": {
+        "manage": {
+          "text": "Zarządzaj",
+          "rect": {
+            "x": 48,
+            "y": 424,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 480
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "necessary": {
+          "text": "Tylko niezbędne",
+          "rect": {
+            "x": 48,
+            "y": 488,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 544
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "accept": {
+          "text": "Akceptuj",
+          "rect": {
+            "x": 48,
+            "y": 552,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 608
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(172, 224, 30)",
+          "color": "rgb(0, 0, 0)",
+          "border": "0px none rgb(0, 0, 0)"
+        }
+      },
+      "menu": {
+        "x": 334,
+        "y": 16,
+        "width": 40,
+        "height": 40,
+        "right": 374,
+        "bottom": 56
+      },
+      "hitAtMenu": {
+        "tag": "DIV",
+        "class": "styles_weUseCookiesBlock__CMc_K",
+        "text": ""
+      },
+      "drawerVisible": false
+    },
+    "afterBlockedClick": {
+      "url": "https://new.margariteros.bar/pl/",
+      "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "touch": 0,
+        "coarse": true,
+        "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+      },
+      "mirror": "home",
+      "panel": {
+        "x": 48,
+        "y": 424,
+        "width": 294,
+        "height": 184,
+        "right": 342,
+        "bottom": 608
+      },
+      "panelText": "Zarządzaj\nTylko niezbędne\nAkceptuj",
+      "buttons": {
+        "manage": {
+          "text": "Zarządzaj",
+          "rect": {
+            "x": 48,
+            "y": 424,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 480
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "necessary": {
+          "text": "Tylko niezbędne",
+          "rect": {
+            "x": 48,
+            "y": 488,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 544
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "1px solid rgb(172, 224, 30)"
+        },
+        "accept": {
+          "text": "Akceptuj",
+          "rect": {
+            "x": 48,
+            "y": 552,
+            "width": 294,
+            "height": 56,
+            "right": 342,
+            "bottom": 608
+          },
+          "font": "700 16px / 19.2px \"Hind Siliguri\", Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "background": "rgb(172, 224, 30)",
+          "color": "rgb(0, 0, 0)",
+          "border": "0px none rgb(0, 0, 0)"
+        }
+      },
+      "menu": {
+        "x": 334,
+        "y": 16,
+        "width": 40,
+        "height": 40,
+        "right": 374,
+        "bottom": 56
+      },
+      "hitAtMenu": {
+        "tag": "DIV",
+        "class": "styles_weUseCookiesBlock__CMc_K",
+        "text": ""
+      },
+      "drawerVisible": false
+    },
+    "necessaryClicked": true,
+    "afterNecessary": {
+      "url": "https://new.margariteros.bar/pl/",
+      "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "touch": 0,
+        "coarse": true,
+        "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+      },
+      "mirror": "home",
+      "panel": null,
+      "panelText": "",
+      "buttons": {
+        "manage": null,
+        "necessary": null,
+        "accept": null
+      },
+      "menu": {
+        "x": 334,
+        "y": 16,
+        "width": 40,
+        "height": 40,
+        "right": 374,
+        "bottom": 56
+      },
+      "hitAtMenu": {
+        "tag": "rect",
+        "class": {},
+        "text": ""
+      },
+      "drawerVisible": false
+    },
+    "afterReload": {
+      "url": "https://new.margariteros.bar/pl/",
+      "title": "Margariteros Bar - Meksykański Cocktail Bar w Centrum Warszawy - Dostawa, Odbiór osobisty, Rezerwacje",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 3,
+        "touch": 5,
+        "coarse": true,
+        "ua": "Mozilla/5.0 (Linux; Android 14; Pixel 7 Build/AP2A.240805.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Mobile Safari/537.36"
+      },
+      "mirror": "home",
+      "panel": null,
+      "panelText": "",
+      "buttons": {
+        "manage": null,
+        "necessary": null,
+        "accept": null
+      },
+      "menu": {
+        "x": 334,
+        "y": 16,
+        "width": 40,
+        "height": 40,
+        "right": 374,
+        "bottom": 56
+      },
+      "hitAtMenu": {
+        "tag": "rect",
+        "class": {},
+        "text": ""
+      },
+      "drawerVisible": false
+    }
+  }
+}

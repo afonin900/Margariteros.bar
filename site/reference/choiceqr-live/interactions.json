@@ -1,0 +1,117 @@
+{
+  "source": "https://qr.margariteros.bar/",
+  "capturedAt": "2026-08-26",
+  "method": "read-only live Chrome audit; no form submission or reservation creation",
+  "coverage": {
+    "desktop": "1744x976 before responsive override",
+    "mobile": "true Android Chrome emulation: mobile=true, touch viewport 398x853 CSS px, DPR 1.5, Android 14 UA/metadata; 597x1280 device-pixel target (height rounds from 1279.5)",
+    "observedUiLocales": ["pl", "en"],
+    "localeSelector": {
+      "humanTranslation": ["English", "Polish", "Russian"],
+      "machineTranslationIncludes": ["Spanish"],
+      "routing": "No locale-specific href is exposed. The ChoiceQR selector changes the vendor UI state in place. Russian and Spanish were not selected during this audit."
+    }
+  },
+  "globalBehavior": {
+    "header": { "position": "sticky", "top": "0px", "zIndex": "4" },
+    "keyboard": {
+      "firstTab": "brand home link",
+      "secondTab": "language button",
+      "semantics": "primary actions are native anchors or buttons",
+      "drawerEscape": "Escape did not close the open drawer in the observed session; the hamburger button closed it."
+    }
+  },
+  "interactions": [
+    { "id": "brand", "surface": "header", "role": "link", "name": "Margariteros Cocktail Bar - Warszawa / Tacos, baile y Margarita", "href": "/", "outcome": "same-origin home route" },
+    { "id": "language", "surface": "header", "role": "button", "dataElement": "header_language-button", "name": "PL / EN", "outcome": "opens selector with a search field and human/machine language groups; selecting English changed visible UI to English without changing the page URL" },
+    { "id": "profile", "surface": "header", "role": "link wrapping button", "name": "Profil / Profile", "href": "https://clients.choiceqr.com/auth/login/me?lang=en", "outcome": "external ChoiceQR authentication" },
+    { "id": "hamburger", "surface": "header", "role": "button", "dataElement": "header_hamburger-button", "name": "Menu", "outcome": "opens and closes a right-side account/contact drawer; opening locks body scrolling" },
+    { "id": "nav-home", "surface": "header navigation", "role": "link", "names": ["Strona główna", "Main"], "href": "/", "outcome": "same-origin home route" },
+    { "id": "nav-menu", "surface": "header navigation", "role": "link", "name": "Menu", "href": "/section:menu", "outcome": "same-origin ChoiceQR menu route; direct GET ended on this URL" },
+    { "id": "nav-booking", "surface": "header navigation", "role": "link", "names": ["Rezerwacje", "Reservation"], "href": "/booking", "outcome": "same-origin ChoiceQR booking route; direct GET ended on this URL" },
+    { "id": "nav-delivery", "surface": "header navigation", "role": "link", "names": ["Obszary dostawy", "Delivery Areas"], "href": "/delivery-areas", "outcome": "same-origin ChoiceQR delivery route; direct GET ended on this URL" },
+    { "id": "nav-feedback", "surface": "header navigation", "role": "link", "names": ["Zostaw opinię", "Send feedback"], "href": "/feedback", "outcome": "same-origin ChoiceQR feedback route; direct GET ended on this URL" },
+    { "id": "contact-map", "surface": "main contact card", "role": "link", "names": ["Pokaż na mapie", "See on map"], "href": "https://maps.google.com/?q=Chmielna%207/9,%2000-021%20Warszawa,%20Poland", "target": "_blank", "outcome": "opens Google Maps" },
+    { "id": "contact-phone", "surface": "main contact card", "role": "link", "names": ["Zadzwoń", "Dial"], "href": "tel:+48 728 805 628", "outcome": "phone dial link" },
+    { "id": "primary-booking", "surface": "main contact card", "role": "link wrapping button", "names": ["Rezerwacja", "Booking"], "href": "/booking", "outcome": "same-origin ChoiceQR booking route" },
+    { "id": "gallery", "surface": "main", "role": "images only", "name": "Nasze zdjęcia / Our photos", "outcome": "20 non-clickable gallery images; at 390px it is a four-column CSS grid (66.5px tiles, 4px gap)" },
+    { "id": "footer-phone", "surface": "footer", "role": "link", "name": "+48 728 805 628", "href": "tel:+48 728 805 628", "outcome": "phone dial link" },
+    { "id": "footer-email", "surface": "footer", "role": "link", "name": "margaritabar.pl@gmail.com", "href": "mailto:margaritabar.pl@gmail.com", "outcome": "mail client link" },
+    { "id": "footer-instagram", "surface": "footer", "role": "link", "name": "Instagram", "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx", "target": "_blank", "outcome": "external social profile" },
+    { "id": "footer-tiktok", "surface": "footer", "role": "link", "name": "TikTok", "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1", "target": "_blank", "outcome": "external social profile" },
+    { "id": "footer-google", "surface": "footer", "role": "link", "name": "Google", "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review", "target": "_blank", "outcome": "Google review destination" },
+    { "id": "footer-tripadvisor", "surface": "footer", "role": "link", "name": "TripAdvisor", "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html", "target": "_blank", "outcome": "external review destination" },
+    { "id": "footer-facebook", "surface": "footer", "role": "link", "name": "Facebook", "href": "https://www.facebook.com/profile.php?id=61576663994634", "target": "_blank", "outcome": "external social profile" },
+    { "id": "footer-map", "surface": "footer", "role": "embedded map plus link wrapping button", "names": ["Dowiedz się, jak dojechać", "Get directions"], "href": "https://maps.google.com/?q=Chmielna%207/9,%2000-021%20Warszawa,%20Poland", "target": "_blank", "outcome": "opens Google Maps directions" },
+    { "id": "cookie-policy", "surface": "footer", "role": "link", "href": "/cookie-policy", "outcome": "same-origin legal page; direct GET had a Back button" },
+    { "id": "terms", "surface": "footer", "role": "link", "href": "/terms-of-use", "outcome": "same-origin legal page; direct GET had a Back button" },
+    { "id": "privacy", "surface": "footer", "role": "link", "href": "/privacy-policy", "outcome": "same-origin legal page; direct GET had a Back button" },
+    { "id": "choice-powered-by", "surface": "footer", "role": "link", "href": "https://choiceqr.com/en", "target": "_blank", "outcome": "external ChoiceQR website" }
+  ],
+  "androidMobileContract": {
+    "viewport": { "css": "398x853", "dpr": 1.5, "devicePixels": "597x1280 (rounded)" },
+    "notDesktopResize": "A 390px desktop resize rendered a different desktop-template DOM (four gallery columns). It is explicitly not evidence for Android behavior.",
+    "header": {
+      "markup": "the desktop header and desktop nav are absent",
+      "controls": [
+        { "role": "link", "name": "Main", "href": "/" },
+        { "role": "button", "name": "Language", "outcome": "opens full-screen language page with Back button, search, English/Polish/Russian human translations and Spanish machine translation" },
+        { "role": "link wrapping button", "name": "Search", "href": "/search" },
+        { "role": "link wrapping button", "name": "Profile", "href": "https://clients.choiceqr.com/auth/login/me?lang=en" },
+        { "role": "button", "name": "Menu", "outcome": "opens scroll-locking account/contact drawer; same button closes it" }
+      ]
+    },
+    "mainActions": [
+      { "name": "Here", "href": "/en/menu" },
+      { "name": "Takeaway", "href": "/en/takeaway" },
+      { "name": "Delivery", "href": "/en/delivery" },
+      { "name": "Menu", "href": "/section:menu" },
+      { "name": "Cocktails", "href": "/section:cocktails" },
+      { "name": "Chupitos", "href": "/section:chupitos" },
+      { "name": "Cervezas", "href": "/section:cervezas" },
+      { "name": "Napoje alkoholowe", "href": "/section:napoje-alkoholowe" },
+      { "name": "Agave Spirits", "href": "/section:agave-spirits" },
+      { "name": "Napoje", "href": "/section:napoje" },
+      { "name": "Reservation", "href": "/booking" },
+      { "name": "Delivery Areas", "href": "/delivery-areas" },
+      { "name": "Send feedback", "href": "/feedback" }
+    ],
+    "gallery": {
+      "count": 20,
+      "columns": 3,
+      "tileCssPx": 119.33,
+      "gapCssPx": 4,
+      "firstRowXs": [16, 139.33, 262.66]
+    },
+    "footer": {
+      "heightCssPx": 917,
+      "socials": "five external links in a two-column 175px grid, with Facebook alone on the third row",
+      "map": "Google map and 366px-wide _blank directions button",
+      "protocolLinks": ["tel:+48 728 805 628", "mailto:margaritabar.pl@gmail.com"],
+      "legalAndVendor": ["/cookie-policy", "/terms-of-use", "/privacy-policy", "https://choiceqr.com/en"]
+    },
+    "drawer": {
+      "opens": "hamburger click",
+      "closes": "same hamburger click",
+      "scrollLock": "body overflow hidden while open",
+      "contents": "login CTA, map/phone/email, five social/review links, company and legal links"
+    }
+  },
+  "stagingAndroidGaps": {
+    "target": "https://new.margariteros.bar/pl/ in the same Android Chrome context",
+    "header": "staging has brand, four always-present locale links, menu link and booking link. It lacks the live mobile Search, Profile and hamburger drawer controls.",
+    "main": "staging lacks the live Here/Takeaway/Delivery cards and the direct category/ChoiceQR route list.",
+    "gallery": "staging renders four 88.5px columns (x=16,108.5,201,293.5); live Android renders three 119.33px columns (x=16,139.33,262.66).",
+    "footer": "staging has three social links and no email, Google review, TripAdvisor, legal links, ChoiceQR attribution or live map embed/directions contract.",
+    "routing": "staging booking uses https://margariteroswwa.choiceqr.com/booking while live Android routes booking to same-origin /booking; staging menu points to QR home rather than live mobile menu/category routes."
+  },
+  "routeReadback": [
+    { "requested": "/section:menu", "final": "https://qr.margariteros.bar/section:menu" },
+    { "requested": "/booking", "final": "https://qr.margariteros.bar/booking" },
+    { "requested": "/delivery-areas", "final": "https://qr.margariteros.bar/delivery-areas" },
+    { "requested": "/feedback", "final": "https://qr.margariteros.bar/feedback" },
+    { "requested": "/cookie-policy", "final": "https://qr.margariteros.bar/cookie-policy" },
+    { "requested": "/terms-of-use", "final": "https://qr.margariteros.bar/terms-of-use" },
+    { "requested": "/privacy-policy", "final": "https://qr.margariteros.bar/privacy-policy" }
+  ]
+}

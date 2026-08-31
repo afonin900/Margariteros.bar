@@ -26,7 +26,9 @@
     "build": "remotionb bundle",
     "upgrade": "remotionb upgrade",
     "lint": "eslint src && tsc",
-    "render:dragon": "remotionb render SaturdayDragon out/saturday-dragon.mp4"
+    "render:dragon": "remotionb render SaturdayDragon out/saturday-dragon.mp4",
+    "render:kike": "remotionb render FridayKike out/friday-kike.mp4",
+    "render:kike-gbp": "remotionb render GoogleBusinessKike out/friday-kike-gbp.mp4"
   },
   "sideEffects": [
     "*.css"

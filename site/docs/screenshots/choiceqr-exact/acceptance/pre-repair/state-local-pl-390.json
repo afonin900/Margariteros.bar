@@ -1,0 +1,1137 @@
+{
+  "buttons": [
+    {
+      "aria": null,
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "text": "PL",
+      "visible": false
+    },
+    {
+      "aria": "Menu",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "text": "",
+      "visible": false
+    },
+    {
+      "aria": null,
+      "rect": {
+        "h": 48,
+        "w": 54,
+        "x": 176,
+        "y": 16
+      },
+      "text": "PL",
+      "visible": true
+    },
+    {
+      "aria": "Menu",
+      "rect": {
+        "h": 40,
+        "w": 40,
+        "x": 334,
+        "y": 16
+      },
+      "text": "",
+      "visible": true
+    },
+    {
+      "aria": null,
+      "rect": {
+        "h": 44,
+        "w": 38.1,
+        "x": 308.56,
+        "y": 208
+      },
+      "text": "pokaż",
+      "visible": true
+    },
+    {
+      "aria": null,
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "text": "←",
+      "visible": false
+    },
+    {
+      "aria": null,
+      "rect": {
+        "h": 40,
+        "w": 96.73,
+        "x": 146.63,
+        "y": 3740.65
+      },
+      "text": "Zmień zgodę",
+      "visible": true
+    },
+    {
+      "aria": null,
+      "rect": {
+        "h": 40,
+        "w": 158,
+        "x": 33,
+        "y": 3675.65
+      },
+      "text": "Odrzucam",
+      "visible": true
+    },
+    {
+      "aria": null,
+      "rect": {
+        "h": 40,
+        "w": 158,
+        "x": 199,
+        "y": 3675.65
+      },
+      "text": "Akceptuję",
+      "visible": true
+    }
+  ],
+  "htmlLang": "pl-PL",
+  "iframes": [
+    {
+      "rect": {
+        "h": 200,
+        "w": 358,
+        "x": 16,
+        "y": 3149.65
+      },
+      "src": "https://www.google.com/maps?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland&output=embed",
+      "title": "Google Maps",
+      "visible": true
+    }
+  ],
+  "images": [
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 16,
+        "y": 1629
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_C-J-T.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 136.66,
+        "y": 1629
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_E-m-n.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 257.33,
+        "y": 1629
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_EbHxSGh-gktDHJl-VuPnAlO_o-y-l.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 16,
+        "y": 1749.66
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_G-Q-I.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 136.66,
+        "y": 1749.66
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_G-p-g.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 257.33,
+        "y": 1749.66
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_H-c-s.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 16,
+        "y": 1870.33
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_I-r-I.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 136.66,
+        "y": 1870.33
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_IRJJIht-JjfZuiq-LJJoHli_f-Q-I.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 257.33,
+        "y": 1870.33
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_J-u-k.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 16,
+        "y": 1990.99
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_JGCbICJ-iNVHPJs-TKdgqth_V-b-u.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 136.66,
+        "y": 1990.99
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_JdLPkDf-suJGvCp-NASaNWU_N-F-f.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 400,
+      "nw": 400,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 257.33,
+        "y": 1990.99
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_LZZLokI-VUXHnDi-nbaQHtF_r-M-M.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 16,
+        "y": 2111.66
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_NDYrCKR-MjOSUIr-KUcbFiC_X-X-y.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 136.66,
+        "y": 2111.66
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_R-A-B.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 257.33,
+        "y": 2111.66
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_S-G-A.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 16,
+        "y": 2232.32
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_X-H-i.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 136.66,
+        "y": 2232.32
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_dcnbIlG-MvHJChZ-uYrZvAC_H-R-q.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 257.33,
+        "y": 2232.32
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_f-x-f.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 16,
+        "y": 2352.98
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_ibTHcaC-kdKVsGG-NxUofHv_n-m-u.webp",
+      "visible": true
+    },
+    {
+      "alt": "gallery",
+      "nh": 0,
+      "nw": 0,
+      "objectFit": "cover",
+      "rect": {
+        "h": 116.66,
+        "w": 116.66,
+        "x": 136.66,
+        "y": 2352.98
+      },
+      "src": "http://127.0.0.1:4323/media/choiceqr-gallery/thumbnail_o-b-l.webp",
+      "visible": true
+    }
+  ],
+  "links": [
+    {
+      "href": "https://qr.margariteros.bar/",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Margariteros Cocktail Bar - WarszawaTacos, baile y Margarita",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Strona główna",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:menu",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Menu",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/booking",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Rezerwacje",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/delivery-areas",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Obszary dostawy",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/feedback",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Zostaw opinię",
+      "visible": false
+    },
+    {
+      "href": "https://clients.choiceqr.com/auth/login/me?lang=en",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/",
+      "rect": {
+        "h": 64,
+        "w": 64,
+        "x": 16,
+        "y": 16
+      },
+      "rel": "",
+      "target": "",
+      "text": "",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/search",
+      "rect": {
+        "h": 40,
+        "w": 40,
+        "x": 238,
+        "y": 16
+      },
+      "rel": "",
+      "target": "",
+      "text": "",
+      "visible": true
+    },
+    {
+      "href": "https://clients.choiceqr.com/auth/login/me?lang=en",
+      "rect": {
+        "h": 40,
+        "w": 40,
+        "x": 286,
+        "y": 16
+      },
+      "rel": "",
+      "target": "",
+      "text": "",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/en/menu",
+      "rect": {
+        "h": 68,
+        "w": 118,
+        "x": 14,
+        "y": 284
+      },
+      "rel": "",
+      "target": "",
+      "text": "Na miejscu 17:00 - 23:00",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/en/takeaway",
+      "rect": {
+        "h": 68,
+        "w": 118,
+        "x": 136,
+        "y": 284
+      },
+      "rel": "",
+      "target": "",
+      "text": "Na wynos 17:00 - 23:00",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/en/delivery",
+      "rect": {
+        "h": 68,
+        "w": 118,
+        "x": 258,
+        "y": 284
+      },
+      "rel": "",
+      "target": "",
+      "text": "Dostawa 17:00 - 22:00",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:menu",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 392
+      },
+      "rel": "",
+      "target": "",
+      "text": "Menu",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:kuchnia",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 472
+      },
+      "rel": "",
+      "target": "",
+      "text": "Kuchnia",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:na-miejscu",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 552
+      },
+      "rel": "",
+      "target": "",
+      "text": "Na miejscu",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:na-wynos",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 632
+      },
+      "rel": "",
+      "target": "",
+      "text": "Na wynos",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:dostawa",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 712
+      },
+      "rel": "",
+      "target": "",
+      "text": "Dostawa",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:napoje",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 792
+      },
+      "rel": "",
+      "target": "",
+      "text": "Napoje",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/section:informacje",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 872
+      },
+      "rel": "",
+      "target": "",
+      "text": "Informacje",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/booking",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 984
+      },
+      "rel": "",
+      "target": "",
+      "text": "Rezerwacja",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/delivery-areas",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 1064
+      },
+      "rel": "",
+      "target": "",
+      "text": "Obszary dostawy",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/feedback",
+      "rect": {
+        "h": 72,
+        "w": 358,
+        "x": 16,
+        "y": 1144
+      },
+      "rel": "",
+      "target": "",
+      "text": "Zostaw opinię",
+      "visible": true
+    },
+    {
+      "href": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "⌁ Pokaż na mapie",
+      "visible": false
+    },
+    {
+      "href": "tel:+48728805628",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "⌕ Zadzwoń",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/booking",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "▣ Rezerwacja",
+      "visible": false
+    },
+    {
+      "href": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland",
+      "rect": {
+        "h": 22.5,
+        "w": 98.9,
+        "x": 16,
+        "y": 1421.5
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "Pokaż na mapie",
+      "visible": true
+    },
+    {
+      "href": "tel:+48728805628",
+      "rect": {
+        "h": 22.5,
+        "w": 58.52,
+        "x": 203,
+        "y": 1401.5
+      },
+      "rel": "",
+      "target": "",
+      "text": "Zadzwoń",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/booking",
+      "rect": {
+        "h": 56,
+        "w": 358,
+        "x": 16,
+        "y": 1469
+      },
+      "rel": "",
+      "target": "",
+      "text": "Rezerwacja",
+      "visible": true
+    },
+    {
+      "href": "tel:+48728805628",
+      "rect": {
+        "h": 44,
+        "w": 358,
+        "x": 16,
+        "y": 2581.65
+      },
+      "rel": "",
+      "target": "",
+      "text": "+48 728 805 628",
+      "visible": true
+    },
+    {
+      "href": "mailto:margaritabar.pl@gmail.com",
+      "rect": {
+        "h": 44,
+        "w": 358,
+        "x": 16,
+        "y": 2633.65
+      },
+      "rel": "",
+      "target": "",
+      "text": "margaritabar.pl@gmail.com",
+      "visible": true
+    },
+    {
+      "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+      "rect": {
+        "h": 40,
+        "w": 175,
+        "x": 16,
+        "y": 2949.65
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "◌ Instagram",
+      "visible": true
+    },
+    {
+      "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+      "rect": {
+        "h": 40,
+        "w": 175,
+        "x": 199,
+        "y": 2949.65
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "◌ TikTok",
+      "visible": true
+    },
+    {
+      "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+      "rect": {
+        "h": 40,
+        "w": 175,
+        "x": 16,
+        "y": 2997.65
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "◌ Google",
+      "visible": true
+    },
+    {
+      "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+      "rect": {
+        "h": 40,
+        "w": 175,
+        "x": 199,
+        "y": 2997.65
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "◌ TripAdvisor",
+      "visible": true
+    },
+    {
+      "href": "https://www.facebook.com/profile.php?id=61576663994634",
+      "rect": {
+        "h": 40,
+        "w": 175,
+        "x": 16,
+        "y": 3045.65
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "◌ Facebook",
+      "visible": true
+    },
+    {
+      "href": "https://maps.google.com/?q=Chmielna%207%2F9%2C%2000-021%20Warszawa%2C%20Poland",
+      "rect": {
+        "h": 48,
+        "w": 358,
+        "x": 16,
+        "y": 3365.65
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "⌁ Dowiedz się, jak dojechać",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/cookie-policy",
+      "rect": {
+        "h": 44,
+        "w": 72.45,
+        "x": 62.85,
+        "y": 3462.65
+      },
+      "rel": "",
+      "target": "",
+      "text": "Cookie Policy",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/terms-of-use",
+      "rect": {
+        "h": 44,
+        "w": 69.51,
+        "x": 159.3,
+        "y": 3462.65
+      },
+      "rel": "",
+      "target": "",
+      "text": "Terms of Use",
+      "visible": true
+    },
+    {
+      "href": "https://qr.margariteros.bar/privacy-policy",
+      "rect": {
+        "h": 44,
+        "w": 74.34,
+        "x": 252.8,
+        "y": 3462.65
+      },
+      "rel": "",
+      "target": "",
+      "text": "Privacy Policy",
+      "visible": true
+    },
+    {
+      "href": "https://choiceqr.com/en",
+      "rect": {
+        "h": 19.5,
+        "w": 36.46,
+        "x": 87.52,
+        "y": 3541.65
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "Choice",
+      "visible": true
+    },
+    {
+      "href": "http://127.0.0.1:4323/en/",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "English",
+      "visible": false
+    },
+    {
+      "href": "http://127.0.0.1:4323/pl/",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Polish",
+      "visible": false
+    },
+    {
+      "href": "http://127.0.0.1:4323/ru/",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Russian",
+      "visible": false
+    },
+    {
+      "href": "http://127.0.0.1:4323/es/",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Spanish",
+      "visible": false
+    },
+    {
+      "href": "https://clients.choiceqr.com/auth/login/me?lang=en",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Zaloguj sięZaloguj się, aby uprościć składanie zamówień i korzystać z dodatkowych funkcji.",
+      "visible": false
+    },
+    {
+      "href": "tel:+48728805628",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "+48 728 805 628",
+      "visible": false
+    },
+    {
+      "href": "mailto:margaritabar.pl@gmail.com",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "margaritabar.pl@gmail.com",
+      "visible": false
+    },
+    {
+      "href": "https://www.instagram.com/margariteros.bar?igsh=NnZoNXN0Y3M5cTNx",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "Instagram",
+      "visible": false
+    },
+    {
+      "href": "https://www.tiktok.com/@margariteros.bar?_t=ZN-8xnyI1pprok&_r=1",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "TikTok",
+      "visible": false
+    },
+    {
+      "href": "https://g.page/r/Cbl9JpsyGsLTEBM/review",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "Google",
+      "visible": false
+    },
+    {
+      "href": "https://www.tripadvisor.com/Restaurant_Review-g274856-d33238464-Reviews-Margariteros-Warsaw_Mazovia_Province_Central_Poland.html",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "TripAdvisor",
+      "visible": false
+    },
+    {
+      "href": "https://www.facebook.com/profile.php?id=61576663994634",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "noreferrer",
+      "target": "_blank",
+      "text": "Facebook",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/cookie-policy",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Cookie Policy",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/terms-of-use",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Terms of Use",
+      "visible": false
+    },
+    {
+      "href": "https://qr.margariteros.bar/privacy-policy",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "rel": "",
+      "target": "",
+      "text": "Privacy Policy",
+      "visible": false
+    }
+  ],
+  "title": "Margariteros — kuchnia, taniec i atmosfera w centrum Warszawy",
+  "viewport": {
+    "dpr": 3,
+    "h": 844,
+    "scrollH": 3796,
+    "scrollW": 390,
+    "w": 390
+  }
+}
