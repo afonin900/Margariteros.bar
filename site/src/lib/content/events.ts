@@ -2,7 +2,7 @@ import { getEmDashCollection, getEmDashEntry } from "emdash";
 import type { Event } from "../../../.emdash/types";
 import type { Locale } from "../../content/page";
 
-export type PublicEvent = Event & { slug: string };
+export type PublicEvent = Event & { slug: string; isPreview?: boolean };
 export type MonthEvents = { key: string; startsAt: Date; events: PublicEvent[] };
 
 function localeFields(locale: Locale) {
@@ -62,4 +62,59 @@ export async function getPublicEvent(locale: Locale, slug: string): Promise<{ ev
 export function localizedEvent(event: PublicEvent, locale: Locale) {
   const fields = localeFields(locale);
   return { title: event[fields.title] as string, summary: event[fields.summary] as string, details: event[fields.details] as Event["details"] };
+}
+
+export function previewEventGroups(now: Date): MonthEvents[] {
+  const makeDate = (days: number, hour: number) => {
+    const value = new Date(now);
+    value.setUTCDate(value.getUTCDate() + days);
+    value.setUTCHours(hour, 0, 0, 0);
+    return value;
+  };
+  const dates = [makeDate(5, 17), makeDate(12, 18)];
+  const titles = [
+    { pl: "TEST — wieczór z muzyką", en: "TEST — music evening", ru: "ТЕСТ — музыкальный вечер", es: "PRUEBA — noche de música" },
+    { pl: "TEST — wieczór taneczny", en: "TEST — dance evening", ru: "ТЕСТ — танцевальный вечер", es: "PRUEBA — noche de baile" },
+  ];
+  const summaries = [
+    { pl: "Przykładowa karta. To nie jest prawdziwe wydarzenie.", en: "Example card. This is not a real event.", ru: "Пример карточки. Это не настоящее событие.", es: "Tarjeta de ejemplo. No es un evento real." },
+    { pl: "Przykładowa karta do oceny wyglądu. Bez rezerwacji.", en: "Example card for design review. Booking is disabled.", ru: "Пример карточки для оценки дизайна. Бронь отключена.", es: "Tarjeta de ejemplo para evaluar el diseño. Sin reserva." },
+  ];
+  const photos = ["dance-floor", "live-music"];
+  const events = dates.map((startsAt, index) => ({
+    id: `preview-event-${index + 1}`,
+    slug: `preview-event-${index + 1}`,
+    status: "published",
+    starts_at: startsAt.toISOString(),
+    event_state: "scheduled" as const,
+    title: titles[index]!.pl,
+    summary: summaries[index]!.pl,
+    details: [],
+    title_en: titles[index]!.en,
+    summary_en: summaries[index]!.en,
+    details_en: [],
+    title_ru: titles[index]!.ru,
+    summary_ru: summaries[index]!.ru,
+    details_ru: [],
+    title_es: titles[index]!.es,
+    summary_es: summaries[index]!.es,
+    details_es: [],
+    published_locales: ["pl", "en", "ru", "es"] as Locale[],
+    hero_image: { id: `preview-image-${index + 1}`, src: `/media/gallery/${photos[index]}-400.webp`, width: 400, height: 400 },
+    fact_sources: "Preview fixture — not a real event",
+    facts_confirmed_at: now.toISOString(),
+    createdAt: now,
+    updatedAt: now,
+    publishedAt: now,
+    isPreview: true,
+  }));
+  const groups = new Map<string, MonthEvents>();
+  for (const event of events) {
+    const startsAt = new Date(event.starts_at);
+    const key = monthKey(startsAt);
+    const group = groups.get(key) ?? { key, startsAt, events: [] };
+    group.events.push(event);
+    groups.set(key, group);
+  }
+  return [...groups.values()];
 }

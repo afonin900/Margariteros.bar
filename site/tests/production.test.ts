@@ -108,6 +108,14 @@ describe("production HTTP contract", () => {
       if (["pl", "en", "es"].includes(locale)) {
         expect(html).not.toMatch(/cocktail|tequila|vodka|whisky|piwo|wino|alkohol/i);
       }
+
+      const previewResponse = await fetch(`${server.url}/${locale}/?preview=events`);
+      const previewHtml = await previewResponse.text();
+      expect(previewResponse.status).toBe(200);
+      expect(previewHtml.match(/class="event-card"/g)).toHaveLength(2);
+      expect(previewHtml).toContain("preview-event-1");
+      expect(previewHtml).toContain("preview-event-2");
+      expect(previewHtml).not.toContain(`/${locale}/events/preview-event-`);
     }
 
     await server.stop();

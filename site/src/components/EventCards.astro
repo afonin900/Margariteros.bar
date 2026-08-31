@@ -5,10 +5,10 @@ import type { MonthEvents } from "../lib/content/events";
 interface Props { locale: Locale; groups: MonthEvents[]; unavailable?: boolean }
 const { locale, groups, unavailable = false } = Astro.props;
 const copy = {
-  pl: { heading: "Nadchodzące wydarzenia", cancelled: "Odwołane", postponed: "Przełożone", booking: "Rezerwacje", details: "Szczegóły", empty: "Nowy program pojawi się tutaj wkrótce.", unavailable: "Program jest chwilowo niedostępny. Spróbuj ponownie później." },
-  en: { heading: "Upcoming events", cancelled: "Cancelled", postponed: "Postponed", booking: "Booking", details: "Details", empty: "The new programme will appear here soon.", unavailable: "The programme is temporarily unavailable. Please try again later." },
-  ru: { heading: "Ближайшие события", cancelled: "Отменено", postponed: "Перенесено", booking: "Бронирование", details: "Подробнее", empty: "Новая программа скоро появится здесь.", unavailable: "Программа временно недоступна. Попробуйте позже." },
-  es: { heading: "Próximos eventos", cancelled: "Cancelado", postponed: "Aplazado", booking: "Reservar", details: "Detalles", empty: "El nuevo programa aparecerá aquí pronto.", unavailable: "El programa no está disponible temporalmente. Inténtalo más tarde." },
+  pl: { heading: "Nadchodzące wydarzenia", cancelled: "Odwołane", postponed: "Przełożone", booking: "Rezerwacje", details: "Szczegóły", preview: "TEST — nie jest prawdziwym wydarzeniem", empty: "Nowy program pojawi się tutaj wkrótce.", unavailable: "Program jest chwilowo niedostępny. Spróbuj ponownie później." },
+  en: { heading: "Upcoming events", cancelled: "Cancelled", postponed: "Postponed", booking: "Booking", details: "Details", preview: "TEST — not a real event", empty: "The new programme will appear here soon.", unavailable: "The programme is temporarily unavailable. Please try again later." },
+  ru: { heading: "Ближайшие события", cancelled: "Отменено", postponed: "Перенесено", booking: "Бронирование", details: "Подробнее", preview: "ТЕСТ — не настоящее событие", empty: "Новая программа скоро появится здесь.", unavailable: "Программа временно недоступна. Попробуйте позже." },
+  es: { heading: "Próximos eventos", cancelled: "Cancelado", postponed: "Aplazado", booking: "Reservar", details: "Detalles", preview: "PRUEBA — no es un evento real", empty: "El nuevo programa aparecerá aquí pronto.", unavailable: "El programa no está disponible temporalmente. Inténtalo más tarde." },
 }[locale];
 const localeTag = { pl: "pl-PL", en: "en", ru: "ru", es: "es" }[locale];
 const local = (event: (typeof groups)[number]["events"][number]) => locale === "pl" ? { title: event.title, summary: event.summary } : { title: event[`title_${locale}` as "title_en" | "title_ru" | "title_es"]!, summary: event[`summary_${locale}` as "summary_en" | "summary_ru" | "summary_es"]! };
@@ -22,13 +22,13 @@ const local = (event: (typeof groups)[number]["events"][number]) => locale === "
       const text = local(event);
       const startsAt = new Date(event.starts_at);
       const isCancelled = event.event_state === "cancelled";
-      return <details class:list={["event-card", { cancelled: isCancelled }]}>
+      return <details class:list={["event-card", { cancelled: isCancelled }]} data-event-id={event.id} data-preview-event={event.isPreview ? "true" : undefined}>
         <summary>
           {event.hero_image.src && <img src={event.hero_image.src} alt={text.title} width={event.hero_image.width} height={event.hero_image.height} loading="lazy" />}
           <div class="event-date"><b>{new Intl.DateTimeFormat(localeTag, { day: "numeric", timeZone: "Europe/Warsaw" }).format(startsAt)}</b><span>{new Intl.DateTimeFormat(localeTag, { month: "short", timeZone: "Europe/Warsaw" }).format(startsAt)}</span><time datetime={event.starts_at}>{new Intl.DateTimeFormat(localeTag, { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Warsaw" }).format(startsAt)}</time></div>
-          <div class="event-copy">{event.event_state !== "scheduled" && <span class="event-state">{isCancelled ? copy.cancelled : copy.postponed}</span>}<h4>{text.title}</h4><p>{text.summary}</p><b class="event-more">{copy.details} +</b></div>
+          <div class="event-copy">{event.isPreview && <span class="event-state preview">{copy.preview}</span>}{event.event_state !== "scheduled" && <span class="event-state">{isCancelled ? copy.cancelled : copy.postponed}</span>}<h4>{text.title}</h4><p>{text.summary}</p>{!event.isPreview && <b class="event-more">{copy.details}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18L15 12L9 6" /></svg></b>}</div>
         </summary>
-        <div class="event-actions"><a href={`/${locale}/events/${event.slug}/`}>{copy.details}</a>{!isCancelled && event.booking_url && <a class="event-booking" href={event.booking_url}>{copy.booking}</a>}</div>
+        {!event.isPreview && <div class="event-actions"><a href={`/${locale}/events/${event.slug}/`}>{copy.details}</a>{!isCancelled && event.booking_url && <a class="event-booking" href={event.booking_url}>{copy.booking}</a>}</div>}
       </details>;
     })}</div>
   </section>)}
@@ -36,7 +36,7 @@ const local = (event: (typeof groups)[number]["events"][number]) => locale === "
 
 <style>
   .events { padding: clamp(2rem, 5vw, 4.5rem); background: #fff5e1; color: #0b0b0b; }
-  .events h2, .events h3 { margin: 0; font-family: Arial, sans-serif; text-transform: uppercase; }
+  .events h2, .events h3 { margin: 0; font-family: HindSiliguri, Inter, sans-serif; text-transform: uppercase; }
   .events h2 { font-size: clamp(2rem, 5vw, 4rem); line-height: .95; }
   .events h3 { margin: 2.5rem 0 .8rem; color: #596200; font-size: 1rem; }
   .events-list { border-top: 2px solid #0b0b0b; }
@@ -47,8 +47,8 @@ const local = (event: (typeof groups)[number]["events"][number]) => locale === "
   .event-card img { width: 104px; height: 128px; object-fit: cover; }
   .event-date { padding: .7rem; background: #c6ff00; display: flex; flex-direction: column; font-weight: 800; }
   .event-date b { font-size: 2.6rem; line-height: .9; }.event-date time { margin-top: auto; }
-  .event-copy { padding: 1rem 1.25rem; }.event-copy h4 { margin: .2rem 0; font-size: 1.45rem; }.event-copy p { margin: 0; }.event-more { display: block; margin-top: .65rem; font-size: .75rem; text-transform: uppercase; }
-  .event-state { display: inline-block; padding: .2rem .4rem; background: #ff5a2e; font-weight: 800; }
+  .event-copy { padding: 1rem 1.25rem; }.event-copy h4 { margin: .2rem 0; font-size: 1.45rem; }.event-copy p { margin: 0; }.event-more { display: flex; align-items: center; gap: .35rem; margin-top: .65rem; font-size: .75rem; text-transform: uppercase; }.event-more svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .event-state { display: inline-block; padding: .2rem .4rem; background: #ff5a2e; font-weight: 800; }.event-state.preview { background: #0b0b0b; color: #fff5e1; font-size: .7rem; text-transform: uppercase; }
   .event-actions { display: flex; justify-content: flex-end; gap: .75rem; padding: .75rem; background: #0b0b0b; }
   .event-actions a { min-width: 132px; padding: .75rem 1rem; border: 1px solid #c6ff00; color: #fff; font-weight: 800; text-align: center; }
   .event-actions .event-booking { background: #c6ff00; color: #0b0b0b; }.cancelled { opacity: .7; }.cancelled .event-date { background: #aaa; }

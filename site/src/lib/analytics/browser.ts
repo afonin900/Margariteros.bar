@@ -12,24 +12,23 @@ interface BrowserAnalyticsOptions {
 
 declare global {
   interface Window {
-    dataLayer?: Record<string, unknown>[];
+    dataLayer?: unknown[];
   }
 }
 
-function dataLayer(): Record<string, unknown>[] {
+function dataLayer(): unknown[] {
   window.dataLayer ??= [];
   return window.dataLayer;
 }
 
 export function publishConsentMode(state: ConsentState, mode: "default" | "update") {
-  dataLayer().push({
-    event: "consent",
-    consent_mode: mode,
+  dataLayer().push(["consent", mode, {
     analytics_storage: state.analytics ? "granted" : "denied",
     ad_storage: state.marketing ? "granted" : "denied",
     ad_user_data: state.marketing ? "granted" : "denied",
     ad_personalization: state.marketing ? "granted" : "denied",
-  });
+    wait_for_update: mode === "default" ? 500 : undefined,
+  }]);
 }
 
 function loadGtmOnce(containerId: string | undefined) {
@@ -70,6 +69,7 @@ export function mountConsentBanner(root: HTMLElement, locale: Locale, options: B
   const panel = root.querySelector<HTMLElement>("[data-consent-panel]");
   const openButton = root.querySelector<HTMLButtonElement>("[data-consent-open]");
   const saved = hasSavedConsent();
+  if (saved) syncChoiceConsent(readConsent());
 
   function setPanel(open: boolean) {
     if (!panel) return;

@@ -96,10 +96,10 @@ describe("consent", () => {
     expect(afterReload.readConsent()).toMatchObject({ analytics: false, marketing: false });
   });
 
-  it("keeps the ChoiceQR bridge unsupported without a proven vendor contract", () => {
-    expect(syncChoiceConsent({ essential: true, analytics: true, marketing: true, updatedAt: "2026-08-26T10:00:00.000Z", policyVersion: 1 })).toMatchObject({
-      status: "unsupported",
-    });
+  it("maps only complete consent to ChoiceQR and keeps partial consent denied", () => {
+    expect(syncChoiceConsent({ essential: true, analytics: true, marketing: true, updatedAt: "2026-08-26T10:00:00.000Z", policyVersion: 1 })).toMatchObject({ value: "required-ga-gtag-fb" });
+    expect(syncChoiceConsent({ essential: true, analytics: true, marketing: false, updatedAt: "2026-08-26T10:00:00.000Z", policyVersion: 1 })).toMatchObject({ value: "required" });
+    expect(syncChoiceConsent({ essential: true, analytics: false, marketing: false, updatedAt: "2026-08-26T10:00:00.000Z", policyVersion: 1 })).toMatchObject({ value: "required" });
   });
 });
 

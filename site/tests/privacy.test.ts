@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { CONSENT_COOKIE_NAME, createConsentStore, saveConsent, type ConsentPersistence } from "../src/lib/consent";
 import { createAnalyticsTracker } from "../src/lib/analytics";
 import { initializeAnalytics } from "../src/lib/analytics/browser";
+import { syncChoiceConsent } from "../src/lib/consent/choice-consent-bridge";
 
 function persistence(cookie: string | undefined = undefined): ConsentPersistence & { written?: string } {
   return {
@@ -27,9 +28,23 @@ describe("privacy regression contract", () => {
     expect(createConsentStore(persistence("not-valid-json")).readConsent()).toMatchObject({ analytics: false, marketing: false });
   });
 
+  it("writes the current shared ChoiceQR consent cookie without granting partial consent", () => {
+    let written = "";
+    vi.stubGlobal("document", {
+      get cookie() { return written; },
+      set cookie(value: string) { written = value; },
+    });
+    const base = { essential: true as const, updatedAt: "2026-08-31T12:00:00.000Z", policyVersion: 1 };
+    expect(syncChoiceConsent({ ...base, analytics: false, marketing: false })).toMatchObject({ status: "synced", value: "required" });
+    expect(written).toContain("cookieSettings=required");
+    expect(written).toContain("Domain=.margariteros.bar");
+    expect(syncChoiceConsent({ ...base, analytics: true, marketing: false })).toMatchObject({ value: "required" });
+    expect(syncChoiceConsent({ ...base, analytics: true, marketing: true })).toMatchObject({ value: "required-ga-gtag-fb" });
+  });
+
   it("keeps browser dataLayer on consent-mode updates for Reject and only permits normal analytics after Accept", () => {
     let cookie = "";
-    const dataLayer: Record<string, unknown>[] = [];
+    const dataLayer: unknown[] = [];
     vi.stubGlobal("window", { dataLayer });
     vi.stubGlobal("document", {
       get cookie() { return cookie; },
@@ -42,13 +57,13 @@ describe("privacy regression contract", () => {
 
     const tracker = initializeAnalytics();
     saveConsent("reject");
-    expect(dataLayer).toContainEqual(expect.objectContaining({ consent_mode: "default", analytics_storage: "denied" }));
-    expect(dataLayer).toContainEqual(expect.objectContaining({ consent_mode: "update", analytics_storage: "denied" }));
+    expect(dataLayer).toContainEqual(["consent", "default", expect.objectContaining({ analytics_storage: "denied", ad_storage: "denied" })]);
+    expect(dataLayer).toContainEqual(["consent", "update", expect.objectContaining({ analytics_storage: "denied", ad_storage: "denied" })]);
     expect(dataLayer).not.toContainEqual(expect.objectContaining({ event: "consent_updated" }));
     expect(tracker.track({ name: "consent_updated", locale: "pl" })).toMatchObject({ status: "blocked", reason: "consent" });
 
     saveConsent("accept");
-    expect(dataLayer).toContainEqual(expect.objectContaining({ consent_mode: "update", analytics_storage: "granted" }));
+    expect(dataLayer).toContainEqual(["consent", "update", expect.objectContaining({ analytics_storage: "granted", ad_storage: "granted" })]);
     expect(tracker.track({ name: "consent_updated", locale: "pl" })).toMatchObject({ status: "sent", event_id: "evt_browser" });
   });
 

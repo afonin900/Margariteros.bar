@@ -16,7 +16,7 @@
 ## Разрешённые отличия
 
 1. **Домен:** на `new.margariteros.bar` локализованные landing routes остаются first-party (`/pl/`, `/en/`, `/ru/`, `/es/`). Любой menu/booking/legal/action, которого first-party SSR не обслуживает, сразу ведёт на соответствующий `https://qr.margariteros.bar/...` route.
-2. **Consent и analytics:** first-party consent panel, cookie и attribution остаются обязательными, поэтому находятся в отдельном fixed layer и не изменяют copied layout. ChoiceQR bridge по-прежнему `unsupported` до подтверждённого vendor contract.
+2. **Consent и analytics:** first-party consent panel, cookie и attribution остаются обязательными, поэтому находятся в отдельном fixed layer и не изменяют copied layout. Текущий live-контракт `cookieSettings` подтверждён 2026-08-31 и синхронизируется на `.margariteros.bar`; это рабочий readback, но не публично закреплённый договор поставщика.
 3. **Google map surface:** публичный ключ live Google Embed API не копируется. Вместо него локальный raster из live public map viewport повторяет поверхность карты; весь 200px card остаётся точной `_blank` ссылкой на directions URL.
 4. **Advertising-content conflict:** extracted live identity literally says `Margariteros Cocktail Bar` and `Tacos, baile y Margarita`; the full live category set also contains alcohol categories. The clone now reproduces these literal PL labels and their ChoiceQR routes at the owner's explicit fidelity request. Therefore it is **not approved for alcohol-restricted advertising** until the owner explicitly chooses a separate legal-safe copy variant.
 
