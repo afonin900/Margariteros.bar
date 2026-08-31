@@ -68,21 +68,38 @@ export function mountConsentBanner(root: HTMLElement, locale: Locale, options: B
   decorateTrackedLinks(attribution);
   const panel = root.querySelector<HTMLElement>("[data-consent-panel]");
   const openButton = root.querySelector<HTMLButtonElement>("[data-consent-open]");
+  const settings = root.querySelector<HTMLElement>("[data-consent-settings]");
+  const analyticsInput = root.querySelector<HTMLInputElement>("[data-consent-analytics]");
+  const marketingInput = root.querySelector<HTMLInputElement>("[data-consent-marketing]");
   const saved = hasSavedConsent();
   if (saved) syncChoiceConsent(readConsent());
 
   function setPanel(open: boolean) {
     if (!panel) return;
     panel.hidden = !open;
+    root.classList.toggle("is-open", open);
     openButton?.setAttribute("aria-expanded", String(open));
   }
 
   // The ChoiceQR comparison baseline is a previously-consented visitor. Keep
   // our first-party control out of that document's layout and visual surface.
   // A new visitor receives a fixed (not flow-affecting) consent overlay.
-  root.hidden = saved;
+  root.hidden = false;
   setPanel(!saved);
   openButton?.addEventListener("click", () => setPanel(true));
+  root.querySelector<HTMLButtonElement>("[data-consent-manage]")?.addEventListener("click", () => {
+    const current = readConsent();
+    if (analyticsInput) analyticsInput.checked = current.analytics;
+    if (marketingInput) marketingInput.checked = current.marketing;
+    if (settings) settings.hidden = false;
+  });
+  root.querySelector<HTMLButtonElement>("[data-consent-save]")?.addEventListener("click", () => {
+    const consent = saveConsent({ analytics: analyticsInput?.checked ?? false, marketing: marketingInput?.checked ?? false });
+    syncChoiceConsent(consent);
+    if (consent.analytics) tracker.track({ name: "consent_updated", locale });
+    setPanel(false);
+    root.hidden = false;
+  });
   root.querySelectorAll<HTMLButtonElement>("[data-consent-choice]").forEach((button) => {
     button.addEventListener("click", () => {
       const choice = button.dataset.consentChoice === "accept" ? "accept" : "reject";
@@ -90,7 +107,7 @@ export function mountConsentBanner(root: HTMLElement, locale: Locale, options: B
       syncChoiceConsent(consent);
       if (consent.analytics) tracker.track({ name: "consent_updated", locale });
       setPanel(false);
-      root.hidden = true;
+      root.hidden = false;
     });
   });
 

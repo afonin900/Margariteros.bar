@@ -126,7 +126,7 @@ function measurementExpression() {
     const contentStage = rect(document.querySelector(".cq-main"));
     const gallery = rect(document.querySelector(".ad-gallery"));
     const footer = rect(footerElement);
-    const consent = rect(document.querySelector(".consent-control"));
+    const consent = rect(document.querySelector("[data-consent-panel]:not([hidden])"));
     return {
       viewport: { width: innerWidth, height: innerHeight },
       scrollWidth: document.documentElement.scrollWidth,
@@ -136,7 +136,7 @@ function measurementExpression() {
       bookingOverlap: overlaps(facts, booking),
       consentGalleryOverlap: overlaps(consent, gallery),
       consentFooterOverlap: overlaps(consent, footer),
-      consentHidden: document.querySelector(".consent-control")?.hasAttribute("hidden") ?? true,
+      consentHidden: document.querySelector("[data-consent-panel]")?.hasAttribute("hidden") ?? true,
       footerAfterGallery: Boolean(footer && gallery && footer.top >= gallery.bottom),
       minimumTarget: Math.min(...targets.map(({ width, height }) => Math.min(width, height))),
       footerActions,

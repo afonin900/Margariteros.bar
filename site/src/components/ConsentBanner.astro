@@ -4,18 +4,26 @@ import type { Locale } from "../content/page";
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const copy = {
-  pl: { title: "Twoja prywatność", text: "Używamy opcjonalnej analityki tylko za Twoją zgodą.", accept: "Akceptuję", reject: "Odrzucam", change: "Zmień zgodę" },
-  en: { title: "Your privacy", text: "We use optional analytics only with your consent.", accept: "Accept", reject: "Reject", change: "Change consent" },
-  ru: { title: "Ваша конфиденциальность", text: "Необязательная аналитика работает только с вашего согласия.", accept: "Принять", reject: "Отклонить", change: "Изменить согласие" },
-  es: { title: "Tu privacidad", text: "Usamos analítica opcional solo con tu consentimiento.", accept: "Aceptar", reject: "Rechazar", change: "Cambiar consentimiento" },
+  pl: { title: "Dbamy o Twoją prywatność", text: "Używamy niezbędnych plików cookie, aby strona działała. Za Twoją zgodą możemy też mierzyć skuteczność strony i reklam. Zgodę możesz później zmienić.", accept: "Akceptuj wszystko", reject: "Tylko niezbędne", manage: "Zarządzaj", save: "Zapisz wybór", change: "Zmień zgodę", settings: "Ustawienia zgody", essential: "Niezbędne", essentialText: "Zawsze włączone — zapisują język i Twój wybór prywatności.", analytics: "Analityka", analyticsText: "Pomaga nam zrozumieć, czy strona jest użyteczna.", marketing: "Pomiar reklam", marketingText: "Pozwala mierzyć reklamy Google bez wysyłania danych osobowych.", policy: "Polityka plików cookie" },
+  en: { title: "We respect your privacy", text: "We use essential cookies so the site can work. With your consent, we may also measure site and advertising performance. You can change your choice later.", accept: "Accept all", reject: "Essential only", manage: "Manage", save: "Save choice", change: "Change consent", settings: "Consent settings", essential: "Essential", essentialText: "Always on — stores language and your privacy choice.", analytics: "Analytics", analyticsText: "Helps us understand whether the site is useful.", marketing: "Advertising measurement", marketingText: "Measures Google ads without sending personal data.", policy: "Cookie policy" },
+  ru: { title: "Мы уважаем вашу конфиденциальность", text: "Обязательные файлы cookie нужны для работы сайта. С вашего согласия мы также можем измерять работу сайта и рекламы. Выбор можно изменить позже.", accept: "Принять всё", reject: "Только обязательные", manage: "Настроить", save: "Сохранить выбор", change: "Изменить согласие", settings: "Настройки согласия", essential: "Обязательные", essentialText: "Всегда включены — сохраняют язык и выбор приватности.", analytics: "Аналитика", analyticsText: "Помогает понять, удобен ли сайт.", marketing: "Измерение рекламы", marketingText: "Измеряет рекламу Google без передачи личных данных.", policy: "Политика cookie" },
+  es: { title: "Respetamos tu privacidad", text: "Usamos cookies esenciales para que el sitio funcione. Con tu permiso, también podemos medir el rendimiento del sitio y la publicidad. Puedes cambiar tu elección después.", accept: "Aceptar todo", reject: "Solo esenciales", manage: "Gestionar", save: "Guardar elección", change: "Cambiar consentimiento", settings: "Ajustes de consentimiento", essential: "Esenciales", essentialText: "Siempre activas: guardan el idioma y tu elección de privacidad.", analytics: "Analítica", analyticsText: "Nos ayuda a saber si el sitio es útil.", marketing: "Medición publicitaria", marketingText: "Mide los anuncios de Google sin enviar datos personales.", policy: "Política de cookies" },
 }[locale];
 ---
 <aside class="consent-control" data-consent-root>
   <button class="consent-change" type="button" data-consent-open aria-expanded="false">{copy.change}</button>
-  <section class="consent-panel" data-consent-panel aria-labelledby="consent-title">
+  <section class="consent-panel" data-consent-panel role="dialog" aria-modal="true" aria-labelledby="consent-title">
     <h2 id="consent-title">{copy.title}</h2>
-    <p>{copy.text}</p>
+    <p>{copy.text} <a href="https://qr.margariteros.bar/cookie-policy">{copy.policy}</a>.</p>
+    <div class="consent-settings" data-consent-settings hidden aria-labelledby="consent-settings-title">
+      <h3 id="consent-settings-title">{copy.settings}</h3>
+      <label><span><b>{copy.essential}</b><small>{copy.essentialText}</small></span><input type="checkbox" checked disabled /></label>
+      <label><span><b>{copy.analytics}</b><small>{copy.analyticsText}</small></span><input type="checkbox" data-consent-analytics /></label>
+      <label><span><b>{copy.marketing}</b><small>{copy.marketingText}</small></span><input type="checkbox" data-consent-marketing /></label>
+      <button class="consent-save" type="button" data-consent-save>{copy.save}</button>
+    </div>
     <div class="consent-actions">
+      <button type="button" data-consent-manage>{copy.manage}</button>
       <button type="button" data-consent-choice="reject">{copy.reject}</button>
       <button type="button" data-consent-choice="accept">{copy.accept}</button>
     </div>
