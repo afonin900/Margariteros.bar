@@ -231,3 +231,6 @@ html,body{font-family:"Hind Siliguri",Inter,-apple-system,BlinkMacSystemFont,"Se
 
 /* ChoiceQR keeps the mobile photo wall in three columns too. */
 @media(max-width:760px){.ad-gallery>div{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}}
+
+/* ChoiceQR footer rails stay inside the same 1280px desktop frame. */
+.cq-footer-legal{box-sizing:border-box;width:100%;max-width:1280px;margin-inline:auto;border-top-color:var(--cq-primary);border-bottom:1px solid var(--cq-primary);background:#000}
