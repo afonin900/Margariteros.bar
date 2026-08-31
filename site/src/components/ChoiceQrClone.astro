@@ -72,8 +72,9 @@ const campaignCopy = {
 
   <main class="cq-main">
     <section class="ad-hero" data-campaign-surface={page.locale}>
-      <div class="ad-hero-copy"><p>{campaignCopy.eyebrow}</p><h1>{campaignCopy.title}</h1><span>{campaignCopy.text}</span><div class="ad-hero-actions"><a class="primary" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking">{campaignCopy.booking}</a><a href={links.menu} data-analytics-event="view_menu" data-analytics-destination="menu">{campaignCopy.menu}</a></div></div>
       <img src="/media/gallery/dance-floor-400.webp" alt={page.galleryAltDance} width="400" height="400" loading="eager" />
+      <div class="ad-hero-copy"><p>{campaignCopy.eyebrow}</p><h1>{campaignCopy.title}</h1><span>{campaignCopy.text}</span><div class="ad-hero-actions"><a class="primary" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking">{campaignCopy.booking}</a><a href={links.menu} data-analytics-event="view_menu" data-analytics-destination="menu">{campaignCopy.menu}</a></div></div>
+      <a class="ad-hero-down" href="#events-title" aria-label={campaignCopy.photos}><i></i><i></i></a>
     </section>
     <EventCards locale={page.locale} groups={eventGroups ?? []} unavailable={eventGroups === null} />
     <section class="ad-gallery" aria-labelledby="ad-gallery-title"><h2 id="ad-gallery-title">{campaignCopy.photos}</h2><div>{page.galleryItems.slice(0, 4).map((asset) => <img src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading="lazy" />)}</div></section>
