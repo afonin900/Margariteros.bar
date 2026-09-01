@@ -13,14 +13,14 @@
     "verify:release": "npm run check && npm run build && npm test && npm run verify:secrets"
   },
   "dependencies": {
-    "@astrojs/node": "^11.1.4",
-    "@astrojs/react": "6.0.4",
-    "@fullcalendar/core": "6.1.19",
-    "@fullcalendar/daygrid": "6.1.19",
-    "@fullcalendar/interaction": "6.1.19",
-    "@fullcalendar/react": "6.1.19",
-    "@fullcalendar/timegrid": "6.1.19",
-    "astro": "^7.2.7",
+    "@astrojs/node": "^11.1.5",
+    "@astrojs/react": "^6.0.5",
+    "@fullcalendar/core": "^6.1.21",
+    "@fullcalendar/daygrid": "^6.1.21",
+    "@fullcalendar/interaction": "^6.1.21",
+    "@fullcalendar/react": "^6.1.21",
+    "@fullcalendar/timegrid": "^6.1.21",
+    "astro": "^7.2.10",
     "emdash": "0.35.0",
     "margariteros-content-ops": "file:plugins/margariteros-content-ops",
     "react": "19.2.8",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
-    "@types/node": "^22.15.3",
+    "@types/node": "^22.20.1",
     "typescript": "^5.9.3",
     "vitest": "^4.1.11"
   }
