@@ -5,18 +5,17 @@
 
 import type { ContentBylineCredit, TaxonomyTerm, PortableTextBlock } from "emdash";
 
-export interface CreativeAsset {
+export interface Homepage {
   id: string;
   slug: string | null;
   status: string;
   name: string;
-  kind: "source-photo" | "source-video" | "banner" | "poster" | "reel" | "story" | "gallery";
-  media: { id: string; url?: string; src?: string; filename?: string; mimeType?: string; size?: number; provider?: string; meta?: Record<string, unknown> };
-  event?: string;
-  rights_state: "unknown" | "owner-provided" | "licensed" | "cleared";
-  cleanup_state: "pending" | "passed" | "failed" | "not-required";
-  source_note: string;
-  legacy_path?: string;
+  hero_image: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
+  published_locales: ("pl" | "en" | "ru" | "es")[];
+  hero_eyebrow_pl?: string; hero_title_pl?: string; hero_text_pl?: string; hero_image_alt_pl?: string; primary_cta_label_pl?: string; secondary_cta_label_pl?: string; gallery_heading_pl?: string;
+  hero_eyebrow_en?: string; hero_title_en?: string; hero_text_en?: string; hero_image_alt_en?: string; primary_cta_label_en?: string; secondary_cta_label_en?: string; gallery_heading_en?: string;
+  hero_eyebrow_ru?: string; hero_title_ru?: string; hero_text_ru?: string; hero_image_alt_ru?: string; primary_cta_label_ru?: string; secondary_cta_label_ru?: string; gallery_heading_ru?: string;
+  hero_eyebrow_es?: string; hero_title_es?: string; hero_text_es?: string; hero_image_alt_es?: string; primary_cta_label_es?: string; secondary_cta_label_es?: string; gallery_heading_es?: string;
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date | null;
@@ -56,38 +55,9 @@ export interface Event {
   terms?: Record<string, TaxonomyTerm[]>;
 }
 
-export interface Publication {
-  id: string;
-  slug: string | null;
-  status: string;
-  title: string;
-  channel: "instagram" | "threads" | "facebook" | "gbp";
-  format: "feed" | "reel" | "story" | "text" | "gbp";
-  publication_locale: "pl" | "en" | "ru" | "es";
-  caption: string;
-  event?: string;
-  assets?: string;
-  workflow_state: "draft" | "review" | "approved" | "postiz-draft" | "scheduled" | "published" | "error";
-  publish_at: string;
-  copy_cleanup_state: "pending" | "passed" | "failed" | "not-required";
-  owner_approved_at?: string;
-  postiz_id?: string;
-  postiz_state?: string;
-  release_url?: string;
-  postiz_synced_at?: string;
-  last_error?: string;
-  legacy_path?: string;
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date | null;
-  bylines?: ContentBylineCredit[];
-  terms?: Record<string, TaxonomyTerm[]>;
-}
-
 declare module "emdash" {
   interface EmDashCollections {
-    creative_assets: CreativeAsset;
+    homepage: Homepage;
     events: Event;
-    publications: Publication;
   }
 }

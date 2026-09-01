@@ -3,7 +3,6 @@ import node from "@astrojs/node";
 import react from "@astrojs/react";
 import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
-import { margariterosContentOpsPlugin } from "margariteros-content-ops";
 
 export default defineConfig({
   output: "server",
@@ -17,7 +16,6 @@ export default defineConfig({
         baseUrl: "/_emdash/api/media/file",
       }),
       maxUploadSize: 250 * 1024 * 1024,
-      plugins: [margariterosContentOpsPlugin()],
     }),
   ],
 });

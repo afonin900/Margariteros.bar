@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { getPage, locales } from "../src/content/page";
 import {
   CONSENT_COOKIE_NAME,
@@ -73,6 +74,22 @@ describe("getPage", () => {
   it("keeps prohibited positioning out of localized content", () => {
     for (const locale of locales) {
       expect(JSON.stringify(getPage(locale))).not.toMatch(/cocktail|margarita|tequila|vodka|whisky|piwo|wino|alkohol|drink/i);
+    }
+  });
+});
+
+describe("Emdash website schema", () => {
+  it("contains only multilingual homepage and event modules", () => {
+    const seed = JSON.parse(readFileSync(new URL("../.emdash/seed.json", import.meta.url), "utf8"));
+    expect(seed.meta.description).toContain("English-first");
+    expect(seed.collections.map((collection: { slug: string }) => collection.slug)).toEqual(["homepage", "events"]);
+    expect(JSON.stringify(seed)).not.toMatch(/publications|creative_assets|postiz|buffer/i);
+    const homepage = seed.collections.find((collection: { slug: string }) => collection.slug === "homepage");
+    const fields = homepage.fields.map((field: { slug: string }) => field.slug);
+    for (const locale of locales) {
+      expect(fields).toContain(`hero_title_${locale}`);
+      expect(fields).toContain(`hero_text_${locale}`);
+      expect(fields).toContain(`primary_cta_label_${locale}`);
     }
   });
 });

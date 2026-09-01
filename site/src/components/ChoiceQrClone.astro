@@ -1,12 +1,13 @@
 ---
 import type { PageContent } from "../content/page";
 import type { MonthEvents } from "../lib/content/events";
+import type { HomepageHero } from "../lib/content/homepage";
 import EventCards from "./EventCards.astro";
 import ChoiceQrLanguageOptions from "./ChoiceQrLanguageOptions.astro";
 import { decorateOutbound, type Attribution } from "../lib/analytics/attribution";
 
-interface Props { page: PageContent; attribution: Attribution; eventGroups: MonthEvents[] | null }
-const { page, attribution, eventGroups } = Astro.props;
+interface Props { page: PageContent; homepage: HomepageHero; attribution: Attribution; eventGroups: MonthEvents[] | null }
+const { page, homepage, attribution, eventGroups } = Astro.props;
 const qr = "https://qr.margariteros.bar";
 const route = (path: string) => decorateOutbound(`${qr}${path}`, attribution);
 const bookingUrl = route("/booking");
@@ -33,12 +34,6 @@ const copy = {
   en: { nav: ["Main", "Menu", "Reservation", "Delivery Areas", "Send feedback"], here: "Here", takeaway: "Takeaway", delivery: "Delivery", digital: "DIGITAL MENU", opening: "The restaurant will open Tomorrow at 17:00", links: "LINKS:", about: "About the place:", intro: "A place on Chmielna in central Warsaw.", show: "show", contact: "Contact details", hours: "Working hours", socials: "We are on social networks", map: "On the map", directions: "Get directions", booking: "Booking", gallery: "Our photos", address: "Address:", phone: "Phone", dial: "Dial", mapLink: "See on map", login: "Log in", loginText: "Log in to simplify the ordering process and use additional features.", legal: "Useful information", food: ["Menu", "Food", "Here", "Takeaway", "Delivery", "Drinks", "Information"] },
   ru: { nav: ["Главная", "Меню", "Бронирование", "Зоны доставки", "Оставить отзыв"], here: "В зале", takeaway: "С собой", delivery: "Доставка", digital: "ЦИФРОВОЕ МЕНЮ", opening: "Ресторан откроется завтра в 17:00", links: "ССЫЛКИ:", about: "О месте:", intro: "Место на Хмельной в центре Варшавы.", show: "показать", contact: "Контакты", hours: "Часы работы", socials: "Мы в социальных сетях", map: "На карте", directions: "Построить маршрут", booking: "Бронирование", gallery: "Наши фотографии", address: "Адрес:", phone: "Телефон", dial: "Позвонить", mapLink: "Показать на карте", login: "Войти", loginText: "Войдите, чтобы упростить оформление заказа и пользоваться дополнительными функциями.", legal: "Полезная информация", food: ["Меню", "Кухня", "В зале", "С собой", "Доставка", "Напитки", "Информация"] },
   es: { nav: ["Inicio", "Menú", "Reserva", "Zonas de entrega", "Enviar opinión"], here: "Aquí", takeaway: "Para llevar", delivery: "Entrega", digital: "MENÚ DIGITAL", opening: "El restaurante abrirá mañana a las 17:00", links: "ENLACES:", about: "Sobre el lugar:", intro: "Un lugar en Chmielna, en el centro de Varsovia.", show: "mostrar", contact: "Datos de contacto", hours: "Horario", socials: "Estamos en redes sociales", map: "En el mapa", directions: "Cómo llegar", booking: "Reserva", gallery: "Nuestras fotos", address: "Dirección:", phone: "Teléfono", dial: "Llamar", mapLink: "Ver en el mapa", login: "Iniciar sesión", loginText: "Inicia sesión para simplificar el pedido y usar funciones adicionales.", legal: "Información útil", food: ["Menú", "Cocina", "Aquí", "Para llevar", "Entrega", "Bebidas", "Información"] },
-}[page.locale];
-const campaignCopy = {
-  pl: { eyebrow: "CHMIELNA 7/9 · WARSZAWA", title: "WYDARZENIA W CENTRUM WARSZAWY", text: "Muzyka, taniec i meksykańska kuchnia. Zobacz program i wybierz swój wieczór.", booking: "ZAREZERWUJ STOLIK", menu: "ZOBACZ MENU", photos: "ZOBACZ, JAK JEST U NAS" },
-  en: { eyebrow: "CHMIELNA 7/9 · WARSAW", title: "EVENTS IN CENTRAL WARSAW", text: "Music, dance and Mexican food. Explore the programme and choose your evening.", booking: "BOOK A TABLE", menu: "VIEW MENU", photos: "SEE THE ATMOSPHERE" },
-  ru: { eyebrow: "CHMIELNA 7/9 · WARSZAWA", title: "СОБЫТИЯ В ЦЕНТРЕ ВАРШАВЫ", text: "Музыка, танцы и мексиканская кухня. Посмотрите программу и выберите свой вечер.", booking: "ЗАБРОНИРОВАТЬ", menu: "ПОСМОТРЕТЬ МЕНЮ", photos: "ПОСМОТРЕТЬ АТМОСФЕРУ" },
-  es: { eyebrow: "CHMIELNA 7/9 · VARSOVIA", title: "EVENTOS EN EL CENTRO DE VARSOVIA", text: "Música, baile y cocina mexicana. Descubre el programa y elige tu noche.", booking: "RESERVAR MESA", menu: "VER MENÚ", photos: "DESCUBRE EL AMBIENTE" },
 }[page.locale];
 ---
 <div class="cq-shell" data-choiceqr-shell>
@@ -72,12 +67,12 @@ const campaignCopy = {
 
   <main class="cq-main">
     <section class="ad-hero" data-campaign-surface={page.locale}>
-      <img src="/media/gallery/dance-floor-400.webp" alt={page.galleryAltDance} width="400" height="400" loading="eager" />
-      <div class="ad-hero-copy"><p>{campaignCopy.eyebrow}</p><h1>{campaignCopy.title}</h1><span>{campaignCopy.text}</span><div class="ad-hero-actions"><a class="primary" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking">{campaignCopy.booking}</a><a href={links.menu} data-analytics-event="view_menu" data-analytics-destination="menu">{campaignCopy.menu}</a></div></div>
-      <a class="ad-hero-down" href="#events-title" aria-label={campaignCopy.photos}><i></i><i></i></a>
+      <img src={homepage.image.src} alt={homepage.imageAlt} width={homepage.image.width} height={homepage.image.height} loading="eager" />
+      <div class="ad-hero-copy"><p>{homepage.eyebrow}</p><h1>{homepage.title}</h1><span>{homepage.text}</span><div class="ad-hero-actions"><a class="primary" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking">{homepage.primaryCta}</a><a href={links.menu} data-analytics-event="view_menu" data-analytics-destination="menu">{homepage.secondaryCta}</a></div></div>
+      <a class="ad-hero-down" href="#events-title" aria-label={homepage.galleryHeading}><i></i><i></i></a>
     </section>
     <EventCards locale={page.locale} groups={eventGroups ?? []} unavailable={eventGroups === null} />
-    <section class="ad-gallery" aria-labelledby="ad-gallery-title"><h2 id="ad-gallery-title">{campaignCopy.photos}</h2><div>{page.galleryItems.slice(0, 4).map((asset) => <img src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading="lazy" />)}</div></section>
+    <section class="ad-gallery" aria-labelledby="ad-gallery-title"><h2 id="ad-gallery-title">{homepage.galleryHeading}</h2><div>{page.galleryItems.slice(0, 4).map((asset) => <img src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading="lazy" />)}</div></section>
   </main>
 
   <footer class="cq-footer">

@@ -1,8 +1,7 @@
-import { readdir, readFile } from "node:fs/promises";
+import { readdir } from "node:fs/promises";
 import { resolve, relative } from "node:path";
 
 const root = resolve(import.meta.dirname, "../..");
-const weeks = ["content/weeks/2026-W34", "content/weeks/2026-W35"];
 const events = [
   ["2026-W34/2026-08-20-bachata-night", "Bachata Night", "2026-08-20T22:00:00+02:00"],
   ["2026-W34/2026-08-22-dj-dragon", "DJ Dragon", "2026-08-22T21:00:00+02:00"],
@@ -29,4 +28,4 @@ for (const [legacy, title, startsAt] of events) {
 
 if (!process.argv.includes("--dry-run") && !process.argv.includes("--apply")) throw new Error("Use --dry-run or --apply");
 if (process.argv.includes("--apply")) throw new Error("Import is intentionally locked until EMDASH_API_TOKEN-backed duplicate checks are implemented.");
-console.log(JSON.stringify({ events: records, totals: { events: records.length, publications: records.reduce((sum, event) => sum + event.channels.length, 0), assets: records.reduce((sum, event) => sum + event.assets.length, 0) } }, null, 2));
+console.log(JSON.stringify({ events: records, totals: { events: records.length } }, null, 2));

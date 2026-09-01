@@ -4,6 +4,7 @@ import ChoiceQrClone from "../../components/ChoiceQrClone.astro";
 import ConsentBanner from "../../components/ConsentBanner.astro";
 import { getPage, locales, type Locale } from "../../content/page";
 import { listUpcomingEvents, previewEventGroups } from "../../lib/content/events";
+import { getHomepageHero } from "../../lib/content/homepage";
 import { captureAttribution } from "../../lib/analytics/attribution";
 import "../../styles/choiceqr-exact.css";
 
@@ -12,6 +13,7 @@ const isLocale = (value: string | undefined): value is Locale =>
   value !== undefined && locales.includes(value as Locale);
 if (!isLocale(requestedLocale)) return new Response("Not found", { status: 404 });
 const page = getPage(requestedLocale);
+const homepage = await getHomepageHero(page.locale);
 const attribution = captureAttribution(Astro.url);
 const now = new Date();
 const previewEvents = Astro.url.searchParams.get("preview") === "events";
@@ -23,6 +25,6 @@ const eventGroups = previewEvents || (isStaging && (!liveEventGroups || liveEven
   : liveEventGroups;
 ---
 <BaseLayout {page}>
-  <ChoiceQrClone {page} {attribution} {eventGroups} />
+  <ChoiceQrClone {page} {homepage} {attribution} {eventGroups} />
   <ConsentBanner locale={page.locale} />
 </BaseLayout>
