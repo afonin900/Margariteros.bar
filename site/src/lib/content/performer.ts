@@ -40,6 +40,14 @@ type PerformerRow = {
 type UnknownRecord = Record<string, unknown>;
 
 function record(value: unknown): UnknownRecord | null {
+  if (typeof value === "string" && value.trim().startsWith("{")) {
+    try {
+      const parsed = JSON.parse(value);
+      return typeof parsed === "object" && parsed !== null && !Array.isArray(parsed) ? parsed as UnknownRecord : null;
+    } catch {
+      return null;
+    }
+  }
   return typeof value === "object" && value !== null && !Array.isArray(value) ? value as UnknownRecord : null;
 }
 
@@ -107,23 +115,29 @@ export function normalizePerformer(value: unknown): Performer | null {
   return performer;
 }
 
-/** Reads the event's primary performer through Emdash's public content API. */
-export async function getEventPerformers(reference: string | undefined, eventSlug: string, locale: Locale): Promise<Performer[]> {
-  const { entries, error } = await getEmDashCollection<"performers", PerformerRow>("performers", { status: "published", locale, limit: 500 });
-  let entry = error || !reference ? undefined : entries.find((candidate) => candidate.id === reference);
-  if (!entry) {
-    const knownSlug = eventSlug.startsWith("dj-kike-") ? "dj-kike"
-      : eventSlug.startsWith("dj-dragon-") ? "dj-dragon"
-        : eventSlug === "lerola-ansambl-2026-09-05" ? "lerolera"
-          : undefined;
-    if (knownSlug) {
-      const direct = await getEmDashEntry<"performers", PerformerRow>("performers", knownSlug, { locale });
-      entry = direct.error ? undefined : direct.entry ?? undefined;
-    }
+/** Reads published, active performers from the same local Emdash database. */
+export async function getEventPerformers(_reference: string | undefined, eventSlug: string, locale: Locale): Promise<Performer[]> {
+  const db = new Kysely({ dialect: createDialect({ url: "file:./data/emdash.db" }) });
+  try {
+    const result = await sql<PerformerRow>`
+      SELECT performer.status, performer.active, performer.name, performer.main_photo,
+        performer.bio, performer.instagram_url, performer.facebook_url,
+        performer.tiktok_url, performer.youtube_url, performer.soundcloud_url,
+        performer.website_url
+      FROM ec_events AS event
+      INNER JOIN ec_performers AS performer ON performer.id = event.primary_performer
+      WHERE event.slug = ${eventSlug} AND event.locale = ${locale}
+        AND performer.status = 'published' AND performer.active = 1
+      LIMIT 1
+    `.execute(db);
+    const performer = normalizePerformer(result.rows[0]);
+    return performer ? [performer] : [];
+  } catch {
+    return [];
+  } finally {
+    await db.destroy();
   }
-  if (!entry || entry.data.active !== true) return [];
-  const performer = normalizePerformer(entry.data);
-  return performer ? [performer] : [];
 }
-import { getEmDashCollection, getEmDashEntry } from "emdash";
+import { sql, Kysely } from "kysely";
+import { createDialect } from "emdash/db/sqlite";
 import type { Locale } from "../../content/page";
