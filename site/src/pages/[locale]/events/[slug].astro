@@ -46,7 +46,7 @@ const bookingUrl = event.event_state === "cancelled" ? undefined : decorateOutbo
       <PortableText value={text.details} />
       {performers.map((performer, index) => <PerformerCard {locale} {performer} cardId={`performer-${index + 1}`} />)}
       {preview && <p class="preview-note">{state.previewNote}</p>}
-      {event.event_state !== "cancelled" && bookingUrl && (preview ? <a class="booking" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{state.generalBooking}</a> : <EventBookingButton {locale} title={`${state.booking}: ${text.title}`} label={state.booking} fallbackUrl={bookingUrl} startsAt={event.starts_at} bookingUrl={event.booking_url} slug={event.slug} isPreview={event.isPreview} legacyPath={event.legacy_path} {attribution} className="booking" />)}
+      {event.event_state !== "cancelled" && bookingUrl && (preview ? <a class="booking" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{state.generalBooking}</a> : <EventBookingButton title={`${state.booking}: ${text.title}`} label={state.booking} fallbackUrl={bookingUrl} {attribution} className="booking" />)}
     </article>
   </main>
 </BaseLayout>
