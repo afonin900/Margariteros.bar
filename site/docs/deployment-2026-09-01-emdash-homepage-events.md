@@ -40,6 +40,30 @@ Editorial-content completion evidence:
 
 Owner entry point: `https://new.margariteros.bar/_emdash/admin`.
 
+## Native language rows — applied after editorial seed
+
+The staging app was updated to commit `1d4afa130ad19f78927819c6b5a9ef3faf934150`
+on 2026-09-01. The existing Dokploy Swarm service completed update version
+`100975` and its new container reported `healthy`.
+
+- Before the first migration read, an SQLite backup was made at
+  `/var/backups/margariteros/emdash-before-native-i18n-20260901T091857Z.db`.
+- The first `--apply` created the native Homepage fields and completed one
+  homepage group plus two event groups, each with published `pl`, `en`, `ru`,
+  and `es` rows. Its independent backup is
+  `/var/backups/margariteros/emdash-native-i18n-before-apply-20260901T091932Z.db`.
+- After the four-locale and public-SSR readback, the separate cleanup removed
+  the old `*_pl`, `*_en`, `*_ru`, `*_es` fields and `published_locales`. Its
+  independent backup is
+  `/var/backups/margariteros/emdash-native-i18n-before-cleanup-20260901T092147Z.db`.
+- Final readback proved all three translation groups contain four published
+  rows with one shared group each; no legacy field remains in the schema or
+  data. `/healthz`, `/pl/`, `/en/`, `/ru/`, and `/es/` returned `200`, and
+  every locale rendered its own CMS event row.
+- The two clearly marked test events still have no event-specific
+  `booking_url`, exactly as before the migration. Their dialog keeps the
+  existing general booking fallback; this is not a missing translation.
+
 ## Boundary
 
 This deployment does not change `margariteros.bar`, DNS, ChoiceQR, GTM, Google Ads, Cloudflare R2, or the server-side GTM runtime.
