@@ -176,6 +176,9 @@ describe("production HTTP contract", () => {
     expect(html.match(/class="event-dialog"/g)).toHaveLength(2);
     expect(html.match(/data-event-dialog-open=/g)).toHaveLength(2);
     expect(html).toContain('href="https://qr.margariteros.bar/booking"');
+    expect(html).toContain("General venue booking");
+    expect(html).not.toContain("data-choiceqr-booking-open");
+    expect(html).not.toContain("embed.choiceqr.com");
 
     await server.stop();
   });

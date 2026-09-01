@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { captureAttribution, decorateOutbound } from "../src/lib/analytics/attribution";
-import { buildEventBookingUrl, isPreviewEvent } from "../src/lib/choiceqr/event-booking";
+import {
+  buildChoiceQrEventEmbed,
+  buildEventBookingUrl,
+  choiceQrEmbedInitializeMessage,
+  choiceQrEmbedPrefillMessages,
+  isChoiceQrEmbedInitializedMessage,
+  isPreviewEvent,
+} from "../src/lib/choiceqr/event-booking";
 import { normalizePublicEvent } from "../src/lib/content/events";
 import type { Event } from "../.emdash/types";
 
@@ -48,6 +55,55 @@ describe("ChoiceQR event booking links", () => {
     expect(buildEventBookingUrl({ startsAt: "2026-01-10T20:00:00+01:00" })).toBe(
       "https://qr.margariteros.bar/booking?date=1768071600",
     );
+  });
+
+  it("builds the official iframe source and Warsaw postMessage prefill for every public language", () => {
+    for (const locale of ["pl", "en", "ru", "es"] as const) {
+      expect(buildChoiceQrEventEmbed({
+        locale,
+        startsAt: "2026-09-05T19:00:00+02:00",
+      })).toEqual({
+        origin: "https://embed.choiceqr.com",
+        src: `https://embed.choiceqr.com/booking/margariteroswwa?lang=${locale}`,
+        date: "2026-09-05",
+        time: "2026-09-05 19:00",
+      });
+    }
+  });
+
+  it("keeps the Warsaw wall-clock time through winter offset changes", () => {
+    expect(buildChoiceQrEventEmbed({
+      locale: "pl",
+      startsAt: "2026-01-10T20:00:00+01:00",
+    })).toMatchObject({ date: "2026-01-10", time: "2026-01-10 20:00" });
+  });
+
+  it("does not build an event iframe for preview fixtures or a different booking provider", () => {
+    expect(buildChoiceQrEventEmbed({
+      locale: "en",
+      slug: "test-music-evening-2026-09-05",
+      startsAt: "2026-09-05T19:00:00+02:00",
+    })).toBeNull();
+    expect(buildChoiceQrEventEmbed({
+      locale: "en",
+      startsAt: "2026-09-05T19:00:00+02:00",
+      bookingUrl: "https://tickets.example.test/events/music-night",
+    })).toBeNull();
+  });
+
+  it("only accepts the official iframe window before sending date and time", () => {
+    const frameWindow = {};
+    const initialized = { origin: "https://embed.choiceqr.com", source: frameWindow, data: { action: "initialized" } };
+
+    expect(isChoiceQrEmbedInitializedMessage(initialized, frameWindow)).toBe(true);
+    expect(isChoiceQrEmbedInitializedMessage({ ...initialized, origin: "https://evil.example" }, frameWindow)).toBe(false);
+    expect(isChoiceQrEmbedInitializedMessage({ ...initialized, source: {} }, frameWindow)).toBe(false);
+    expect(isChoiceQrEmbedInitializedMessage({ ...initialized, data: { action: "bookingCreated", booking: { email: "guest@example.com" } } }, frameWindow)).toBe(false);
+    expect(choiceQrEmbedInitializeMessage()).toEqual({ action: "initialize" });
+    expect(choiceQrEmbedPrefillMessages({ date: "2026-09-05", time: "2026-09-05 19:00" })).toEqual([
+      { action: "updateDate", date: "2026-09-05" },
+      { action: "updateTime", time: "2026-09-05 19:00" },
+    ]);
   });
 
   it("rebuilds both ChoiceQR booking forms without vendor parameters", () => {

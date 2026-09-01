@@ -5,6 +5,7 @@ import { getPage, locales, type Locale } from "../../../content/page";
 import { captureAttribution, decorateOutbound } from "../../../lib/analytics/attribution";
 import { getPublicEvent, localizedEvent } from "../../../lib/content/events";
 import { buildEventBookingUrl, isPreviewEvent } from "../../../lib/choiceqr/event-booking";
+import EventBookingButton from "../../../components/EventBookingButton.astro";
 
 const requestedLocale = Astro.params.locale;
 const slug = Astro.params.slug;
@@ -19,15 +20,16 @@ const text = localizedEvent(event, locale);
 const startsAt = new Date(event.starts_at);
 const localeTag = { pl: "pl-PL", en: "en", ru: "ru", es: "es" }[locale];
 const state = {
-  pl: { cancelled: "Odwołane", postponed: "Przełożone", preview: "TEST — nie jest prawdziwym wydarzeniem", previewNote: "To wydarzenie pokazowe. Rezerwacja dotyczy wizyty w lokalu, a nie tego testowego wydarzenia.", booking: "Rezerwacje" },
-  en: { cancelled: "Cancelled", postponed: "Postponed", preview: "TEST — not a real event", previewNote: "This is a demonstration event. The booking is for a visit to the venue, not this test event.", booking: "Booking" },
-  ru: { cancelled: "Отменено", postponed: "Перенесено", preview: "ТЕСТ — не настоящее событие", previewNote: "Это демонстрационное событие. Бронирование относится к посещению заведения, а не к этому тестовому событию.", booking: "Бронирование" },
-  es: { cancelled: "Cancelado", postponed: "Aplazado", preview: "PRUEBA — no es un evento real", previewNote: "Este es un evento de demostración. La reserva es para visitar el local, no para este evento de prueba.", booking: "Reservar" },
+  pl: { cancelled: "Odwołane", postponed: "Przełożone", preview: "TEST — nie jest prawdziwym wydarzeniem", previewNote: "To wydarzenie pokazowe. Rezerwacja dotyczy wizyty w lokalu, a nie tego testowego wydarzenia.", booking: "Rezerwacje", generalBooking: "Ogólna rezerwacja w lokalu" },
+  en: { cancelled: "Cancelled", postponed: "Postponed", preview: "TEST — not a real event", previewNote: "This is a demonstration event. The booking is for a visit to the venue, not this test event.", booking: "Booking", generalBooking: "General venue booking" },
+  ru: { cancelled: "Отменено", postponed: "Перенесено", preview: "ТЕСТ — не настоящее событие", previewNote: "Это демонстрационное событие. Бронирование относится к посещению заведения, а не к этому тестовому событию.", booking: "Бронирование", generalBooking: "Общая бронь в баре" },
+  es: { cancelled: "Cancelado", postponed: "Aplazado", preview: "PRUEBA — no es un evento real", previewNote: "Este es un evento de demostración. La reserva es para visitar el local, no para este evento de prueba.", booking: "Reservar", generalBooking: "Reserva general del local" },
 }[locale];
 const preview = isPreviewEvent(event);
+const attribution = captureAttribution(Astro.url);
 const bookingUrl = event.event_state === "cancelled" ? undefined : decorateOutbound(
   buildEventBookingUrl({ slug: event.slug, startsAt: event.starts_at, bookingUrl: event.booking_url, isPreview: event.isPreview, legacyPath: event.legacy_path }),
-  captureAttribution(Astro.url),
+  attribution,
 );
 ---
 <BaseLayout {page}>
@@ -40,7 +42,7 @@ const bookingUrl = event.event_state === "cancelled" ? undefined : decorateOutbo
       <h1>{text.title}</h1><p class="summary">{text.summary}</p>
       <PortableText value={text.details} />
       {preview && <p class="preview-note">{state.previewNote}</p>}
-      {event.event_state !== "cancelled" && bookingUrl && <a class="booking" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{state.booking}</a>}
+      {event.event_state !== "cancelled" && bookingUrl && (preview ? <a class="booking" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{state.generalBooking}</a> : <EventBookingButton {locale} title={`${state.booking}: ${text.title}`} label={state.booking} fallbackUrl={bookingUrl} startsAt={event.starts_at} bookingUrl={event.booking_url} slug={event.slug} isPreview={event.isPreview} legacyPath={event.legacy_path} {attribution} className="booking" />)}
     </article>
   </main>
 </BaseLayout>

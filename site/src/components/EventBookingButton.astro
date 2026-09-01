@@ -1,0 +1,194 @@
+---
+import type { Locale } from "../content/page";
+import { decorateOutbound, type Attribution } from "../lib/analytics/attribution";
+import { buildChoiceQrEventEmbed } from "../lib/choiceqr/event-booking";
+
+interface Props {
+  locale: Locale;
+  title: string;
+  label: string;
+  fallbackLabel?: string;
+  fallbackUrl: string;
+  startsAt: string;
+  bookingUrl?: string;
+  slug?: string | null;
+  isPreview?: boolean;
+  legacyPath?: string | null;
+  attribution: Attribution;
+  className?: string;
+}
+
+const {
+  locale,
+  title,
+  label,
+  fallbackLabel,
+  fallbackUrl,
+  startsAt,
+  bookingUrl,
+  slug,
+  isPreview,
+  legacyPath,
+  attribution,
+  className,
+} = Astro.props;
+const copy = {
+  pl: { close: "Zamknij rezerwację", fallback: "Otwórz rezerwację w ChoiceQR", loading: "Otwieramy formularz rezerwacji" },
+  en: { close: "Close booking", fallback: "Open booking in ChoiceQR", loading: "Opening the booking form" },
+  ru: { close: "Закрыть бронирование", fallback: "Открыть бронирование в ChoiceQR", loading: "Открываем форму бронирования" },
+  es: { close: "Cerrar reserva", fallback: "Abrir reserva en ChoiceQR", loading: "Abriendo el formulario de reserva" },
+}[locale];
+const embed = buildChoiceQrEventEmbed({ locale, startsAt, bookingUrl, slug, isPreview, legacyPath });
+const embedSrc = embed ? decorateOutbound(embed.src, attribution) : undefined;
+const directLabel = fallbackLabel ?? copy.fallback;
+---
+
+{embed && embedSrc ? <><button
+  class:list={["choiceqr-booking-trigger", className]}
+  type="button"
+  data-choiceqr-booking-open
+  data-choiceqr-embed-src={embedSrc}
+  data-choiceqr-booking-date={embed.date}
+  data-choiceqr-booking-time={embed.time}
+  data-choiceqr-booking-title={title}
+  data-choiceqr-booking-fallback={fallbackUrl}
+  data-choiceqr-booking-close={copy.close}
+  data-choiceqr-booking-fallback-label={directLabel}
+  data-choiceqr-booking-loading={copy.loading}
+  data-analytics-event="reservation_click"
+  data-analytics-destination="booking"
+  aria-haspopup="dialog"
+>{label}</button><noscript><a class:list={["choiceqr-booking-fallback", className]} href={fallbackUrl}>{directLabel}</a></noscript></> : <a class:list={["choiceqr-booking-fallback", className]} href={fallbackUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{label}</a>}
+
+<script>
+  import {
+    CHOICE_QR_EMBED_ORIGIN,
+    choiceQrEmbedInitializeMessage,
+    choiceQrEmbedPrefillMessages,
+    isChoiceQrEmbedInitializedMessage,
+  } from "../lib/choiceqr/event-booking";
+
+  let activeDialog: HTMLDialogElement | undefined;
+
+  function text(button: HTMLButtonElement, name: string): string | undefined {
+    const value = button.dataset[name as keyof DOMStringMap];
+    return value && value.trim() ? value : undefined;
+  }
+
+  function openFallback(url: string) {
+    window.location.assign(url);
+  }
+
+  function createDialog(button: HTMLButtonElement) {
+    const src = text(button, "choiceqrEmbedSrc");
+    const date = text(button, "choiceqrBookingDate");
+    const time = text(button, "choiceqrBookingTime");
+    const title = text(button, "choiceqrBookingTitle");
+    const fallback = text(button, "choiceqrBookingFallback");
+    if (!src || !date || !time || !title || !fallback) return openFallback(fallback ?? "https://qr.margariteros.bar/booking");
+
+    let endpoint: URL;
+    try {
+      endpoint = new URL(src);
+    } catch {
+      return openFallback(fallback);
+    }
+    if (endpoint.protocol !== "https:" || endpoint.origin !== CHOICE_QR_EMBED_ORIGIN) return openFallback(fallback);
+
+    if (activeDialog?.open) activeDialog.close();
+    const dialog = document.createElement("dialog");
+    dialog.className = "choiceqr-booking-dialog";
+    const headingId = `choiceqr-booking-title-${crypto.randomUUID()}`;
+    dialog.setAttribute("aria-labelledby", headingId);
+
+    const header = document.createElement("header");
+    header.className = "choiceqr-booking-dialog__header";
+    const heading = document.createElement("h2");
+    heading.id = headingId;
+    heading.textContent = title;
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "choiceqr-booking-dialog__close";
+    close.setAttribute("aria-label", text(button, "choiceqrBookingClose") ?? "Close booking");
+    close.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>';
+    header.append(heading, close);
+
+    const body = document.createElement("div");
+    body.className = "choiceqr-booking-dialog__body";
+    const status = document.createElement("p");
+    status.className = "choiceqr-booking-dialog__status";
+    status.textContent = text(button, "choiceqrBookingLoading") ?? "Opening the booking form";
+    status.setAttribute("aria-live", "polite");
+    const frame = document.createElement("iframe");
+    frame.className = "choiceqr-booking-dialog__frame";
+    frame.title = title;
+    frame.referrerPolicy = "strict-origin-when-cross-origin";
+    frame.setAttribute("sandbox", "allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts");
+    const fallbackLink = document.createElement("a");
+    fallbackLink.className = "choiceqr-booking-dialog__fallback";
+    fallbackLink.href = fallback;
+    fallbackLink.textContent = text(button, "choiceqrBookingFallbackLabel") ?? fallback;
+    body.append(status, frame, fallbackLink);
+    dialog.append(header, body);
+
+    const onMessage = (event: MessageEvent) => {
+      if (!isChoiceQrEmbedInitializedMessage(event, frame.contentWindow)) return;
+      for (const message of choiceQrEmbedPrefillMessages({ date, time })) {
+        frame.contentWindow?.postMessage(message, CHOICE_QR_EMBED_ORIGIN);
+      }
+    };
+    const cleanup = () => {
+      window.removeEventListener("message", onMessage);
+      frame.removeAttribute("src");
+      document.documentElement.classList.remove("choiceqr-booking-scroll-lock");
+      activeDialog = undefined;
+      dialog.remove();
+      button.focus({ preventScroll: true });
+    };
+
+    close.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("cancel", (event) => { event.preventDefault(); dialog.close(); });
+    dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener("close", cleanup, { once: true });
+    frame.addEventListener("load", () => {
+      frame.contentWindow?.postMessage(choiceQrEmbedInitializeMessage(), CHOICE_QR_EMBED_ORIGIN);
+    }, { once: true });
+
+    document.body.append(dialog);
+    document.documentElement.classList.add("choiceqr-booking-scroll-lock");
+    activeDialog = dialog;
+    dialog.showModal();
+    close.focus({ preventScroll: true });
+    frame.src = endpoint.toString();
+  }
+
+  document.querySelectorAll<HTMLButtonElement>("[data-choiceqr-booking-open]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (typeof HTMLDialogElement === "undefined" || !("showModal" in HTMLDialogElement.prototype)) {
+        const fallback = text(button, "choiceqrBookingFallback");
+        if (fallback) openFallback(fallback);
+        return;
+      }
+      createDialog(button);
+    });
+  });
+</script>
+
+<style>
+  .choiceqr-booking-trigger, .choiceqr-booking-fallback { display:inline-flex; min-height:48px; padding:0 20px; align-items:center; justify-content:center; border:0; border-radius:8px; background:#c6ff00; color:#0b0b0b; font:inherit; font-weight:800; text-align:center; text-decoration:none; cursor:pointer; }
+  .choiceqr-booking-trigger:hover, .choiceqr-booking-fallback:hover { filter:brightness(1.06); }
+  .choiceqr-booking-trigger:focus-visible, .choiceqr-booking-fallback:focus-visible { outline:3px solid currentColor; outline-offset:3px; }
+  :global(html.choiceqr-booking-scroll-lock) { overflow:hidden; overscroll-behavior:none; }
+  :global(.choiceqr-booking-dialog) { width:min(760px, calc(100% - 2rem)); height:min(820px, calc(100dvh - 2rem)); max-height:calc(100dvh - 2rem); padding:0; overflow:hidden; border:1px solid #c6ff00; border-radius:12px; background:#0b0b0b; color:#fff5e1; box-shadow:0 24px 80px rgba(0,0,0,.48); }
+  :global(.choiceqr-booking-dialog::backdrop) { background:rgba(0,0,0,.78); }
+  :global(.choiceqr-booking-dialog__header) { display:flex; min-width:0; min-height:60px; padding:8px 12px 8px 20px; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid rgba(198,255,0,.55); }
+  :global(.choiceqr-booking-dialog__header h2) { min-width:0; margin:0; overflow-wrap:anywhere; font:800 clamp(1.05rem, 3vw, 1.35rem)/1.15 HindSiliguri, Inter, sans-serif; }
+  :global(.choiceqr-booking-dialog__close) { display:grid; width:44px; height:44px; flex:0 0 auto; padding:0; place-items:center; border:1px solid #c6ff00; border-radius:8px; background:#0b0b0b; color:#fff5e1; font-size:2rem; line-height:1; cursor:pointer; }
+  :global(.choiceqr-booking-dialog__close svg) { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2; }
+  :global(.choiceqr-booking-dialog__close:focus-visible), :global(.choiceqr-booking-dialog__fallback:focus-visible) { outline:3px solid #fff5e1; outline-offset:3px; }
+  :global(.choiceqr-booking-dialog__body) { display:flex; height:calc(100% - 60px); min-height:0; flex-direction:column; }
+  :global(.choiceqr-booking-dialog__status) { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  :global(.choiceqr-booking-dialog__frame) { display:block; width:100%; min-height:0; flex:1 1 auto; border:0; background:#fff; }
+  :global(.choiceqr-booking-dialog__fallback) { display:inline-flex; min-height:52px; padding:12px 20px; align-items:center; justify-content:center; background:#0b0b0b; color:#c6ff00; font-weight:800; text-align:center; text-decoration:underline; text-underline-offset:3px; }
+  @media (max-width:560px) { .choiceqr-booking-trigger, .choiceqr-booking-fallback { width:100%; } :global(.choiceqr-booking-dialog) { width:calc(100% - 1rem); height:calc(100dvh - 1rem); max-height:calc(100dvh - 1rem); } :global(.choiceqr-booking-dialog__header) { padding-inline-start:16px; } }
+</style>

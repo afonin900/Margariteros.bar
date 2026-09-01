@@ -111,11 +111,11 @@ export function mountConsentBanner(root: HTMLElement, locale: Locale, options: B
     });
   });
 
-  document.querySelectorAll<HTMLAnchorElement>("a[data-analytics-event]").forEach((link) => {
-    link.addEventListener("click", () => {
-      const name = link.dataset.analyticsEvent;
+  document.querySelectorAll<HTMLElement>("[data-analytics-event]").forEach((element) => {
+    element.addEventListener("click", () => {
+      const name = element.dataset.analyticsEvent;
       if (name === "view_menu" || name === "reservation_click" || name === "contact_click") {
-        tracker.track({ name, locale, destination: link.dataset.analyticsDestination as "menu" | "booking" | "phone" | "map" | "instagram" | "tiktok" | "facebook" | undefined, attribution });
+        tracker.track({ name, locale, destination: element.dataset.analyticsDestination as "menu" | "booking" | "phone" | "map" | "instagram" | "tiktok" | "facebook" | undefined, attribution });
       }
     });
   });
