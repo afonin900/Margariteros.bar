@@ -123,8 +123,11 @@ volume, environment, and domain binding were preserved.
   link is the same general ChoiceQR URL in all four languages.
 - The live ChoiceQR URL
   `https://qr.margariteros.bar/booking?date=1788541200` opened the Friday,
-  4 September, 19:00 choice in the vendor form. No contact data was entered,
-  no reservation was submitted, and no payment was attempted.
-- The payment/deposit rule is not proven by this check: the first form step
-  showed no price. Confirming the Friday paid-reservation setting still needs
-  an owner-approved controlled flow or ChoiceQR API evidence.
+  4 September, 19:00 choice in the vendor form, proving date/time prefill.
+- A separate read-only live check of
+  `https://qr.margariteros.bar/booking?date=1788544800` opened Friday,
+  4 September, 20:00 and displayed `20 PLN/person` before submission. This
+  confirms the paid-Friday rule for that time window; the absence of a price
+  at 19:00 is expected because the paid window starts at 20:00.
+- No contact data was entered, no reservation was submitted, and no payment
+  was attempted in either check.
