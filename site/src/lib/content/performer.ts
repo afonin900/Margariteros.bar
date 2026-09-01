@@ -13,8 +13,8 @@ export type PerformerPhoto = {
  */
 export type Performer = {
   name: string;
-  instagram: string;
   photo?: PerformerPhoto;
+  instagram?: string;
   bio?: string;
   facebook?: string;
   tiktok?: string;
@@ -85,17 +85,18 @@ function photo(value: unknown): PerformerPhoto | undefined {
   }
 }
 
-/** Returns null rather than a partial card: Instagram is the required public contact. */
+/** A public card requires only a confirmed name; all presentation fields are optional. */
 export function normalizePerformer(value: unknown): Performer | null {
   const input = record(value);
   const name = text(input?.name);
-  const instagram = socialUrl(input?.instagram_url ?? input?.instagram, "instagram");
-  if (!name || !instagram) return null;
-
-  const performer: Performer = { name, instagram };
   const resolvedPhoto = photo(input?.main_photo ?? input?.photo);
+  const instagram = socialUrl(input?.instagram_url ?? input?.instagram, "instagram");
+  if (!name) return null;
+
+  const performer: Performer = { name };
   const bio = text(input?.bio);
   if (resolvedPhoto) performer.photo = resolvedPhoto;
+  if (instagram) performer.instagram = instagram;
   if (bio) performer.bio = bio;
   for (const social of ["facebook", "tiktok", "youtube", "soundcloud", "website"] as const) {
     const url = socialUrl(input?.[`${social}_url`] ?? input?.[social], social);

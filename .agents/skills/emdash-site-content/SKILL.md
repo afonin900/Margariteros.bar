@@ -58,8 +58,8 @@ stable descriptive slug and one translation group per event. The public site
 reads the row for the requested locale, with the configured fallback only when
 the requested row is unavailable.
 
-Performer writes target `performers`. `name`, `main_photo`, `instagram_url`,
-and `active` are shared facts; `bio` is localized. Facebook, TikTok, YouTube,
+Performer writes target `performers`. `name` and `active` are shared facts;
+`main_photo` is an optional shared fact and `bio` is localized. Instagram, Facebook, TikTok, YouTube,
 SoundCloud, and website are optional HTTPS links. Editors normally choose one
 `Primary performer` on an event; the native `event_performers` relation is for
 an ordered multi-performer list. Draft or inactive profiles never render.

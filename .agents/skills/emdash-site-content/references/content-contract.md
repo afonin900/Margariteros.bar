@@ -42,9 +42,9 @@
 ## Performers
 
 - Collection: `performers`; one stable slug and translation group per person or act.
-- Shared facts: `name`, `main_photo`, Instagram and optional social URLs, `active`.
+- Shared facts: `name`, optional `main_photo`, optional social URLs, and `active`.
 - Localized fact: `bio`. Published profiles require PL/EN/RU/ES rows.
-- Instagram is required. Facebook, TikTok, YouTube, SoundCloud and website are optional.
+- Only the name is required. Photo, biography and every social link are optional and render only when present.
 - The public event page reads only published and active profiles.
 
 ## Safe writes

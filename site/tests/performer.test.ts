@@ -26,13 +26,17 @@ describe("performer public contract", () => {
     });
   });
 
-  it("does not render a partial or unsafe card", () => {
-    expect(normalizePerformer({ name: "No contact" })).toBeNull();
-    expect(normalizePerformer({ name: "Unsafe", instagram: "javascript:alert(1)" })).toBeNull();
-    expect(normalizePerformer({ name: "Wrong host", instagram: "https://example.com/profile" })).toBeNull();
-    expect(normalizePerformer({ name: "DJ Kike", instagram: "https://instagram.com/djkike", website: "javascript:alert(1)", photo: { src: "javascript:alert(1)" } })).toEqual({
+  it("renders a name-only card and silently omits unsafe optional fields", () => {
+    expect(normalizePerformer({ name: "DJ Kike" })).toEqual({ name: "DJ Kike" });
+    expect(normalizePerformer({ name: "Unsafe photo", main_photo: { src: "javascript:alert(1)" } })).toEqual({ name: "Unsafe photo" });
+    expect(normalizePerformer({ name: "DJ Kike", main_photo: { src: "/_emdash/api/media/file/dj-kike.webp" } })).toEqual({
       name: "DJ Kike",
-      instagram: "https://instagram.com/djkike",
+      photo: { src: "/_emdash/api/media/file/dj-kike.webp" },
     });
+    expect(normalizePerformer({ name: "DJ Kike", main_photo: { src: "/_emdash/api/media/file/dj-kike.webp" }, instagram: "https://example.com/profile", website: "javascript:alert(1)" })).toEqual({
+      name: "DJ Kike",
+      photo: { src: "/_emdash/api/media/file/dj-kike.webp" },
+    });
+    expect(normalizePerformer({ main_photo: { src: "/_emdash/api/media/file/dj-kike.webp" } })).toBeNull();
   });
 });

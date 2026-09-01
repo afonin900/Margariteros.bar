@@ -14,21 +14,19 @@ const links = (["instagram", "facebook", "tiktok", "youtube", "soundcloud", "web
   .flatMap((social) => performer[social] ? [{ social, href: performer[social]!, label: copy[social] }] : []);
 ---
 
-<aside class="performer-card" aria-labelledby={cardId}>
-  <div class="performer-photo" aria-hidden={performer.photo ? undefined : "true"}>
-    {performer.photo
-      ? <img src={performer.photo.src} width={performer.photo.width} height={performer.photo.height} alt={`${copy.photo}: ${performer.name}`} loading="lazy" />
-      : <span>{performer.name.slice(0, 1).toLocaleUpperCase()}</span>}
-  </div>
+<aside class:list={["performer-card", { "without-photo": !performer.photo }]} aria-labelledby={cardId}>
+  {performer.photo && <div class="performer-photo">
+    <img src={performer.photo.src} width={performer.photo.width} height={performer.photo.height} alt={`${copy.photo}: ${performer.name}`} loading="lazy" />
+  </div>}
   <div class="performer-copy">
     <h2 id={cardId}>{performer.name}</h2>
     {performer.bio && <p class="performer-bio">{performer.bio}</p>}
-    <nav class="performer-socials" aria-label={`${performer.name}: ${copy.socials}`}>
+    {links.length > 0 && <nav class="performer-socials" aria-label={`${performer.name}: ${copy.socials}`}>
       {links.map(({ social, href, label }) => <a href={href} target="_blank" rel="noopener noreferrer" data-performer-social={social}>{label}</a>)}
-    </nav>
+    </nav>}
   </div>
 </aside>
 
 <style>
-  .performer-card{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;margin-top:2rem;padding:12px;border:1px solid rgba(198,255,0,.75);border-radius:12px;background:#151515;color:#fff5e1}.performer-photo{display:grid;min-height:132px;place-items:center;overflow:hidden;border-radius:8px;background:#c6ff00;color:#0b0b0b;font-size:3.25rem;font-weight:900}.performer-photo img{display:block;width:100%;height:100%;object-fit:cover}.performer-copy{padding:6px 4px 6px 0}.performer-copy h2{margin:.25rem 0 .55rem;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1}.performer-bio{max-width:58ch;margin:0;line-height:1.45}.performer-socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}.performer-socials a{display:inline-flex;min-height:36px;padding:0 11px;align-items:center;border:1px solid #c6ff00;border-radius:7px;color:#fff5e1;font-size:.8rem;font-weight:800;text-decoration:none}.performer-socials a:hover{background:#c6ff00;color:#0b0b0b}.performer-socials a:focus-visible{outline:3px solid #fff5e1;outline-offset:3px}@media(max-width:520px){.performer-card{grid-template-columns:84px minmax(0,1fr);gap:14px}.performer-photo{min-height:84px;font-size:2.2rem}.performer-copy{padding:2px 0}.performer-socials{margin-left:-98px}.performer-socials a{min-height:40px}}
+  .performer-card{display:grid;grid-template-columns:132px minmax(0,1fr);gap:20px;margin-top:2rem;padding:12px;border:1px solid rgba(198,255,0,.75);border-radius:12px;background:#151515;color:#fff5e1}.performer-card.without-photo{grid-template-columns:minmax(0,1fr)}.performer-photo{min-height:132px;overflow:hidden;border-radius:8px}.performer-photo img{display:block;width:100%;height:100%;object-fit:cover}.performer-copy{padding:6px 4px 6px 0}.without-photo .performer-copy{padding:6px 8px}.performer-copy h2{margin:.25rem 0 .55rem;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1}.performer-bio{max-width:58ch;margin:0;line-height:1.45}.performer-socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}.performer-socials a{display:inline-flex;min-height:36px;padding:0 11px;align-items:center;border:1px solid #c6ff00;border-radius:7px;color:#fff5e1;font-size:.8rem;font-weight:800;text-decoration:none}.performer-socials a:hover{background:#c6ff00;color:#0b0b0b}.performer-socials a:focus-visible{outline:3px solid #fff5e1;outline-offset:3px}@media(max-width:520px){.performer-card{grid-template-columns:84px minmax(0,1fr);gap:14px}.performer-card.without-photo{grid-template-columns:minmax(0,1fr)}.performer-photo{min-height:84px}.performer-copy{padding:2px 0}.performer-socials{margin-left:-98px}.without-photo .performer-socials{margin-left:0}.performer-socials a{min-height:40px}}
 </style>

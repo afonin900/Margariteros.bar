@@ -37,9 +37,9 @@ const performerCollection = {
 
 const performerFields = [
   { slug: "name", label: "Performer name", type: "string", required: true, translatable: false },
-  { slug: "main_photo", label: "Main photo", type: "image", required: true, translatable: false },
+  { slug: "main_photo", label: "Main photo", type: "image", translatable: false },
   { slug: "bio", label: "Biography", type: "text", translatable: true },
-  { slug: "instagram_url", label: "Instagram URL", type: "url", required: true, translatable: false },
+  { slug: "instagram_url", label: "Instagram URL", type: "url", translatable: false },
   { slug: "facebook_url", label: "Facebook URL", type: "url", translatable: false },
   { slug: "tiktok_url", label: "TikTok URL", type: "url", translatable: false },
   { slug: "youtube_url", label: "YouTube URL", type: "url", translatable: false },
@@ -186,7 +186,7 @@ function assertField(field, definition) {
   if (!same(actual, expected)) throw new Error(`performers.${definition.slug} has an incompatible definition`);
 }
 
-async function preparePerformerSchema(registry) {
+async function preparePerformerSchema(registry, db) {
   const eventCollection = await registry.getCollection("events");
   if (!eventCollection) throw new Error("events collection is missing; performers cannot be linked");
 
@@ -214,8 +214,26 @@ async function preparePerformerSchema(registry) {
   for (const definition of performerFields) {
     const field = await registry.getField("performers", definition.slug);
     if (field) {
-      assertField(field, definition);
-      report.fields.push({ slug: definition.slug, state: "present" });
+      // Emdash deliberately refuses every required-flag change through its
+      // public registry because making a field stricter can invalidate rows.
+      // This one-way relaxation is safe: existing values stay intact and the
+      // backup made before --apply remains the rollback point.
+      const relaxRequiredField = ["main_photo", "instagram_url"].includes(definition.slug)
+        && field.required === true
+        && definition.required !== true;
+      if (relaxRequiredField) {
+        assertField(field, { ...definition, required: true });
+        if (!apply) {
+          report.fields.push({ slug: definition.slug, state: "would-relax-required" });
+        } else {
+          await db.updateTable("_emdash_fields").set({ required: 0 }).where("id", "=", field.id).execute();
+          assertField(await registry.getField("performers", definition.slug), definition);
+          report.fields.push({ slug: definition.slug, state: "relaxed-required" });
+        }
+      } else {
+        assertField(field, definition);
+        report.fields.push({ slug: definition.slug, state: "present" });
+      }
     } else if (!apply) {
       report.fields.push({ slug: definition.slug, state: "would-create" });
     } else {
@@ -344,7 +362,7 @@ const db = new Kysely({ dialect: createDialect({ url: databasePath }) });
 
 try {
   const registry = new SchemaRegistry(db);
-  const schema = await preparePerformerSchema(registry);
+  const schema = await preparePerformerSchema(registry, db);
   const relation = await prepareEventPerformersRelation(db);
 
   console.log(JSON.stringify({

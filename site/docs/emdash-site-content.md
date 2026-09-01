@@ -68,9 +68,10 @@ Do not add publication channels, scheduling, Buffer, or Postiz data to an event.
 
 ## Performers
 
-Open **Performers** to create a reusable DJ or artist profile. Fill the name,
-main photo and Instagram URL. Biography is translated in the native PL/EN/RU/ES
-rows; Facebook, TikTok, YouTube, SoundCloud and website are optional. Turn off
+Open **Performers** to create a reusable DJ or artist profile. Only the name
+is required. Main photo, biography, Instagram, Facebook, TikTok, YouTube,
+SoundCloud and website are optional. Biography is translated in the native
+PL/EN/RU/ES rows. Turn off
 `Active` to hide a profile from public event pages without deleting it.
 
 In **Events**, `Primary performer` is the normal editor control: select one

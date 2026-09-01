@@ -59,7 +59,7 @@ Margariteros — варшавский бар Lime Fiesta. Проект помо�
 | Web GTM и GA4 | Web GTM `GTM-T5F4VVGF`, поток GA4 `G-ZYB0MZ1CSR`; в Preview доказано одно `booking_request` на одну отправленную заявку, без персональных данных; публикация версии ожидает доступного публичного MCP-клиента | `docs/growth-os/HANDOFF-2026-08-21-choiceqr-booking-ads.md` |
 | Server GTM | Версия 3 опубликована; продление cookies ещё не доказано реальным `Set-Cookie` | тот же handoff |
 | Доступ к GTM и Google Ads | Jungle MCP жив и авторизован; для чтения использовать его раньше браузера | `docs/growth-os/JUNGLE-MCP-ACCESS.md` |
-| Собственный сайт | PL/EN/RU/ES SSR-поверхность, ChoiceQR-подобная оболочка, редактируемые Homepage и Events в Emdash, согласие и безопасные ссылки; схема staging ещё требует отдельного применения и проверки | `site/`, `site/docs/emdash-site-content.md`, Issue #17 |
+| Собственный сайт | PL/EN/RU/ES SSR-поверхность, ChoiceQR-подобная оболочка, редактируемые Homepage, Events и Performers в Emdash, согласие и безопасные ссылки; на staging заведены DJ Kike, DJ Dragón, DJ Joyland и LeroLera с подтверждёнными фото и доступными ссылками | `site/`, `site/docs/emdash-site-content.md`, Issue #17 |
 | R Club | RefRef, узкий Syrve-адаптер, web/Mini App и отдельный Dokploy staging собраны; `/api/ready` подтверждает только чтение активной программы | `docs/club/README.md`, `.autopilot/2026-08-28-margariteros-club-pilot--wip/` |
 | Buffer | Проектный скилл и несекретный конфиг подготовлены локально в `a1cc301`; CLI и доступность API проверены | `.agents/skills/buffer/SKILL.md`, `.buffer/config.json` |
 

@@ -58,8 +58,9 @@ describe("performers EmDash schema migration", () => {
       expect((await registry.getCollection("performers"))?.titleField).toBe("name");
       expect((await registry.getCollection("performers"))?.routable).toBe(false);
       expect((await registry.getField("performers", "name"))?.translatable).toBe(false);
+      expect((await registry.getField("performers", "main_photo"))?.required).toBe(false);
       expect((await registry.getField("performers", "bio"))?.translatable).toBe(true);
-      expect((await registry.getField("performers", "instagram_url"))?.required).toBe(true);
+      expect((await registry.getField("performers", "instagram_url"))?.required).toBe(false);
       expect((await registry.getField("performers", "active"))?.defaultValue).toBe(true);
       expect((await registry.getField("performers", "active"))?.indexed).toBe(true);
       expect((await registry.getField("events", "primary_performer"))?.type).toBe("reference");
@@ -97,5 +98,45 @@ describe("performers EmDash schema migration", () => {
     expect(report.mode).toBe("dry-run");
     expect(report.schema.collection).toBe("would-create");
     expect(report.relation.locales.map((item) => item.state)).toEqual(["would-create", "would-create", "would-create", "would-create"]);
+  });
+
+  it("safely relaxes historical required photo and Instagram fields without changing content", async () => {
+    const fixture = await createFixture();
+    await execFileAsync(process.execPath, [
+      "./scripts/migrate-performers.mjs", "--apply", `--backup=${fixture.backupPath}`,
+    ], {
+      cwd: siteRoot,
+      env: { ...process.env, EMDASH_DATABASE_PATH: fixture.databasePath },
+    });
+
+    const db = new Kysely({ dialect: createDialect({ url: fixture.databasePath }) });
+    try {
+      const registry = new SchemaRegistry(db);
+      for (const slug of ["main_photo", "instagram_url"]) {
+        const field = await registry.getField("performers", slug);
+        await db.updateTable("_emdash_fields").set({ required: 1 }).where("id", "=", field.id).execute();
+      }
+    } finally {
+      await db.destroy();
+    }
+
+    const { stdout } = await execFileAsync(process.execPath, [
+      "./scripts/migrate-performers.mjs", "--apply", `--backup=${fixture.rerunBackupPath}`,
+    ], {
+      cwd: siteRoot,
+      env: { ...process.env, EMDASH_DATABASE_PATH: fixture.databasePath },
+    });
+    expect(JSON.parse(stdout).schema.fields).toEqual(expect.arrayContaining([
+      { slug: "main_photo", state: "relaxed-required" },
+      { slug: "instagram_url", state: "relaxed-required" },
+    ]));
+
+    const readback = new Kysely({ dialect: createDialect({ url: fixture.databasePath }) });
+    try {
+      expect((await new SchemaRegistry(readback).getField("performers", "instagram_url"))?.required).toBe(false);
+      expect((await new SchemaRegistry(readback).getField("performers", "main_photo"))?.required).toBe(false);
+    } finally {
+      await readback.destroy();
+    }
   });
 });
