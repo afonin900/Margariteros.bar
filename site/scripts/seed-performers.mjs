@@ -72,13 +72,18 @@ async function upsertProfile(profile) {
   return { anchor, report };
 }
 
-async function linkEvents(profile, performerId) {
+async function linkEvents(profile, performerId, performerPhoto) {
   const report = [];
   for (const slug of profile.events) {
     const event = await content.findByIdOrSlug("events", slug, "pl");
     if (!event) { report.push({ slug, state: "missing" }); continue; }
     if (apply) {
-      const result = await handleContentUpdate(db, "events", event.id, { data: { primary_performer: performerId } });
+      const result = await handleContentUpdate(db, "events", event.id, {
+        data: {
+          primary_performer: performerId,
+          ...(performerPhoto ? { shared_hero_image: performerPhoto } : {}),
+        },
+      });
       if (!result.success) throw new Error(`${slug}: ${result.error.message}`);
     }
     report.push({ slug, state: apply ? "linked" : "would-link" });
@@ -92,7 +97,9 @@ try {
   const output = [];
   for (const profile of profiles) {
     const result = await upsertProfile(profile);
-    const events = result.anchor?.id ? await linkEvents(profile, result.anchor.id) : profile.events.map((slug) => ({ slug, state: "would-link" }));
+    const events = result.anchor?.id
+      ? await linkEvents(profile, result.anchor.id, result.anchor.data.main_photo)
+      : profile.events.map((slug) => ({ slug, state: "would-link" }));
     output.push({ slug: profile.slug, rows: result.report, events });
   }
   const readback = [];
