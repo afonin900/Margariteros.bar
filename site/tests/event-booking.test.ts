@@ -53,7 +53,7 @@ describe("ChoiceQR event booking links", () => {
     );
   });
 
-  it("rebuilds both ChoiceQR booking forms without vendor parameters", () => {
+  it("rebuilds ChoiceQR booking links without stale vendor parameters", () => {
     for (const bookingUrl of [
       "https://qr.margariteros.bar/booking?party=6&duration=120&eventId=old",
       "https://margariteroswwa.choiceqr.com/booking?date=1",
