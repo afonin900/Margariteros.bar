@@ -188,6 +188,19 @@ html,body{font-family:"Hind Siliguri",Inter,-apple-system,BlinkMacSystemFont,"Se
   .cq-map-cta svg{width:20px;height:20px}
 }
 @media(min-width:561px) and (max-width:760px){.ad-hero-copy{padding-inline:24px}.ad-hero-copy h1{font-size:clamp(3rem,9vw,4.2rem)}}
+
+/* ChoiceQR mobile header geometry: 120px shell with a 110px centered row. */
+@media(max-width:760px),(pointer:coarse){
+  .cq-mobile-header{min-height:120px;background:#000}
+  .cq-mobile-top{height:110px;bottom:auto;padding:0 24px;align-items:center}
+  .cq-mobile-logo{width:56px;height:56px}
+  .cq-mobile-actions{align-items:center;gap:8px}
+  .cq-mobile-language{min-width:77px;height:48px;padding:0 12px 0 16px}
+  .cq-mobile-icon{width:48px;height:48px;min-height:48px}
+  .cq-mobile-icon svg{width:24px;height:24px}
+  .ad-hero{min-height:420px;height:calc(100svh - 120px);max-height:none;margin-top:0}
+  .ad-hero-copy{padding:48px 16px 64px}
+}
 .consent-control:not(.is-open){display:block;padding:0;background:transparent;pointer-events:none}.consent-change{pointer-events:auto}.consent-control.is-open .consent-change{display:none}
 
 /* Source-measured ChoiceQR desktop language selector and media geometry. */
