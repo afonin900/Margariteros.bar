@@ -28,7 +28,7 @@ The retired `publications` and `creative_assets` collections and their content t
 
 ## Current content state
 
-There are no saved Emdash events and no saved `homepage/main` entry yet. The public staging site therefore uses reviewed built-in homepage copy and staging-only example event cards. This is intentional fallback behavior, not lost content.
+The published `homepage/main` entry and two clearly labelled test events were added to Emdash after a second SQLite backup. Their images remain in the persistent local upload volume. The public site must read these records through `src/live.config.ts`; the built-in hero and preview events remain only as failure-safe fallbacks.
 
 Owner entry point: `https://new.margariteros.bar/_emdash/admin`.
 

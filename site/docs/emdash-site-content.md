@@ -14,7 +14,7 @@ The Emdash interface and field labels are English. Public content is stored sepa
 
 Open **Homepage** and edit the published entry with slug `main`. It controls the hero image, hero text, both button labels, image description, and gallery heading. Every text has Polish, English, Russian, and Spanish fields. Add a language to **Ready languages** only after its fields are complete.
 
-The site uses reviewed built-in text when Emdash is unavailable, the entry is a draft, a language is not ready, or a field is empty. This keeps the homepage working during editing.
+The site uses reviewed built-in text when Emdash is unavailable, the entry is a draft, a language is not ready, or a field is empty. This keeps the homepage working during editing. The runtime connection is registered in `src/live.config.ts`; without this file the admin can save content but the public pages cannot read it.
 
 ### Events
 
@@ -34,4 +34,4 @@ Articles are the next independent module, not an event field. When an article pa
 
 `site/.emdash/seed.json` is the reviewed schema source. Applying it to staging changes live administration data and therefore requires a separate deployment/maintenance instruction, a database backup, and a readback. The retired `publications` and `creative_assets` collections must be removed from staging only during that controlled maintenance step.
 
-The controlled staging change was completed on 2026-09-01. See `deployment-2026-09-01-emdash-homepage-events.md` for evidence. The accepted future media-storage direction is recorded in `cloudflare-r2-media-plan.md`; R2 is not connected yet.
+The controlled staging change was completed on 2026-09-01. See `deployment-2026-09-01-emdash-homepage-events.md` for evidence. The initial published `homepage/main` entry and two explicitly labelled test events are created by the idempotent maintenance script `scripts/seed-staging-editorial-content.mjs`. The accepted future media-storage direction is recorded in `cloudflare-r2-media-plan.md`; R2 is deferred and not connected.
