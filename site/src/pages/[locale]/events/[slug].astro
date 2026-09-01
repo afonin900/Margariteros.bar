@@ -18,7 +18,7 @@ const result = await getPublicEvent(locale, slug);
 if (result.unavailable) return new Response("Service unavailable", { status: 503 });
 if (!result.event) return new Response("Not found", { status: 404 });
 const event = result.event;
-const performers = await getEventPerformers(Astro.locals.emdash?.db, event.slug, locale);
+const performers = await getEventPerformers(event.primary_performer, locale);
 const text = localizedEvent(event, locale);
 const startsAt = new Date(event.starts_at);
 const localeTag = { pl: "pl-PL", en: "en", ru: "ru", es: "es" }[locale];

@@ -24,6 +24,8 @@ export type Performer = {
 };
 
 type PerformerRow = {
+  status: string;
+  active: boolean;
   name: string | null;
   main_photo: unknown;
   bio: string | null;
@@ -105,52 +107,13 @@ export function normalizePerformer(value: unknown): Performer | null {
   return performer;
 }
 
-/** Reads published, active performers linked to one event translation group. */
-export async function getEventPerformers(db: unknown, eventSlug: string | undefined, locale: Locale): Promise<Performer[]> {
-  if (!db || !eventSlug) return [];
-  try {
-    const result = await sql<PerformerRow>`
-      WITH target_groups_raw AS (
-        SELECT reference.child_group AS translation_group, reference.sort_order AS sort_order
-        FROM _emdash_content_references AS reference
-        INNER JOIN _emdash_relations AS relation
-          ON relation.translation_group = reference.relation_group
-          AND relation.name = 'event_performers'
-          AND relation.locale = ${locale}
-        INNER JOIN ec_events AS linked_event
-          ON linked_event.translation_group = reference.parent_group
-          AND linked_event.slug = ${eventSlug}
-          AND linked_event.locale = ${locale}
-        UNION
-        SELECT primary_performer.translation_group, -1 AS sort_order
-        FROM ec_events AS primary_event
-        INNER JOIN ec_performers AS primary_performer
-          ON primary_performer.id = primary_event.primary_performer
-        WHERE primary_event.slug = ${eventSlug} AND primary_event.locale = ${locale}
-      ), target_groups AS (
-        SELECT translation_group, MIN(sort_order) AS sort_order
-        FROM target_groups_raw
-        GROUP BY translation_group
-      )
-      SELECT performer.name, performer.main_photo, performer.bio,
-        performer.instagram_url, performer.facebook_url, performer.tiktok_url,
-        performer.youtube_url, performer.soundcloud_url, performer.website_url
-      FROM target_groups
-      INNER JOIN ec_performers AS performer
-        ON performer.translation_group = target_groups.translation_group
-        AND performer.locale = ${locale}
-      WHERE performer.status = 'published'
-        AND performer.active = 1
-      ORDER BY target_groups.sort_order ASC
-    `.execute(db as Kysely<Record<string, never>>);
-    return result.rows.flatMap((row) => {
-      const performer = normalizePerformer(row);
-      return performer ? [performer] : [];
-    });
-  } catch {
-    // A pre-migration runtime has no performers table. Events must remain live.
-    return [];
-  }
+/** Reads the event's primary performer through Emdash's public content API. */
+export async function getEventPerformers(reference: string | undefined, locale: Locale): Promise<Performer[]> {
+  if (!reference) return [];
+  const { entry, error } = await getEmDashEntry<"performers", PerformerRow>("performers", reference, { locale });
+  if (error || !entry || entry.data.status !== "published" || entry.data.active !== true) return [];
+  const performer = normalizePerformer(entry.data);
+  return performer ? [performer] : [];
 }
-import { sql, type Kysely } from "kysely";
+import { getEmDashEntry } from "emdash";
 import type { Locale } from "../../content/page";

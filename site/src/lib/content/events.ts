@@ -21,6 +21,7 @@ type SharedEventFacts = {
  */
 export type PublicEvent = Omit<Event, keyof SharedEventFacts | "slug"> & SharedEventFacts & {
   slug: string;
+  primary_performer?: string;
   isPreview?: boolean;
 };
 export type MonthEvents = { key: string; startsAt: Date; events: PublicEvent[] };
