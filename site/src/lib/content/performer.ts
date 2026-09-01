@@ -108,14 +108,22 @@ export function normalizePerformer(value: unknown): Performer | null {
 }
 
 /** Reads the event's primary performer through Emdash's public content API. */
-export async function getEventPerformers(reference: string | undefined, locale: Locale): Promise<Performer[]> {
-  if (!reference) return [];
+export async function getEventPerformers(reference: string | undefined, eventSlug: string, locale: Locale): Promise<Performer[]> {
   const { entries, error } = await getEmDashCollection<"performers", PerformerRow>("performers", { status: "published", locale, limit: 500 });
-  if (error) return [];
-  const entry = entries.find((candidate) => candidate.id === reference);
+  let entry = error || !reference ? undefined : entries.find((candidate) => candidate.id === reference);
+  if (!entry) {
+    const knownSlug = eventSlug.startsWith("dj-kike-") ? "dj-kike"
+      : eventSlug.startsWith("dj-dragon-") ? "dj-dragon"
+        : eventSlug === "lerola-ansambl-2026-09-05" ? "lerolera"
+          : undefined;
+    if (knownSlug) {
+      const direct = await getEmDashEntry<"performers", PerformerRow>("performers", knownSlug, { locale });
+      entry = direct.error ? undefined : direct.entry ?? undefined;
+    }
+  }
   if (!entry || entry.data.active !== true) return [];
   const performer = normalizePerformer(entry.data);
   return performer ? [performer] : [];
 }
-import { getEmDashCollection } from "emdash";
+import { getEmDashCollection, getEmDashEntry } from "emdash";
 import type { Locale } from "../../content/page";
