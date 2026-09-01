@@ -81,8 +81,11 @@ function socialUrl(value: unknown, social: PerformerSocial): string | undefined 
 
 function photo(value: unknown): PerformerPhoto | undefined {
   const image = record(value);
-  const src = text(image?.src);
-  if (!src) return undefined;
+  const rawSrc = text(image?.src);
+  if (!rawSrc) return undefined;
+  const src = !rawSrc.startsWith("/") && /^[A-Za-z0-9._/-]+$/.test(rawSrc) && !rawSrc.includes("..")
+    ? `/_emdash/api/media/file/${rawSrc}`
+    : rawSrc;
 
   try {
     const url = new URL(src, "https://margariteros.bar");
