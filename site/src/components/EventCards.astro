@@ -3,32 +3,39 @@ import type { Locale } from "../content/page";
 import type { MonthEvents } from "../lib/content/events";
 import { buildEventBookingUrl, isPreviewEvent } from "../lib/choiceqr/event-booking";
 import { decorateOutbound, type Attribution } from "../lib/analytics/attribution";
+import { EVENTS_PAGE_SIZE } from "../lib/content/event-pagination";
 import EventBookingButton from "./EventBookingButton.astro";
 
 interface Props { locale: Locale; groups: MonthEvents[]; unavailable?: boolean; attribution: Attribution }
 const { locale, groups, unavailable = false, attribution } = Astro.props;
 const copy = {
-  pl: { heading: "Nadchodzące wydarzenia", cancelled: "Odwołane", postponed: "Przełożone", booking: "Zarezerwuj stolik", generalBooking: "Ogólna rezerwacja w lokalu", details: "Szczegóły", close: "Zamknij", preview: "TEST — nie jest prawdziwym wydarzeniem", previewNote: "To karta pokazowa. Rezerwacja dotyczy wizyty w lokalu, a nie tego testowego wydarzenia.", empty: "Nowy program pojawi się tutaj wkrótce.", unavailable: "Program jest chwilowo niedostępny. Spróbuj ponownie później." },
-  en: { heading: "Upcoming events", cancelled: "Cancelled", postponed: "Postponed", booking: "Book a table", generalBooking: "General venue booking", details: "Details", close: "Close", preview: "TEST — not a real event", previewNote: "This is a demonstration card. The booking is for a visit to the venue, not this test event.", empty: "The new programme will appear here soon.", unavailable: "The programme is temporarily unavailable. Please try again later." },
-  ru: { heading: "Ближайшие события", cancelled: "Отменено", postponed: "Перенесено", booking: "Забронировать столик", generalBooking: "Общая бронь в баре", details: "Подробнее", close: "Закрыть", preview: "ТЕСТ — не настоящее событие", previewNote: "Это демонстрационная карточка. Бронирование относится к посещению заведения, а не к тестовому событию.", empty: "Новая программа скоро появится здесь.", unavailable: "Программа временно недоступна. Попробуйте позже." },
-  es: { heading: "Próximos eventos", cancelled: "Cancelado", postponed: "Aplazado", booking: "Reservar una mesa", generalBooking: "Reserva general del local", details: "Detalles", close: "Cerrar", preview: "PRUEBA — no es un evento real", previewNote: "Esta es una tarjeta de muestra. La reserva es para visitar el local, no para este evento de prueba.", empty: "El nuevo programa aparecerá aquí pronto.", unavailable: "El programa no está disponible temporalmente. Inténtalo más tarde." },
+  pl: { heading: "Nadchodzące wydarzenia", cancelled: "Odwołane", postponed: "Przełożone", booking: "Zarezerwuj stolik", generalBooking: "Ogólna rezerwacja w lokalu", details: "Szczegóły", close: "Zamknij", showMore: "Pokaż więcej", shown: "Pokazano wydarzenia", preview: "TEST — nie jest prawdziwym wydarzeniem", previewNote: "To karta pokazowa. Rezerwacja dotyczy wizyty w lokalu, a nie tego testowego wydarzenia.", empty: "Nowy program pojawi się tutaj wkrótce.", unavailable: "Program jest chwilowo niedostępny. Spróbuj ponownie później." },
+  en: { heading: "Upcoming events", cancelled: "Cancelled", postponed: "Postponed", booking: "Book a table", generalBooking: "General venue booking", details: "Details", close: "Close", showMore: "Show more", shown: "Events shown", preview: "TEST — not a real event", previewNote: "This is a demonstration card. The booking is for a visit to the venue, not this test event.", empty: "The new programme will appear here soon.", unavailable: "The programme is temporarily unavailable. Please try again later." },
+  ru: { heading: "Ближайшие события", cancelled: "Отменено", postponed: "Перенесено", booking: "Забронировать столик", generalBooking: "Общая бронь в баре", details: "Подробнее", close: "Закрыть", showMore: "Показать ещё", shown: "Показано мероприятий", preview: "ТЕСТ — не настоящее событие", previewNote: "Это демонстрационная карточка. Бронирование относится к посещению заведения, а не к тестовому событию.", empty: "Новая программа скоро появится здесь.", unavailable: "Программа временно недоступна. Попробуйте позже." },
+  es: { heading: "Próximos eventos", cancelled: "Cancelado", postponed: "Aplazado", booking: "Reservar una mesa", generalBooking: "Reserva general del local", details: "Detalles", close: "Cerrar", showMore: "Mostrar más", shown: "Eventos mostrados", preview: "PRUEBA — no es un evento real", previewNote: "Esta es una tarjeta de muestra. La reserva es para visitar el local, no para este evento de prueba.", empty: "El nuevo programa aparecerá aquí pronto.", unavailable: "El programa no está disponible temporalmente. Inténtalo más tarde." },
 }[locale];
 const localeTag = { pl: "pl-PL", en: "en", ru: "ru", es: "es" }[locale];
 const local = (event: (typeof groups)[number]["events"][number]) => ({ title: event.title, summary: event.summary });
+const pageSize = EVENTS_PAGE_SIZE;
+const totalEvents = groups.reduce((total, group) => total + group.events.length, 0);
+let eventIndex = 0;
 ---
-<section class="events" aria-labelledby="events-title">
+<section class="events" aria-labelledby="events-title" data-events-root data-page-size={pageSize} data-total-events={totalEvents}>
   <div class="events-inner"><h2 id="events-title">{copy.heading}</h2>
   {groups.length === 0 && <p class="events-empty">{unavailable ? copy.unavailable : copy.empty}</p>}
-  {groups.map((group) => <section class="events-month" aria-label={new Intl.DateTimeFormat(localeTag, { month: "long", year: "numeric", timeZone: "Europe/Warsaw" }).format(group.startsAt)}>
+  <div id="events-list">{groups.map((group) => {
+    const monthStartsAt = eventIndex;
+    return <section class="events-month" data-events-month-deferred={monthStartsAt >= pageSize ? "true" : undefined} aria-label={new Intl.DateTimeFormat(localeTag, { month: "long", year: "numeric", timeZone: "Europe/Warsaw" }).format(group.startsAt)}>
     <h3>{new Intl.DateTimeFormat(localeTag, { month: "long", year: "numeric", timeZone: "Europe/Warsaw" }).format(group.startsAt)}</h3>
     <div class="events-list">{group.events.map((event) => {
+      const currentIndex = eventIndex++;
       const text = local(event);
       const startsAt = new Date(event.starts_at);
       const isCancelled = event.event_state === "cancelled";
       const preview = isPreviewEvent(event);
       const dialogId = `event-dialog-${event.id}`;
       const bookingUrl = decorateOutbound(buildEventBookingUrl({ slug: event.slug, startsAt: event.starts_at, bookingUrl: event.booking_url, isPreview: event.isPreview, legacyPath: event.legacy_path }), attribution);
-      return <><article class:list={["event-card", { cancelled: isCancelled }]} data-event-id={event.id} data-preview-event={preview ? "true" : undefined}>
+      return <><article class:list={["event-card", { cancelled: isCancelled }]} data-event-index={currentIndex} data-event-deferred={currentIndex >= pageSize ? "true" : undefined} data-event-id={event.id} data-preview-event={preview ? "true" : undefined}>
         <div class="event-card-row">
           {event.hero_image.src && <img src={event.hero_image.src} alt="" width={event.hero_image.width} height={event.hero_image.height} loading="lazy" />}
           <div class="event-date"><b>{new Intl.DateTimeFormat(localeTag, { day: "numeric", timeZone: "Europe/Warsaw" }).format(startsAt)}</b><span>{new Intl.DateTimeFormat(localeTag, { month: "short", timeZone: "Europe/Warsaw" }).format(startsAt)}</span><time datetime={event.starts_at}>{new Intl.DateTimeFormat(localeTag, { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Warsaw" }).format(startsAt)}</time></div>
@@ -36,10 +43,38 @@ const local = (event: (typeof groups)[number]["events"][number]) => ({ title: ev
         </div>
       </article><dialog class="event-dialog" id={dialogId} aria-labelledby={`${dialogId}-title`}><button class="event-dialog-close" type="button" data-event-dialog-close aria-label={copy.close}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg></button><div class="event-dialog-media">{event.hero_image.src && <img src={event.hero_image.src} alt="" width={event.hero_image.width} height={event.hero_image.height} loading="lazy" />}<div class="event-dialog-date"><b>{new Intl.DateTimeFormat(localeTag, { day: "numeric", month: "long", timeZone: "Europe/Warsaw" }).format(startsAt)}</b><time datetime={event.starts_at}>{new Intl.DateTimeFormat(localeTag, { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Warsaw" }).format(startsAt)}</time></div></div><div class="event-dialog-copy">{preview && <span class="event-state preview">{copy.preview}</span>}<h3 id={`${dialogId}-title`}>{text.title}</h3><p>{text.summary}</p>{preview && <p class="event-preview-note">{copy.previewNote}</p>}{!isCancelled && (preview ? <a class="event-booking" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{copy.generalBooking}</a> : <EventBookingButton {locale} title={`${copy.booking}: ${text.title}`} label={copy.booking} fallbackUrl={bookingUrl} startsAt={event.starts_at} bookingUrl={event.booking_url} slug={event.slug} isPreview={event.isPreview} legacyPath={event.legacy_path} {attribution} className="event-booking" />)}</div></dialog></>;
     })}</div>
-  </section>)}</div>
+  </section>})}</div>
+  {totalEvents > pageSize && <div class="events-more"><button type="button" data-events-show-more aria-controls="events-list" aria-expanded="false">{copy.showMore}</button><p class="events-more-status" data-events-status aria-live="polite" data-events-shown-label={copy.shown}></p></div>}</div>
 </section>
 
 <script>
+  import { nextEventWindow } from "../lib/content/event-pagination";
+
+  document.querySelectorAll<HTMLElement>("[data-events-root]").forEach((root) => {
+    const button = root.querySelector<HTMLButtonElement>("[data-events-show-more]");
+    if (!button) return;
+    const pageSize = Number(root.dataset.pageSize) || 4;
+    const total = Number(root.dataset.totalEvents) || 0;
+    const status = root.querySelector<HTMLElement>("[data-events-status]");
+    root.dataset.eventsEnhanced = "true";
+    let shown = Math.min(pageSize, total);
+    const update = () => {
+      root.querySelectorAll<HTMLElement>("[data-event-index]").forEach((card) => {
+        const visible = Number(card.dataset.eventIndex) < shown;
+        card.hidden = !visible;
+        if (visible) card.removeAttribute("data-event-deferred");
+      });
+      root.querySelectorAll<HTMLElement>(".events-month").forEach((month) => {
+        month.hidden = !month.querySelector<HTMLElement>("[data-event-index]:not([hidden])");
+      });
+      const complete = shown >= total;
+      button.hidden = complete;
+      button.setAttribute("aria-expanded", String(shown > pageSize));
+      if (status) status.textContent = `${status.dataset.eventsShownLabel}: ${shown} / ${total}`;
+    };
+    update();
+    button.addEventListener("click", () => { shown = nextEventWindow(total, shown, pageSize).end; update(); });
+  });
   document.querySelectorAll<HTMLButtonElement>("[data-event-dialog-open]").forEach((button) => button.addEventListener("click", () => (document.getElementById(button.dataset.eventDialogOpen || "") as HTMLDialogElement | null)?.showModal()));
   document.querySelectorAll<HTMLDialogElement>(".event-dialog").forEach((dialog) => {
     dialog.querySelector("[data-event-dialog-close]")?.addEventListener("click", () => dialog.close());
@@ -54,6 +89,7 @@ const local = (event: (typeof groups)[number]["events"][number]) => ({ title: ev
   .events h2 { font-size: clamp(2rem, 5vw, 4rem); line-height: .95; }
   .events h3 { margin: 1.75rem 0 .65rem; color: #596200; font-size: 1rem; }
   .events-list { display: grid; gap: 8px; }
+  .events-more { display:none;margin-top:24px;text-align:center }.events[data-events-enhanced="true"] .events-more{display:block}.events-more button{display:inline-flex;min-height:48px;padding:0 24px;align-items:center;justify-content:center;border:1px solid #0b0b0b;border-radius:8px;background:#0b0b0b;color:#fff5e1;font:inherit;font-weight:800;cursor:pointer}.events-more button:hover{background:#c6ff00;color:#0b0b0b}.events-more button:focus-visible{outline:3px solid #0b0b0b;outline-offset:3px}.events-more-status{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .events-empty { max-width: 46rem; margin: 1.5rem 0 0; font-size: 1.15rem; }
   .event-card { overflow: hidden; border: 1px solid rgba(11,11,11,.22); border-radius: 10px; background: #fff; color: #0b0b0b; }
   .event-card-row { display:grid;grid-template-columns:168px 104px minmax(0,1fr);min-height:136px }
