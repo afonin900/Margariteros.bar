@@ -1,7 +1,7 @@
 # Staging deployment — Homepage and Events
 
-Date: 2026-09-01  
-Scope: `https://new.margariteros.bar` only  
+Date: 2026-09-01
+Scope: `https://new.margariteros.bar` only
 Deployed commit: `dc2010be0dd0f14380441d9007439ddfa5cb8efd`
 
 ## Result

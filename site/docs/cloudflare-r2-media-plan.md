@@ -1,6 +1,6 @@
 # Cloudflare R2 media plan
 
-Status: accepted plan, not implemented  
+Status: accepted plan, not implemented
 Decision date: 2026-09-01
 
 ## Decision
