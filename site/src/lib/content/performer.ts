@@ -110,10 +110,12 @@ export function normalizePerformer(value: unknown): Performer | null {
 /** Reads the event's primary performer through Emdash's public content API. */
 export async function getEventPerformers(reference: string | undefined, locale: Locale): Promise<Performer[]> {
   if (!reference) return [];
-  const { entry, error } = await getEmDashEntry<"performers", PerformerRow>("performers", reference, { locale });
-  if (error || !entry || entry.data.status !== "published" || entry.data.active !== true) return [];
+  const { entries, error } = await getEmDashCollection<"performers", PerformerRow>("performers", { status: "published", locale, limit: 500 });
+  if (error) return [];
+  const entry = entries.find((candidate) => candidate.id === reference);
+  if (!entry || entry.data.active !== true) return [];
   const performer = normalizePerformer(entry.data);
   return performer ? [performer] : [];
 }
-import { getEmDashEntry } from "emdash";
+import { getEmDashCollection } from "emdash";
 import type { Locale } from "../../content/page";
