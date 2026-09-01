@@ -26,7 +26,7 @@ const local = (event: (typeof groups)[number]["events"][number]) => ({ title: ev
       const isCancelled = event.event_state === "cancelled";
       const preview = isPreviewEvent(event);
       const dialogId = `event-dialog-${event.id}`;
-      const bookingUrl = decorateOutbound(buildEventBookingUrl({ startsAt: event.starts_at, bookingUrl: event.booking_url, isPreview: event.isPreview, legacyPath: event.legacy_path }), attribution);
+      const bookingUrl = decorateOutbound(buildEventBookingUrl({ slug: event.slug, startsAt: event.starts_at, bookingUrl: event.booking_url, isPreview: event.isPreview, legacyPath: event.legacy_path }), attribution);
       return <><article class:list={["event-card", { cancelled: isCancelled }]} data-event-id={event.id} data-preview-event={preview ? "true" : undefined}>
         <div class="event-card-row">
           {event.hero_image.src && <img src={event.hero_image.src} alt="" width={event.hero_image.width} height={event.hero_image.height} loading="lazy" />}

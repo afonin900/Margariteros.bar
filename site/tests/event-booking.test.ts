@@ -99,12 +99,14 @@ describe("ChoiceQR event booking links", () => {
     })).toBe("https://tickets.example.test/events/music-night");
   });
 
-  it("uses the general booking page for preview and legacy staging rows", () => {
+  it("uses the general booking page for test fixtures and legacy staging rows", () => {
     expect(isPreviewEvent({ isPreview: true })).toBe(true);
+    expect(isPreviewEvent({ slug: "test-dance-evening-2026-09-12" })).toBe(true);
+    expect(isPreviewEvent({ slug: "music-night" })).toBe(false);
     expect(isPreviewEvent({ legacyPath: "staging-preview/test-dance-evening" })).toBe(true);
     expect(buildEventBookingUrl({
+      slug: "test-music-evening-2026-09-05",
       startsAt: "2026-09-05T19:00:00+02:00",
-      legacyPath: "staging-preview/test-music-evening",
     })).toBe("https://qr.margariteros.bar/booking");
   });
 });

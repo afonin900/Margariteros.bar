@@ -8,14 +8,19 @@ const choiceQrBookingHosts = new Set([
 ]);
 
 export interface EventBookingInput {
+  slug?: string | null;
   startsAt: string;
   bookingUrl?: string | null;
   isPreview?: boolean;
   legacyPath?: string | null;
 }
 
-export function isPreviewEvent(input: Pick<EventBookingInput, "isPreview" | "legacyPath">): boolean {
-  return input.isPreview === true || input.legacyPath?.startsWith("staging-preview/") === true;
+export function isPreviewEvent(input: Pick<EventBookingInput, "slug" | "isPreview" | "legacyPath">): boolean {
+  // Test fixtures share a slug across every locale, unlike the historical
+  // staging marker which may only exist on the source-language row.
+  return input.isPreview === true
+    || input.slug?.startsWith("test-") === true
+    || input.legacyPath?.startsWith("staging-preview/") === true;
 }
 
 function isChoiceQrBooking(value: string): boolean {

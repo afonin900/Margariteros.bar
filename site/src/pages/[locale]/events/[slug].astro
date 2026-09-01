@@ -26,7 +26,7 @@ const state = {
 }[locale];
 const preview = isPreviewEvent(event);
 const bookingUrl = event.event_state === "cancelled" ? undefined : decorateOutbound(
-  buildEventBookingUrl({ startsAt: event.starts_at, bookingUrl: event.booking_url, isPreview: event.isPreview, legacyPath: event.legacy_path }),
+  buildEventBookingUrl({ slug: event.slug, startsAt: event.starts_at, bookingUrl: event.booking_url, isPreview: event.isPreview, legacyPath: event.legacy_path }),
   captureAttribution(Astro.url),
 );
 ---
