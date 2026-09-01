@@ -30,6 +30,14 @@ The retired `publications` and `creative_assets` collections and their content t
 
 The published `homepage/main` entry and two clearly labelled test events were added to Emdash after a second SQLite backup. Their images remain in the persistent local upload volume. The public site must read these records through `src/live.config.ts`; the built-in hero and preview events remain only as failure-safe fallbacks.
 
+Editorial-content completion evidence:
+
+- Pre-write backup: `/var/backups/margariteros/emdash-before-editorial-seed-20260901T075923Z.db` (`1433600` bytes, mode `600`; SHA-256 prefix `87f03537`).
+- Idempotent import script: `scripts/seed-staging-editorial-content.mjs`.
+- Runtime bridge commit: `2e446e6`.
+- Dokploy deployment: `sFavOVoWoDzVRHxGFOof8`, completed at `2026-09-01T08:08:35.264Z`.
+- Readback: the CMS hero image is served on all four locales, both CMS event cards replace the code-only preview fixtures, and both event detail routes return HTTP `200` for PL/EN/RU/ES.
+
 Owner entry point: `https://new.margariteros.bar/_emdash/admin`.
 
 ## Boundary
