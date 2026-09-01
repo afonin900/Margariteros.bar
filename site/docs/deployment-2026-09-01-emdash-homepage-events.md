@@ -67,3 +67,64 @@ on 2026-09-01. The existing Dokploy Swarm service completed update version
 ## Boundary
 
 This deployment does not change `margariteros.bar`, DNS, ChoiceQR, GTM, Google Ads, Cloudflare R2, or the server-side GTM runtime.
+
+## Editable gallery and shared facts — final staging readback
+
+The same staging service was updated from the previous native-language image to
+commit `577e22fc1a513ed97c0e341005ba7f9841a28ec6`, then to the small
+locale-consistency fix `ae8789c72854130e5da5e6899fd97dde1a8c9dd1`. The final
+running image is `margariteros-site-staging-zgyi7c:deploy-ae8789c`; Swarm
+service update version `101082` is healthy and retains `start-first` plus
+automatic rollback on failure. The persistent `margariteros-emdash-data`
+volume, environment, and domain binding were preserved.
+
+### Backups
+
+- Before the first image update: SQLite
+  `/var/backups/margariteros/emdash-before-577e22f-20260901T113905Z.db` and
+  volume archive
+  `/var/backups/margariteros/emdash-volume-before-577e22f-20260901T113905Z.tar.gz`.
+- Before the gallery migration:
+  `/var/backups/margariteros/emdash-homepage-gallery-before-577e22f-20260901T114048Z.db`.
+- Before the shared-field bridge:
+  `/var/backups/margariteros/emdash-shared-fields-before-577e22f-20260901T114215Z.db`.
+  The bridge's temporary rollback rehearsal passed.
+- Before legacy cleanup:
+  `/var/backups/margariteros/emdash-shared-fields-cleanup-before-ae8789c-20260901T115055Z.db`.
+  The cleanup parity check passed before anything was removed.
+- Final post-cleanup copies: SQLite
+  `/var/backups/margariteros/emdash-after-cleanup-ae8789c-20260901T115249Z.db`
+  and volume archive
+  `/var/backups/margariteros/emdash-volume-after-cleanup-ae8789c-20260901T115249Z.tar.gz`.
+
+### Applied content model
+
+- Homepage `main` has one PL/EN/RU/ES translation group, a shared hero image,
+  one shared 20-image order, and 20 translated descriptions in every locale.
+- Each of the two existing Events groups has four locale rows. Start/end,
+  state, image, booking URL, fact source, and confirmation time are now
+  non-translatable shared fields; the Events date column uses
+  `shared_starts_at`.
+- The final cleanup removed the verified duplicate fallbacks:
+  `homepage.hero_image`, `homepage.gallery_items`, `events.starts_at`,
+  `events.ends_at`, `events.event_state`, `events.hero_image`,
+  `events.booking_url`, `events.fact_sources`, and
+  `events.facts_confirmed_at`.
+- The code treats test-fixture slugs `test-*` as previews in every locale, so
+  their general ChoiceQR fallback cannot diverge by language. A real event
+  without that test marker builds its date parameter from the shared start
+  time.
+
+### Final acceptance
+
+- `/healthz`, `/pl/`, `/en/`, `/ru/`, `/es/`, both event-detail routes in all
+  four locales, and `/_emdash/admin/login` returned HTTP `200`.
+- Every public homepage renders 20 gallery images. Every test-event booking
+  link is the same general ChoiceQR URL in all four languages.
+- The live ChoiceQR URL
+  `https://qr.margariteros.bar/booking?date=1788541200` opened the Friday,
+  4 September, 19:00 choice in the vendor form. No contact data was entered,
+  no reservation was submitted, and no payment was attempted.
+- The payment/deposit rule is not proven by this check: the first form step
+  showed no price. Confirming the Friday paid-reservation setting still needs
+  an owner-approved controlled flow or ChoiceQR API evidence.
