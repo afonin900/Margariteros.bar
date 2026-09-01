@@ -1,11 +1,12 @@
 ---
 name: emdash-site-content
-description: Safely read or change Margariteros homepage and event content in Emdash. Use when an agent needs to add, update, remove, translate, or inspect website homepage content or events. Never use for social publication planning.
+description: Safely read or change Margariteros homepage, event, and performer content in Emdash. Use when an agent needs to add, update, remove, translate, link, or inspect website homepage content, events, or DJ profiles. Never use for social publication planning.
 ---
 
 # Emdash website content
 
-Use Emdash only for the Margariteros website collections `homepage` and `events`.
+Use Emdash only for the Margariteros website collections `homepage`, `events`,
+and `performers`.
 The repository contract and the current editing instructions live in
 `site/docs/emdash-site-content.md`. Read that document before any write.
 
@@ -57,12 +58,20 @@ stable descriptive slug and one translation group per event. The public site
 reads the row for the requested locale, with the configured fallback only when
 the requested row is unavailable.
 
+Performer writes target `performers`. `name`, `main_photo`, `instagram_url`,
+and `active` are shared facts; `bio` is localized. Facebook, TikTok, YouTube,
+SoundCloud, and website are optional HTTPS links. Editors normally choose one
+`Primary performer` on an event; the native `event_performers` relation is for
+an ordered multi-performer list. Draft or inactive profiles never render.
+
 ## Scope boundaries
 
 - Use the Emdash Media Library and the existing local storage for site images;
   check that an image is attached and has a useful alt description.
 - Do not create social channels, publication schedules, Buffer/Postiz records,
   or social creative workflows in Emdash.
+- A performer social link is informational only. It never authorizes a post,
+  message, follow, or other action on that network.
 - Do not install a plugin as part of a content edit. The repository audit keeps
   SEO and the Media Library on Emdash core, treats WordPress import as an
   explicit migration, keeps the homepage gallery as its existing site module,

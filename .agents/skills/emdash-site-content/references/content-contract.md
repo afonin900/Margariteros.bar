@@ -36,6 +36,16 @@
   repeated across the group or performed by an agent with readback.
 - `event_state` is `scheduled`, `postponed`, or `cancelled`.
 - `booking_url` may point to the ChoiceQR booking page.
+- `primary_performer` is a shared reference to one reusable `performers` row.
+  The `event_performers` native relation may add an ordered multi-performer list.
+
+## Performers
+
+- Collection: `performers`; one stable slug and translation group per person or act.
+- Shared facts: `name`, `main_photo`, Instagram and optional social URLs, `active`.
+- Localized fact: `bio`. Published profiles require PL/EN/RU/ES rows.
+- Instagram is required. Facebook, TikTok, YouTube, SoundCloud and website are optional.
+- The public event page reads only published and active profiles.
 
 ## Safe writes
 

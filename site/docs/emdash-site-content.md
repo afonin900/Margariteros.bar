@@ -1,6 +1,7 @@
 # Editing the site in Emdash
 
-Emdash controls two website modules: **Homepage** and **Events**. The admin
+Emdash controls three website modules: **Homepage**, **Events**, and
+**Performers**. The admin
 labels are English, while each visitor-facing text is stored in its own
 language version. Social publishing is not part of this site content model.
 
@@ -64,6 +65,23 @@ visitor-facing copy. Publish a row only after its required text is ready. The
 homepage cards and the event detail route read these localized rows.
 
 Do not add publication channels, scheduling, Buffer, or Postiz data to an event.
+
+## Performers
+
+Open **Performers** to create a reusable DJ or artist profile. Fill the name,
+main photo and Instagram URL. Biography is translated in the native PL/EN/RU/ES
+rows; Facebook, TikTok, YouTube, SoundCloud and website are optional. Turn off
+`Active` to hide a profile from public event pages without deleting it.
+
+In **Events**, `Primary performer` is the normal editor control: select one
+profile and save the event. The native `event_performers` relation also supports
+an ordered list of additional performers through the protected API. Both paths
+are locale-safe, and the public event page ignores draft or inactive profiles.
+Social links are informational links only; they do not publish content.
+
+The schema is installed by `scripts/migrate-performers.mjs`. Its default mode is
+read-only. An apply is a one-time structure change and requires a database
+backup; ordinary profile and event edits do not.
 
 ## Standard capabilities audit (checked 2026-09-01)
 

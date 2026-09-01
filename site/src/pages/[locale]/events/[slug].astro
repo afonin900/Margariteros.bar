@@ -6,6 +6,8 @@ import { captureAttribution, decorateOutbound } from "../../../lib/analytics/att
 import { getPublicEvent, localizedEvent } from "../../../lib/content/events";
 import { buildEventBookingUrl, isPreviewEvent } from "../../../lib/choiceqr/event-booking";
 import EventBookingButton from "../../../components/EventBookingButton.astro";
+import PerformerCard from "../../../components/PerformerCard.astro";
+import { getEventPerformers } from "../../../lib/content/performer";
 
 const requestedLocale = Astro.params.locale;
 const slug = Astro.params.slug;
@@ -16,6 +18,7 @@ const result = await getPublicEvent(locale, slug);
 if (result.unavailable) return new Response("Service unavailable", { status: 503 });
 if (!result.event) return new Response("Not found", { status: 404 });
 const event = result.event;
+const performers = await getEventPerformers(Astro.locals.emdash?.db, event.slug, locale);
 const text = localizedEvent(event, locale);
 const startsAt = new Date(event.starts_at);
 const localeTag = { pl: "pl-PL", en: "en", ru: "ru", es: "es" }[locale];
@@ -41,6 +44,7 @@ const bookingUrl = event.event_state === "cancelled" ? undefined : decorateOutbo
       <time datetime={event.starts_at}>{new Intl.DateTimeFormat(localeTag, { dateStyle: "full", timeStyle: "short", timeZone: "Europe/Warsaw" }).format(startsAt)}</time>
       <h1>{text.title}</h1><p class="summary">{text.summary}</p>
       <PortableText value={text.details} />
+      {performers.map((performer, index) => <PerformerCard {locale} {performer} cardId={`performer-${index + 1}`} />)}
       {preview && <p class="preview-note">{state.previewNote}</p>}
       {event.event_state !== "cancelled" && bookingUrl && (preview ? <a class="booking" href={bookingUrl} data-analytics-event="reservation_click" data-analytics-destination="booking">{state.generalBooking}</a> : <EventBookingButton {locale} title={`${state.booking}: ${text.title}`} label={state.booking} fallbackUrl={bookingUrl} startsAt={event.starts_at} bookingUrl={event.booking_url} slug={event.slug} isPreview={event.isPreview} legacyPath={event.legacy_path} {attribution} className="booking" />)}
     </article>

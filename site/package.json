@@ -12,6 +12,7 @@
     "verify:docker": "node ./scripts/verify-docker.mjs",
     "migrate:homepage-gallery": "node ./scripts/migrate-homepage-gallery.mjs",
     "migrate:shared-fields": "node ./scripts/migrate-shared-fields.mjs",
+    "migrate:performers": "node ./scripts/migrate-performers.mjs",
     "sync:september-events": "node ./scripts/sync-september-events.mjs",
     "verify:release": "npm run check && npm run build && npm test && npm run verify:secrets"
   },
