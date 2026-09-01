@@ -5,16 +5,6 @@ import type { Locale } from "../../content/page";
 export type PublicEvent = Event & { slug: string; isPreview?: boolean };
 export type MonthEvents = { key: string; startsAt: Date; events: PublicEvent[] };
 
-function localeFields(locale: Locale) {
-  if (locale === "pl") return { title: "title", summary: "summary", details: "details" } as const;
-  return { title: `title_${locale}`, summary: `summary_${locale}`, details: `details_${locale}` } as const;
-}
-
-function hasLocale(event: Event, locale: Locale): boolean {
-  const fields = localeFields(locale);
-  return event.published_locales.includes(locale) && Boolean(event[fields.title] && event[fields.summary] && event[fields.details]);
-}
-
 function warsawDayEnd(value: Date): Date {
   const date = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Warsaw", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(value);
   const part = (type: Intl.DateTimeFormatPartTypes) => date.find((item) => item.type === type)?.value;
@@ -30,7 +20,7 @@ function publicEvent(event: Event): PublicEvent | null {
 }
 
 export async function listUpcomingEvents(locale: Locale, now: Date): Promise<MonthEvents[] | null> {
-  const { entries, error } = await getEmDashCollection<"events", Event>("events", { status: "published", orderBy: { starts_at: "asc" }, limit: 500 });
+  const { entries, error } = await getEmDashCollection<"events", Event>("events", { status: "published", locale, orderBy: { starts_at: "asc" }, limit: 500 });
   if (error) return null;
   const currentMonth = monthKey(now);
   const nextMonth = monthKey(new Date(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
@@ -38,7 +28,7 @@ export async function listUpcomingEvents(locale: Locale, now: Date): Promise<Mon
 
   for (const entry of entries) {
     const event = publicEvent(entry.data);
-    if (!event || !hasLocale(event, locale)) continue;
+    if (!event || !event.title || !event.summary || !event.details) continue;
     const startsAt = new Date(event.starts_at);
     const endsAt = event.ends_at ? new Date(event.ends_at) : warsawDayEnd(startsAt);
     if (Number.isNaN(startsAt.valueOf()) || Number.isNaN(endsAt.valueOf()) || endsAt < now) continue;
@@ -53,18 +43,17 @@ export async function listUpcomingEvents(locale: Locale, now: Date): Promise<Mon
 }
 
 export async function getPublicEvent(locale: Locale, slug: string): Promise<{ event: PublicEvent | null; unavailable: boolean }> {
-  const { entry, error } = await getEmDashEntry<"events", Event>("events", slug);
+  const { entry, error } = await getEmDashEntry<"events", Event>("events", slug, { locale });
   if (error) return { event: null, unavailable: true };
   const event = entry ? publicEvent(entry.data) : null;
-  return { event: event && event.status === "published" && hasLocale(event, locale) ? event : null, unavailable: false };
+  return { event: event && event.status === "published" && event.title && event.summary && event.details ? event : null, unavailable: false };
 }
 
-export function localizedEvent(event: PublicEvent, locale: Locale) {
-  const fields = localeFields(locale);
-  return { title: event[fields.title] as string, summary: event[fields.summary] as string, details: event[fields.details] as Event["details"] };
+export function localizedEvent(event: PublicEvent, _locale: Locale) {
+  return { title: event.title, summary: event.summary, details: event.details };
 }
 
-export function previewEventGroups(now: Date): MonthEvents[] {
+export function previewEventGroups(now: Date, locale: Locale = "pl"): MonthEvents[] {
   const makeDate = (days: number, hour: number) => {
     const value = new Date(now);
     value.setUTCDate(value.getUTCDate() + days);
@@ -87,19 +76,9 @@ export function previewEventGroups(now: Date): MonthEvents[] {
     status: "published",
     starts_at: startsAt.toISOString(),
     event_state: "scheduled" as const,
-    title: titles[index]!.pl,
-    summary: summaries[index]!.pl,
+    title: titles[index]![locale],
+    summary: summaries[index]![locale],
     details: [],
-    title_en: titles[index]!.en,
-    summary_en: summaries[index]!.en,
-    details_en: [],
-    title_ru: titles[index]!.ru,
-    summary_ru: summaries[index]!.ru,
-    details_ru: [],
-    title_es: titles[index]!.es,
-    summary_es: summaries[index]!.es,
-    details_es: [],
-    published_locales: ["pl", "en", "ru", "es"] as Locale[],
     hero_image: { id: `preview-image-${index + 1}`, src: `/media/gallery/${photos[index]}-400.webp`, width: 400, height: 400 },
     fact_sources: "Preview fixture — not a real event",
     facts_confirmed_at: now.toISOString(),

@@ -14,6 +14,8 @@ const apply = process.argv.includes("--apply");
 const databasePath = process.env.EMDASH_DATABASE_PATH ?? "/app/data/emdash.db";
 const uploadsPath = process.env.EMDASH_UPLOADS_PATH ?? "/app/data/uploads";
 const publicPath = process.env.EMDASH_PUBLIC_PATH ?? "/app/dist/client";
+const locales = ["pl", "en", "ru", "es"];
+const defaultLocale = "pl";
 
 const db = new Kysely({ dialect: createDialect({ url: databasePath }) });
 
@@ -67,128 +69,255 @@ function imageValue(item) {
   };
 }
 
-async function createPublished(collection, slug, data) {
+async function publish(collection, id) {
+  const result = await handleContentPublish(db, collection, id);
+  if (!result.success) throw new Error(`${collection}/${id}: ${result.error.code}: ${result.error.message}`);
+}
+
+/**
+ * Create one published locale row, linked to the default-language row when
+ * `translationOf` is supplied. Existing rows are left untouched so rerunning
+ * this fixture cannot overwrite edits made in the Emdash admin.
+ */
+async function createPublished(collection, slug, locale, data, translationOf) {
   const repository = new ContentRepository(db);
-  const existing = await repository.findByIdOrSlug(collection, slug, "en");
-  if (existing) return { slug, state: "already-present", id: existing.id };
-  if (!apply) return { slug, state: "missing" };
+  const existing = await repository.findByIdOrSlug(collection, slug, locale);
+  if (existing) {
+    if (apply && existing.status !== "published") {
+      await publish(collection, existing.id);
+      const readback = await handleContentGet(db, collection, existing.id, locale);
+      if (!readback.success || readback.data.item.status !== "published") {
+        throw new Error(`${collection}/${slug}/${locale}: existing row publish readback failed`);
+      }
+      return {
+        slug,
+        locale,
+        state: "published-existing",
+        id: existing.id,
+        translationGroup: existing.translationGroup,
+      };
+    }
+    return {
+      slug,
+      locale,
+      state: "already-present",
+      id: existing.id,
+      status: existing.status,
+      translationGroup: existing.translationGroup,
+    };
+  }
+
+  if (!apply) {
+    return {
+      slug,
+      locale,
+      state: "would-create",
+      translationOf: translationOf ?? null,
+    };
+  }
 
   const created = await handleContentCreate(db, collection, {
     slug,
-    locale: "en",
+    locale,
+    translationOf,
     status: "draft",
     data,
   });
-  if (!created.success) throw new Error(`${collection}/${slug}: ${created.error.code}: ${created.error.message}`);
-  const published = await handleContentPublish(db, collection, created.data.item.id);
-  if (!published.success) throw new Error(`${collection}/${slug}: ${published.error.code}: ${published.error.message}`);
-  const readback = await handleContentGet(db, collection, slug, "en");
-  if (!readback.success || readback.data.item.status !== "published") {
-    throw new Error(`${collection}/${slug}: published readback failed`);
+  if (!created.success) throw new Error(`${collection}/${slug}/${locale}: ${created.error.code}: ${created.error.message}`);
+
+  await publish(collection, created.data.item.id);
+  const readback = await handleContentGet(db, collection, created.data.item.id, locale);
+  if (
+    !readback.success
+    || readback.data.item.status !== "published"
+    || readback.data.item.locale !== locale
+  ) {
+    throw new Error(`${collection}/${slug}/${locale}: published readback failed`);
   }
-  return { slug, state: "published", id: created.data.item.id };
+
+  return {
+    slug,
+    locale,
+    state: "published",
+    id: created.data.item.id,
+    translationOf: translationOf ?? null,
+    translationGroup: readback.data.item.translationGroup,
+  };
+}
+
+async function seedTranslatedEntry(collection, slug, dataByLocale) {
+  const repository = new ContentRepository(db);
+  const existingByLocale = new Map();
+  for (const locale of locales) {
+    const existing = await repository.findByIdOrSlug(collection, slug, locale);
+    if (existing) existingByLocale.set(locale, existing);
+  }
+
+  let anchorId = existingByLocale.get(defaultLocale)?.id;
+  const plannedAnchor = `planned:${collection}/${slug}/${defaultLocale}`;
+  const report = [];
+
+  for (const locale of locales) {
+    const translationOf = locale === defaultLocale ? undefined : anchorId ?? plannedAnchor;
+    const result = await createPublished(collection, slug, locale, dataByLocale[locale], translationOf);
+    report.push(result);
+
+    // The anchor is created first when the database is being populated. This
+    // gives all subsequent rows a real Emdash id for `translationOf`.
+    if (locale === defaultLocale && result.id) anchorId = result.id;
+  }
+
+  return report;
+}
+
+const homepageCopy = {
+  pl: {
+    hero_eyebrow: "CHMIELNA 7/9 · WARSZAWA",
+    hero_title: "WYDARZENIA W CENTRUM WARSZAWY",
+    hero_text: "Muzyka, taniec i meksykańska kuchnia. Zobacz program i wybierz swój wieczór.",
+    hero_image_alt: "Goście podczas wydarzenia w Margariteros",
+    primary_cta_label: "ZAREZERWUJ STOLIK",
+    secondary_cta_label: "ZOBACZ MENU",
+    gallery_heading: "ZOBACZ, JAK JEST U NAS",
+  },
+  en: {
+    hero_eyebrow: "CHMIELNA 7/9 · WARSAW",
+    hero_title: "EVENTS IN CENTRAL WARSAW",
+    hero_text: "Music, dance and Mexican food. Explore the programme and choose your evening.",
+    hero_image_alt: "Guests at an event at Margariteros",
+    primary_cta_label: "BOOK A TABLE",
+    secondary_cta_label: "VIEW MENU",
+    gallery_heading: "SEE THE ATMOSPHERE",
+  },
+  ru: {
+    hero_eyebrow: "CHMIELNA 7/9 · WARSZAWA",
+    hero_title: "СОБЫТИЯ В ЦЕНТРЕ ВАРШАВЫ",
+    hero_text: "Музыка, танцы и мексиканская кухня. Посмотрите программу и выберите свой вечер.",
+    hero_image_alt: "Гости на мероприятии в Margariteros",
+    primary_cta_label: "ЗАБРОНИРОВАТЬ",
+    secondary_cta_label: "ПОСМОТРЕТЬ МЕНЮ",
+    gallery_heading: "ПОСМОТРЕТЬ АТМОСФЕРУ",
+  },
+  es: {
+    hero_eyebrow: "CHMIELNA 7/9 · VARSOVIA",
+    hero_title: "EVENTOS EN EL CENTRO DE VARSOVIA",
+    hero_text: "Música, baile y cocina mexicana. Descubre el programa y elige tu noche.",
+    hero_image_alt: "Invitados en un evento de Margariteros",
+    primary_cta_label: "RESERVAR MESA",
+    secondary_cta_label: "VER MENÚ",
+    gallery_heading: "DESCUBRE EL AMBIENTE",
+  },
+};
+
+function homepageData(locale, heroMedia) {
+  return {
+    name: "Main homepage",
+    hero_image: imageValue(heroMedia),
+    ...homepageCopy[locale],
+  };
+}
+
+const eventDefinitions = [
+  {
+    slug: "test-music-evening-2026-09-05",
+    starts_at: "2026-09-05T19:00:00+02:00",
+    imageKey: "music",
+    localized: {
+      pl: {
+        title: "TEST — wieczór z muzyką",
+        summary: "Przykładowa karta. To nie jest prawdziwe wydarzenie.",
+        details: "To wydarzenie testowe służy wyłącznie do sprawdzenia wyglądu i obsługi strony.",
+      },
+      en: {
+        title: "TEST — music evening",
+        summary: "Example card. This is not a real event.",
+        details: "This test event exists only to demonstrate the website layout and editing flow.",
+      },
+      ru: {
+        title: "ТЕСТ — музыкальный вечер",
+        summary: "Пример карточки. Это не настоящее событие.",
+        details: "Это тестовое мероприятие существует только для проверки вида и редактирования сайта.",
+      },
+      es: {
+        title: "PRUEBA — noche de música",
+        summary: "Tarjeta de ejemplo. No es un evento real.",
+        details: "Este evento de prueba solo sirve para comprobar el diseño y la edición del sitio.",
+      },
+    },
+  },
+  {
+    slug: "test-dance-evening-2026-09-12",
+    starts_at: "2026-09-12T20:00:00+02:00",
+    imageKey: "dance",
+    localized: {
+      pl: {
+        title: "TEST — wieczór taneczny",
+        summary: "Przykładowa karta do oceny wyglądu. Bez rezerwacji.",
+        details: "To wydarzenie testowe służy wyłącznie do sprawdzenia wyglądu i obsługi strony.",
+      },
+      en: {
+        title: "TEST — dance evening",
+        summary: "Example card for design review. Booking is disabled.",
+        details: "This test event exists only to demonstrate the website layout and editing flow.",
+      },
+      ru: {
+        title: "ТЕСТ — танцевальный вечер",
+        summary: "Пример карточки для оценки дизайна. Бронь отключена.",
+        details: "Это тестовое мероприятие существует только для проверки вида и редактирования сайта.",
+      },
+      es: {
+        title: "PRUEBA — noche de baile",
+        summary: "Tarjeta de ejemplo para evaluar el diseño. Sin reserva.",
+        details: "Este evento de prueba solo sirve para comprobar el diseño y la edición del sitio.",
+      },
+    },
+  },
+];
+
+function eventData(event, locale, image) {
+  const copy = event.localized[locale];
+  const baseLegacyPath = `staging-preview/${event.slug}`;
+  return {
+    starts_at: event.starts_at,
+    event_state: "scheduled",
+    title: copy.title,
+    summary: copy.summary,
+    details: textBlock(copy.details),
+    hero_image: imageValue(image),
+    booking_url: "",
+    fact_sources: "Demonstration fixture requested by the owner; not a real event",
+    facts_confirmed_at: "2026-09-01T09:00:00+02:00",
+    // legacy_path is unique in the current schema, so each locale gets a
+    // stable suffix while all rows retain the same human-readable base path.
+    legacy_path: locale === defaultLocale ? baseLegacyPath : `${baseLegacyPath}#${locale}`,
+  };
 }
 
 try {
   const heroMedia = await media("homepage-hero-dance-floor.webp", "dance-floor-400.webp", "Guests at Margariteros");
   const musicMedia = await media("test-event-music.webp", "dance-floor-400.webp", "Demonstration event card");
   const danceMedia = await media("test-event-dance.webp", "live-music-400.webp", "Demonstration event card");
+  const eventMedia = { music: musicMedia, dance: danceMedia };
 
-  const homepage = await createPublished("homepage", "main", {
-    name: "Main homepage",
-    hero_image: imageValue(heroMedia),
-    published_locales: ["pl", "en", "ru", "es"],
-    hero_eyebrow_pl: "CHMIELNA 7/9 · WARSZAWA",
-    hero_title_pl: "WYDARZENIA W CENTRUM WARSZAWY",
-    hero_text_pl: "Muzyka, taniec i meksykańska kuchnia. Zobacz program i wybierz swój wieczór.",
-    hero_image_alt_pl: "Goście podczas wydarzenia w Margariteros",
-    primary_cta_label_pl: "ZAREZERWUJ STOLIK",
-    secondary_cta_label_pl: "ZOBACZ MENU",
-    gallery_heading_pl: "ZOBACZ, JAK JEST U NAS",
-    hero_eyebrow_en: "CHMIELNA 7/9 · WARSAW",
-    hero_title_en: "EVENTS IN CENTRAL WARSAW",
-    hero_text_en: "Music, dance and Mexican food. Explore the programme and choose your evening.",
-    hero_image_alt_en: "Guests at an event at Margariteros",
-    primary_cta_label_en: "BOOK A TABLE",
-    secondary_cta_label_en: "VIEW MENU",
-    gallery_heading_en: "SEE THE ATMOSPHERE",
-    hero_eyebrow_ru: "CHMIELNA 7/9 · WARSZAWA",
-    hero_title_ru: "СОБЫТИЯ В ЦЕНТРЕ ВАРШАВЫ",
-    hero_text_ru: "Музыка, танцы и мексиканская кухня. Посмотрите программу и выберите свой вечер.",
-    hero_image_alt_ru: "Гости на мероприятии в Margariteros",
-    primary_cta_label_ru: "ЗАБРОНИРОВАТЬ",
-    secondary_cta_label_ru: "ПОСМОТРЕТЬ МЕНЮ",
-    gallery_heading_ru: "ПОСМОТРЕТЬ АТМОСФЕРУ",
-    hero_eyebrow_es: "CHMIELNA 7/9 · VARSOVIA",
-    hero_title_es: "EVENTOS EN EL CENTRO DE VARSOVIA",
-    hero_text_es: "Música, baile y cocina mexicana. Descubre el programa y elige tu noche.",
-    hero_image_alt_es: "Invitados en un evento de Margariteros",
-    primary_cta_label_es: "RESERVAR MESA",
-    secondary_cta_label_es: "VER MENÚ",
-    gallery_heading_es: "DESCUBRE EL AMBIENTE",
-  });
-
-  const eventDefinitions = [
-    {
-      slug: "test-music-evening-2026-09-05",
-      starts_at: "2026-09-05T19:00:00+02:00",
-      image: musicMedia,
-      title: "TEST — wieczór z muzyką",
-      summary: "Przykładowa karta. To nie jest prawdziwe wydarzenie.",
-      details: "To wydarzenie testowe służy wyłącznie do sprawdzenia wyglądu i obsługi strony.",
-      title_en: "TEST — music evening",
-      summary_en: "Example card. This is not a real event.",
-      details_en: "This test event exists only to demonstrate the website layout and editing flow.",
-      title_ru: "ТЕСТ — музыкальный вечер",
-      summary_ru: "Пример карточки. Это не настоящее событие.",
-      details_ru: "Это тестовое мероприятие существует только для проверки вида и редактирования сайта.",
-      title_es: "PRUEBA — noche de música",
-      summary_es: "Tarjeta de ejemplo. No es un evento real.",
-      details_es: "Este evento de prueba solo sirve para comprobar el diseño y la edición del sitio.",
-    },
-    {
-      slug: "test-dance-evening-2026-09-12",
-      starts_at: "2026-09-12T20:00:00+02:00",
-      image: danceMedia,
-      title: "TEST — wieczór taneczny",
-      summary: "Przykładowa karta do oceny wyglądu. Bez rezerwacji.",
-      details: "To wydarzenie testowe służy wyłącznie do sprawdzenia wyglądu i obsługi strony.",
-      title_en: "TEST — dance evening",
-      summary_en: "Example card for design review. Booking is disabled.",
-      details_en: "This test event exists only to demonstrate the website layout and editing flow.",
-      title_ru: "ТЕСТ — танцевальный вечер",
-      summary_ru: "Пример карточки для оценки дизайна. Бронь отключена.",
-      details_ru: "Это тестовое мероприятие существует только для проверки вида и редактирования сайта.",
-      title_es: "PRUEBA — noche de baile",
-      summary_es: "Tarjeta de ejemplo para evaluar el diseño. Sin reserva.",
-      details_es: "Este evento de prueba solo sirve para comprobar el diseño y la edición del sitio.",
-    },
-  ];
+  const homepage = await seedTranslatedEntry(
+    "homepage",
+    "main",
+    Object.fromEntries(locales.map((locale) => [locale, homepageData(locale, heroMedia)])),
+  );
 
   const events = [];
   for (const event of eventDefinitions) {
-    events.push(await createPublished("events", event.slug, {
-      starts_at: event.starts_at,
-      event_state: "scheduled",
-      title: event.title,
-      summary: event.summary,
-      details: textBlock(event.details),
-      title_en: event.title_en,
-      summary_en: event.summary_en,
-      details_en: textBlock(event.details_en),
-      title_ru: event.title_ru,
-      summary_ru: event.summary_ru,
-      details_ru: textBlock(event.details_ru),
-      title_es: event.title_es,
-      summary_es: event.summary_es,
-      details_es: textBlock(event.details_es),
-      published_locales: ["pl", "en", "ru", "es"],
-      hero_image: imageValue(event.image),
-      booking_url: "",
-      fact_sources: "Demonstration fixture requested by the owner; not a real event",
-      facts_confirmed_at: "2026-09-01T09:00:00+02:00",
-      legacy_path: `staging-preview/${event.slug}`,
-    }));
+    events.push({
+      slug: event.slug,
+      locales: await seedTranslatedEntry(
+        "events",
+        event.slug,
+        Object.fromEntries(locales.map((locale) => [
+          locale,
+          eventData(event, locale, eventMedia[event.imageKey]),
+        ])),
+      ),
+    });
   }
 
   console.log(JSON.stringify({ mode: apply ? "apply" : "dry-run", homepage, events }, null, 2));

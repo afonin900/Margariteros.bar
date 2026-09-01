@@ -75,7 +75,21 @@
 		],
 		"fingerprint": "9a0f3b2fa67e926b166c89b137deab2191f518e59751f1577193badda1800701"
 	},
-	"i18n": null,
+	"i18n": {
+		"defaultLocale": "pl",
+		"locales": [
+			"pl",
+			"en",
+			"ru",
+			"es"
+		],
+		"fallback": {
+			"en": "pl",
+			"ru": "pl",
+			"es": "pl"
+		},
+		"prefixDefaultLocale": true
+	},
 	"database": {
 		"type": "sqlite",
 		"executorEntrypoint": "emdash/db/sqlite-migrations",

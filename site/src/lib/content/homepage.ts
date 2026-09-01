@@ -20,23 +20,20 @@ const fallback: Record<Locale, HomepageHero> = {
   es: { image: { src: "/media/gallery/dance-floor-400.webp", width: 400, height: 400 }, eyebrow: "CHMIELNA 7/9 · VARSOVIA", title: "EVENTOS EN EL CENTRO DE VARSOVIA", text: "Música, baile y cocina mexicana. Descubre el programa y elige tu noche.", imageAlt: "Invitados en un evento de Margariteros", primaryCta: "RESERVAR MESA", secondaryCta: "VER MENÚ", galleryHeading: "DESCUBRE EL AMBIENTE" },
 };
 
-const textKeys = ["hero_eyebrow", "hero_title", "hero_text", "hero_image_alt", "primary_cta_label", "secondary_cta_label", "gallery_heading"] as const;
-
 export async function getHomepageHero(locale: Locale): Promise<HomepageHero> {
   const defaults = fallback[locale];
-  const { entry, error } = await getEmDashEntry<"homepage", Homepage>("homepage", "main");
-  if (error || !entry || entry.data.status !== "published" || !entry.data.published_locales.includes(locale)) return defaults;
+  const { entry, error } = await getEmDashEntry<"homepage", Homepage>("homepage", "main", { locale });
+  if (error || !entry || entry.data.status !== "published") return defaults;
   const data = entry.data;
-  const values = Object.fromEntries(textKeys.map((key) => [key, data[`${key}_${locale}` as keyof Homepage]])) as Record<(typeof textKeys)[number], unknown>;
   const image = data.hero_image;
   return {
     image: image.src ? { src: image.src, width: image.width ?? 1200, height: image.height ?? 800 } : defaults.image,
-    eyebrow: typeof values.hero_eyebrow === "string" && values.hero_eyebrow.trim() ? values.hero_eyebrow : defaults.eyebrow,
-    title: typeof values.hero_title === "string" && values.hero_title.trim() ? values.hero_title : defaults.title,
-    text: typeof values.hero_text === "string" && values.hero_text.trim() ? values.hero_text : defaults.text,
-    imageAlt: typeof values.hero_image_alt === "string" && values.hero_image_alt.trim() ? values.hero_image_alt : defaults.imageAlt,
-    primaryCta: typeof values.primary_cta_label === "string" && values.primary_cta_label.trim() ? values.primary_cta_label : defaults.primaryCta,
-    secondaryCta: typeof values.secondary_cta_label === "string" && values.secondary_cta_label.trim() ? values.secondary_cta_label : defaults.secondaryCta,
-    galleryHeading: typeof values.gallery_heading === "string" && values.gallery_heading.trim() ? values.gallery_heading : defaults.galleryHeading,
+    eyebrow: data.hero_eyebrow?.trim() || defaults.eyebrow,
+    title: data.hero_title?.trim() || defaults.title,
+    text: data.hero_text?.trim() || defaults.text,
+    imageAlt: data.hero_image_alt?.trim() || defaults.imageAlt,
+    primaryCta: data.primary_cta_label?.trim() || defaults.primaryCta,
+    secondaryCta: data.secondary_cta_label?.trim() || defaults.secondaryCta,
+    galleryHeading: data.gallery_heading?.trim() || defaults.galleryHeading,
   };
 }

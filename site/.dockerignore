@@ -9,7 +9,12 @@ dist
 coverage
 docs
 tests
-scripts
+# Keep only the two operational scripts copied by the runtime image. The
+# remaining local helpers are intentionally outside the Docker build context.
+scripts/*
+!scripts/
+!scripts/migrate-native-i18n.mjs
+!scripts/seed-staging-editorial-content.mjs
 *.jpeg
 *.jpg
 *.JPG

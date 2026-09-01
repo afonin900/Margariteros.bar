@@ -84,13 +84,14 @@ describe("Emdash website schema", () => {
     expect(seed.meta.description).toContain("English-first");
     expect(seed.collections.map((collection: { slug: string }) => collection.slug)).toEqual(["homepage", "events"]);
     expect(JSON.stringify(seed)).not.toMatch(/publications|creative_assets|postiz|buffer/i);
+    expect(seed.defaultLocale).toBe("pl");
     const homepage = seed.collections.find((collection: { slug: string }) => collection.slug === "homepage");
     const fields = homepage.fields.map((field: { slug: string }) => field.slug);
-    for (const locale of locales) {
-      expect(fields).toContain(`hero_title_${locale}`);
-      expect(fields).toContain(`hero_text_${locale}`);
-      expect(fields).toContain(`primary_cta_label_${locale}`);
-    }
+    expect(fields).toContain("hero_title");
+    expect(fields).toContain("hero_text");
+    expect(fields).toContain("primary_cta_label");
+    expect(fields.some((field: string) => /_(pl|en|ru|es)$/.test(field))).toBe(false);
+    expect(JSON.stringify(seed)).not.toContain("published_locales");
   });
 });
 

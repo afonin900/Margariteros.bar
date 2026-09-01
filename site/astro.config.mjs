@@ -6,6 +6,12 @@ import { sqlite } from "emdash/db";
 
 export default defineConfig({
   output: "server",
+  i18n: {
+    defaultLocale: "pl",
+    locales: ["pl", "en", "ru", "es"],
+    fallback: { en: "pl", ru: "pl", es: "pl" },
+    routing: { prefixDefaultLocale: true },
+  },
   adapter: node({ mode: "standalone" }),
   integrations: [
     react(),

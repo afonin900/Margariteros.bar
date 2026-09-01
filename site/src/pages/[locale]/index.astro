@@ -21,7 +21,7 @@ const liveEventGroups = previewEvents ? null : await listUpcomingEvents(page.loc
 const publicOrigin = process.env.PUBLIC_SITE_ORIGIN || import.meta.env.PUBLIC_SITE_ORIGIN || Astro.url.origin;
 const isStaging = new URL(publicOrigin).hostname === "new.margariteros.bar";
 const eventGroups = previewEvents || (isStaging && (!liveEventGroups || liveEventGroups.length === 0))
-  ? previewEventGroups(now)
+  ? previewEventGroups(now, page.locale)
   : liveEventGroups;
 ---
 <BaseLayout {page}>

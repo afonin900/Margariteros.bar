@@ -11,7 +11,7 @@ const copy = {
   es: { heading: "Próximos eventos", cancelled: "Cancelado", postponed: "Aplazado", booking: "Reservar una mesa", details: "Detalles", close: "Cerrar", preview: "PRUEBA — no es un evento real", previewNote: "Esta es una tarjeta de muestra. La reserva es para visitar el local, no para este evento de prueba.", empty: "El nuevo programa aparecerá aquí pronto.", unavailable: "El programa no está disponible temporalmente. Inténtalo más tarde." },
 }[locale];
 const localeTag = { pl: "pl-PL", en: "en", ru: "ru", es: "es" }[locale];
-const local = (event: (typeof groups)[number]["events"][number]) => locale === "pl" ? { title: event.title, summary: event.summary } : { title: event[`title_${locale}` as "title_en" | "title_ru" | "title_es"]!, summary: event[`summary_${locale}` as "summary_en" | "summary_ru" | "summary_es"]! };
+const local = (event: (typeof groups)[number]["events"][number]) => ({ title: event.title, summary: event.summary });
 ---
 <section class="events" aria-labelledby="events-title">
   <div class="events-inner"><h2 id="events-title">{copy.heading}</h2>
