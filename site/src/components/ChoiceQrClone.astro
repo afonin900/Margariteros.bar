@@ -71,8 +71,8 @@ const copy = {
       <div class="ad-hero-copy"><p>{homepage.eyebrow}</p><h1>{homepage.title}</h1><span>{homepage.text}</span><div class="ad-hero-actions"><a class="primary" href={links.booking} data-analytics-event="reservation_click" data-analytics-destination="booking">{homepage.primaryCta}</a><a href={links.menu} data-analytics-event="view_menu" data-analytics-destination="menu">{homepage.secondaryCta}</a></div></div>
       <a class="ad-hero-down" href="#events-title" aria-label={homepage.galleryHeading}><i></i><i></i></a>
     </section>
-    <EventCards locale={page.locale} groups={eventGroups ?? []} unavailable={eventGroups === null} />
-    <section class="ad-gallery" aria-labelledby="ad-gallery-title"><h2 id="ad-gallery-title">{homepage.galleryHeading}</h2><div>{page.galleryItems.slice(0, 4).map((asset) => <img src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading="lazy" />)}</div></section>
+    <EventCards locale={page.locale} groups={eventGroups ?? []} unavailable={eventGroups === null} {attribution} />
+    <section class="ad-gallery" aria-labelledby="ad-gallery-title"><h2 id="ad-gallery-title">{homepage.galleryHeading}</h2><div>{homepage.galleryItems.map((asset) => <img src={asset.src} alt={asset.alt} width={asset.width} height={asset.height} loading="lazy" />)}</div></section>
   </main>
 
   <footer class="cq-footer">

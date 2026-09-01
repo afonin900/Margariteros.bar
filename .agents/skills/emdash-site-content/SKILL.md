@@ -18,13 +18,20 @@ The repository contract and the current editing instructions live in
   `translationOf` pointing to an existing row.
 - Do not create or restore `_pl`, `_en`, `_ru`, or `_es` fields. Do not create or
   restore `published_locales`. Locale is row metadata, not a long set of fields.
-- `title`, `summary`, `details`, and other visitor-facing copy belong to the
-  matching locale row. During the migration, common facts such as dates, event
-  state, image, booking URL, fact sources, and confirmation time are copied into
-  all four rows. In the current Emdash schema those fields are also marked
-  translatable, so a later date or image change must be repeated in every row or
-  made by an agent with a full-group readback. Automatic shared-field sync is a
-  separate future improvement, not a current guarantee.
+- `title`, `summary`, `details`, hero/button copy, and image descriptions belong
+  to the matching locale row. After `migrate:shared-fields` has been accepted,
+  `shared_*` fields are the common facts: event date/time, state, image, booking
+  URL, fact sources, confirmation time, plus the homepage hero and gallery image
+  order. Edit one shared field on any sibling and native Emdash synchronizes it
+  to the whole translation group.
+- For the homepage, images live in `Shared hero image` and `Shared homepage
+  gallery images`; `Gallery image descriptions` remains a translated list. For
+  events, use the `Shared ...` fields and keep title/summary/details translated.
+  Old non-`shared_*` common fields are fallback only during the two-phase bridge;
+  never edit them after the bridge has been applied.
+- Emdash's native sync is an editing guarantee, not a reason to hand-write data
+  in every SQLite row. It keeps synchronized copies internally. If the group
+  readback disagrees, stop rather than manually repairing database tables.
 - Administration labels stay in English. Public text must be fact-checked and
   written for its locale; never invent event facts, prices, performers, or
   offers.
@@ -36,8 +43,14 @@ The repository contract and the current editing instructions live in
    text is complete and checked. Publication and deletion require the owner's
    explicit instruction.
 3. After each write, read the exact translation group back and preview every
-   affected public locale. Confirm the copied common facts and image are still
-   present in all rows.
+   affected public locale. Confirm shared fields are identical in all rows and
+   localized copy/descriptions stayed in their own language.
+
+The bridge itself is owner-controlled: first run
+`npm run migrate:shared-fields -- --apply --backup=/absolute/path/pre-shared-fields.db`,
+then accept the four-route readback. Never run `--cleanup-legacy` unless the
+owner explicitly asks after that acceptance; it needs a fresh backup and the
+separate `--confirm-legacy-cleanup` flag.
 
 Homepage writes target `homepage/main` and its locale rows. Event writes use a
 stable descriptive slug and one translation group per event. The public site

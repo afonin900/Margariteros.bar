@@ -22,10 +22,12 @@ RUN addgroup -S astro && adduser -S astro -G astro
 RUN mkdir -p /app/data/backups /app/node_modules/.astro/sessions \
     && chown -R astro:astro /app/data /app/node_modules/.astro
 COPY --from=build --chown=astro:astro /app/dist ./dist
-# Operational artifacts only: the native-i18n migration and the checked seed
-# input. They contain no environment values or credentials.
+# Operational artifacts only: the checked seed input and migrations. They
+# contain no environment values or credentials.
 COPY --from=build --chown=astro:astro /app/.emdash/seed.json ./.emdash/seed.json
 COPY --from=build --chown=astro:astro /app/scripts/migrate-native-i18n.mjs ./scripts/migrate-native-i18n.mjs
+COPY --from=build --chown=astro:astro /app/scripts/migrate-homepage-gallery.mjs ./scripts/migrate-homepage-gallery.mjs
+COPY --from=build --chown=astro:astro /app/scripts/migrate-shared-fields.mjs ./scripts/migrate-shared-fields.mjs
 COPY --from=build --chown=astro:astro /app/scripts/seed-staging-editorial-content.mjs ./scripts/seed-staging-editorial-content.mjs
 USER astro
 EXPOSE 4321

@@ -63,6 +63,43 @@ describe("production HTTP contract", () => {
     await server.stop();
   });
 
+  it("keeps Emdash's canonical passkey routes outside public locale routing", async () => {
+    const server = await startProductionServer();
+    const admin = await fetch(`${server.url}/_emdash/admin`, { redirect: "manual" });
+    const login = await fetch(`${server.url}/_emdash/admin/login`, { redirect: "manual" });
+    const setup = await fetch(`${server.url}/_emdash/admin/setup`, { redirect: "manual" });
+    const authMode = await fetch(`${server.url}/_emdash/api/auth/mode`);
+    const setupHtml = await setup.text();
+
+    expect(admin.status).toBe(302);
+    expect(admin.headers.get("location")).toMatch(/^\/_emdash\/admin\/(?:login|setup)/);
+    expect([200, 302]).toContain(login.status);
+    if (login.status === 302) expect(login.headers.get("location")).toMatch(/^\/_emdash\/admin\/setup/);
+    expect(setup.status).toBe(200);
+    expect(setup.headers.get("cache-control")).toBe("private, no-store");
+    expect(setupHtml).toContain('id="admin-root"');
+    expect(await authMode.json()).toMatchObject({
+      success: true,
+      data: { authMode: "passkey" },
+    });
+
+    await server.stop();
+  });
+
+  it("keeps the public root redirect and every locale page with manual routing", async () => {
+    const server = await startProductionServer();
+    const root = await fetch(`${server.url}/`, { redirect: "manual" });
+
+    expect(root.status).toBe(302);
+    expect(root.headers.get("location")).toBe("/pl/");
+
+    for (const locale of ["pl", "en", "ru", "es"]) {
+      expect((await fetch(`${server.url}/${locale}/`)).status).toBe(200);
+    }
+
+    await server.stop();
+  });
+
   it("renders the accessible, food-safe guest surface on every SSR locale without JavaScript", async () => {
     const server = await startProductionServer();
     const labels = {
@@ -98,6 +135,8 @@ describe("production HTTP contract", () => {
       expect(html).toContain('href="/favicon.ico"');
       expect(html).toContain('href="/apple-touch-icon.png"');
       expect(html).toContain('class="ad-gallery"');
+      const gallerySection = html.match(/<section class="ad-gallery"[\s\S]*?<\/section>/)?.[0] ?? "";
+      expect(gallerySection.match(/<img\b/g)).toHaveLength(20);
       expect(html).toContain('viewport-fit=cover');
       expect(html).toContain('data-analytics-destination="phone"');
       expect(html).toContain('data-analytics-destination="map"');

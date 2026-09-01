@@ -10,6 +10,8 @@
     "test": "vitest run",
     "verify:secrets": "node ./scripts/secret-scan.mjs",
     "verify:docker": "node ./scripts/verify-docker.mjs",
+    "migrate:homepage-gallery": "node ./scripts/migrate-homepage-gallery.mjs",
+    "migrate:shared-fields": "node ./scripts/migrate-shared-fields.mjs",
     "verify:release": "npm run check && npm run build && npm test && npm run verify:secrets"
   },
   "dependencies": {

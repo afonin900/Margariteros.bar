@@ -9,6 +9,7 @@ import {
 import { syncChoiceConsent } from "../src/lib/consent/choice-consent-bridge";
 import { captureAttribution, decorateOutbound } from "../src/lib/analytics/attribution";
 import { createAnalyticsTracker } from "../src/lib/analytics";
+import { resolveHomepageGallery, resolveHomepageMediaUrl, resolveSharedHomepageGallery } from "../src/lib/content/homepage";
 
 function createMemoryPersistence(): ConsentPersistence & { cookie: string | undefined; writtenCookie: string | undefined } {
   return {
@@ -90,8 +91,48 @@ describe("Emdash website schema", () => {
     expect(fields).toContain("hero_title");
     expect(fields).toContain("hero_text");
     expect(fields).toContain("primary_cta_label");
+    const gallery = homepage.fields.find((field: { slug: string; validation?: unknown }) => field.slug === "gallery_items");
+    expect(gallery).toMatchObject({ slug: "gallery_items", type: "repeater", required: true });
+    expect(gallery?.validation).toMatchObject({ minItems: 4, maxItems: 20 });
+    expect((gallery?.validation as { subFields?: unknown } | undefined)?.subFields).toEqual([
+      { slug: "image", label: "Image", type: "image", required: true },
+      { slug: "alt", label: "Alt text", type: "string", required: true },
+    ]);
     expect(fields.some((field: string) => /_(pl|en|ru|es)$/.test(field))).toBe(false);
     expect(JSON.stringify(seed)).not.toContain("published_locales");
+  });
+});
+
+describe("editable homepage gallery", () => {
+  it("resolves local Emdash storage keys and keeps CMS order", () => {
+    const value = [
+      { image: { id: "media-1", provider: "local", width: 800, height: 600, meta: { storageKey: "seed/one.webp" } }, alt: "One" },
+      { image: { id: "media-2", provider: "local", src: "/_emdash/api/media/file/seed/two.webp" }, alt: "Two" },
+    ];
+
+    expect(resolveHomepageGallery("pl", value, (key) => `/media/${key}`)).toEqual([
+      { src: "/media/seed/one.webp", alt: "One", width: 800, height: 600 },
+      { src: "/_emdash/api/media/file/seed/two.webp", alt: "Two", width: 400, height: 400 },
+    ]);
+  });
+
+  it("falls back to the media id for a local value without a URL", () => {
+    expect(resolveHomepageMediaUrl({ id: "media-1", provider: "local" })).toBe("/_emdash/api/media/file/media-1");
+    expect(resolveHomepageMediaUrl({ id: "media-1", provider: "local", meta: { storageKey: "../private.webp" } })).toBe("/_emdash/api/media/file/media-1");
+  });
+
+  it("keeps shared gallery images paired with each locale's descriptions", () => {
+    const images = [
+      { image: { id: "media-1", provider: "local", meta: { storageKey: "seed/one.webp" }, width: 800, height: 600 } },
+      { image: { id: "media-2", provider: "local", meta: { storageKey: "seed/two.webp" } } },
+    ];
+    const alts = [{ alt: "Polski opis jeden" }, { alt: "Polski opis dwa" }];
+
+    expect(resolveSharedHomepageGallery(images, alts, (key) => `/media/${key}`)).toEqual([
+      { src: "/media/seed/one.webp", alt: "Polski opis jeden", width: 800, height: 600 },
+      { src: "/media/seed/two.webp", alt: "Polski opis dwa", width: 400, height: 400 },
+    ]);
+    expect(resolveSharedHomepageGallery(images, [{ alt: "Only one" }])).toEqual([]);
   });
 });
 

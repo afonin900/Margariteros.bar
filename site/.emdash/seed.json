@@ -22,7 +22,21 @@
         { "slug": "hero_image_alt", "label": "Hero image description", "type": "string" },
         { "slug": "primary_cta_label", "label": "Primary button", "type": "string" },
         { "slug": "secondary_cta_label", "label": "Secondary button", "type": "string" },
-        { "slug": "gallery_heading", "label": "Gallery heading", "type": "string" }
+        { "slug": "gallery_heading", "label": "Gallery heading", "type": "string" },
+        {
+          "slug": "gallery_items",
+          "label": "Homepage gallery",
+          "type": "repeater",
+          "required": true,
+          "validation": {
+            "minItems": 4,
+            "maxItems": 20,
+            "subFields": [
+              { "slug": "image", "label": "Image", "type": "image", "required": true },
+              { "slug": "alt", "label": "Alt text", "type": "string", "required": true }
+            ]
+          }
+        }
       ]
     },
     {

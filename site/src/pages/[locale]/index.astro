@@ -13,7 +13,7 @@ const isLocale = (value: string | undefined): value is Locale =>
   value !== undefined && locales.includes(value as Locale);
 if (!isLocale(requestedLocale)) return new Response("Not found", { status: 404 });
 const page = getPage(requestedLocale);
-const homepage = await getHomepageHero(page.locale);
+const homepage = await getHomepageHero(page.locale, Astro.locals.emdash?.getPublicMediaUrl);
 const attribution = captureAttribution(Astro.url);
 const now = new Date();
 const previewEvents = Astro.url.searchParams.get("preview") === "events";

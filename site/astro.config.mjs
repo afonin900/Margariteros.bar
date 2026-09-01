@@ -10,7 +10,9 @@ export default defineConfig({
     defaultLocale: "pl",
     locales: ["pl", "en", "ru", "es"],
     fallback: { en: "pl", ru: "pl", es: "pl" },
-    routing: { prefixDefaultLocale: true },
+    // Emdash keeps its canonical unprefixed namespace at /_emdash/*. Public
+    // locale routing is applied selectively in src/middleware.ts.
+    routing: "manual",
   },
   adapter: node({ mode: "standalone" }),
   integrations: [

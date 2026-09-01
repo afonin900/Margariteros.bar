@@ -2,7 +2,27 @@ import { getEmDashCollection, getEmDashEntry } from "emdash";
 import type { Event } from "../../../.emdash/types";
 import type { Locale } from "../../content/page";
 
-export type PublicEvent = Event & { slug: string; isPreview?: boolean };
+type EventState = NonNullable<Event["event_state"]>;
+type EventImage = NonNullable<Event["hero_image"]>;
+type SharedEventFacts = {
+  starts_at: string;
+  ends_at?: string;
+  event_state: EventState;
+  hero_image: EventImage;
+  booking_url?: string;
+  fact_sources: string;
+  facts_confirmed_at: string;
+};
+
+/**
+ * The page continues to receive one stable event shape.  New shared_* fields
+ * win after the migration; old fields are only a read fallback until their
+ * separately approved removal.
+ */
+export type PublicEvent = Omit<Event, keyof SharedEventFacts | "slug"> & SharedEventFacts & {
+  slug: string;
+  isPreview?: boolean;
+};
 export type MonthEvents = { key: string; startsAt: Date; events: PublicEvent[] };
 
 function warsawDayEnd(value: Date): Date {
@@ -15,19 +35,73 @@ function monthKey(value: Date): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Warsaw", year: "numeric", month: "2-digit" }).format(value);
 }
 
-function publicEvent(event: Event): PublicEvent | null {
-  return event.slug ? { ...event, slug: event.slug } : null;
+function meaningfulText(...values: Array<string | undefined>): string | undefined {
+  return values.find((value) => typeof value === "string" && value.trim().length > 0 && value.trim() !== "null")?.trim();
+}
+
+function eventImage(...values: Array<EventImage | undefined>): EventImage | undefined {
+  return values.find((value) => typeof value?.id === "string" && value.id.trim().length > 0);
+}
+
+function eventState(...values: Array<EventState | undefined>): EventState | undefined {
+  return values.find((value) => value === "scheduled" || value === "postponed" || value === "cancelled");
+}
+
+function sharedEventFacts(event: Event): SharedEventFacts | null {
+  const starts_at = meaningfulText(event.shared_starts_at, event.starts_at);
+  const event_state = eventState(event.shared_event_state, event.event_state);
+  const hero_image = eventImage(event.shared_hero_image, event.hero_image);
+  const fact_sources = meaningfulText(event.shared_fact_sources, event.fact_sources);
+  const facts_confirmed_at = meaningfulText(event.shared_facts_confirmed_at, event.facts_confirmed_at);
+
+  if (!starts_at || !event_state || !hero_image || !fact_sources || !facts_confirmed_at) return null;
+
+  return {
+    starts_at,
+    ...(meaningfulText(event.shared_ends_at, event.ends_at) ? { ends_at: meaningfulText(event.shared_ends_at, event.ends_at) } : {}),
+    event_state,
+    hero_image,
+    ...(meaningfulText(event.shared_booking_url, event.booking_url) ? { booking_url: meaningfulText(event.shared_booking_url, event.booking_url) } : {}),
+    fact_sources,
+    facts_confirmed_at,
+  };
+}
+
+export function normalizePublicEvent(event: Event): PublicEvent | null {
+  if (!event.slug) return null;
+  const facts = sharedEventFacts(event);
+  return facts ? { ...event, ...facts, slug: event.slug } : null;
+}
+
+async function listEventsByStart(locale: Locale): Promise<Array<{ data: Event }> | null> {
+  // A schema from before the migration has no shared_starts_at column.  Fall
+  // back to its old indexed date rather than taking the events page offline.
+  const shared = await getEmDashCollection<"events", Event>("events", {
+    status: "published",
+    locale,
+    orderBy: { shared_starts_at: "asc" },
+    limit: 500,
+  });
+  if (!shared.error) return shared.entries;
+
+  const legacy = await getEmDashCollection<"events", Event>("events", {
+    status: "published",
+    locale,
+    orderBy: { starts_at: "asc" },
+    limit: 500,
+  });
+  return legacy.error ? null : legacy.entries;
 }
 
 export async function listUpcomingEvents(locale: Locale, now: Date): Promise<MonthEvents[] | null> {
-  const { entries, error } = await getEmDashCollection<"events", Event>("events", { status: "published", locale, orderBy: { starts_at: "asc" }, limit: 500 });
-  if (error) return null;
+  const entries = await listEventsByStart(locale);
+  if (!entries) return null;
   const currentMonth = monthKey(now);
   const nextMonth = monthKey(new Date(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
   const groups = new Map<string, MonthEvents>();
 
   for (const entry of entries) {
-    const event = publicEvent(entry.data);
+    const event = normalizePublicEvent(entry.data);
     if (!event || !event.title || !event.summary || !event.details) continue;
     const startsAt = new Date(event.starts_at);
     const endsAt = event.ends_at ? new Date(event.ends_at) : warsawDayEnd(startsAt);
@@ -45,7 +119,7 @@ export async function listUpcomingEvents(locale: Locale, now: Date): Promise<Mon
 export async function getPublicEvent(locale: Locale, slug: string): Promise<{ event: PublicEvent | null; unavailable: boolean }> {
   const { entry, error } = await getEmDashEntry<"events", Event>("events", slug, { locale });
   if (error) return { event: null, unavailable: true };
-  const event = entry ? publicEvent(entry.data) : null;
+  const event = entry ? normalizePublicEvent(entry.data) : null;
   return { event: event && event.status === "published" && event.title && event.summary && event.details ? event : null, unavailable: false };
 }
 

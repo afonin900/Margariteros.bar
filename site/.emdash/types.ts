@@ -10,7 +10,8 @@ export interface Homepage {
   slug: string | null;
   status: string;
   name: string;
-  hero_image: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
+  /** Legacy fallback until migrate:shared-fields cleanup is explicitly approved. */
+  hero_image?: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
   hero_eyebrow?: string;
   hero_title?: string;
   hero_text?: string;
@@ -18,6 +19,11 @@ export interface Homepage {
   primary_cta_label?: string;
   secondary_cta_label?: string;
   gallery_heading?: string;
+  /** Legacy fallback until migrate:shared-fields cleanup is explicitly approved. */
+  gallery_items?: Array<{ image: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> }; alt: string }>;
+  shared_hero_image?: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
+  shared_gallery_images?: Array<{ image: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> } }>;
+  gallery_item_alts?: Array<{ alt: string }>;
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date | null;
@@ -29,16 +35,24 @@ export interface Event {
   id: string;
   slug: string | null;
   status: string;
-  starts_at: string;
+  /** Legacy fallback until migrate:shared-fields cleanup is explicitly approved. */
+  starts_at?: string;
   ends_at?: string;
-  event_state: "scheduled" | "postponed" | "cancelled";
+  event_state?: "scheduled" | "postponed" | "cancelled";
   title: string;
   summary: string;
   details: PortableTextBlock[];
-  hero_image: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
+  hero_image?: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
   booking_url?: string;
-  fact_sources: string;
-  facts_confirmed_at: string;
+  fact_sources?: string;
+  facts_confirmed_at?: string;
+  shared_starts_at?: string;
+  shared_ends_at?: string;
+  shared_event_state?: "scheduled" | "postponed" | "cancelled";
+  shared_hero_image?: { id: string; src?: string; alt?: string; width?: number; height?: number; filename?: string; mimeType?: string; blurhash?: string; dominantColor?: string; provider?: string; previewUrl?: string; meta?: Record<string, unknown> };
+  shared_booking_url?: string;
+  shared_fact_sources?: string;
+  shared_facts_confirmed_at?: string;
   legacy_path?: string;
   createdAt: Date;
   updatedAt: Date;
