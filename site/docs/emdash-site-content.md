@@ -33,3 +33,5 @@ Articles are the next independent module, not an event field. When an article pa
 ## Applying the schema
 
 `site/.emdash/seed.json` is the reviewed schema source. Applying it to staging changes live administration data and therefore requires a separate deployment/maintenance instruction, a database backup, and a readback. The retired `publications` and `creative_assets` collections must be removed from staging only during that controlled maintenance step.
+
+The controlled staging change was completed on 2026-09-01. See `deployment-2026-09-01-emdash-homepage-events.md` for evidence. The accepted future media-storage direction is recorded in `cloudflare-r2-media-plan.md`; R2 is not connected yet.

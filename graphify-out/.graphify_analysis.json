@@ -1,17 +1,6 @@
 {
   "communities": {
     "0": [
-      "site_src_components_choiceqrclone",
-      "site_src_components_choiceqrheader",
-      "site_src_components_choiceqrheader_bookingurl",
-      "site_src_components_choiceqrheader_menuurl",
-      "site_src_components_contactbar",
-      "site_src_lib_analytics_attribution",
-      "site_src_lib_analytics_attribution_attribution",
-      "site_src_lib_analytics_attribution_attributionkey",
-      "site_src_lib_analytics_attribution_attributionkeys",
-      "site_src_lib_analytics_attribution_captureattribution",
-      "site_src_lib_analytics_attribution_decorateoutbound",
       "site_src_lib_analytics_browser",
       "site_src_lib_analytics_browser_browseranalyticsoptions",
       "site_src_lib_analytics_browser_datalayer",
@@ -53,6 +42,10 @@
       "site_src_lib_consent_index_consentpersistence_readcookie",
       "site_src_lib_consent_index_consentpersistence_writecookie",
       "site_src_lib_consent_index_consentstate",
+      "site_src_lib_consent_index_consentstore",
+      "site_src_lib_consent_index_consentstore_readconsent",
+      "site_src_lib_consent_index_consentstore_saveconsent",
+      "site_src_lib_consent_index_consentstore_subscribeconsent",
       "site_src_lib_consent_index_createconsentstore",
       "site_src_lib_consent_index_defaultconsent",
       "site_src_lib_consent_index_hassavedconsent",
@@ -61,13 +54,48 @@
       "site_src_lib_consent_index_saveconsent",
       "site_src_lib_consent_index_subscribeconsent",
       "site_src_lib_consent_index_toconsentstate",
-      "site_tests_page_test",
-      "site_tests_page_test_creatememorypersistence",
       "site_tests_privacy_test",
       "site_tests_privacy_test_cookie",
       "site_tests_privacy_test_persistence"
     ],
     "1": [
+      "site_src_components_choiceqrclone",
+      "site_src_components_choiceqrheader",
+      "site_src_components_choiceqrheader_bookingurl",
+      "site_src_components_choiceqrheader_menuurl",
+      "site_src_components_consentbanner",
+      "site_src_components_contactbar",
+      "site_src_components_photogallery",
+      "site_src_components_sitefooter",
+      "site_src_content_page",
+      "site_src_content_page_galleryitem",
+      "site_src_content_page_getpage",
+      "site_src_content_page_locale",
+      "site_src_content_page_locales",
+      "site_src_content_page_localizedpage",
+      "site_src_content_page_openinghour",
+      "site_src_content_page_pagecontent",
+      "site_src_content_page_pages",
+      "site_src_content_page_sharedfacts",
+      "site_src_layouts_baselayout",
+      "site_src_layouts_baselayout_string",
+      "site_src_lib_analytics_attribution",
+      "site_src_lib_analytics_attribution_attribution",
+      "site_src_lib_analytics_attribution_attributionkey",
+      "site_src_lib_analytics_attribution_attributionkeys",
+      "site_src_lib_analytics_attribution_captureattribution",
+      "site_src_lib_analytics_attribution_decorateoutbound",
+      "site_src_pages_locale_club_index",
+      "site_src_pages_locale_club_index_islocale",
+      "site_src_pages_locale_club_index_page",
+      "site_src_pages_locale_index",
+      "site_src_pages_locale_index_attribution",
+      "site_src_pages_locale_index_islocale",
+      "site_src_pages_locale_index_page",
+      "site_tests_page_test",
+      "site_tests_page_test_creatememorypersistence"
+    ],
+    "2": [
       "content_production_html_posters_render",
       "content_production_html_posters_render_argvalue",
       "content_production_html_posters_render_artist",
@@ -102,7 +130,7 @@
       "content_production_html_posters_render_tmpshot",
       "content_production_html_posters_render_waitforfile"
     ],
-    "2": [
+    "3": [
       "site_src_lib_choiceqr_mirror",
       "site_src_lib_choiceqr_mirror_api_query",
       "site_src_lib_choiceqr_mirror_attribution",
@@ -135,15 +163,16 @@
       "site_tests_choiceqr_mirror_test",
       "site_tests_choiceqr_mirror_test_request"
     ],
-    "3": [
+    "4": [
       "content_production_remotion_package",
+      "content_production_remotion_package_dependencies",
+      "content_production_remotion_package_dependencies_react",
+      "content_production_remotion_package_dependencies_react_dom",
+      "content_production_remotion_package_dependencies_remotion",
+      "content_production_remotion_package_dependencies_remotion_cli",
+      "content_production_remotion_package_dependencies_remotion_tailwind_v4",
+      "content_production_remotion_package_dependencies_tailwindcss",
       "content_production_remotion_package_description",
-      "content_production_remotion_package_devdependencies",
-      "content_production_remotion_package_devdependencies_eslint",
-      "content_production_remotion_package_devdependencies_prettier",
-      "content_production_remotion_package_devdependencies_remotion_eslint_config_flat",
-      "content_production_remotion_package_devdependencies_types_react",
-      "content_production_remotion_package_devdependencies_types_web",
       "content_production_remotion_package_license",
       "content_production_remotion_package_name",
       "content_production_remotion_package_private",
@@ -158,53 +187,69 @@
       "content_production_remotion_package_scripts_upgrade",
       "content_production_remotion_package_sideeffects",
       "content_production_remotion_package_version",
-      "eslint",
-      "prettier",
-      "ref_css",
-      "remotion_eslint_config_flat",
-      "types_react",
-      "types_web"
-    ],
-    "4": [
-      "site_src_components_consentbanner",
-      "site_src_components_photogallery",
-      "site_src_components_sitefooter",
-      "site_src_content_page",
-      "site_src_content_page_galleryitem",
-      "site_src_content_page_getpage",
-      "site_src_content_page_locale",
-      "site_src_content_page_locales",
-      "site_src_content_page_localizedpage",
-      "site_src_content_page_openinghour",
-      "site_src_content_page_pagecontent",
-      "site_src_content_page_pages",
-      "site_src_content_page_sharedfacts",
-      "site_src_layouts_baselayout",
-      "site_src_layouts_baselayout_string",
-      "site_src_pages_locale_club_index",
-      "site_src_pages_locale_club_index_islocale",
-      "site_src_pages_locale_club_index_page",
-      "site_src_pages_locale_index",
-      "site_src_pages_locale_index_attribution",
-      "site_src_pages_locale_index_islocale",
-      "site_src_pages_locale_index_page"
-    ],
-    "5": [
-      "content_production_remotion_package_dependencies",
-      "content_production_remotion_package_dependencies_react",
-      "content_production_remotion_package_dependencies_react_dom",
-      "content_production_remotion_package_dependencies_remotion",
-      "content_production_remotion_package_dependencies_remotion_cli",
-      "content_production_remotion_package_dependencies_remotion_tailwind_v4",
-      "content_production_remotion_package_dependencies_tailwindcss",
       "react",
       "react_dom",
+      "ref_css",
       "remotion",
       "remotion_cli",
       "remotion_tailwind_v4",
       "tailwindcss"
     ],
+    "5": [
+      "site_docs_cloudflare_r2_media_plan_bundled_media",
+      "site_docs_cloudflare_r2_media_plan_cloudflare_r2_media_plan",
+      "site_docs_cloudflare_r2_media_plan_deferred_workers_migration",
+      "site_docs_cloudflare_r2_media_plan_dokploy_node_runtime",
+      "site_docs_cloudflare_r2_media_plan_openbao_secrets",
+      "site_docs_cloudflare_r2_media_plan_persistent_sqlite",
+      "site_docs_cloudflare_r2_media_plan_persistent_uploads",
+      "site_docs_cloudflare_r2_media_plan_r2_free_allowance",
+      "site_docs_cloudflare_r2_media_plan_r2_implementation_gate",
+      "site_docs_cloudflare_r2_media_plan_r2_rollback",
+      "site_docs_cloudflare_r2_media_plan_r2_upload_storage",
+      "site_docs_cloudflare_r2_media_plan_s3_configuration",
+      "site_docs_cloudflare_r2_media_plan_workers_free_plan",
+      "site_docs_deployment_2026_09_01_emdash_homepage_events_database_backup",
+      "site_docs_deployment_2026_09_01_emdash_homepage_events_deployed_commit",
+      "site_docs_deployment_2026_09_01_emdash_homepage_events_deployment_boundary",
+      "site_docs_deployment_2026_09_01_emdash_homepage_events_intentional_empty_state",
+      "site_docs_deployment_2026_09_01_emdash_homepage_events_live_readback",
+      "site_docs_deployment_2026_09_01_emdash_homepage_events_staging_application",
+      "site_docs_deployment_2026_09_01_emdash_homepage_events_staging_deployment",
+      "site_docs_emdash_site_content_articles_module",
+      "site_docs_emdash_site_content_builtin_fallback",
+      "site_docs_emdash_site_content_controlled_schema_change",
+      "site_docs_emdash_site_content_emdash_site_content",
+      "site_docs_emdash_site_content_events_collection",
+      "site_docs_emdash_site_content_homepage_main",
+      "site_docs_emdash_site_content_multilingual_content",
+      "site_docs_emdash_site_content_ready_languages",
+      "site_docs_emdash_site_content_seed_schema"
+    ],
     "6": [
+      "astrojs_check",
+      "content_production_remotion_package_devdependencies",
+      "content_production_remotion_package_devdependencies_eslint",
+      "content_production_remotion_package_devdependencies_prettier",
+      "content_production_remotion_package_devdependencies_remotion_eslint_config_flat",
+      "content_production_remotion_package_devdependencies_types_react",
+      "content_production_remotion_package_devdependencies_types_web",
+      "content_production_remotion_package_devdependencies_typescript",
+      "eslint",
+      "prettier",
+      "remotion_eslint_config_flat",
+      "site_package_devdependencies",
+      "site_package_devdependencies_astrojs_check",
+      "site_package_devdependencies_types_node",
+      "site_package_devdependencies_typescript",
+      "site_package_devdependencies_vitest",
+      "site_package_json_typescript",
+      "types_node",
+      "types_react",
+      "types_web",
+      "vitest"
+    ],
+    "7": [
       "autopilot_sync",
       "autopilot_sync_audit",
       "autopilot_sync_close_passed",
@@ -225,7 +270,7 @@
       "autopilot_sync_serve",
       "autopilot_sync_write_snapshot"
     ],
-    "7": [
+    "8": [
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_acceptance",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_acceptance_acceptvisibleconsent",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_acceptance_cdp",
@@ -246,7 +291,7 @@
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_acceptance_until",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_acceptance_warm"
     ],
-    "8": [
+    "9": [
       "site_scripts_verify_responsive_ui",
       "site_scripts_verify_responsive_ui_cdp",
       "site_scripts_verify_responsive_ui_cdp_close",
@@ -267,21 +312,13 @@
       "site_tests_layout_contract_test_geometry",
       "site_tests_layout_contract_test_widths"
     ],
-    "9": [
+    "10": [
       "astro",
-      "astrojs_check",
       "astrojs_node",
-      "content_production_remotion_package_devdependencies_typescript",
       "site_package",
       "site_package_dependencies",
       "site_package_dependencies_astro",
       "site_package_dependencies_astrojs_node",
-      "site_package_devdependencies",
-      "site_package_devdependencies_astrojs_check",
-      "site_package_devdependencies_types_node",
-      "site_package_devdependencies_typescript",
-      "site_package_devdependencies_vitest",
-      "site_package_json_typescript",
       "site_package_name",
       "site_package_private",
       "site_package_scripts",
@@ -293,11 +330,9 @@
       "site_package_scripts_verify_release",
       "site_package_scripts_verify_secrets",
       "site_package_type",
-      "site_package_version",
-      "types_node",
-      "vitest"
+      "site_package_version"
     ],
-    "10": [
+    "11": [
       "content_production_remotion_src_composition",
       "content_production_remotion_src_fridaykikereel",
       "content_production_remotion_src_fridaykikereel_fridaykikereel",
@@ -317,7 +352,7 @@
       "content_production_remotion_src_saturdayreel_saturdayreel",
       "content_production_remotion_src_saturdayreel_saturdayreelprops"
     ],
-    "11": [
+    "12": [
       "margariteros_asset_pack_v1_lime_fiesta_02_mascot_pack_manifest",
       "margariteros_asset_pack_v1_lime_fiesta_02_mascot_pack_manifest_assets",
       "margariteros_asset_pack_v1_lime_fiesta_02_mascot_pack_manifest_palette",
@@ -336,7 +371,7 @@
       "margariteros_asset_pack_v1_lime_fiesta_02_mascot_pack_manifest_technical_format",
       "margariteros_asset_pack_v1_lime_fiesta_02_mascot_pack_manifest_technical_master_dimensions"
     ],
-    "12": [
+    "13": [
       "margariteros_asset_pack_v1_lime_fiesta_03_icons_pack_manifest",
       "margariteros_asset_pack_v1_lime_fiesta_03_icons_pack_manifest_assets",
       "margariteros_asset_pack_v1_lime_fiesta_03_icons_pack_manifest_canvas",
@@ -355,7 +390,7 @@
       "ref_lf_icon_sun_png",
       "ref_lf_icon_taco_png"
     ],
-    "13": [
+    "14": [
       "content_production_remotion_tsconfig",
       "content_production_remotion_tsconfig_compileroptions",
       "content_production_remotion_tsconfig_compileroptions_esmoduleinterop",
@@ -373,7 +408,7 @@
       "ref_es2015",
       "ref_remotion_config_ts"
     ],
-    "14": [
+    "15": [
       "margariteros_asset_pack_v2_canva_templates_build_templates",
       "margariteros_asset_pack_v2_canva_templates_build_templates_addfooter",
       "margariteros_asset_pack_v2_canva_templates_build_templates_addlogo",
@@ -390,7 +425,7 @@
       "margariteros_asset_pack_v2_canva_templates_build_templates_setup",
       "margariteros_asset_pack_v2_canva_templates_build_templates_story"
     ],
-    "15": [
+    "16": [
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_staging_consent",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_staging_consent_cdp",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_staging_consent_cdp_close",
@@ -407,7 +442,7 @@
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_staging_consent_sleep",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_staging_consent_until"
     ],
-    "16": [
+    "17": [
       "site_scripts_capture_choiceqr_reference",
       "site_scripts_capture_choiceqr_reference_cases",
       "site_scripts_capture_choiceqr_reference_cdp",
@@ -424,7 +459,7 @@
       "site_scripts_capture_choiceqr_reference_until",
       "site_scripts_capture_choiceqr_reference_wait"
     ],
-    "17": [
+    "18": [
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_mirror_runtime",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_mirror_runtime_cdp",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_mirror_runtime_cdp_close",
@@ -440,7 +475,7 @@
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_mirror_runtime_sleep",
       "site_docs_screenshots_choiceqr_exact_acceptance_capture_mirror_runtime_until"
     ],
-    "18": [
+    "19": [
       "margariteros_asset_pack_v1_lime_fiesta_06_textures_backgrounds_manifest",
       "margariteros_asset_pack_v1_lime_fiesta_06_textures_backgrounds_manifest_files",
       "margariteros_asset_pack_v1_lime_fiesta_06_textures_backgrounds_manifest_generated_at",
@@ -455,7 +490,7 @@
       "margariteros_asset_pack_v1_lime_fiesta_06_textures_backgrounds_manifest_production_method",
       "margariteros_asset_pack_v1_lime_fiesta_06_textures_backgrounds_manifest_version"
     ],
-    "19": [
+    "20": [
       "margariteros_asset_pack_v2_canva_package",
       "margariteros_asset_pack_v2_canva_package_dependencies",
       "margariteros_asset_pack_v2_canva_package_dependencies_pptxgenjs",
@@ -469,7 +504,7 @@
       "margariteros_asset_pack_v2_canva_package_type",
       "pptxgenjs"
     ],
-    "20": [
+    "21": [
       "content_production_telegram_handoff_send_instagram_handoff",
       "content_production_telegram_handoff_send_instagram_handoff_args",
       "content_production_telegram_handoff_send_instagram_handoff_briefpath",
@@ -482,7 +517,7 @@
       "content_production_telegram_handoff_send_instagram_handoff_video",
       "content_production_telegram_handoff_send_instagram_handoff_videopath"
     ],
-    "21": [
+    "22": [
       "margariteros_asset_pack_v1_lime_fiesta_07_poster_templates_pack_manifest",
       "margariteros_asset_pack_v1_lime_fiesta_07_poster_templates_pack_manifest_files",
       "margariteros_asset_pack_v1_lime_fiesta_07_poster_templates_pack_manifest_package",
@@ -495,7 +530,7 @@
       "margariteros_asset_pack_v1_lime_fiesta_07_poster_templates_pack_manifest_source_scale_log",
       "margariteros_asset_pack_v1_lime_fiesta_07_poster_templates_pack_manifest_version"
     ],
-    "22": [
+    "23": [
       "margariteros_asset_pack_v1_lime_fiesta_08_video_social_templates_pack_manifest",
       "margariteros_asset_pack_v1_lime_fiesta_08_video_social_templates_pack_manifest_files",
       "margariteros_asset_pack_v1_lime_fiesta_08_video_social_templates_pack_manifest_package",
@@ -508,7 +543,7 @@
       "margariteros_asset_pack_v1_lime_fiesta_08_video_social_templates_pack_manifest_source_scaling_log",
       "margariteros_asset_pack_v1_lime_fiesta_08_video_social_templates_pack_manifest_version"
     ],
-    "23": [
+    "24": [
       "site_scripts_secret_scan",
       "site_scripts_secret_scan_collectfiles",
       "site_scripts_secret_scan_ignoreddirectories",
@@ -521,7 +556,7 @@
       "site_tests_secret_scan_test",
       "site_tests_secret_scan_test_temporaryroots"
     ],
-    "24": [
+    "25": [
       "content_production_html_posters_package",
       "content_production_html_posters_package_name",
       "content_production_html_posters_package_private",
@@ -530,49 +565,43 @@
       "content_production_html_posters_package_scripts_render_kike",
       "content_production_html_posters_package_type"
     ],
-    "25": [
+    "26": [
       "content_production_postiz_check",
       "content_production_postiz_check_base",
       "content_production_postiz_check_key",
       "content_production_postiz_check_loadenv",
       "content_production_postiz_check_reporoot"
     ],
-    "26": [
+    "27": [
       "site_scripts_verify_docker",
       "site_scripts_verify_docker_docker",
       "site_scripts_verify_docker_execfile",
       "site_scripts_verify_docker_siteroot",
       "site_scripts_verify_docker_waitforhealthy"
     ],
-    "27": [
+    "28": [
       "margariteros_asset_pack_v1_lime_fiesta_04_decor_pack_manifest",
       "margariteros_asset_pack_v1_lime_fiesta_04_decor_pack_manifest_assets",
       "margariteros_asset_pack_v1_lime_fiesta_04_decor_pack_manifest_notes",
       "margariteros_asset_pack_v1_lime_fiesta_04_decor_pack_manifest_title"
     ],
-    "28": [
+    "29": [
       "margariteros_asset_pack_v1_lime_fiesta_05_pattern_pack_manifest",
       "margariteros_asset_pack_v1_lime_fiesta_05_pattern_pack_manifest_assets",
       "margariteros_asset_pack_v1_lime_fiesta_05_pattern_pack_manifest_notes",
       "margariteros_asset_pack_v1_lime_fiesta_05_pattern_pack_manifest_title"
     ],
-    "29": [
+    "30": [
       "margariteros_asset_pack_v2_canva_dashboard_app",
       "margariteros_asset_pack_v2_canva_dashboard_app_panels",
       "margariteros_asset_pack_v2_canva_dashboard_app_selecttab",
       "margariteros_asset_pack_v2_canva_dashboard_app_tabs"
     ],
-    "30": [
+    "31": [
       "margariteros_asset_pack_v2_canva_system_build_system",
       "margariteros_asset_pack_v2_canva_system_build_system_magick",
       "margariteros_asset_pack_v2_canva_system_build_system_markersets",
       "margariteros_asset_pack_v2_canva_system_build_system_root"
-    ],
-    "31": [
-      "site_src_lib_consent_index_consentstore",
-      "site_src_lib_consent_index_consentstore_readconsent",
-      "site_src_lib_consent_index_consentstore_saveconsent",
-      "site_src_lib_consent_index_consentstore_subscribeconsent"
     ],
     "32": [
       "site_tests_production_test",
@@ -590,57 +619,61 @@
       "mcp_mcp_server_margariteros_growth_tools"
     ],
     "35": [
+      "site_docs_emdash_site_content_agent_write_safety",
+      "site_docs_emdash_site_content_protected_api"
+    ],
+    "36": [
       "site_src_pages_healthz",
       "site_src_pages_healthz_get"
     ],
-    "36": [
+    "37": [
       "autopilot_2026_08_26_first_party_astro_home_state"
     ],
-    "37": [
+    "38": [
       "autopilot_state"
     ],
-    "38": [
+    "39": [
       "content_production_remotion_eslint_config"
     ],
-    "39": [
+    "40": [
       "content_production_remotion_remotion_config"
     ],
-    "40": [
+    "41": [
       "site_astro_config"
     ],
-    "41": [
+    "42": [
       "site_src_pages_index"
     ]
   },
   "cohesion": {
-    "0": 0.06201923076923077,
-    "1": 0.06060606060606061,
-    "2": 0.13763440860215054,
-    "3": 0.07142857142857142,
-    "4": 0.12987012987012986,
-    "5": 0.15384615384615385,
-    "6": 0.17543859649122806,
-    "7": 0.19298245614035087,
-    "8": 0.17543859649122806,
-    "9": 0.07142857142857142,
-    "10": 0.20915032679738563,
-    "11": 0.11764705882352941,
+    "0": 0.06233766233766234,
+    "1": 0.09915966386554621,
+    "2": 0.06060606060606061,
+    "3": 0.13763440860215054,
+    "4": 0.06666666666666667,
+    "5": 0.0960591133004926,
+    "6": 0.09523809523809523,
+    "7": 0.17543859649122806,
+    "8": 0.19298245614035087,
+    "9": 0.17543859649122806,
+    "10": 0.1111111111111111,
+    "11": 0.20915032679738563,
     "12": 0.11764705882352941,
-    "13": 0.125,
-    "14": 0.23809523809523808,
-    "15": 0.22857142857142856,
-    "16": 0.1523809523809524,
-    "17": 0.1978021978021978,
-    "18": 0.15384615384615385,
-    "19": 0.16666666666666666,
-    "20": 0.18181818181818182,
+    "13": 0.11764705882352941,
+    "14": 0.125,
+    "15": 0.23809523809523808,
+    "16": 0.22857142857142856,
+    "17": 0.1523809523809524,
+    "18": 0.1978021978021978,
+    "19": 0.15384615384615385,
+    "20": 0.16666666666666666,
     "21": 0.18181818181818182,
     "22": 0.18181818181818182,
-    "23": 0.23636363636363636,
-    "24": 0.2857142857142857,
-    "25": 0.4,
-    "26": 0.6,
-    "27": 0.5,
+    "23": 0.18181818181818182,
+    "24": 0.23636363636363636,
+    "25": 0.2857142857142857,
+    "26": 0.4,
+    "27": 0.6,
     "28": 0.5,
     "29": 0.5,
     "30": 0.5,
@@ -654,7 +687,8 @@
     "38": 1.0,
     "39": 1.0,
     "40": 1.0,
-    "41": 1.0
+    "41": 1.0,
+    "42": 1.0
   },
   "gods": [
     {
@@ -693,12 +727,12 @@
       "degree": 8
     },
     {
-      "id": "content_production_remotion_package_scripts",
+      "id": "site_package_scripts",
       "label": "scripts",
       "degree": 8
     },
     {
-      "id": "site_package_scripts",
+      "id": "content_production_remotion_package_scripts",
       "label": "scripts",
       "degree": 8
     },
@@ -710,26 +744,26 @@
   ],
   "surprises": [
     {
-      "source": "ALL()",
-      "target": "officialRedirect()",
+      "source": "Staging-only deployment boundary",
+      "target": "R2 controlled implementation gate",
       "source_files": [
-        "site/src/pages/[locale]/[...path].ts",
-        "site/src/lib/choiceqr/mirror.ts"
+        "site/docs/deployment-2026-09-01-emdash-homepage-events.md",
+        "site/docs/cloudflare-r2-media-plan.md"
       ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "peripheral node `ALL()` unexpectedly reaches hub `officialRedirect()`"
+      "confidence": "INFERRED",
+      "relation": "conceptually_related_to",
+      "why": "inferred connection - not explicitly stated in source; peripheral node `Staging-only deployment boundary` unexpectedly reaches hub `R2 controlled implementation gate`"
     },
     {
-      "source": "ALL()",
-      "target": "officialRedirect()",
+      "source": "Intentional staging fallback state",
+      "target": "Reviewed built-in homepage fallback",
       "source_files": [
-        "site/src/pages/[...path].ts",
-        "site/src/lib/choiceqr/mirror.ts"
+        "site/docs/deployment-2026-09-01-emdash-homepage-events.md",
+        "site/docs/emdash-site-content.md"
       ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "peripheral node `ALL()` unexpectedly reaches hub `officialRedirect()`"
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; semantically similar concepts with no structural link"
     },
     {
       "source": "AnalyticsEvent",
@@ -740,18 +774,7 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "references",
-      "why": "cross-file semantic connection"
-    },
-    {
-      "source": "mountConsentBanner()",
-      "target": "captureAttribution()",
-      "source_files": [
-        "site/src/lib/analytics/browser.ts",
-        "site/src/lib/analytics/attribution.ts"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "cross-file semantic connection"
+      "why": "bridges separate communities"
     },
     {
       "source": "decorateTrackedLinks()",
@@ -762,29 +785,45 @@
       ],
       "confidence": "EXTRACTED",
       "relation": "calls",
-      "why": "cross-file semantic connection"
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "mountConsentBanner()",
+      "target": "captureAttribution()",
+      "source_files": [
+        "site/src/lib/analytics/browser.ts",
+        "site/src/lib/analytics/attribution.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
     }
   ],
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `devDependencies` connect `remotion/package.json` to `scripts`?",
-      "why": "High betweenness centrality (0.011) - this node is a cross-community bridge."
+      "question": "Why does `devDependencies` connect `devDependencies` to `remotion/package.json`?",
+      "why": "High betweenness centrality (0.009) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `typescript` connect `scripts` to `remotion/package.json`?",
+      "question": "Why does `devDependencies` connect `devDependencies` to `scripts`?",
       "why": "High betweenness centrality (0.008) - this node is a cross-community bridge."
     },
     {
       "type": "isolated_nodes",
-      "question": "What connects `AttributionKey`, `BrowserAnalyticsOptions`, `Locale` to the rest of the system?",
-      "why": "235 weakly-connected nodes found - possible documentation gaps or missing edges."
+      "question": "What connects `BrowserAnalyticsOptions`, `Locale`, `Window` to the rest of the system?",
+      "why": "242 weakly-connected nodes found - possible documentation gaps or missing edges."
     },
     {
       "type": "low_cohesion",
       "question": "Should `browser.ts` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.06201923076923077 - nodes in this community are weakly interconnected."
+      "why": "Cohesion score 0.06233766233766234 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `page.ts` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.09915966386554621 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
@@ -795,11 +834,6 @@
       "type": "low_cohesion",
       "question": "Should `mirror.ts` be split into smaller, more focused modules?",
       "why": "Cohesion score 0.13763440860215054 - nodes in this community are weakly interconnected."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `remotion/package.json` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected."
     }
   ]
 }
