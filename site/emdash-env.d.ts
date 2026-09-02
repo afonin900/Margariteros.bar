@@ -5,25 +5,6 @@
 
 import type { ContentBylineCredit, TaxonomyTerm, PortableTextBlock } from "emdash";
 
-export interface CreativeAsset {
-  id: string;
-  slug: string | null;
-  status: string;
-  name: string;
-  kind: "source-photo" | "source-video" | "banner" | "poster" | "reel" | "story" | "gallery";
-  media: { id: string; url?: string; src?: string; filename?: string; mimeType?: string; size?: number; provider?: string; meta?: Record<string, unknown> };
-  event?: string;
-  rights_state: "unknown" | "owner-provided" | "licensed" | "cleared";
-  cleanup_state: "pending" | "passed" | "failed" | "not-required";
-  source_note: string;
-  legacy_path?: string;
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date | null;
-  bylines?: ContentBylineCredit[];
-  terms?: Record<string, TaxonomyTerm[]>;
-}
-
 export interface Event {
   id: string;
   slug: string | null;
@@ -66,39 +47,9 @@ export interface Homepage {
   terms?: Record<string, TaxonomyTerm[]>;
 }
 
-export interface Publication {
-  id: string;
-  slug: string | null;
-  status: string;
-  title: string;
-  channel: "instagram" | "threads" | "facebook" | "gbp";
-  format: "feed" | "reel" | "story" | "text" | "gbp";
-  publication_locale: "pl" | "en" | "ru" | "es";
-  caption: string;
-  event?: string;
-  assets?: string;
-  workflow_state: "draft" | "review" | "approved" | "postiz-draft" | "scheduled" | "published" | "error";
-  publish_at: string;
-  copy_cleanup_state: "pending" | "passed" | "failed" | "not-required";
-  owner_approved_at?: string;
-  postiz_id?: string;
-  postiz_state?: string;
-  release_url?: string;
-  postiz_synced_at?: string;
-  last_error?: string;
-  legacy_path?: string;
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date | null;
-  bylines?: ContentBylineCredit[];
-  terms?: Record<string, TaxonomyTerm[]>;
-}
-
 declare module "emdash" {
   interface EmDashCollections {
-    creative_assets: CreativeAsset;
     events: Event;
     homepage: Homepage;
-    publications: Publication;
   }
 }
