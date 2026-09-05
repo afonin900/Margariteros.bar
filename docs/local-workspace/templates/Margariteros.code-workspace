@@ -1,0 +1,16 @@
+{
+  "folders": [
+    { "path": "Margariteros.bar" },
+    { "path": "margariteros-site" },
+    { "path": "margariteros-content" },
+    { "path": "margariteros-analytics" },
+    { "path": "margariteros-ads" },
+    { "path": "margariteros-r-club" },
+    { "path": "margariteros-booking-service" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.DS_Store": true
+    }
+  }
+}
