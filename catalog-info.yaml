@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: margariteros.bar
+  namespace: default
+  description: Общий исторический корень и рабочая карта бренда, контента, аналитики, рекламы и сайта Margariteros Bar.
+  annotations:
+    github.com/project-slug: afonin900/margariteros.bar
+    afonin.xyz/source-refs: README.md,CONTEXT.md,AGENTS.md,PRODUCT.md,afonin900/afonin-hq:portfolio/projects.yaml,afonin900/afonin-hq:portfolio/departments.yaml
+    afonin.xyz/project-id: margariteros
+spec:
+  type: documentation
+  lifecycle: unknown
+  owner: group:default/unassigned

@@ -135,3 +135,12 @@ Astro SSR-сайт для рекламного трафика, меню, соб�
 
 Состояние run: `.autopilot/state.js`; прогресс: `.autopilot/dashboard.html`. Продолжение: «продолжи автопилот». Требование из manifest снимает только пользователь.
 <!-- autopilot:end -->
+
+## HQ navigation (local Mac)
+
+Для межрепозиторной навигации в этой рабочей копии читай
+`/Users/afonin900/Github/afonin-hq/docs/catalog.md`, а точные project/department ID
+сверяй в `/Users/afonin900/Github/afonin-hq/portfolio/projects.yaml` и
+`/Users/afonin900/Github/afonin-hq/portfolio/departments.yaml`. Каталог
+`navigation_only`: он не подтверждает опубликованный clone, runtime, доступ или deploy.
+Безопасный инфраструктурный маршрут: `/Users/afonin900/Github/platform-infrastructure/docs/infrastructure-duty.md`.
