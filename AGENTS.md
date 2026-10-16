@@ -1,26 +1,26 @@
 # Margariteros — отдел бара / SMM
 
-**Сначала:** `docs/growth-os/HERMES-START.md`. Без этого файл не трогать.
+**Сначала:** [карта входов Штаба](https://github.com/afonin900/afonin-hq/blob/main/portfolio/products.md). Агент выбирает ответственный репозиторий и читает его AGENTS.md и README.md. Старые документы growth-os сохраняют историю.
 
-Штаб: `/opt/data/workspace/HQ/AGENTS.md`. Скиллы: `corp-*`.
-Задачи: GitHub Issues `afonin900/Margariteros.bar`.
+Штаб: [актуальная карта](https://github.com/afonin900/afonin-hq/blob/main/portfolio/products.md).
+Обычная задача выполняется напрямую по поручению владельца и не требует новой карточки. Выбранный владельцем граф задач ведётся в центральном HQ Beads.
 Факты домена: `PROJECT.md`.
-Доска: Margariteros Bar Ops (#8).
+GitHub Issues и доска Margariteros Bar Ops (#8) сохраняют историю.
 
 `CLAUDE.md` → этот файл.
 
 ## Before durable work
 
-1. Read `docs/growth-os/HERMES-START.md`.
+1. Choose the responsible repository from the HQ entry map; read its AGENTS.md and README.md.
 2. Read `PROJECT.md` for current project state.
-3. Read the assigned GitHub Issue for requested work.
+3. Read the owner request or the selected task card in central HQ Beads.
 4. For infrastructure, DNS, Dokploy or OpenBao work, read `docs/ORG-INFRA.md`.
-5. Read the README of the needed direction (`content/`, `analytics/` or brandbook) and inspect relevant repository/runtime evidence before changing anything.
+5. Work in the responsible repository and inspect relevant repository/runtime evidence before changing anything.
 
 ## Priority of truth
 
 1. Actual assets / live accounts / runtime
-2. GitHub Issue for the requested task
+2. Owner request or the selected central HQ Beads task
 3. PROJECT.md
 4. README and other documentation (`CONTEXT.md`, `PRODUCT.md`, `0_hq/` — legacy)
 
@@ -32,7 +32,7 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 
 ## Sources of truth
 
-- Задачи / статус: GitHub Issues
+- Задачи / статус: поручение владельца; для выбранного графа — центральный HQ Beads
 - Что живо: `PROJECT.md`
 - Визуал: `margariteros_asset_pack_v1_lime_fiesta/09_docs/design.md`
 - Пайплайн контента (черновик): `CONTENT_PIPELINE_DRAFT.md`
