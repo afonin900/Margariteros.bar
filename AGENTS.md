@@ -4,7 +4,7 @@
 
 Штаб: [актуальная карта](https://github.com/afonin900/afonin-hq/blob/main/portfolio/products.md).
 Обычная задача выполняется напрямую по поручению владельца и не требует новой карточки. Выбранный владельцем граф задач ведётся в центральном HQ Beads.
-Факты домена: `PROJECT.md`.
+Факты домена: документы профильного репозитория; старый `PROJECT.md` сохраняет историю.
 GitHub Issues и доска Margariteros Bar Ops (#8) сохраняют историю.
 
 `CLAUDE.md` → этот файл.
@@ -12,7 +12,7 @@ GitHub Issues и доска Margariteros Bar Ops (#8) сохраняют ист�
 ## Before durable work
 
 1. Choose the responsible repository from the HQ entry map; read its AGENTS.md and README.md.
-2. Read `PROJECT.md` for current project state.
+2. Read current project documents in the responsible repository; the old meta PROJECT.md is historical.
 3. Read the owner request or the selected task card in central HQ Beads.
 4. For infrastructure, DNS, Dokploy or OpenBao work, read `docs/ORG-INFRA.md`.
 5. Work in the responsible repository and inspect relevant repository/runtime evidence before changing anything.
@@ -21,8 +21,8 @@ GitHub Issues и доска Margariteros Bar Ops (#8) сохраняют ист�
 
 1. Actual assets / live accounts / runtime
 2. Owner request or the selected central HQ Beads task
-3. PROJECT.md
-4. README and other documentation (`CONTEXT.md`, `PRODUCT.md`, `0_hq/` — legacy)
+3. Documents of the responsible repository
+4. Historical meta PROJECT.md, README and other documentation (`CONTEXT.md`, `PRODUCT.md`, `0_hq/` — legacy)
 
 If a doc contradicts reality, report the discrepancy. Do not blindly follow stale weekly cards.
 
@@ -33,7 +33,7 @@ If a doc contradicts reality, report the discrepancy. Do not blindly follow stal
 ## Sources of truth
 
 - Задачи / статус: поручение владельца; для выбранного графа — центральный HQ Beads
-- Что живо: `PROJECT.md`
+- Что живо: свежие доказательства профильного репозитория
 - Визуал: `margariteros_asset_pack_v1_lime_fiesta/09_docs/design.md`
 - Пайплайн контента (черновик): `CONTENT_PIPELINE_DRAFT.md`
 - Куда класть посты: `content/weeks/README.md`
