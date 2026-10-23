@@ -1,11 +1,22 @@
 # Margariteros Bar
 
-Варшавский бар (Chmielna). Этот репо — бренд Lime Fiesta и SMM-ритм: факты → пост → ChoiceQR. Не школа флористики и не Pinterest-фабрика сухоцветов.
+Варшавский бар на Chmielna. Путь гостя: контент или поиск → сайт →
+ChoiceQR booking → визит.
 
-Начать со [Штаба](https://github.com/afonin900/afonin-hq/blob/main/portfolio/products.md); агент выбирает профильный репозиторий и читает его AGENTS.md и README.md. Локальный порядок: [AGENTS.md](AGENTS.md).
-Обычная задача выполняется напрямую. Для выбранного владельцем графа задачи и статус ведутся в центральном HQ Beads; новая задача сама по себе не требует карточки.
-Рабочие контуры включают [Operations](https://github.com/afonin900/margariteros-operations) — Syrve/Choice и документы — и [Booking Service](https://github.com/afonin900/margariteros-booking-service) — бронирование и депозиты. Старые PROJECT.md, growth-os и GitHub Issues сохраняют историю; текущие факты проверяются в профильном репозитории.
+Этот метарепозиторий хранит карту направлений и историю. Общей сборки нет.
 
-Паки: `margariteros_asset_pack_v1_lime_fiesta/` и `margariteros_asset_pack_v2_canva/`. Визуальный закон: `…/09_docs/design.md`.
+| Репозиторий | Продукт |
+| --- | --- |
+| [Site](https://github.com/afonin900/margariteros-site) | Публичный сайт, CMS, страницы и события |
+| [Content](https://github.com/afonin900/margariteros-content) | Бренд, реальные материалы и публикации каналов |
+| [Analytics](https://github.com/afonin900/margariteros-analytics) | Согласие, события, UTM и атрибуция |
+| [Ads](https://github.com/afonin900/margariteros-ads) | Google Ads, Meta Ads и бюджеты |
+| [R Club](https://github.com/afonin900/margariteros-r-club) | Партнёрский кабинет и связь с Syrve |
+| [Operations](https://github.com/afonin900/margariteros-operations) | Syrve/Choice, меню, учёт и документы |
+| [Booking Service](https://github.com/afonin900/margariteros-booking-service) | Брони, депозиты, резервы и закрытые счета |
 
-Публикация, реклама, подключение аккаунтов — только после явного «можно».
+Брендбук и реестр визуальных стилей принадлежат Content. Сайт, социальная
+публикация, заявка, подтверждённая бронь и визит — разные результаты.
+Факты события и состояние брони подтверждаются ответственными системами.
+`PROJECT.md`, старые growth-os, `site/`, `content/`, `analytics/` и asset packs
+этой копии сохраняют историю.
